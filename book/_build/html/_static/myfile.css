@@ -1,0 +1,13 @@
+p {
+    text-align: justify;
+}
+
+.mermaid {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.center-text {
+    text-align: center;
+}

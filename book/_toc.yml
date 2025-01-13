@@ -1,0 +1,10 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+parts:
+  - caption: Module 1. Equations of State
+    numbered: true
+    chapters:
+      - file: lecture-01.md
