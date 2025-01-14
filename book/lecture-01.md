@@ -220,6 +220,9 @@ flowchart TB
 ```
 
 ```{glossary}
+Particle
+  A microscopic entity with mass and velocity (e.g., an atom, molecule, or ion).
+
 Microscopic state (classical)
   The positions and momenta of all particles in a system.
 
