@@ -18,6 +18,8 @@ kernelspec:
 
 This course explores the core concepts of thermodynamics and statistical mechanics as well as their applications in chemical systems. Building on prior knowledge of thermodynamic principles (covered in [Chem 106](https://chemistry.wustl.edu/chemistry-105-106) and [Chem 112](https://chemistry.wustl.edu/chemistry-111-112)) and quantum mechanics (covered in [Chem 105](https://chemistry.wustl.edu/chemistry-105-106), [Chem 111](https://chemistry.wustl.edu/chemistry-111-112), and [Chem 401](https://chemistry.wustl.edu/physical-chemistry-i)), this course prepares students to connect molecular behavior to macroscopic thermodynamics, bridging theory and real-world contexts.
 
+---
+
 ## Why Study Thermodynamics and Statistical Mechanics?
 
 ### Bridging the Microscopic and Macroscopic Worlds
@@ -255,6 +257,8 @@ Intensive property
   A property that is independent of system size (e.g., pressure, temperature).
 ```
 
+---
+
 ## Basic Forms of Energy and Energy Transfer
 
 ```{mermaid}
@@ -337,6 +341,8 @@ Work
 Heat
   Energy transfer due to a temperature difference (e.g., conduction from a hot object to a cold object).
 ```
+
+---
 
 ## Important Units in Statistical Thermochemistry
 
