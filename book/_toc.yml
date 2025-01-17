@@ -8,3 +8,4 @@ parts:
     numbered: true
     chapters:
       - file: lecture-01.md
+      - file: lecture-02.md
