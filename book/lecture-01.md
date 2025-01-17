@@ -24,7 +24,7 @@ This course explores the core concepts of thermodynamics and statistical mechani
 
 ### Bridging the Microscopic and Macroscopic Worlds
 
-Chemical systems commonly contain particles numbering on the order of [Avogadro's number](https://physics.nist.gov/cgi-bin/cuu/Value?na), $N_\text{A} = 6.022 \times 10^{23}$. Thermodynamics abstracts the complexity of these molecular systems into a framework capable of predicting macroscopic behavior, such as
+Chemical systems commonly contain particles numbering on the order of [Avogadro's number](https://physics.nist.gov/cgi-bin/cuu/Value?na) (i.e., $N_\text{A} = 6.022 \times 10^{23}$). Thermodynamics abstracts the complexity of these molecular systems into a framework capable of predicting macroscopic behavior, such as
 
 - Reaction spontaneity,
 - Equilibrium states, and
