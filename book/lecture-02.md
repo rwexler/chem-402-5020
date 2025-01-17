@@ -197,4 +197,4 @@ This calculation shows that air molecules move several hundreds of miles per hou
 [^2]: [https://www.boeing.com/commercial/747-8/design-highlights#technologically-advanced](https://www.boeing.com/commercial/747-8/design-highlights#technologically-advanced)
 ````
 
-<!-- Just note that N<sub>2</sub> is actually *diatomic*. Strictly speaking, the factor of 3 in the RMS formula comes from *translational* degrees of freedom only; it remains valid for *translational speed*.  Diatomic gases do have rotational (and possibly vibrational) modes, but that mainly affects *internal* energy—translation is still 3D motion. -->
+<!-- Just note that N<sub>2</sub> is actually *diatomic*. Strictly speaking, the factor of 3 in the RMS formula comes from *translational* degrees of freedom only; it remains valid for *translational speed*. Diatomic gases do have rotational (and possibly vibrational) modes, but that mainly affects *internal* energy—translation is still 3D motion. -->
