@@ -154,7 +154,7 @@ plt.close(fig)
 :figwidth: 100%
 :align: center
 
-Visualizing isolated, closed, and open systems: isolated systems exchange neither energy nor matter; closed systems exchange energy only; open systems exchange both energy and matter with their surroundings.
+Main types of systems in thermodynamics: (a) isolated systems exchange neither energy nor matter with their surroundings; (b) closed systems can exchange energy but not matter with their surroundings; and (c) open systems can exchange both energy and matter with their surroundings.
 ```
 
 ```{glossary}
@@ -347,7 +347,7 @@ Heat
 
 ---
 
-## Important Units in Statistical Thermochemistry
+## Important Units
 
 ### SI Units
 
