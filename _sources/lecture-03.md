@@ -28,6 +28,7 @@ Ideal gases are a central model in thermodynamics. By simplifying microscopic in
 ---
 
 (section:gas-laws)=
+
 ## Gas Laws
 
 ```{code-cell} ipython3
@@ -95,7 +96,7 @@ plt.close(fig)
 :figwidth: 100%
 :align: center
 
-Four classical gas laws (blue) shown in chronological order: Boyle’s law,[^1] Charles’s law, Gay-Lussac’s law, and Avogadro’s law.
+Four classical gas laws (blue) shown in chronological order: Boyle's law,[^1] Charles's law, Gay-Lussac's law, and Avogadro's law.
 
 [^1]: [Boyle's original data](https://web.lemoyne.edu/~giunta/classicalcs/boyleform.html)
 ```
@@ -127,7 +128,7 @@ where $\left(\partial f / \partial x_i\right)_{\{ x_j | j \neq i \}}$ is the **p
 
 ### Total Differential of Volume
 
-From Boyle’s, Charles’s, and Avogadro’s laws, we can treat $V$ as a function of $P, T,$ and $N$:
+From Boyle's, Charles's, and Avogadro's laws, we can treat $V$ as a function of $P, T,$ and $N$:
 
 ```{math}
 V = V(P, T, N).
@@ -279,10 +280,10 @@ The red line is an ordinary least squares fit whose intercept at -273.15 °C s
 [^2]: [NIST WebBook: O₂ Data](https://webbook.nist.gov/cgi/inchi/InChI%3D1S/O2/c1-2)
 ```
 
-Charles’s law states that, at constant (low) pressure, the volume per particle is directly proportional to the gas temperature. Historically, the Celsius scale was used ($0\,^\circ\mathrm{C}$ as the freezing point of water and $100\,^\circ\mathrm{C}$ as the boiling point). However, by measuring gas volume at various Celsius temperatures and extrapolating to where volume vanishes, we identify $-273.15\,^\circ\mathrm{C}$ as the limit—an unphysical negative volume indicates a *theoretical* bound. Shifting the Celsius scale by $273.15$ degrees places absolute zero at $0\,\mathrm{K}$:
+Charles's law states that, at constant (low) pressure, the volume per particle is directly proportional to the gas temperature. Historically, the Celsius scale was used ($0\,^\circ\text{C}$ as the freezing point of water and $100\,^\circ\text{C}$ as the boiling point). However, by measuring gas volume at various Celsius temperatures and extrapolating to where volume vanishes, we identify $-273.15\,^\circ\text{C}$ as the limit—an unphysical negative volume indicates a *theoretical* bound. Shifting the Celsius scale by $273.15$ degrees places absolute zero at $0\,\text{K}$:
 
 ```{math}
-T(\mathrm{K}) \;=\; T(\mathrm{^\circ C}) \;+\; 273.15.
+T(\text{K}) \;=\; T(\text{^\circ C}) \;+\; 273.15.
 ```
 
 This defines the **Kelvin scale**, an absolute temperature scale that starts at the lowest physically meaningful temperature.

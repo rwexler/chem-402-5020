@@ -375,7 +375,7 @@
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#microscopic-picture-of-pressure">2.3.1. Microscopic Picture of Pressure</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#particle-momentum-change">2.3.1.1. Particle Momentum Change</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#time-between-collisions">2.3.1.2. Time Between Collisions</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#force-exerted-on-the-wall">2.3.1.3. Force Exerted on the Wall</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#force-on-the-wall">2.3.1.3. Force on the Wall</a></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#total-pressure">2.3.2. Total Pressure</a></li>
@@ -398,25 +398,25 @@
 <h1><span class="section-number">2. </span>Kinetic Theory<a class="headerlink" href="#kinetic-theory" title="Link to this heading">#</a></h1>
 <section id="overview">
 <h2><span class="section-number">2.1. </span>Overview<a class="headerlink" href="#overview" title="Link to this heading">#</a></h2>
-<p>Kinetic theory explains the macroscopic properties of gases—such as pressure and temperature—by describing the microscopic motion of particles. This lecture examines the foundational assumptions, derivation of fundamental equations, and the physical significance of kinetic theory.</p>
+<p>Kinetic theory connects the microscopic motion of gas particles to macroscopic properties such as pressure and temperature. This lecture introduces the fundamental assumptions of kinetic theory, derives key equations, and highlights their physical relevance.</p>
 </section>
 <hr class="docutils" />
 <section id="foundational-assumptions-of-kinetic-theory">
 <h2><span class="section-number">2.2. </span>Foundational Assumptions of Kinetic Theory<a class="headerlink" href="#foundational-assumptions-of-kinetic-theory" title="Link to this heading">#</a></h2>
 <ol class="arabic">
 <li><p><strong>Large Number of Particles</strong>:
-A gas consists of a statistically large number of identical particles in isotropic random motion.</p></li>
+A gas contains a very large number of identical particles moving randomly in all directions.</p></li>
 <li><p><strong>Point Particles</strong>:
-The size of the particles is negligible compared to the average distance between them.</p></li>
+Each particle’s size is negligible compared to the average distance between particles.</p></li>
 <li><p><strong>Elastic Collisions</strong>:
-Collisions between particles and with the container walls (a type of boundary) are perfectly elastic, conserving both momentum and kinetic energy.</p></li>
-<li><p><strong>No Interparticle Forces</strong>:
-Particles do not exert forces on one another, except during collisions.</p></li>
+Collisions between particles, and between particles and the container walls, conserve both momentum and kinetic energy.</p></li>
+<li><p><strong>No Long-Range Interparticle Forces</strong>:
+Particles do not exert forces on one another except when they collide (i.e., there are no long-range attractive or repulsive forces).</p></li>
 <li><p><strong>Classical Mechanics Applies</strong>:
 Particle motion follows Newton’s second law:</p>
 <div class="math notranslate nohighlight">
 \[\vec{F} = \frac{d\vec{p}}{dt},\]</div>
-<p>where <span class="math notranslate nohighlight">\(\vec{F}\)</span> is the net force acting on a particle, <span class="math notranslate nohighlight">\(\vec{p}\)</span> is the linear momentum of the particle, and <span class="math notranslate nohighlight">\(t\)</span> is time.</p>
+<p>where <span class="math notranslate nohighlight">\(\vec{F}\)</span> is the net force on a particle, <span class="math notranslate nohighlight">\(\vec{p}\)</span> is its linear momentum, and <span class="math notranslate nohighlight">\(t\)</span> is time.</p>
 </li>
 </ol>
 </section>
@@ -431,47 +431,53 @@ Particle motion follows Newton’s second law:</p>
 </summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.patches</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">patches</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">myst_nb</span><span class="w"> </span><span class="kn">import</span> <span class="n">glue</span>
 
 <span class="k">def</span><span class="w"> </span><span class="nf">plot_container_2d</span><span class="p">(</span><span class="n">offset</span><span class="o">=</span><span class="mf">0.2</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Plot a 2D version of the gas particle in a container.&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Plot a 2D schematic of a gas particle in a container.&quot;&quot;&quot;</span>
     <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
 
-    <span class="c1"># Draw the container as a rectangle</span>
+    <span class="c1"># Dimensions</span>
     <span class="n">Lx</span><span class="p">,</span> <span class="n">Lz</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">2</span>
+
+    <span class="c1"># Draw container</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="n">Lx</span><span class="p">,</span> <span class="n">Lx</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">Lz</span><span class="p">,</span> <span class="n">Lz</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">fill_between</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="n">Lx</span><span class="p">],</span> <span class="mi">0</span><span class="p">,</span> <span class="n">Lz</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;lightgray&#39;</span><span class="p">)</span>
 
-    <span class="c1"># Draw the gas particle as a circle</span>
+    <span class="c1"># Gas particle</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="mf">0.5</span> <span class="o">*</span> <span class="n">Lx</span><span class="p">,</span> <span class="mf">0.75</span> <span class="o">*</span> <span class="n">Lz</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">0.5</span> <span class="o">*</span> <span class="n">Lx</span><span class="p">,</span> <span class="mf">0.75</span> <span class="o">*</span> <span class="n">Lz</span><span class="p">,</span> <span class="s2">&quot;$m$&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">0.5</span> <span class="o">*</span> <span class="n">Lx</span><span class="p">,</span> <span class="mf">0.75</span> <span class="o">*</span> <span class="n">Lz</span><span class="p">,</span> <span class="s2">&quot;$m$&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">,</span>
+            <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
 
-    <span class="c1"># Add velocity arrows</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="mf">0.5</span> <span class="o">*</span> <span class="n">Lx</span><span class="p">,</span> <span class="mf">0.75</span> <span class="o">*</span> <span class="n">Lz</span><span class="p">),</span> <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="n">Lx</span><span class="p">,</span> <span class="mf">0.75</span> <span class="o">*</span> <span class="n">Lz</span><span class="p">),</span> <span class="n">arrowprops</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">arrowstyle</span><span class="o">=</span><span class="s2">&quot;&lt;-&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">))</span>
+    <span class="c1"># Velocity arrows</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="mf">0.5</span> <span class="o">*</span> <span class="n">Lx</span><span class="p">,</span> <span class="mf">0.75</span> <span class="o">*</span> <span class="n">Lz</span><span class="p">),</span> <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="n">Lx</span><span class="p">,</span> <span class="mf">0.75</span> <span class="o">*</span> <span class="n">Lz</span><span class="p">),</span>
+                <span class="n">arrowprops</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">arrowstyle</span><span class="o">=</span><span class="s2">&quot;&lt;-&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">))</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">Lx</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">/</span> <span class="mi">3</span><span class="p">,</span> <span class="mf">0.75</span> <span class="o">*</span> <span class="n">Lz</span> <span class="o">+</span> <span class="n">offset</span><span class="p">,</span> <span class="s2">&quot;$v_x$&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">)</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="n">Lx</span><span class="p">,</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">Lz</span><span class="p">),</span> <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">Lz</span><span class="p">),</span> <span class="n">arrowprops</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">arrowstyle</span><span class="o">=</span><span class="s2">&quot;&lt;-&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">))</span>
+
+    <span class="n">ax</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="n">Lx</span><span class="p">,</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">Lz</span><span class="p">),</span> <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">Lz</span><span class="p">),</span>
+                <span class="n">arrowprops</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">arrowstyle</span><span class="o">=</span><span class="s2">&quot;&lt;-&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">))</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">Lx</span> <span class="o">*</span> <span class="mi">5</span> <span class="o">/</span> <span class="mi">6</span><span class="p">,</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">Lz</span> <span class="o">+</span> <span class="n">offset</span><span class="p">,</span> <span class="s2">&quot;$-v_x$&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">)</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.25</span> <span class="o">*</span> <span class="n">Lz</span><span class="p">),</span> <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="mf">0.5</span> <span class="o">*</span> <span class="n">Lx</span><span class="p">,</span> <span class="mf">0.25</span> <span class="o">*</span> <span class="n">Lz</span><span class="p">),</span> <span class="n">arrowprops</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">arrowstyle</span><span class="o">=</span><span class="s2">&quot;&lt;-&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">))</span>
+
+    <span class="n">ax</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.25</span> <span class="o">*</span> <span class="n">Lz</span><span class="p">),</span> <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="mf">0.5</span> <span class="o">*</span> <span class="n">Lx</span><span class="p">,</span> <span class="mf">0.25</span> <span class="o">*</span> <span class="n">Lz</span><span class="p">),</span>
+                <span class="n">arrowprops</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">arrowstyle</span><span class="o">=</span><span class="s2">&quot;&lt;-&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">))</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">0.25</span> <span class="o">*</span> <span class="n">Lx</span><span class="p">,</span> <span class="mf">0.25</span> <span class="o">*</span> <span class="n">Lz</span> <span class="o">+</span> <span class="n">offset</span><span class="p">,</span> <span class="s2">&quot;$v_z$&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">)</span>
 
-    <span class="c1"># Add length indicators</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="n">offset</span><span class="p">),</span> <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="n">Lx</span><span class="p">,</span> <span class="o">-</span><span class="n">offset</span><span class="p">),</span> <span class="n">arrowprops</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">arrowstyle</span><span class="o">=</span><span class="s2">&quot;&lt;-&gt;&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">))</span>
+    <span class="c1"># Length indicators</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="n">offset</span><span class="p">),</span> <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="n">Lx</span><span class="p">,</span> <span class="o">-</span><span class="n">offset</span><span class="p">),</span>
+                <span class="n">arrowprops</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">arrowstyle</span><span class="o">=</span><span class="s2">&quot;&lt;-&gt;&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">))</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">Lx</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span> <span class="o">*</span> <span class="n">offset</span><span class="p">,</span> <span class="s2">&quot;$L_x$&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">)</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="n">offset</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="n">offset</span><span class="p">,</span> <span class="n">Lz</span><span class="p">),</span> <span class="n">arrowprops</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">arrowstyle</span><span class="o">=</span><span class="s2">&quot;&lt;-&gt;&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">))</span>
+
+    <span class="n">ax</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="n">offset</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="n">offset</span><span class="p">,</span> <span class="n">Lz</span><span class="p">),</span>
+                <span class="n">arrowprops</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">arrowstyle</span><span class="o">=</span><span class="s2">&quot;&lt;-&gt;&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">))</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span> <span class="o">*</span> <span class="n">offset</span><span class="p">,</span> <span class="n">Lz</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;$L_z$&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">)</span>
 
-    <span class="c1"># Configure plot appearance</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">)</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">Lx</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">Lz</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
 
     <span class="k">return</span> <span class="n">fig</span>
 
-<span class="c1"># Call the function to plot</span>
 <span class="n">fig</span> <span class="o">=</span> <span class="n">plot_container_2d</span><span class="p">()</span>
-
-<span class="c1"># Save and display</span>
 <span class="n">glue</span><span class="p">(</span><span class="s1">&#39;gas-in-container&#39;</span><span class="p">,</span> <span class="n">fig</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">(</span><span class="n">fig</span><span class="p">)</span>
 </pre></div>
@@ -482,80 +488,75 @@ Particle motion follows Newton’s second law:</p>
 <figure class="align-center" id="fig-gas-in-container" style="width: 100%">
 <img alt="_images/e02e7de3d45af02cee190256cc5d1497021366c4e768a9b744b9178c9935b014.png" src="_images/e02e7de3d45af02cee190256cc5d1497021366c4e768a9b744b9178c9935b014.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 2.1 </span><span class="caption-text">A two-dimensional view of a gas particle (blue) in a three-dimensional cuboid container (light gray), showing velocity <span class="math notranslate nohighlight">\(v_x\)</span> (red arrows) and container lengths <span class="math notranslate nohighlight">\(L_x\)</span> and <span class="math notranslate nohighlight">\(L_z\)</span> (black bidirectional arrows). The length <span class="math notranslate nohighlight">\(L_y\)</span> is not depicted, as it is perpendicular to the two-dimensional view.</span><a class="headerlink" href="#fig-gas-in-container" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 2.1 </span><span class="caption-text">A two-dimensional representation of a single gas particle in a cuboid container (gray). Velocity components are shown in red. The length <span class="math notranslate nohighlight">\(L_y\)</span> is not depicted, as it extends perpendicular to the plane of view.</span><a class="headerlink" href="#fig-gas-in-container" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <section id="microscopic-picture-of-pressure">
 <h3><span class="section-number">2.3.1. </span>Microscopic Picture of Pressure<a class="headerlink" href="#microscopic-picture-of-pressure" title="Link to this heading">#</a></h3>
-<p>Pressure is defined as the force exerted per unit area. At the microscopic scale, pressure arises from particles colliding with the container walls. Each collision exerts a force, and the cumulative effect of countless microscopic collisions produces macroscopic pressure.</p>
+<p>Pressure is the force exerted per unit area on the container walls. On a microscopic level, this force comes from the collective effect of countless collisions of gas particles with the walls.</p>
 <section id="particle-momentum-change">
 <h4><span class="section-number">2.3.1.1. </span>Particle Momentum Change<a class="headerlink" href="#particle-momentum-change" title="Link to this heading">#</a></h4>
-<p>Consider a particle of mass <span class="math notranslate nohighlight">\(m\)</span> moving with velocity <span class="math notranslate nohighlight">\(v_x\)</span> in the <span class="math notranslate nohighlight">\(x\)</span>-direction. When it collides elastically with a container wall, the momentum change <span class="math notranslate nohighlight">\(\Delta p_x\)</span> is:</p>
+<p>For an elastic collision of a particle of mass <span class="math notranslate nohighlight">\(m\)</span> moving with velocity <span class="math notranslate nohighlight">\(v_x\)</span> in the <span class="math notranslate nohighlight">\(x\)</span>-direction, the momentum change is:</p>
 <div class="math notranslate nohighlight">
-\[\Delta p_x = 2mv_x.\]</div>
+\[\Delta p_x = 2 m v_x.\]</div>
 </section>
 <section id="time-between-collisions">
 <h4><span class="section-number">2.3.1.2. </span>Time Between Collisions<a class="headerlink" href="#time-between-collisions" title="Link to this heading">#</a></h4>
-<p>The time <span class="math notranslate nohighlight">\(\Delta t\)</span> between consecutive collisions with the same wall is:</p>
+<p>If the container has length <span class="math notranslate nohighlight">\(L_x\)</span> in the <span class="math notranslate nohighlight">\(x\)</span>-direction, the time between two consecutive collisions of the same particle with that wall is:</p>
 <div class="math notranslate nohighlight">
-\[\Delta t = \frac{2L_x}{v_x},\]</div>
-<p>where <span class="math notranslate nohighlight">\(L_x\)</span> is the length of the container in the <span class="math notranslate nohighlight">\(x\)</span>-direction.</p>
+\[\Delta t = \frac{2 L_x}{v_x}.\]</div>
 </section>
-<section id="force-exerted-on-the-wall">
-<h4><span class="section-number">2.3.1.3. </span>Force Exerted on the Wall<a class="headerlink" href="#force-exerted-on-the-wall" title="Link to this heading">#</a></h4>
-<aside class="margin sidebar">
-<p class="sidebar-title"></p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Force is exerted only during collisions.</p>
-</div>
-</aside>
-<p>The time-averaged force <span class="math notranslate nohighlight">\(F_{\text{p},x}\)</span> exerted by one particle in the <span class="math notranslate nohighlight">\(x\)</span>-direction is:</p>
+<section id="force-on-the-wall">
+<h4><span class="section-number">2.3.1.3. </span>Force on the Wall<a class="headerlink" href="#force-on-the-wall" title="Link to this heading">#</a></h4>
+<p>A single particle’s average force on the wall (in the <span class="math notranslate nohighlight">\(x\)</span>-direction) is then:</p>
 <div class="math notranslate nohighlight">
-\[F_{\text{p},x} = \frac{\Delta p_x}{\Delta t} = \frac{mv_x^2}{L_x},\]</div>
-<p>where <span class="math notranslate nohighlight">\(\text{p}\)</span> denotes one particle.</p>
+\[F_{\text{p}, x} = \frac{\Delta p_x}{\Delta t} = \frac{m v_x^2}{L_x}.\]</div>
 </section>
 </section>
 <section id="total-pressure">
 <h3><span class="section-number">2.3.2. </span>Total Pressure<a class="headerlink" href="#total-pressure" title="Link to this heading">#</a></h3>
-<p>For <span class="math notranslate nohighlight">\(N\)</span> identical particles moving isotropically and randomly in a container of volume <span class="math notranslate nohighlight">\(V\)</span>, the pressure <span class="math notranslate nohighlight">\(P\)</span> is:</p>
+<p>For <span class="math notranslate nohighlight">\(N\)</span> identical particles with isotropic motion in a volume <span class="math notranslate nohighlight">\(V\)</span>, the total pressure <span class="math notranslate nohighlight">\(P\)</span> is:</p>
 <div class="math notranslate nohighlight">
 \[P = \frac{1}{V} \sum_{i=1}^N \frac{1}{3} m v_i^2,\]</div>
-<p>where <span class="math notranslate nohighlight">\(v_i\)</span> is the speed of the <span class="math notranslate nohighlight">\(i^{\text{th}}\)</span> particle. Substituting the sum with an average, we obtain:</p>
-<!-- ````{important} -->
+<p>where <span class="math notranslate nohighlight">\(v_i\)</span> is the speed of the <span class="math notranslate nohighlight">\(i\)</span>-th particle. Using the average speed squared <span class="math notranslate nohighlight">\(\langle v^2 \rangle\)</span>, we get:</p>
 <div class="math notranslate nohighlight" id="equation-pressure-kinetic-theory">
-<span class="eqno">(2.1)<a class="headerlink" href="#equation-pressure-kinetic-theory" title="Link to this equation">#</a></span>\[P = \frac{N m \langle v^2 \rangle}{3V}.\]</div>
-<p>Equation <a class="reference internal" href="#equation-pressure-kinetic-theory">(2.1)</a> relates the macroscopic pressure to the microscopic average squared speed <span class="math notranslate nohighlight">\(\langle v^2 \rangle\)</span> of the gas particles, which is proportional to their average kinetic energy.</p>
+<span class="eqno">(2.1)<a class="headerlink" href="#equation-pressure-kinetic-theory" title="Link to this equation">#</a></span>\[P = \frac{N m \langle v^2 \rangle}{3 V}.\]</div>
+<p>This equation shows how the macroscopic pressure depends on the microscopic speeds of the particles.</p>
 </section>
 </section>
 <hr class="docutils" />
 <section id="kinetic-energy-and-temperature">
 <h2><span class="section-number">2.4. </span>Kinetic Energy and Temperature<a class="headerlink" href="#kinetic-energy-and-temperature" title="Link to this heading">#</a></h2>
-<p>By definition, the average translational kinetic energy <span class="math notranslate nohighlight">\(\langle E_\text{kin} \rangle\)</span> is:</p>
+<p>The average translational kinetic energy per particle is:</p>
 <div class="math notranslate nohighlight">
 \[\langle E_\text{kin} \rangle = \frac{1}{2} m \langle v^2 \rangle.\]</div>
-<p>Using the equation <span class="math notranslate nohighlight">\(PV = Nk_\text{B}T\)</span>, referred to as the ideal gas law (to be discussed in Lecture 3), we find:</p>
-<!-- Reference Lecture 3 -->
+<p>From the ideal gas law <span class="math notranslate nohighlight">\(P V = N k_\text{B} T\)</span> (to be discussed in more detail in <a class="reference internal" href="lecture-03.html"><span class="std std-doc">Lecture 3</span></a>), one can show that</p>
 <div class="math notranslate nohighlight" id="equation-equipartition-theorem">
 <span class="eqno">(2.2)<a class="headerlink" href="#equation-equipartition-theorem" title="Link to this equation">#</a></span>\[\frac{1}{2} m \langle v^2 \rangle = \frac{3}{2} k_\text{B} T,\]</div>
-<p>where <span class="math notranslate nohighlight">\(k_\text{B}\)</span> is the <a class="reference external" href="https://physics.nist.gov/cgi-bin/cuu/Value?k">Boltzmann constant</a> (i.e., <span class="math notranslate nohighlight">\(k_\text{B} = 1.381 \times 10^{-23} \, \text{J/K}\)</span>) and <span class="math notranslate nohighlight">\(T\)</span> is the absolute temperature of the gas. Equation <a class="reference internal" href="#equation-equipartition-theorem">(2.2)</a>, termed the equipartition theorem, shows that the macroscopic temperature is directly proportional to the microscopic average kinetic energy of the gas particles, indicating the equal partition of energy among degrees of freedom.</p>
-<!-- Clarify degrees of freedom. -->
+<p>where <span class="math notranslate nohighlight">\(k_\text{B}\)</span> is the Boltzmann constant and <span class="math notranslate nohighlight">\(T\)</span> is the absolute temperature. This result—called the equipartition theorem—indicates that the temperature is directly proportional to the average kinetic energy of the particles.</p>
 </section>
 <hr class="docutils" />
 <section id="estimating-particle-speeds">
 <h2><span class="section-number">2.5. </span>Estimating Particle Speeds<a class="headerlink" href="#estimating-particle-speeds" title="Link to this heading">#</a></h2>
-<p>Solving Equation <a class="reference internal" href="#equation-equipartition-theorem">(2.2)</a> for <span class="math notranslate nohighlight">\(\langle v^2 \rangle\)</span> and taking the square root, we calculate the root-mean-square speed <span class="math notranslate nohighlight">\(v_{\text{rms}}\)</span> of the gas particles:</p>
+<p>By rearranging Equation <a class="reference internal" href="#equation-equipartition-theorem">(2.2)</a>, we obtain the root-mean-square (rms) speed:</p>
 <div class="math notranslate nohighlight" id="equation-rms-speed">
-<span class="eqno">(2.3)<a class="headerlink" href="#equation-rms-speed" title="Link to this equation">#</a></span>\[v_{\text{rms}} = \sqrt{\frac{3k_\text{B}T}{m}},\]</div>
-<p>which is a statistical measure of the average speed of the gas particles. This demonstrates that hotter gases have faster-moving particles than colder gases and that lighter particles move faster than heavier ones at the same temperature.</p>
+<span class="eqno">(2.3)<a class="headerlink" href="#equation-rms-speed" title="Link to this equation">#</a></span>\[v_{\text{rms}} = \sqrt{\frac{3 k_\text{B} T}{m}}.\]</div>
+<p>This expression shows that:</p>
+<ul class="simple">
+<li><p>Hotter gases (larger <span class="math notranslate nohighlight">\(T\)</span>) have faster particles.</p></li>
+<li><p>For a given temperature, lighter particles (smaller <span class="math notranslate nohighlight">\(m\)</span>) move faster than heavier ones.</p></li>
+</ul>
 <div class="dropdown admonition">
-<p class="admonition-title">Example: Estimating the Speed of Air Molecules at Room Temperature</p>
-<p>As N<sub>2</sub> molecules constitute 78.084% of air molecules, we can estimate the speed of air molecules at room temperature as the root-mean-square speed of N<sub>2</sub> molecules at 300 K. Using the relative molecular mass <span class="math notranslate nohighlight">\(M_\text{r}\)</span> of N<sub>2</sub> (i.e., <span class="math notranslate nohighlight">\(M_\text{r} = 28.0134 \, \text{g/mol}\)</span><a class="footnote-reference brackets" href="#id3" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>), we find:</p>
+<p class="admonition-title">Example: Speed of Air Molecules at Room Temperature</p>
+<p>Air is roughly 78% nitrogen (N<span class="math notranslate nohighlight">\(_2\)</span>) by volume. Thus, a good estimate for the speed of air molecules at around 300 K is the rms speed of an N<span class="math notranslate nohighlight">\(_2\)</span> molecule at 300 K.</p>
+<p>Using the molar mass of N<span class="math notranslate nohighlight">\(_2\)</span>, <span class="math notranslate nohighlight">\(M_\text{r} = 28.0134\,\text{g/mol}\)</span>,<a class="footnote-reference brackets" href="#id3" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> one finds:</p>
 <div class="math notranslate nohighlight">
-\[v_{\text{rms}} = \sqrt{\frac{3k_\text{B}T}{m}} = \sqrt{\frac{3k_\text{B}T}{M_\text{r} / N_\text{A}}} \approx 517 \, \text{m/s} \approx 1{,}156 \, \text{mph}.\]</div>
-<p>This calculation shows that air molecules move several hundreds of miles per hour faster than a Boeing 747-8 aircraft at cruising speed (about 660 mph).<a class="footnote-reference brackets" href="#id4" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a></p>
+\[v_{\text{rms}} = \sqrt{\frac{3 k_\text{B} T}{M_\text{r} / N_\text{A}}}
+               \approx 517\,\text{m/s}
+               \approx 1{,}156\,\text{mph}.\]</div>
+<p>This speed is significantly faster than a Boeing 747-8 airliner at cruising velocity (about 660 mph).<a class="footnote-reference brackets" href="#id4" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a></p>
 </div>
-<!-- Just note that N<sub>2</sub> is actually *diatomic*. Strictly speaking, the factor of 3 in the RMS formula comes from *translational* degrees of freedom only; it remains valid for *translational speed*. Diatomic gases do have rotational (and possibly vibrational) modes, but that mainly affects *internal* energy—translation is still 3D motion. --><hr class="footnotes docutils" />
+<hr class="footnotes docutils" />
 <aside class="footnote-list brackets">
 <aside class="footnote brackets" id="id3" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
@@ -640,7 +641,7 @@ Particle motion follows Newton’s second law:</p>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#microscopic-picture-of-pressure">2.3.1. Microscopic Picture of Pressure</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#particle-momentum-change">2.3.1.1. Particle Momentum Change</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#time-between-collisions">2.3.1.2. Time Between Collisions</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#force-exerted-on-the-wall">2.3.1.3. Force Exerted on the Wall</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#force-on-the-wall">2.3.1.3. Force on the Wall</a></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#total-pressure">2.3.2. Total Pressure</a></li>
