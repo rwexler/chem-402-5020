@@ -154,7 +154,7 @@ plt.close(fig)
 :figwidth: 100%
 :align: center
 
-Main types of systems in thermodynamics: (a) isolated systems exchange neither energy (red) nor matter (magenta) with their surroundings; (b) closed systems can exchange energy but not matter with their surroundings; and (c) open systems can exchange both energy and matter with their surroundings.
+The main types of systems in thermodynamics: (a) isolated systems exchange neither energy (red) nor matter (magenta) with their surroundings; (b) closed systems can exchange energy but not matter with their surroundings; and (c) open systems can exchange both energy and matter with their surroundings.
 ```
 
 ```{glossary}
