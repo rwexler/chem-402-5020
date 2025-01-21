@@ -16,7 +16,7 @@ kernelspec:
 
 ## Overview
 
-This course explores the core concepts of thermodynamics and statistical mechanics as well as their applications in chemical systems. Building on prior knowledge of thermodynamic principles (covered in [Chem 106](https://chemistry.wustl.edu/chemistry-105-106) and [Chem 112](https://chemistry.wustl.edu/chemistry-111-112)) and quantum mechanics (covered in [Chem 105](https://chemistry.wustl.edu/chemistry-105-106), [Chem 111](https://chemistry.wustl.edu/chemistry-111-112), and [Chem 401](https://chemistry.wustl.edu/physical-chemistry-i)), this course prepares students to connect molecular behavior to macroscopic thermodynamics, bridging theory and real-world contexts.
+This course covers the fundamental concepts of thermodynamics and statistical mechanics, along with their applications to chemical systems. It builds upon the thermodynamic principles introduced in [Chem 106](https://chemistry.wustl.edu/chemistry-105-106) and [Chem 112](https://chemistry.wustl.edu/chemistry-111-112), and the quantum mechanics taught in [Chem 105](https://chemistry.wustl.edu/chemistry-105-106), [Chem 111](https://chemistry.wustl.edu/chemistry-111-112), and [Chem 401](https://chemistry.wustl.edu/physical-chemistry-i). By connecting molecular-level behavior to macroscopic thermodynamic observations, students will learn how theory underpins real-world chemical processes.
 
 ---
 
@@ -24,15 +24,15 @@ This course explores the core concepts of thermodynamics and statistical mechani
 
 ### Bridging the Microscopic and Macroscopic Worlds
 
-Chemical systems commonly contain particles numbering on the order of [Avogadro's number](https://physics.nist.gov/cgi-bin/cuu/Value?na) (i.e., $N_\text{A} = 6.022 \times 10^{23}$). Thermodynamics abstracts the complexity of these molecular systems into a framework capable of predicting macroscopic behavior, such as
+Typical chemical systems contain on the order of [Avogadro's number](https://physics.nist.gov/cgi-bin/cuu/Value?na) of particles (i.e., $N_\text{A} = 6.022 \times 10^{23}$). Thermodynamics abstracts the complexity of such large collections of molecules into a framework for predicting:
 
 - Reaction spontaneity,
-- Equilibrium states, and
-- Phase transitions.
+- Equilibrium states,
+- Phase transitions, and more.
 
 ### Modern Applications
 
-Thermodynamics and statistical mechanics are essential to many disciplines, including industrial chemistry ({numref}`industrial-chemistry`), materials science ({numref}`materials-chemistry`), and biochemistry ({numref}`biochemistry`).
+Thermodynamics and statistical mechanics are central to diverse fields, including industrial chemistry, materials science, and biochemistry. The examples below highlight just a few applications:
 
 ::::{grid}
 :gutter: 3
@@ -40,14 +40,14 @@ Thermodynamics and statistical mechanics are essential to many disciplines, incl
 :::{grid-item-card} Industrial Chemistry
 :text-align: center
 <div class="center-text">
-Modeling chemical processes and reaction spontaneity.
+Predicting reaction spontaneity and modeling large-scale chemical processes.
 </div>
 
 ```{figure} _static/lecture-01/industrial_chemistry.jpg
 ---
 name: industrial-chemistry
 ---
-Hydrogen production via steam-methane reforming.[^1]
+Hydrogen production via steam–methane reforming.[^1]
 
 [^1]: [https://www.energy.gov/eere/fuelcells/hydrogen-production-natural-gas-reforming](https://www.energy.gov/eere/fuelcells/hydrogen-production-natural-gas-reforming)
 ```
@@ -57,7 +57,7 @@ Hydrogen production via steam-methane reforming.[^1]
 :::{grid-item-card} Materials Chemistry
 :text-align: center
 <div class="center-text">
-Designing new materials for optical, electronic, and mechanical applications.
+Designing advanced materials for optical, electronic, or mechanical applications.
 </div>
 
 ```{figure} _static/lecture-01/materials_chemistry.jpg
@@ -74,15 +74,14 @@ Electricity generation using solar panels.[^2]
 :::{grid-item-card} Biochemistry
 :text-align: center
 <div class="center-text">
-Understanding protein folding and enzyme activity in biological systems.
+Investigating protein folding and enzyme activity in biological systems.
 </div>
 
 ```{figure} _static/lecture-01/biochemistry.jpg
 ---
 name: biochemistry
 ---
-
-Predicting protein folding using AlphaFold.[^3]
+Predicting protein structures with AlphaFold.[^3]
 
 [^3]: [https://alphafold.ebi.ac.uk/entry/P21852](https://alphafold.ebi.ac.uk/entry/P21852)
 ```
@@ -94,7 +93,7 @@ Predicting protein folding using AlphaFold.[^3]
 
 ## Key Definitions
 
-### Framework of Thermodynamics
+### Thermodynamic Systems
 
 ```{code-cell} ipython3
 :tags: [hide-input]
@@ -136,15 +135,12 @@ annotations = [
     ],
 ]
 
-# Titles for the systems
-titles = ['Isolated system', 'Closed system', 'Open system']
+titles = ["Isolated system", "Closed system", "Open system"]
 
-# Create the figure and axes
 fig, axes = plt.subplots(1, 3, figsize=(12, 4))
 for i, ax in enumerate(axes):
     plot_system(ax, titles[i], annotations[i])
 
-# Save and display
 glue('thermo-systems', fig, display=False)
 plt.close(fig)
 ```
@@ -154,27 +150,27 @@ plt.close(fig)
 :figwidth: 100%
 :align: center
 
-The main types of systems in thermodynamics: (a) isolated systems exchange neither energy (red) nor matter (magenta) with their surroundings; (b) closed systems can exchange energy but not matter with their surroundings; and (c) open systems can exchange both energy and matter with their surroundings.
+**Types of thermodynamic systems:** (a) **Isolated**—no exchange of energy or matter; (b) **Closed**—exchanges energy but not matter; and (c) **Open**—exchanges both energy and matter.
 ```
 
 ```{glossary}
 System
-  A system is the part of the universe chosen for analysis, separated from its surroundings by a boundary.
+  The portion of the universe chosen for study, separated from its surroundings by a boundary.
 
 Surroundings
-  The surroundings are everything external to the system that can exchange energy or matter with it.
+  Everything external to the system that can exchange energy or matter with it.
 
 Boundary
-  A boundary separates the system from its surroundings and defines the interactions between them.
+  The interface separating a system from its surroundings.
 
 Isolated system
-  An isolated system exchanges neither energy nor matter with its surroundings.
+  Exchanges neither energy nor matter with its surroundings.
 
 Closed system
-  A closed system can exchange energy but not matter with its surroundings.
+  Exchanges energy but not matter with its surroundings.
 
 Open system
-  An open system can exchange both energy and matter with its surroundings.
+  Exchanges both energy and matter with its surroundings.
 ```
 
 ### State of a System
@@ -221,43 +217,43 @@ flowchart TB
 
 ```{glossary}
 Particle
-  A microscopic entity with mass and velocity (e.g., an atom, molecule, or ion).
+  A microscopic entity such as an atom, molecule, or ion.
 
 Microscopic state (classical)
-  The positions and momenta of all particles in a system.
+  Positions and momenta of all particles in the system.
 
 Microscopic state (quantum)
-  The wavefunction describing all particles in a system.
+  The wavefunction describing the system's particles.
 
 Equilibrium
-  A state in which macroscopic properties remain constant over time.
+  A condition in which macroscopic properties remain constant over time.
 
 Thermodynamic equilibrium
-  A state in which mechanical, thermal, and chemical equilibrium coexist.
+  A state of simultaneous mechanical, thermal, and chemical equilibrium.
 
 Thermodynamic state
-  A set of macroscopic variables that defines a system at equilibrium.
+  A set of macroscopic variables defining a system in equilibrium.
 
 State variable
   A property that defines a system's state.
 
 State function
-  A property that depends only on a system's state, not its path.
+  A property depending only on the system's state, not on the path taken.
 
 Equation of state
-  A mathematical relationship between state variables.
+  A mathematical relationship among state variables.
 
 Path function
-  A property that depends on the path followed between states.
+  A property depending on the process or path taken between states.
 
 Process
-  A transformation that changes a system from one state to another.
+  A transformation changing a system from one state to another.
 
 Extensive property
-  A property that is proportional to system size (e.g., volume, entropy).
+  A property proportional to system size (e.g., volume, entropy).
 
 Intensive property
-  A property that is independent of system size (e.g., pressure, temperature).
+  A property independent of system size (e.g., temperature, pressure).
 ```
 
 ---
@@ -278,11 +274,11 @@ config: "{
 flowchart TB
   subgraph H1["Electrostatic"]
     direction TB
-      H11["Charge-charge"] ~~~ H12["Charge-dipole"]
+      H11["Charge–charge"] ~~~ H12["Charge–dipole"]
   end
   subgraph H2["van der Waals"]
     direction TB
-      H21["Dipole-dipole"] ~~~ H22["Induced dipole"] ~~~ H23["Dispersion"]
+      H21["Dipole–dipole"] ~~~ H22["Induced dipole"] ~~~ H23["Dispersion"]
   end
   subgraph H["Electric"]
     direction LR
@@ -326,23 +322,23 @@ flowchart TB
 
 ```{glossary}
 Kinetic energy
-  The energy associated with motion in a system (e.g., a moving particle).
+  Energy due to motion (e.g., a moving particle).
 
 Potential energy
-  The energy associated with position or configuration in a system (e.g., a stretched spring).
+  Energy due to position or configuration (e.g., a stretched spring).
 
 Internal energy
-  The total microscopic kinetic and potential energy within a system, averaged over the ensemble of microstates.
+  The total microscopic kinetic and potential energy of a system, averaged over its microstates.
 ```
 
 ### Energy Transfer
 
 ```{glossary}
 Work
-  Energy transfer due to a force acting through a distance (e.g., lifting a weight).
+  Energy transferred when a force acts over a distance (e.g., lifting a mass).
 
 Heat
-  Energy transfer due to a temperature difference (e.g., conduction from a hot object to a cold object).
+  Energy transferred because of a temperature difference (e.g., conduction from hot to cold).
 ```
 
 ---
@@ -351,7 +347,7 @@ Heat
 
 ### SI Units
 
-```{list-table} Base SI Units
+```{list-table} **Base SI Units**
 :header-rows: 1
 :name: physical-quantities-basic
 
@@ -359,16 +355,16 @@ Heat
   - Unit
   - Symbol
 * - Time
-  - Second
+  - second
   - s
 * - Length
-  - Meter
+  - meter
   - m
 * - Mass
-  - Kilogram
+  - kilogram
   - kg
 * - Temperature
-  - Kelvin
+  - kelvin
   - K
 ```
 
@@ -376,7 +372,7 @@ Heat
 
 [^4]: [https://www.nist.gov/pml/owm/metric-si/si-units](https://www.nist.gov/pml/owm/metric-si/si-units)
 
-```{list-table} Derived SI Units
+```{list-table} **Derived SI Units**
 :header-rows: 1
 :name: physical-quantities-units
 
@@ -385,26 +381,26 @@ Heat
   - Symbol
   - Conversion
 * - Frequency
-  - Hertz
+  - hertz
   - Hz
-  - $1 \, \text{Hz} = 1 \, \text{s}^{-1}$
+  - $1 \,\text{Hz} = 1 \,\text{s}^{-1}$
 * - Force
-  - Newton
+  - newton
   - N
-  - $1 \, \text{N} = 1 \, \text{kg m/s}^2$
+  - $1 \,\text{N} = 1 \,\text{kg m s}^{-2}$
 * - Pressure
-  - Pascal
+  - pascal
   - Pa
-  - $1 \, \text{Pa} = 1 \, \text{N/m}^2$
+  - $1 \,\text{Pa} = 1 \,\text{N m}^{-2}$
 * - Energy
-  - Joule
+  - joule
   - J
-  - $1 \, \text{J} = 1 \, \text{N m}$
+  - $1 \,\text{J} = 1 \,\text{N m}$
 ```
 
 ### Non-SI Units
 
-```{list-table} Non-SI Units
+```{list-table} **Non-SI Units**
 :header-rows: 1
 :name: non-si-units
 
@@ -413,35 +409,33 @@ Heat
   - Symbol
   - Conversion
 * - Pressure
-  - Bar
   - bar
-  - $1 \, \text{bar} = 1 \times 10^5 \, \text{Pa}$
+  - bar
+  - $1 \,\text{bar} = 1 \times 10^5 \,\text{Pa}$
 * - 
-  - Atmosphere
+  - atmosphere
   - atm
-  - $1 \, \text{atm} \approx 1.01325 \, \text{bar}$
+  - $1 \,\text{atm} \approx 1.01325 \,\text{bar}$
 * -
-  - Torr
   - torr
-  - $1 \, \text{torr} = 1/760 \, \text{atm}$
+  - torr
+  - $1 \,\text{torr} = \frac{1}{760}\,\text{atm}$
 * -
-  - Millimeters of mercury
+  - millimeters of mercury
   - mmHg
-  - $1 \, \text{mmHg} = 1 \, \text{torr}$
+  - $1 \,\text{mmHg} = 1 \,\text{torr}$
 * - Energy
-  - Electronvolt
+  - electronvolt
   - eV
-  - $1 \, \text{eV} = 1.602 \times 10^{-19} \, \text{J}$
+  - $1 \,\text{eV} = 1.602 \times 10^{-19} \,\text{J}$
 * -
-  - Calorie
+  - calorie
   - cal
-  - $1 \, \text{cal} = 4.184 \, \text{J}$
+  - $1 \,\text{cal} = 4.184 \,\text{J}$
 ```
 
 [^5] [^6] [^7]
 
-[^5]: [https://www.nist.gov/pml/sensor-science/thermodynamic-metrology/unit-conversions](https://www.nist.gov/pml/sensor-science/thermodynamic-metrology/unit-conversions)
-
-[^6]: [https://physics.nist.gov/cgi-bin/cuu/Value?evj](https://physics.nist.gov/cgi-bin/cuu/Value?evj)
-
+[^5]: [https://www.nist.gov/pml/sensor-science/thermodynamic-metrology/unit-conversions](https://www.nist.gov/pml/sensor-science/thermodynamic-metrology/unit-conversions)  
+[^6]: [https://physics.nist.gov/cgi-bin/cuu/Value?evj](https://physics.nist.gov/cgi-bin/cuu/Value?evj)  
 [^7]: [https://www.nist.gov/pml/special-publication-811/nist-guide-si-appendix-b-conversion-factors/nist-guide-si-appendix-b8#C](https://www.nist.gov/pml/special-publication-811/nist-guide-si-appendix-b-conversion-factors/nist-guide-si-appendix-b8#C)
