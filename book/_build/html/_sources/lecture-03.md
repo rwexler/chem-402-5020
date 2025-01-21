@@ -283,7 +283,7 @@ The red line is an ordinary least squares fit whose intercept at -273.15 °C s
 Charles's law states that, at constant (low) pressure, the volume per particle is directly proportional to the gas temperature. Historically, the Celsius scale was used ($0\,^\circ\text{C}$ as the freezing point of water and $100\,^\circ\text{C}$ as the boiling point). However, by measuring gas volume at various Celsius temperatures and extrapolating to where volume vanishes, we identify $-273.15\,^\circ\text{C}$ as the limit—an unphysical negative volume indicates a *theoretical* bound. Shifting the Celsius scale by $273.15$ degrees places absolute zero at $0\,\text{K}$:
 
 ```{math}
-T(\text{K}) \;=\; T(\text{^\circ C}) \;+\; 273.15.
+T(\text{K}) \;=\; T(^\circ\text{C}) \;+\; 273.15.
 ```
 
 This defines the **Kelvin scale**, an absolute temperature scale that starts at the lowest physically meaningful temperature.
