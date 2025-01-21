@@ -101,7 +101,7 @@ plt.close(fig)
 :figwidth: 100%
 :align: center
 
-2D view of a gas particle (blue) in a 3D cuboid container (light gray), showing velocity $v_x$ (red arrows) and container lengths $L_x$ and $L_z$ (black bidirectional arrows). The length $L_y$ is not depicted, as it is perpendicular to the 2D view.
+A two-dimensional view of a gas particle (blue) in a three-dimensional cuboid container (light gray), showing velocity $v_x$ (red arrows) and container lengths $L_x$ and $L_z$ (black bidirectional arrows). The length $L_y$ is not depicted, as it is perpendicular to the two-dimensional view.
 ```
 
 ### Microscopic Picture of Pressure
