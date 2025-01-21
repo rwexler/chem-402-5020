@@ -24,7 +24,7 @@ This course explores the core concepts of thermodynamics and statistical mechani
 
 ### Bridging the Microscopic and Macroscopic Worlds
 
-Chemical systems commonly contain particles numbering on the order of [Avogadro's number](https://physics.nist.gov/cgi-bin/cuu/Value?na), $N_\text{A} = 6.022 \times 10^{23}$. Thermodynamics abstracts the complexity of these molecular systems into a framework capable of predicting macroscopic behavior, such as
+Chemical systems commonly contain particles numbering on the order of [Avogadro's number](https://physics.nist.gov/cgi-bin/cuu/Value?na) (i.e., $N_\text{A} = 6.022 \times 10^{23}$). Thermodynamics abstracts the complexity of these molecular systems into a framework capable of predicting macroscopic behavior, such as
 
 - Reaction spontaneity,
 - Equilibrium states, and
@@ -154,7 +154,7 @@ plt.close(fig)
 :figwidth: 100%
 :align: center
 
-Visualizing isolated, closed, and open systems: isolated systems exchange neither energy nor matter; closed systems exchange energy only; open systems exchange both energy and matter with their surroundings.
+The main types of systems in thermodynamics: (a) isolated systems exchange neither energy (red) nor matter (magenta) with their surroundings; (b) closed systems can exchange energy but not matter with their surroundings; and (c) open systems can exchange both energy and matter with their surroundings.
 ```
 
 ```{glossary}
@@ -347,7 +347,7 @@ Heat
 
 ---
 
-## Important Units in Statistical Thermochemistry
+## Important Units
 
 ### SI Units
 
