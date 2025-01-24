@@ -1,12 +1,17 @@
 # Table of contents
 # Learn more at https://jupyterbook.org/customize/toc.html
 
+# Appendix #. NIST Chemistry WebBook
+# Appendix #. Partial Pressure
+# Appendix #. Miscellaneous Resources (e.g., the IUPAC Gold Book, Berkeley Math Bootcamp, etc.)
+
 format: jb-book
 root: intro
 parts:
   - caption: Module 1. Equations of State
     numbered: true
     chapters:
-      - file: lecture-01.md
-      - file: lecture-02.md
-      - file: lecture-03.md
+      - file: section-01.md
+      - file: section-02.md
+      - file: section-03.md
+      # - file: section-04.md
