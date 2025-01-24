@@ -64,10 +64,10 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'lecture-03';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'section-03';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="2. Kinetic Theory" href="lecture-02.html" />
+    <link rel="prev" title="2. Kinetic Theory" href="section-02.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -173,8 +173,8 @@
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Module 1. Equations of State</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="lecture-01.html">1. Course Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="lecture-02.html">2. Kinetic Theory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="section-01.html">1. Course Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="section-02.html">2. Kinetic Theory</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">3. Ideal Gases</a></li>
 </ul>
 
@@ -252,7 +252,7 @@
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Flecture-03.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fsection-03.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -282,7 +282,7 @@
       
       
       
-      <li><a href="_sources/lecture-03.md" target="_blank"
+      <li><a href="_sources/section-03.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -401,7 +401,7 @@ Board 6: 3.6. Absolute Temperature -->
 <h1><span class="section-number">3. </span>Ideal Gases<a class="headerlink" href="#ideal-gases" title="Link to this heading">#</a></h1>
 <section id="overview">
 <h2><span class="section-number">3.1. </span>Overview<a class="headerlink" href="#overview" title="Link to this heading">#</a></h2>
-<p>Ideal gases are a central model in thermodynamics. By simplifying microscopic interactions and treating molecules as non-interacting point particles, we can accurately predict many macroscopic properties for gases under appropriate conditions. This lecture reviews the classical gas laws, derives the ideal gas equation of state, and discusses the assumptions underlying the ideal gas model.</p>
+<p>Ideal gases are a central model in thermodynamics. By simplifying microscopic interactions and treating molecules as non-interacting point particles, we can accurately predict many macroscopic properties for gases under appropriate conditions. This section reviews the classical gas laws, derives the ideal gas equation of state, and discusses the assumptions underlying the ideal gas model.</p>
 <hr class="docutils" />
 </section>
 <section id="gas-laws">
@@ -490,7 +490,7 @@ Board 6: 3.6. Absolute Temperature -->
 <hr class="docutils" />
 <section id="deriving-an-equation-of-state">
 <h2><span class="section-number">3.3. </span>Deriving an Equation of State<a class="headerlink" href="#deriving-an-equation-of-state" title="Link to this heading">#</a></h2>
-<p>In <a class="reference internal" href="lecture-01.html"><span class="std std-doc">Lecture 1</span></a>, we defined an <strong>equation of state</strong> as a mathematical relationship among state variables. Above, each gas law relates <em>two</em> state variables (among <span class="math notranslate nohighlight">\(P, V, T, N\)</span>) under conditions where two other variables remain constant. To derive a single equation of state that relates <em>all</em> four variables, we can combine these laws and use multivariate calculus (as covered in <a class="reference external" href="https://math.wustl.edu/calculus-iii">Math 233</a>).</p>
+<p>In <a class="reference internal" href="section-01.html"><span class="std std-doc">Section 1</span></a>, we defined an <strong>equation of state</strong> as a mathematical relationship among state variables. Above, each gas law relates <em>two</em> state variables (among <span class="math notranslate nohighlight">\(P, V, T, N\)</span>) under conditions where two other variables remain constant. To derive a single equation of state that relates <em>all</em> four variables, we can combine these laws and use multivariate calculus (as covered in <a class="reference external" href="https://math.wustl.edu/calculus-iii">Math 233</a>).</p>
 <section id="total-differential">
 <h3><span class="section-number">3.3.1. </span>Total Differential<a class="headerlink" href="#total-differential" title="Link to this heading">#</a></h3>
 <p>The total differential <span class="math notranslate nohighlight">\(df\)</span> of a function <span class="math notranslate nohighlight">\(f\)</span> of <span class="math notranslate nohighlight">\(m\)</span> variables <span class="math notranslate nohighlight">\(x_1, \ldots, x_m\)</span> is</p>
@@ -584,7 +584,7 @@ Board 6: 3.6. Absolute Temperature -->
 <span class="kn">from</span><span class="w"> </span><span class="nn">myst_nb</span><span class="w"> </span><span class="kn">import</span> <span class="n">glue</span>
 
 <span class="c1"># Experimental data for O2 at 1 Pa:</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_table</span><span class="p">(</span><span class="s2">&quot;assets/lecture-03/isobaric-properties-for-oxygen.tsv&quot;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">]]</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_table</span><span class="p">(</span><span class="s2">&quot;_static/section-03/isobaric-properties-for-oxygen.tsv&quot;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">]]</span>
 <span class="n">df</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;T_C&quot;</span><span class="p">,</span> <span class="s2">&quot;P&quot;</span><span class="p">,</span> <span class="s2">&quot;V&quot;</span><span class="p">]</span>
 <span class="n">df</span><span class="p">[</span><span class="s2">&quot;v&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;V&quot;</span><span class="p">]</span> <span class="o">*</span> <span class="mf">1e27</span> <span class="o">/</span> <span class="n">N_A</span>  <span class="c1"># Convert volume to nm³/molecule</span>
 
@@ -668,7 +668,7 @@ The red line is an ordinary least squares fit whose intercept at -273.15 °C s
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="lecture-02.html"
+       href="section-02.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">

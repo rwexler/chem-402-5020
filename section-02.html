@@ -64,11 +64,11 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'lecture-02';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'section-02';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="3. Ideal Gases" href="lecture-03.html" />
-    <link rel="prev" title="1. Course Introduction" href="lecture-01.html" />
+    <link rel="next" title="3. Ideal Gases" href="section-03.html" />
+    <link rel="prev" title="1. Course Introduction" href="section-01.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -174,9 +174,9 @@
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Module 1. Equations of State</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="lecture-01.html">1. Course Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="section-01.html">1. Course Introduction</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">2. Kinetic Theory</a></li>
-<li class="toctree-l1"><a class="reference internal" href="lecture-03.html">3. Ideal Gases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="section-03.html">3. Ideal Gases</a></li>
 </ul>
 
     </div>
@@ -253,7 +253,7 @@
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Flecture-02.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fsection-02.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -283,7 +283,7 @@
       
       
       
-      <li><a href="_sources/lecture-02.md" target="_blank"
+      <li><a href="_sources/section-02.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -398,7 +398,7 @@
 <h1><span class="section-number">2. </span>Kinetic Theory<a class="headerlink" href="#kinetic-theory" title="Link to this heading">#</a></h1>
 <section id="overview">
 <h2><span class="section-number">2.1. </span>Overview<a class="headerlink" href="#overview" title="Link to this heading">#</a></h2>
-<p>Kinetic theory connects the microscopic motion of gas particles to macroscopic properties such as pressure and temperature. This lecture introduces the fundamental assumptions of kinetic theory, derives key equations, and highlights their physical relevance.</p>
+<p>Kinetic theory connects the microscopic motion of gas particles to macroscopic properties such as pressure and temperature. This section introduces the fundamental assumptions of kinetic theory, derives key equations, and highlights their physical relevance.</p>
 </section>
 <hr class="docutils" />
 <section id="foundational-assumptions-of-kinetic-theory">
@@ -530,10 +530,65 @@ Particle motion follows Newton’s second law:</p>
 <p>The average translational kinetic energy per particle is:</p>
 <div class="math notranslate nohighlight">
 \[\langle E_\text{kin} \rangle = \frac{1}{2} m \langle v^2 \rangle.\]</div>
-<p>From the ideal gas law <span class="math notranslate nohighlight">\(P V = N k_\text{B} T\)</span> (to be discussed in more detail in <a class="reference internal" href="lecture-03.html"><span class="std std-doc">Lecture 3</span></a>), one can show that</p>
+<p>From the ideal gas equation of state <span class="math notranslate nohighlight">\(P V = N k_\text{B} T\)</span> (to be discussed in <a class="reference internal" href="section-03.html"><span class="std std-doc">Section 3</span></a>), one can show that</p>
 <div class="math notranslate nohighlight" id="equation-equipartition-theorem">
 <span class="eqno">(2.2)<a class="headerlink" href="#equation-equipartition-theorem" title="Link to this equation">#</a></span>\[\frac{1}{2} m \langle v^2 \rangle = \frac{3}{2} k_\text{B} T,\]</div>
 <p>where <span class="math notranslate nohighlight">\(k_\text{B}\)</span> is the Boltzmann constant and <span class="math notranslate nohighlight">\(T\)</span> is the absolute temperature. This result—called the equipartition theorem—indicates that the temperature is directly proportional to the average kinetic energy of the particles.</p>
+<div class="dropdown admonition">
+<p class="admonition-title">Complete Derivation of the Relationship Between Kinetic Energy and Temperature</p>
+<p><strong>1. Kinetic Energy of a Single Particle</strong>:
+Consider a single particle with mass <span class="math notranslate nohighlight">\(m\)</span> and velocity <span class="math notranslate nohighlight">\(v\)</span>. Its translational kinetic energy is given by</p>
+<div class="math notranslate nohighlight">
+\[E_{\text{p},\,\text{kin}} \;=\; \frac{1}{2}\,m\,v^{2}.\]</div>
+<p><strong>2. Total Kinetic Energy of <span class="math notranslate nohighlight">\(N\)</span> Particles</strong>:
+For <span class="math notranslate nohighlight">\(N\)</span> particles with masses <span class="math notranslate nohighlight">\(m_1, m_2, \ldots, m_N\)</span> and respective velocities <span class="math notranslate nohighlight">\(v_1, v_2, \ldots, v_N\)</span>, the total translational kinetic energy is</p>
+<div class="math notranslate nohighlight">
+\[E_{\text{kin}}\left(m_1,\ldots,m_N\right) \;=\; \frac{1}{2}\,\sum_{i=1}^{N} m_i\,v_i^2.\]</div>
+<p>If all particles are identical with mass <span class="math notranslate nohighlight">\(m\)</span>, the total kinetic energy simplifies to</p>
+<div class="math notranslate nohighlight">
+\[E_{\text{kin}} \;=\; \frac{1}{2}\,m\,\sum_{i=1}^{N} v_i^2.\]</div>
+<p><strong>3. Defining the Average of the Velocity Squared</strong>:
+We define the average of the velocity squared as</p>
+<div class="math notranslate nohighlight">
+\[\langle v^2 \rangle \;=\; \frac{1}{N}\,\sum_{i=1}^{N} v_i^2,\]</div>
+<p>so that</p>
+<div class="math notranslate nohighlight">
+\[\sum_{i=1}^{N} v_i^2 \;=\; N\,\langle v^2 \rangle.\]</div>
+<p>Substituting this back into the expression for the total kinetic energy of <span class="math notranslate nohighlight">\(N\)</span> identical particles gives</p>
+<div class="important admonition">
+<p class="admonition-title">Total Kinetic Energy of <span class="math notranslate nohighlight">\(N\)</span> Identical Particles</p>
+<div class="math notranslate nohighlight">
+\[E_{\text{kin}} \;=\; \frac{1}{2}\,N\,m\,\langle v^2 \rangle.\]</div>
+</div>
+<p><strong>4. Relating Pressure to Kinetic Energy</strong>:
+From Equation <a class="reference internal" href="#equation-pressure-kinetic-theory">(2.1)</a>, the pressure <span class="math notranslate nohighlight">\(P\)</span> in a volume <span class="math notranslate nohighlight">\(V\)</span> can be written as</p>
+<div class="math notranslate nohighlight">
+\[P \;=\; \frac{N\,m\,\langle v^2 \rangle}{3\,V}.\]</div>
+<p>Recognizing that <span class="math notranslate nohighlight">\(N m \langle v^2 \rangle / 2 = E_{\text{kin}}\)</span>, we see:</p>
+<div class="math notranslate nohighlight">
+\[P \;=\; \frac{2\,E_{\text{kin}}}{3\,V}.\]</div>
+<p><strong>5. Equating to the Ideal Gas Equation of State</strong>:
+According to the ideal gas equation of state (to be discussed in <a class="reference internal" href="section-03.html"><span class="std std-doc">Section 3</span></a>), the pressure is also given by</p>
+<div class="math notranslate nohighlight">
+\[P \;=\; \frac{N\,k_\text{B}\,T}{V},\]</div>
+<p>where <span class="math notranslate nohighlight">\(k_\text{B}\)</span> is the Boltzmann constant and <span class="math notranslate nohighlight">\(T\)</span> is the absolute temperature. Equating the two expressions for pressure,</p>
+<div class="math notranslate nohighlight">
+\[\frac{2\,E_{\text{kin}}}{3\,V} \;=\; \frac{N\,k_\text{B}\,T}{V}.\]</div>
+<p>Solving for <span class="math notranslate nohighlight">\(E_{\text{kin}}\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[E_{\text{kin}} \;=\; \frac{3}{2}\,N\,k_\text{B}\,T.\]</div>
+<p><strong>6. Average Kinetic Energy Per Particle (Equipartition Theorem)</strong>:
+Dividing both sides by <span class="math notranslate nohighlight">\(N\)</span>, we obtain the average kinetic energy of a single particle:</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<div class="math notranslate nohighlight">
+\[\langle E_{\text{kin}} \rangle 
+\;=\; \frac{E_{\text{kin}}}{N}
+\;=\; \frac{1}{2}\,m\,\langle v^2 \rangle
+\;=\; \frac{3}{2}\,k_\text{B}\,T.\]</div>
+</div>
+<p>Each translational degree of freedom contributes <span class="math notranslate nohighlight">\(k_\text{B} T / 2\)</span> to the average kinetic energy.</p>
+</div>
 </section>
 <hr class="docutils" />
 <section id="estimating-particle-speeds">
@@ -601,7 +656,7 @@ Particle motion follows Newton’s second law:</p>
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="lecture-01.html"
+       href="section-01.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
@@ -610,7 +665,7 @@ Particle motion follows Newton’s second law:</p>
       </div>
     </a>
     <a class="right-next"
-       href="lecture-03.html"
+       href="section-03.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>

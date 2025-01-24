@@ -16,7 +16,7 @@ kernelspec:
 
 ## Overview
 
-Kinetic theory connects the microscopic motion of gas particles to macroscopic properties such as pressure and temperature. This lecture introduces the fundamental assumptions of kinetic theory, derives key equations, and highlights their physical relevance.
+Kinetic theory connects the microscopic motion of gas particles to macroscopic properties such as pressure and temperature. This section introduces the fundamental assumptions of kinetic theory, derives key equations, and highlights their physical relevance.
 
 ---
 
@@ -165,7 +165,7 @@ The average translational kinetic energy per particle is:
 \langle E_\text{kin} \rangle = \frac{1}{2} m \langle v^2 \rangle.
 ```
 
-From the ideal gas law $P V = N k_\text{B} T$ (to be discussed in more detail in [Lecture 3](lecture-03.md)), one can show that
+From the ideal gas equation of state $P V = N k_\text{B} T$ (to be discussed in [Section 3](section-03.md)), one can show that
 
 ```{math}
 :label: equipartition-theorem
@@ -173,6 +173,98 @@ From the ideal gas law $P V = N k_\text{B} T$ (to be discussed in more detail in
 ```
 
 where $k_\text{B}$ is the Boltzmann constant and $T$ is the absolute temperature. This result—called the equipartition theorem—indicates that the temperature is directly proportional to the average kinetic energy of the particles.
+
+`````{admonition} Complete Derivation of the Relationship Between Kinetic Energy and Temperature
+:class: dropdown
+
+**1. Kinetic Energy of a Single Particle**:
+Consider a single particle with mass $m$ and velocity $v$. Its translational kinetic energy is given by
+
+```{math}
+E_{\text{p},\,\text{kin}} \;=\; \frac{1}{2}\,m\,v^{2}.
+```
+
+**2. Total Kinetic Energy of $N$ Particles**:
+For $N$ particles with masses $m_1, m_2, \ldots, m_N$ and respective velocities $v_1, v_2, \ldots, v_N$, the total translational kinetic energy is
+
+```{math}
+E_{\text{kin}}\left(m_1,\ldots,m_N\right) \;=\; \frac{1}{2}\,\sum_{i=1}^{N} m_i\,v_i^2.
+```
+
+If all particles are identical with mass $m$, the total kinetic energy simplifies to
+
+```{math}
+E_{\text{kin}} \;=\; \frac{1}{2}\,m\,\sum_{i=1}^{N} v_i^2.
+```
+
+**3. Defining the Average of the Velocity Squared**:
+We define the average of the velocity squared as
+
+```{math}
+\langle v^2 \rangle \;=\; \frac{1}{N}\,\sum_{i=1}^{N} v_i^2,
+```
+
+so that
+
+```{math}
+\sum_{i=1}^{N} v_i^2 \;=\; N\,\langle v^2 \rangle.
+```
+
+Substituting this back into the expression for the total kinetic energy of $N$ identical particles gives
+
+````{admonition} Total Kinetic Energy of $N$ Identical Particles
+:class: important
+```{math}
+E_{\text{kin}} \;=\; \frac{1}{2}\,N\,m\,\langle v^2 \rangle.
+```
+````
+
+**4. Relating Pressure to Kinetic Energy**:
+From Equation {eq}`pressure-kinetic-theory`, the pressure $P$ in a volume $V$ can be written as
+
+```{math}
+P \;=\; \frac{N\,m\,\langle v^2 \rangle}{3\,V}.
+```
+
+Recognizing that $N m \langle v^2 \rangle / 2 = E_{\text{kin}}$, we see:
+
+```{math}
+P \;=\; \frac{2\,E_{\text{kin}}}{3\,V}.
+```
+
+**5. Equating to the Ideal Gas Equation of State**:
+According to the ideal gas equation of state (to be discussed in [Section 3](section-03.md)), the pressure is also given by
+
+```{math}
+P \;=\; \frac{N\,k_\text{B}\,T}{V},
+```
+
+where $k_\text{B}$ is the Boltzmann constant and $T$ is the absolute temperature. Equating the two expressions for pressure,
+
+```{math}
+\frac{2\,E_{\text{kin}}}{3\,V} \;=\; \frac{N\,k_\text{B}\,T}{V}.
+```
+
+Solving for $E_{\text{kin}}$:
+
+```{math}
+E_{\text{kin}} \;=\; \frac{3}{2}\,N\,k_\text{B}\,T.
+```
+
+**6. Average Kinetic Energy Per Particle (Equipartition Theorem)**:
+Dividing both sides by $N$, we obtain the average kinetic energy of a single particle:
+
+````{important}
+```{math}
+\langle E_{\text{kin}} \rangle 
+\;=\; \frac{E_{\text{kin}}}{N}
+\;=\; \frac{1}{2}\,m\,\langle v^2 \rangle
+\;=\; \frac{3}{2}\,k_\text{B}\,T.
+```
+````
+
+Each translational degree of freedom contributes $k_\text{B} T / 2$ to the average kinetic energy.
+`````
 
 ---
 

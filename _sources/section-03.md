@@ -23,7 +23,7 @@ Board 6: 3.6. Absolute Temperature -->
 
 ## Overview
 
-Ideal gases are a central model in thermodynamics. By simplifying microscopic interactions and treating molecules as non-interacting point particles, we can accurately predict many macroscopic properties for gases under appropriate conditions. This lecture reviews the classical gas laws, derives the ideal gas equation of state, and discusses the assumptions underlying the ideal gas model.
+Ideal gases are a central model in thermodynamics. By simplifying microscopic interactions and treating molecules as non-interacting point particles, we can accurately predict many macroscopic properties for gases under appropriate conditions. This section reviews the classical gas laws, derives the ideal gas equation of state, and discusses the assumptions underlying the ideal gas model.
 
 ---
 
@@ -113,7 +113,7 @@ These conditions collectively ensure minimal intermolecular interactions, allowi
 
 ## Deriving an Equation of State
 
-In [Lecture 1](lecture-01.md), we defined an **equation of state** as a mathematical relationship among state variables. Above, each gas law relates *two* state variables (among $P, V, T, N$) under conditions where two other variables remain constant. To derive a single equation of state that relates *all* four variables, we can combine these laws and use multivariate calculus (as covered in [Math 233](https://math.wustl.edu/calculus-iii)).
+In [Section 1](section-01.md), we defined an **equation of state** as a mathematical relationship among state variables. Above, each gas law relates *two* state variables (among $P, V, T, N$) under conditions where two other variables remain constant. To derive a single equation of state that relates *all* four variables, we can combine these laws and use multivariate calculus (as covered in [Math 233](https://math.wustl.edu/calculus-iii)).
 
 ### Total Differential
 
@@ -244,7 +244,7 @@ import statsmodels.api as sm
 from myst_nb import glue
 
 # Experimental data for O2 at 1 Pa:
-df = pd.read_table("assets/lecture-03/isobaric-properties-for-oxygen.tsv", sep="\t").iloc[:, [0, 1, 3]]
+df = pd.read_table("_static/section-03/isobaric-properties-for-oxygen.tsv", sep="\t").iloc[:, [0, 1, 3]]
 df.columns = ["T_C", "P", "V"]
 df["v"] = df["V"] * 1e27 / N_A  # Convert volume to nm³/molecule
 
