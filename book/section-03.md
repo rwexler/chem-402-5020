@@ -12,13 +12,6 @@ kernelspec:
   name: python3
 ---
 
-<!-- Board 1: 3.1 & 3.2
-Board 2: 3.3.1 & 3.3.2
-Board 3: 3.3.3
-Board 4: 3.3.4 & 3.4
-Board 5: 3.5
-Board 6: 3.6. Absolute Temperature -->
-
 # Ideal Gases
 
 ## Overview

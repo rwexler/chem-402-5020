@@ -12,13 +12,6 @@ kernelspec:
   name: python3
 ---
 
-<!-- Board 1: 4.1 & 4.2
-Board 2: 4.3
-Board 3: 4.4.1
-Board 4: 4.4.2
-Board 5: 4.4.2.1
-Board 6: 4.4.2.2 -->
-
 # Real Gases
 
 ## Overview
