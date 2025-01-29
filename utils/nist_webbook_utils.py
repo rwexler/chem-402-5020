@@ -61,14 +61,14 @@ def parse_to_dataframe(response_text, sep="\t"):
     # Extract tabular data (assumes header and tabular data are present)
     lines = response_text.splitlines()
     header, *data = [line.split(sep) for line in lines if line.strip()]
+
+    # Create the DataFrame without specifying dtypes initially
+    df = pd.DataFrame(data, columns=header)
     
-    # Define column data types: float for all columns except the last one
-    column_dtypes = {col: float for col in header[:-1]}  # Float for all except last column
-    column_dtypes[header[-1]] = str  # String for the last column
-    
-    # Convert data to DataFrame with explicit dtypes
-    df = pd.DataFrame(data, columns=header).astype(column_dtypes)
-    
+    # Attempt to convert all columns except the last one to float, handling errors
+    for col in header[:-1]:
+        df[col] = pd.to_numeric(df[col], errors='coerce')  # Converts invalid entries to NaN
+
     return df
 
 def get_nist_data(

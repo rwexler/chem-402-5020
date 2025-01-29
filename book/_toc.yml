@@ -14,4 +14,4 @@ parts:
       - file: section-01.md
       - file: section-02.md
       - file: section-03.md
-      # - file: section-04.md
+      - file: section-04.md
