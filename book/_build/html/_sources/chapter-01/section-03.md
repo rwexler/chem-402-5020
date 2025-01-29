@@ -237,7 +237,7 @@ import statsmodels.api as sm
 from myst_nb import glue
 
 # Experimental data for O2 at 1 Pa:
-df = pd.read_table("_static/section-03/isobaric-properties-for-oxygen.tsv", sep="\t").iloc[:, [0, 1, 3]]
+df = pd.read_table("../_static/section-03/isobaric-properties-for-oxygen.tsv", sep="\t").iloc[:, [0, 1, 3]]
 df.columns = ["T_C", "P", "V"]
 df["v"] = df["V"] * 1e27 / N_A  # Convert volume to nm³/molecule
 

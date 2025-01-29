@@ -12,13 +12,6 @@ kernelspec:
   name: python3
 ---
 
-<!-- Board 1: 4.1 & 4.2
-Board 2: 4.3
-Board 3: 4.4.1
-Board 4: 4.4.2
-Board 5: 4.4.2.1
-Board 6: 4.4.2.2 -->
-
 # Real Gases
 
 ## Overview
@@ -41,7 +34,7 @@ from myst_nb import glue
 from scipy.interpolate import interp1d
 
 # Load the experimental data for water at 300 K
-df = pd.read_csv("_static/section-04/isothermal-properties-for-water-T=300.csv").iloc[:, [0, 1, 2, 3]]
+df = pd.read_csv("../_static/section-04/isothermal-properties-for-water-T=300.csv").iloc[:, [0, 1, 2, 3]]
 df.columns = ["T", "P", "rho_m", "V_m"]  # Rename columns
 
 # Calculate the compressibility factor
@@ -234,9 +227,9 @@ def load_experimental_data(filename):
     df.columns = ["Tc", "P", "rho_m", "V_m"]
     return df
 
-df_lt_Tc = load_experimental_data("_static/section-04/isothermal-properties-for-carbon-dioxide-Tr=0.9.csv")
-df_at_Tc = load_experimental_data("_static/section-04/isothermal-properties-for-carbon-dioxide-Tr=1.0.csv")
-df_gt_Tc = load_experimental_data("_static/section-04/isothermal-properties-for-carbon-dioxide-Tr=1.1.csv")
+df_lt_Tc = load_experimental_data("../_static/section-04/isothermal-properties-for-carbon-dioxide-Tr=0.9.csv")
+df_at_Tc = load_experimental_data("../_static/section-04/isothermal-properties-for-carbon-dioxide-Tr=1.0.csv")
+df_gt_Tc = load_experimental_data("../_static/section-04/isothermal-properties-for-carbon-dioxide-Tr=1.1.csv")
 
 # Set up figure
 fig, ax = plt.subplots(figsize=(4, 4))
@@ -652,7 +645,7 @@ color_for_species = {"Ar": "black", "O2": "blue", "H2O": "red", "CO2": "magenta"
 
 # Paths to data files
 paths = [
-    f"_static/section-04/isothermal-properties-for-{species}-Tr={T_r}.csv"
+    f"../_static/section-04/isothermal-properties-for-{species}-Tr={T_r}.csv"
     for species in ["argon", "oxygen", "water", "carbon-dioxide"]
     for T_r in [1.0, 1.2, 2.0]
 ]

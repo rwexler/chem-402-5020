@@ -11,7 +11,7 @@ parts:
   - caption: Module 1. Equations of State
     numbered: true
     chapters:
-      - file: section-01.md
-      - file: section-02.md
-      - file: section-03.md
-      - file: section-04.md
+      - file: chapter-01/section-01.md
+      - file: chapter-01/section-02.md
+      - file: chapter-01/section-03.md
+      - file: chapter-01/section-04.md

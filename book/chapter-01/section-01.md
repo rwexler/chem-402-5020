@@ -43,7 +43,7 @@ Thermodynamics and statistical mechanics are central to diverse fields, includin
 Predicting reaction spontaneity and modeling large-scale chemical processes.
 </div>
 
-```{figure} _static/section-01/industrial_chemistry.jpg
+```{figure} ../_static/section-01/industrial_chemistry.jpg
 ---
 name: industrial-chemistry
 ---
@@ -60,7 +60,7 @@ Hydrogen production via steam–methane reforming.[^1]
 Designing advanced materials for optical, electronic, or mechanical applications.
 </div>
 
-```{figure} _static/section-01/materials_chemistry.jpg
+```{figure} ../_static/section-01/materials_chemistry.jpg
 ---
 name: materials-chemistry
 ---
@@ -77,7 +77,7 @@ Electricity generation using solar panels.[^2]
 Investigating protein folding and enzyme activity in biological systems.
 </div>
 
-```{figure} _static/section-01/biochemistry.jpg
+```{figure} ../_static/section-01/biochemistry.jpg
 ---
 name: biochemistry
 ---
