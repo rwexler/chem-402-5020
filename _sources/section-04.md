@@ -40,60 +40,70 @@ from labellines import labelLines
 from myst_nb import glue
 from scipy.interpolate import interp1d
 
-# Experimental data for H2O at 300 K
-df = pd.read_csv("_static/section-04/water_compressibility.csv")
+# Load the experimental data for water at 300 K
+df = pd.read_csv("_static/section-04/isothermal-properties-for-water-T=300.csv").iloc[:, [0, 1, 2, 3]]
+df.columns = ["T", "P", "rho_m", "V_m"]  # Rename columns
 
+# Calculate the compressibility factor
+df["P_Pa"] = df["P"] * 1e5  # Convert pressure from bar to Pa
+df["Z"] = df["P_Pa"] * df["V_m"] / (R * df["T"])
+
+# Set up figure and axis
 fig, ax = plt.subplots(figsize=(4, 4))
-line1 = ax.plot(df["Pressure (bar)"], df["Z"], "b-", label="$Z_\\text{water}$")
-labelLines(line1, zorder=2.5)
+ax.set_xlim(0, 1000)
+ax.set_ylim(0, 2)
+ax.set_xlabel("Pressure (bar)")
+ax.set_ylabel(r"$Z$")
+ax.grid(True, linestyle="--", alpha=0.7)
 
-xlim = ax.get_xlim()
-ylim = ax.get_ylim()
+# Plot experimental compressibility factor
+data_line = ax.plot(df["P"], df["Z"], "b-", label="$Z_\\text{water}$")
+labelLines(data_line, xvals=[400], zorder=2.5)
 
-x = np.linspace(xlim[0], xlim[1], 100)
-y = np.ones_like(x)
-line2 = ax.plot(x, y, "r--", label="$Z_\\text{ideal}$")
-labelLines(line2, zorder=2.5)
+# Plot ideal gas line
+x_values = np.linspace(0, 1000, 100)
+ideal_line = ax.plot(x_values, np.ones_like(x_values), "r--", label="$Z_\\text{ideal}$")
+labelLines(ideal_line, xvals=[400], zorder=2.5)
 
-# Interpolating to find the intersection more accurately
-interp_Z = interp1d(df["Pressure (bar)"], df["Z"], kind='linear', fill_value="extrapolate")
-intersection_pressure = interp1d(df["Z"] - 1, df["Pressure (bar)"], kind='linear')(0)
+# Interpolate to find intersection with ideal gas line
+interp_Z = interp1d(df["P"], df["Z"], kind='linear', fill_value="extrapolate")
+intersection_pressure = interp1d(df["Z"] - 1, df["P"], kind='linear')(0)
 intersection_Z = interp_Z(intersection_pressure)
 
-# Find the pressure and Z value at which Z is minimized for the real gas
-min_Z_index = df["Z"].idxmin()  # Index of the minimum Z value
-min_pressure = df.loc[min_Z_index, "Pressure (bar)"]  # Pressure corresponding to the minimum Z
-min_Z = df.loc[min_Z_index, "Z"]  # Minimum Z value
+# Find pressure and Z value at minimum Z
+min_Z_index = df["Z"].idxmin()
+min_pressure = df.loc[min_Z_index, "P"]
+min_Z = df.loc[min_Z_index, "Z"]
 
-x_ideal = np.mean([xlim[0], min_pressure])
+# Annotate ideal and coincidentally ideal points
 ax.annotate("Ideal",
-            xy=(0, 1),
-            xytext=(x_ideal, 1.1),
+            xy=(0, 1), xytext=(200, 1.25),
             arrowprops=dict(arrowstyle="->"),
-            ha='center', va='bottom',
-            zorder=4)
+            ha='center', va='center', zorder=4)
 
-x_coincidentally_ideal = np.mean([intersection_pressure, xlim[1]])
 ax.annotate("Coincidentally\nideal",
-            xy=(intersection_pressure, 1),
-            xytext=(x_coincidentally_ideal, 0.9),
+            xy=(intersection_pressure, 1), xytext=(800, 0.75),
             arrowprops=dict(arrowstyle="->"),
-            ha='center', va='top',
-            zorder=4)
+            ha='center', va='center', zorder=4)
 
+# Draw vertical lines for reference
 ax.axvline(x=min_pressure, color="black", linestyle=":")
 ax.axvline(x=intersection_pressure, color="black", linestyle=":")
-x_attractive = np.mean([min_pressure, intersection_pressure])
-ax.text(x_attractive, min_Z, "Attractive", ha='center', va='center', color="black")
-ax.text(x_coincidentally_ideal, min_Z, "Repulsive", ha='center', va='center', color="black")
 
-# Adjust limits and labels
-ax.set_xlim(xlim[0], xlim[1])
-ax.set_ylim(ylim[0], ylim[1])
+# Highlight regions of attractive and repulsive behavior
+ax.fill_between([min_pressure, intersection_pressure], 0, 2, color="magenta", alpha=0.2, label="Attractive")
+ax.fill_between([intersection_pressure, 1000], 0, 2, color="gray", alpha=0.2, label="Repulsive")
 
-ax.set_xlabel(r"Pressure (bar)")
-ax.set_ylabel(r"$Z$")
+# Annotate regions
+x_values_for_attractive = np.linspace(min_pressure, intersection_pressure, 100)
+attractive_line = ax.plot(x_values_for_attractive, np.ones_like(x_values_for_attractive) * min_Z, "m-", label="Attractive", alpha=0.0)
+labelLines(attractive_line, xvals=np.mean([min_pressure, intersection_pressure]), zorder=2.5)
 
+x_values_for_repulsive = np.linspace(intersection_pressure, 1000, 100)
+repulsive_line = ax.plot(x_values_for_repulsive, np.ones_like(x_values_for_repulsive) * min_Z, "gray", label="Repulsive", alpha=0.0)
+labelLines(repulsive_line, xvals=800, zorder=2.5)
+
+# Adjust layout and display
 plt.tight_layout()
 glue('compressibility-factor', fig, display=False)
 plt.close(fig)
@@ -104,7 +114,7 @@ plt.close(fig)
 :figwidth: 100%
 :align: center
 
-Hello, world!
+Compressibility factor $Z$ of water at 300 K as a function of pressure, with the ideal-gas line ($Z=1$) included for comparison. The dip below $Z=1$ highlights net attractive forces (most pronounced at the minimum $Z$), while crossing above $Z=1$ at higher pressures reflects repulsive interactions. The point at which the real-gas curve intersects the ideal-gas line indicates a coincidental match to ideal behavior.
 ```
 
 One of the ways to quantify deviations from ideal behavior is by way of the compressibility factor $Z$:
@@ -114,595 +124,625 @@ One of the ways to quantify deviations from ideal behavior is by way of the comp
 Z = \frac{P V}{N k_\text{B} T} = \frac{P V}{n R T}.
 ```
 
-Imagine that you are measuring the volume of a gas at a sequence of pressures and constant temperature. If the gas behaves ideally, $V = N k_\text{B} T / P$, and so $Z = 1$. If the gas deviates from ideal behavior, $Z$ will differ from 1.
+```{list-table} Behavior of Water at Different Pressures
+:header-rows: 1
+:name: water-compressibility-analysis
+
+* - Pressure
+  - $Z$
+  - Volume
+  - Analysis
+  - Water
+* - High
+  - $> 1$
+  - $V_\text{real} > V_\text{ideal}$
+  - Repulsive interactions
+  - Pauli repulsion (steric hindrance)
+* - Medium
+  - $< 1$
+  - $V_\text{real} < V_\text{ideal}$
+  - Attractive interactions
+  - H bonding and van der Waals interactions
+* - Low
+  - $= 1$
+  - $V_\text{real} = V_\text{ideal}$
+  - Ideal gas behavior
+  - 
+```
+
+```{tip}
+Can you demonstrate why $V_\text{real} > V_\text{ideal}$ for $Z > 1$ and $V_\text{real} < V_\text{ideal}$ for $Z < 1$?
+```
+
+```{tip}
+What might be the cause of attractive interactions in a gas of carbon dioxide or methane molecules?
+```
 
 ## Van der Waals Fluid
 
 ### Van der Waals Equation of State
 
-Hello, world!
+The van der Waals equation of state is one of the simplest models for real gases and the subject of the [Nobel Prize in Physics 1910](https://www.nobelprize.org/prizes/physics/1910/summary/):
+
+````{list-table} Forms of the van der Waals Equation of State
+:header-rows: 1
+:name: van-der-waals-forms
+
+* - 
+  - Extensive Volume
+  - Intensive Volume
+* - Per Particle
+  - ```{math}
+    \left( P + \frac{a_\text{p} N^2}{V^2} \right) \left( V - b_\text{p} N \right) = N k_\text{B} T
+    ```
+  - ```{math}
+    \left( P + \frac{a_\text{p}}{V_\text{p}^2} \right) \left( V_\text{p} - b_\text{p} \right) = k_\text{B} T
+    ```
+* - Per Mole
+  - ```{math}
+    \left( P + \frac{a_\text{m} n^2}{V^2} \right) \left( V - b_\text{m} n \right) = R T
+    ```
+  - ```{math}
+    :label: van-der-waals-eos
+    \left( P + \frac{a_\text{m}}{V_\text{m}^2} \right) \left( V_\text{m} - b_\text{m} \right) = R T,
+    ```
+````
+
+where $a$ and $b$ are constants that quantify two deviations from ideal behavior:
+
+- **$a$**: Attractive interactions between particles.
+- **$b$**: Volume occupied by the particles.
 
 ### Van der Waals Isotherm
 
-Hello, world!
+```{code-cell} ipython3
+:tags: [hide-input]
+
+import matplotlib.pyplot as plt
+from matplotlib.lines import Line2D
+import numpy as np
+import pandas as pd
+from scipy.constants import R
+from labellines import labelLines
+from myst_nb import glue
+
+# van der Waals constants for carbon dioxide
+a_m_L_bar = 3.6551  # L^2 bar / mol^2
+b_m_L = 0.042816  # L / mol
+L_to_m3 = 1e-3  # m^3 / L
+bar_to_Pa = 1e5  # Pa / bar
+a_m = a_m_L_bar * L_to_m3**2 * bar_to_Pa  # m^6 Pa / mol^2
+b_m = b_m_L * L_to_m3  # m^3 / mol
+
+# van der Waals critical properties for carbon dioxide
+Tc_vdW = 8 * a_m / (27 * b_m * R)  # K
+Pc_vdW = a_m / (27 * b_m**2)  # Pa
+Vc_vdW = 3 * b_m  # m^3 / mol
+
+# Experimental phase change data for carbon dioxide
+Tc_exp = 304.18  # K
+Pc_exp = 73.80 * bar_to_Pa  # Pa
+Vc_exp = 0.0919 * L_to_m3  # m^3 / mol
+
+# van der Waals pressure function
+def van_der_waals_pressure(a, b, T, V):
+    return R * T / (V - b) - a / V**2
+
+# Load experimental data
+def load_experimental_data(filename):
+    df = pd.read_csv(filename).iloc[:, [0, 1, 2, 3]]
+    df.columns = ["Tc", "P", "rho_m", "V_m"]
+    return df
+
+df_lt_Tc = load_experimental_data("_static/section-04/isothermal-properties-for-carbon-dioxide-Tr=0.9.csv")
+df_at_Tc = load_experimental_data("_static/section-04/isothermal-properties-for-carbon-dioxide-Tr=1.0.csv")
+df_gt_Tc = load_experimental_data("_static/section-04/isothermal-properties-for-carbon-dioxide-Tr=1.1.csv")
+
+# Set up figure
+fig, ax = plt.subplots(figsize=(4, 4))
+Vm_vdW = np.linspace(0.5 * Vc_vdW, 20 * Vc_vdW, 1000)
+
+# Plot van der Waals isotherms
+colors = ["b", "r", "m"]
+temps = [0.9 * Tc_vdW, Tc_vdW, 1.1 * Tc_vdW]
+labels = ["$T < T_c$", "$T = T_c$", "$T > T_c$"]
+lines = []
+for T, color, label in zip(temps, colors, labels):
+    P_vdW = van_der_waals_pressure(a_m, b_m, T, Vm_vdW)
+    line = ax.plot(Vm_vdW / L_to_m3, P_vdW / bar_to_Pa, color + "-", label=label)
+    lines.append(line)
+    labelLines(line, xvals=[0.3], zorder=2.5)
+
+# Plot experimental isotherms
+for df, color in zip([df_lt_Tc, df_at_Tc, df_gt_Tc], colors):
+    ax.plot(df["V_m"] / L_to_m3, df["P"], color + "-", alpha=0.5)
+
+# Legend and labels
+legend_elements = [Line2D([0], [0], c='k', label='van der Waals', ls="-"),
+                   Line2D([0], [0], c='k', label='Experimental', ls="-", alpha=0.5)]
+ax.set_xlim(0, 1)
+ax.set_ylim(0, 100)
+ax.set_xlabel("Molar Volume (L/mol)")
+ax.set_ylabel("Pressure (bar)")
+ax.legend(handles=legend_elements, loc='lower left')
+ax.grid(True, linestyle="--", alpha=0.7)
+
+# Adjust layout and display
+plt.tight_layout()
+glue('van-der-waals-isotherms', fig, display=False)
+plt.close(fig)
+```
+
+```{glue:figure} van-der-waals-isotherms
+:name: van-der-waals-isotherms
+:figwidth: 100%
+:align: center
+
+Comparison of experimental and van der Waals isotherms for CO<sub>2</sub> at temperatures below, at, and above the critical temperature $T_c$. The subcritical isotherm ($T < T_c$) displays the characteristic loop associated with phase separation, while the isotherm at $T = T_c$ shows an inflection point, and supercritical conditions ($T > T_c$) no longer exhibit a liquid–vapor transition.
+```
 
 #### Critical Point
 
-Hello, world!
+```{code-cell} ipython3
+:tags: [hide-input]
+
+# Reference: https://scipython.com/blog/the-maxwell-construction/
+
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+from matplotlib.lines import Line2D
+from scipy.constants import R as R_SI
+from scipy.integrate import quad
+from scipy.optimize import curve_fit, newton
+from scipy.signal import argrelextrema
+from scipy import stats
+from labellines import labelLines
+from myst_nb import glue
+
+R = R_SI / 100  # Gas constant in L bar / mol K
+
+# van der Waals constants for carbon dioxide
+a_m = 3.6551    # L^2 bar/mol^2
+b_m = 0.042816  # L/mol
+
+# van der Waals critical properties for carbon dioxide
+Tc_vdW = 8 * a_m / (27 * b_m * R)  # K
+Pc_vdW = a_m / (27 * b_m**2)       # bar
+Vc_vdW = 3 * b_m                   # L/mol
+
+# Reduced-pressure form of the van der Waals equation of state
+def vdw(Tr, Vr):
+    """Van der Waals equation of state.
+
+    Return the reduced pressure from the reduced temperature and volume.
+
+    """
+
+    pr = 8*Tr/(3*Vr-1) - 3/Vr**2
+    return pr
+
+# Maxwell construction of the reduced-pressure form of the van der Waals equation of state
+def vdw_maxwell(Tr, Vr):
+    """Van der Waals equation of state with Maxwell construction.
+
+    Return the reduced pressure from the reduced temperature and volume,
+    applying the Maxwell construction correction to the unphysical region
+    if necessary.
+
+    """
+
+    pr = vdw(Tr, Vr)
+    if Tr >= 1:
+        # No unphysical region above the critical temperature.
+        return pr
+
+    if min(pr) < 0:
+         raise ValueError('Negative pressure results from van der Waals'
+                         ' equation of state with Tr = {} K.'.format(Tr))
+
+    # Initial guess for the position of the Maxwell construction line:
+    # the volume corresponding to the mean pressure between the minimum and
+    # maximum in reduced pressure, pr.
+    iprmin = argrelextrema(pr, np.less)
+    iprmax = argrelextrema(pr, np.greater)
+    Vr0 = np.mean([Vr[iprmin], Vr[iprmax]])
+
+    def get_Vlims(pr0):
+        """Solve the inverted van der Waals equation for reduced volume.
+
+        Return the lowest and highest reduced volumes such that the reduced
+        pressure is pr0. It only makes sense to call this function for
+        T<Tc, ie below the critical temperature where there are three roots.
+
+        """
+
+        eos = np.poly1d( (3*pr0, -(pr0+8*Tr), 9, -3) )
+        roots = eos.r
+        roots.sort()
+        Vrmin, _, Vrmax = roots
+        return Vrmin, Vrmax
+
+    def get_area_difference(Vr0):
+        """Return the difference in areas of the van der Waals loops.
+
+        Return the difference between the areas of the loops from Vr0 to Vrmax
+        and from Vrmin to Vr0 where the reduced pressure from the van der Waals
+        equation is the same at Vrmin, Vr0 and Vrmax. This difference is zero
+        when the straight line joining Vrmin and Vrmax at pr0 is the Maxwell
+        construction.
+
+        """
+
+        pr0 = vdw(Tr, Vr0)
+        Vrmin, Vrmax = get_Vlims(pr0)
+        return quad(lambda vr: vdw(Tr, vr) - pr0, Vrmin, Vrmax)[0]
+
+    # Root finding by Newton's method determines Vr0 corresponding to
+    # equal loop areas for the Maxwell construction.
+    Vr0 = newton(get_area_difference, Vr0)
+    pr0 = vdw(Tr, Vr0)
+    Vrmin, Vrmax = get_Vlims(pr0)
+
+    # Set the pressure in the Maxwell construction region to constant pr0.
+    pr[(Vr >= Vrmin) & (Vr <= Vrmax)] = pr0
+    return pr, Vrmin, Vrmax
+
+# Reduced volume range
+Vr = np.linspace(0.5, 20, 1000)
+
+fig, axs = plt.subplot_mosaic([[0, 1]], figsize=(8, 4), sharex=True, sharey=True)
+
+# Plot the van der Waals isotherm below the critical temperature
+line1 = axs[0].plot(Vr * Vc_vdW,
+                    vdw(0.9, Vr) * Pc_vdW,
+                    'b-', label='$T = 0.9 T_c$')
+labelLines(line1, xvals=0.4, zorder=2.5)
+Pr_max, Vr_liq, Vr_vap = vdw_maxwell(0.9, Vr)
+Pr_equ = Pr_max[np.argwhere(np.diff(Pr_max) == 0).flatten().mean().astype(int)]
+Vr_int = 0.140076 / Vc_vdW  # https://www.wolframalpha.com/input?i=V%5E3-%28b%2BR*T%2FP%29*V%5E2%2Ba%2FP*V-a*b%2FP%3D0+for+a%3D3.6551%2C+b%3D0.042816%2C+R%3D8.314462618%2F100%2C+T%3D0.9*8*a%2F%2827*b*R%29%2C+P%3D0.64699835*a%2F%2827*b%5E2%29
+# print(f"At Tr = 0.90, the molar volume of the liquid phase is {Vr_liq * Vc_vdW:.4f} L/mol, the molar volume of the vapor phase is {Vr_vap * Vc_vdW:.4f} L/mol, and the equilibrium pressure is {Pr_equ * Pc_vdW:.4f} bar.")
+
+# Calculate the molar volume of the liquid and vapor phases at Tr = 0.85
+Pr_max_85, Vr_liq_85, Vr_vap_85 = vdw_maxwell(0.85, Vr)
+Pr_equ_85 = Pr_max_85[np.argwhere(np.diff(Pr_max_85) == 0).flatten().mean().astype(int)]
+# print(f"At Tr = 0.85, the molar volume of the liquid phase is {Vr_liq_85 * Vc_vdW:.4f} L/mol, the molar volume of the vapor phase is {Vr_vap_85 * Vc_vdW:.4f} L/mol, and the equilibrium pressure is {Pr_equ_85 * Pc_vdW:.4f} bar.")
+
+# Calculate the molar volume of the liquid and vapor phases at Tr = 0.8
+
+# Plot the van der Waals isotherm at the critical temperature
+line2 = axs[0].plot(Vr * Vc_vdW,
+                    vdw(1.0, Vr) * Pc_vdW,
+                    'r-', label='$T = T_c$')
+labelLines(line2, xvals=0.4, zorder=2.5)
+
+# Fill the Maxwell construction region
+Vr_vals_fill_l = np.linspace(Vr_liq, Vr_int, 100)   # Range of volumes for filling
+Pr_vals_fill_l = vdw(0.9, Vr_vals_fill_l) * Pc_vdW  # Calculate pressures along the curve
+Vr_vals_fill_r = np.linspace(Vr_int, Vr_vap, 100)   # Range of volumes for filling
+Pr_vals_fill_r = vdw(0.9, Vr_vals_fill_r) * Pc_vdW  # Calculate pressures along the curve
+
+# Fill the area between the vdw curve and the phase transition pressure Pr_equ
+axs[0].fill_between(
+    Vr_vals_fill_l * Vc_vdW,                         # Scaled volume
+    Pr_vals_fill_l,                                  # Pressure from vdw curve
+    np.ones_like(Vr_vals_fill_l) * Pr_equ * Pc_vdW,  # Constant transition pressure
+    color='blue',                                    # Styling for the fill
+)
+axs[0].fill_between(
+    Vr_vals_fill_r * Vc_vdW,                         # Scaled volume
+    Pr_vals_fill_r,                                  # Pressure from vdw curve
+    np.ones_like(Vr_vals_fill_r) * Pr_equ * Pc_vdW,  # Constant transition pressure
+    color='blue',                                    # Styling for the fill
+)
+
+# Plot the molar volume of the liquid and vapor phases at Tr = 0.9
+axs[0].plot(Vr_liq * Vc_vdW, Pr_equ * Pc_vdW, 'wo', mec='b')
+axs[0].plot(Vr_vap * Vc_vdW, Pr_equ * Pc_vdW, 'wo', mec='b')
+
+# Annotate the Maxwell construction
+x_maxwell = np.mean([Vc_vdW, 0.3])
+axs[0].annotate("Maxwell\nconstruction",
+                xy=(x_maxwell, Pr_equ * Pc_vdW),
+                xytext=(x_maxwell, 40),
+                arrowprops=dict(arrowstyle="->"),
+                ha='center', va='center',
+                zorder=4)
+
+# Plot and annotate the critical point
+axs[0].plot(Vc_vdW, Pc_vdW, 'wo', mec='r')
+
+Vm_vals_Vc = np.linspace(1e-3, 0.5, 100)
+y_supercritical = np.mean([Pc_vdW, 80])
+line3 = axs[0].plot(Vm_vals_Vc, np.ones_like(Vm_vals_Vc) * y_supercritical, 'r-', alpha=0, label='$V_{\\text{m},c}$')
+labelLines(line3, xvals=Vc_vdW, zorder=2.5)
+
+Vm_vals_Pc = np.linspace(0, 0.5, 100)
+line4 = axs[0].plot(Vm_vals_Pc, np.ones_like(Vm_vals_Pc) * Pc_vdW, 'r-', alpha=0, label='$P_c$')
+labelLines(line4, xvals=0.035, zorder=2.5)
+
+axs[0].axvline(Vc_vdW, color='r', linestyle=':', zorder=-200)
+axs[0].axhline(Pc_vdW, color='r', linestyle=':', zorder=-200)
+
+# Approximate the coexistence curve with a function
+
+# Define the functional form: A * ln(B * Vm) * exp(-C * Vm ** 0.25)
+def fit_function(Vm, A, B, C):
+    return A * np.log(B * Vm) * np.exp(-C * Vm ** 0.25)
+
+# Extract data points: (Vm_liq, P_eq), (Vc, Pc), (Vm_vap, P_eq)
+Vm_data = np.array([Vr_liq * Vc_vdW,
+                    Vr_liq_85 * Vc_vdW,
+                    Vc_vdW,
+                    Vr_vap_85 * Vc_vdW,
+                    Vr_vap * Vc_vdW])
+P_data = np.array([Pr_equ * Pc_vdW,
+                   Pr_equ_85 * Pc_vdW,
+                   Pc_vdW,
+                   Pr_equ_85 * Pc_vdW,
+                   Pr_equ * Pc_vdW])
+
+# Provide an initial guess for the parameters A, B, C
+initial_guess = [100, 10, 1]
+
+# Fit the curve to the data
+params, covariance = curve_fit(fit_function, Vm_data, P_data, p0=initial_guess)
+
+# Extract fitted parameters
+A_fit, B_fit, C_fit = params
+# print(f"Fitted parameters: A = {A_fit}, B = {B_fit}, C = {C_fit}")
+
+# Generate data for plotting the fitted curve
+P_fit = fit_function(Vm_vals_Vc, A_fit, B_fit, C_fit)
+
+# Fitted curve
+axs[0].fill_between(Vm_vals_Vc, P_fit, 0, color='magenta', alpha=0.2, zorder=-100)
+axs[1].fill_between(Vm_vals_Vc, P_fit, 0, color='magenta', alpha=0.2, zorder=-100)
+
+# Annotate the coexistence curve
+line5 = axs[1].plot(Vm_vals_Vc - 0.04, P_fit, 'b-', label='Liquid', alpha=0)
+labelLines(line5, xvals=0.04, zorder=2.5)
+axs[1].fill_between(Vm_vals_Vc[Vm_vals_Vc <= Vc_vdW],
+                    np.ones_like(Vm_vals_Vc[Vm_vals_Vc <= Vc_vdW]) * Pc_vdW,
+                    P_fit[Vm_vals_Vc <= Vc_vdW],
+                    color='blue',
+                    alpha=0.2)
+
+line6 = axs[1].plot(Vm_vals_Vc + 0.04, P_fit, 'r-', label='Vapor', alpha=0)
+labelLines(line6, xvals=0.32, zorder=2.5)
+axs[1].fill_between(Vm_vals_Vc[Vm_vals_Vc >= Vc_vdW],
+                    np.ones_like(Vm_vals_Vc[Vm_vals_Vc >= Vc_vdW]) * Pc_vdW,
+                    P_fit[Vm_vals_Vc >= Vc_vdW],
+                    color='red',
+                    alpha=0.2)
+
+line7 = axs[1].plot(Vm_vals_Pc, np.ones_like(Vm_vals_Pc) * y_supercritical, '-', c="gray", alpha=0, label='Supercritical fluid')
+labelLines(line7, xvals=Vc_vdW, zorder=2.5)
+axs[1].fill_between(Vm_vals_Pc,
+                    np.ones_like(Vm_vals_Pc) * Pc_vdW,
+                    80,
+                    color='gray',
+                    alpha=0.2)
+
+line8 = axs[1].plot(Vm_vals_Pc, np.ones_like(Vm_vals_Pc) * 40, 'm-', alpha=0, label='Liquid-vapor\nmixture')
+labelLines(line8, xvals=x_maxwell, zorder=2.5)
+
+axs[0].set_xlim(0, 0.5)
+axs[0].set_ylim(30, 80)
+axs[0].set_xlabel("Molar Volume (L/mol)")
+axs[1].set_xlabel("Molar Volume (L/mol)")
+axs[0].set_ylabel("Pressure (bar)")
+axs[0].grid(True, linestyle="--", alpha=0.7)
+
+# Adjust layout and display
+plt.tight_layout()
+glue('van-der-waals-critical-point', fig, display=False)
+plt.close(fig)
+```
+
+```{glue:figure} van-der-waals-critical-point
+:name: van-der-waals-critical-point
+:figwidth: 100%
+:align: center
+
+Van der Waals isotherm for CO<sub>2</sub> at $T = 0.9\,T_c$, with the Maxwell construction illustrating how the unphysical loop is replaced by a horizontal tie line defining liquid–vapor coexistence. The critical point at $T = T_c$ is also shown, where the liquid and vapor phases merge.
+```
+
+Expanding Equation {eq}`van-der-waals-eos` and rearranging terms:
+
+```{math}
+:label: van-der-waals-eos-expanded
+V_\text{m}^3 - \left( b_\text{m} + \frac{R T}{P} \right) V_\text{m}^2 + \frac{a_\text{m}}{P} V_\text{m} - \frac{a_\text{m} b_\text{m}}{P} = 0.
+```
+
+````{admonition} Complete Derivation of the Cubic Equation in $V_\text{m}$
+:class: dropdown
+
+**1. Expand Equation {eq}`van-der-waals-eos` and Subtract $RT$ From Both Sides:**
+
+```{math}
+P V_\text{m} - P b_\text{m} + \frac{a_\text{m}}{V_\text{m}} - \frac{a_\text{m} b_\text{m}}{V_\text{m}^2} - R T = 0.
+```
+
+**2. Multiply Both Sides by $V_\text{m}^2 / P$:**
+
+```{math}
+V_\text{m}^3 - b_\text{m} V_\text{m}^2 + \frac{a_\text{m}}{P} V_\text{m} - \frac{a_\text{m} b_\text{m}}{P} - \frac{R T}{P} V_\text{m}^2 = 0.
+```
+
+**3. Group Terms:**
+
+```{math}
+V_\text{m}^3 - \left( b_\text{m} + \frac{R T}{P} \right) V_\text{m}^2 + \frac{a_\text{m}}{P} V_\text{m} - \frac{a_\text{m} b_\text{m}}{P} = 0.
+```
+````
+
+At the critical point, Equation {eq}`van-der-waals-eos-expanded` simplifies to:
+
+```{math}
+\left( V_\text{m} - V_{\text{m},c} \right)^3 = V_{\text{m},c}^3 - 3 V_{\text{m},c} V_\text{m}^2 + 3 V_{\text{m},c}^2 V_\text{m} - V_\text{m}^3 = 0.
+```
+
+Comparing these equations:
+
+```{math}
+V_{\text{m},c} = 3 b_\text{m}, \quad P_{\text{c}} = \frac{a_\text{m}}{27 b_\text{m}^2}, \quad T_{\text{c}} = \frac{8 a_\text{m}}{27 b_\text{m} R}.
+```
+
+````{admonition} Complete Derivation of the Critical Point
+:class: dropdown
+
+**1. Set Coefficients Equal to Each Other and Solve for Powers of $V_{\text{m},c}$:**
+
+```{math}
+V_{\text{m},c} = \frac{1}{3} \left( b_\text{m} + \frac{R T_{\text{c}}}{P_{\text{c}}} \right), \quad V_{\text{m},c}^2 = \frac{a_\text{m}}{3 P_{\text{c}}}, \quad V_{\text{m},c}^3 = \frac{a_\text{m} b_\text{m}}{P_{\text{c}}}.
+```
+
+**2. Divide $V_{\text{m},c}^3$ by $V_{\text{m},c}^2$ and Eliminate $P_{\text{c}}$:**
+
+```{math}
+\begin{aligned}
+\frac{V_{\text{m},c}^3}{V_{\text{m},c}^2} &= \frac{a_\text{m} b_\text{m}}{P_{\text{c}}} \cdot \frac{3 P_{\text{c}}}{a_\text{m}} \\
+V_{\text{m},c} &= 3 b_\text{m}.
+\end{aligned}
+```
+
+**3. Substitute This Result Into $V_{\text{m},c}^3$ and Solve for $P_{\text{c}}$:**
+
+```{math}
+\begin{aligned}
+V_{\text{m},c}^3 &= \frac{a_\text{m} b_\text{m}}{P_{\text{c}}} \\
+27 b_\text{m}^3 &= \frac{a_\text{m} b_\text{m}}{P_{\text{c}}} \\
+P_{\text{c}} &= \frac{a_\text{m}}{27 b_\text{m}^2}.
+\end{aligned}
+```
+
+**4. Substitute These Results Into $V_{\text{m},c}$ and Solve for $T_{\text{c}}$:**
+
+```{math}
+\begin{aligned}
+V_{\text{m},c} &= \frac{1}{3} \left( b_\text{m} + \frac{R T_{\text{c}}}{P_{\text{c}}} \right) \\
+3 b_\text{m} &= \frac{1}{3} \left( b_\text{m} + R T_{\text{c}} \cdot \frac{27 b_\text{m}^2}{a_\text{m}} \right) \\
+9 b_\text{m} &= b_\text{m} + R T_{\text{c}} \cdot \frac{27 b_\text{m}^2}{a_\text{m}} \\
+8 b_\text{m} &= R T_{\text{c}} \cdot \frac{27 b_\text{m}^2}{a_\text{m}} \\
+T_{\text{c}} &= \frac{8 a_\text{m}}{27 b_\text{m} R}.
+\end{aligned}
+```
+````
 
 #### Corresponding States
 
-Hello, world!
-
-<!-- # Real Gases & Equations of State I -->
-
-## Introduction
-
-In our previous lectures, we considered ideal gases, which assume non-interacting, point-like particles. This approximation works remarkably well at low pressures and high temperatures but fails to describe gases near condensation conditions. Here, we begin our study of **real gases**, which deviate from ideality due to two key effects:
-
-1. Gas particles have finite size.
-2. Gas particles interact with each other (attractive and repulsive forces).
-
-We focus on the **van der Waals (vdW) equation of state**, a simple yet instructive model that incorporates these real-gas features. This equation accurately reproduces qualitative aspects such as non-ideal behavior, phase transitions from gas to liquid, and the existence of a critical point.
-
----
-
-## The van der Waals Equation
-
-### Derivation & Physical Meaning of $a$ and $b$
-
-#### Key Idea
-
-The van der Waals equation modifies the ideal gas law $P V_m = R T$ by correcting for particle size and intermolecular attractions.
-
-- **Finite Particle Size Correction**: The parameter $b$ accounts for the **excluded volume** per mole due to the finite size of molecules. Since real gas particles occupy space, the available volume for molecular motion is less than the total container volume.
-
-- **Intermolecular Attraction Correction**: The parameter $a$ corrects the pressure for the attractive forces between molecules. Attractive interactions effectively reduce the momentum transfer to the walls and hence the measured pressure.
-
-#### Mathematically
-
-$$
-\left(P + \frac{a}{V_m^2}\right)(V_m - b) = R T
-$$
-
-where $V_m$ is the molar volume.
-
-#### Interpretation
-
-- Increasing $a$: stronger intermolecular attractions.
-- Increasing $b$: larger molecular size, reducing the free volume.
-
-### Alternative Form
-
-$$
-P = \frac{R T}{V_m - b} - \frac{a}{V_m^2}
-$$
-
-This rearrangement shows the balance between a repulsive term $RT/(V_m - b)$ and an attractive term $a/V_m^2$.
-
----
-
-## Critical Phenomena & the Critical Point
-
-### Key Concept
-
-As temperature and pressure increase, the distinction between liquid and gas phases blurs. At a specific combination of temperature ($T_c$), pressure ($P_c$), and volume ($V_{m,c}$), the system reaches the **critical point**. Beyond the critical point, there is no longer a clear boundary between the liquid and gaseous states—only a supercritical fluid remains.
-
-### Conditions at the Critical Point
-
-From the van der Waals equation, applying conditions for the critical point yields:
-
-$$
-V_{m,c} = 3b, \quad P_c = \frac{a}{27 b^2}, \quad T_c = \frac{8a}{27 R b}.
-$$
-
-At $(P_c, V_{m,c}, T_c)$, the first and second derivatives of $P$ with respect to $V_m$ vanish. This mathematical condition corresponds to the inflection point on the critical isotherm.
-
-```{admonition} Derivation of Critical Conditions
-:class: dropdown
-
-To find the critical point $\left(P_c, V_{m,c}, T_c\right)$ for a van der Waals gas, we use two conditions on the isotherm at $\,T = T_c$:
-
-1. $\left.\left(\frac{\partial P}{\partial V_m}\right)_{T}\right|_{V_{m,c}} = 0$
-2. $\left.\left(\frac{\partial^2 P}{\partial V_m^2}\right)_{T}\right|_{V_{m,c}} = 0$
-
-where the pressure $P$ is given by the van der Waals equation:
-
-$$
-P = \frac{R T}{\,V_m - b\,} \;-\; \frac{a}{\,V_m^2\,}.
-$$
-
----
-
-**Step 1: First Derivative Condition**
-
-$$
-\left.\left(\frac{\partial P}{\partial V_m}\right)_{T}\right|_{V_{m,c}} 
-\;=\;
-\left.\frac{\partial}{\partial V_m}
-\left[\tfrac{R T}{\,V_m - b\,} - \tfrac{a}{\,V_m^2\,}\right]
-\right|_{V_{m,c}}
-\;=\; 0.
-$$
-
-Compute each term’s derivative with respect to $V_m$:
-
-- For $\tfrac{R T}{\,V_m - b\,}$:
-
-  $$
-  \frac{\partial}{\partial V_m} \left(\frac{R T}{V_m - b}\right)
-  = -\,\frac{R T}{\,(V_m - b)^2\,}.
-  $$
-
-- For $\tfrac{a}{\,V_m^2\,}$:
-
-  $$
-  \frac{\partial}{\partial V_m} \left(\frac{a}{\,V_m^2}\right)
-  = -\,\frac{2\,a}{\,V_m^3\,}.
-  $$
-
-So the first derivative is:
-
-$$
-\left.\left(\frac{\partial P}{\partial V_m}\right)_{T}\right|_{V_{m,c}}
-= -\,\frac{R T_c}{\,(V_{m,c} - b)^2\,} \;+\; \frac{2\,a}{\,V_{m,c}^3\,}
-= 0.
-$$
-
-Rearranging yields:
-
-$$
-\frac{R T_c}{\,(V_{m,c} - b)^2\,}
-= \frac{2\,a}{\,V_{m,c}^3\,}.
-$$
-
----
-
-**Step 2: Second Derivative Condition**
-
-$$
-\left.\left(\frac{\partial^2 P}{\partial V_m^2}\right)_{T}\right|_{V_{m,c}}
-= 0.
-$$
-
-Starting again from $P = \tfrac{R T}{\,V_m - b\,} - \tfrac{a}{\,V_m^2\,}$, we take the second derivative:
-
-1. The derivative of $-\,\tfrac{R T}{\,(V_m - b)^2\,}$ with respect to $V_m$:
-
-   $$
-   \frac{\partial}{\partial V_m} 
-   \left(-\frac{R T}{\,(V_m - b)^2}\right)
-   = 2 \,\frac{R T}{\,(V_m - b)^3\,}.
-   $$
-
-2. The derivative of $\tfrac{2\,a}{\,V_m^3\,}$ with respect to $V_m$:
-
-   $$
-   \frac{\partial}{\partial V_m} \left(\frac{2\,a}{\,V_m^3}\right)
-   = -\,\frac{6\,a}{\,V_m^4\,}.
-   $$
-
-Hence,
-
-$$
-\left.\left(\frac{\partial^2 P}{\partial V_m^2}\right)_{T}\right|_{V_{m,c}}
-= 2\,\frac{R T_c}{\,(V_{m,c} - b)^3\,} \;-\; \frac{6\,a}{\,V_{m,c}^4\,}
-= 0.
-$$
-
-Rearranging gives:
-
-$$
-\frac{2\,R T_c}{\,(V_{m,c} - b)^3\,}
-= \frac{6\,a}{\,V_{m,c}^4\,}.
-$$
-
----
-
-**Step 3: Solving Simultaneously**
-
-We now have two equations:
-
-$$
-\begin{aligned}
-\frac{R T_c}{(V_{m,c} - b)^2} &= \frac{2\,a}{V_{m,c}^3}, \\
-\frac{2\,R T_c}{(V_{m,c} - b)^3} &= \frac{6\,a}{V_{m,c}^4}.
-\end{aligned}
-$$
-
-Divide the second equation by the first to eliminate $R T_c$ and $a$. Simplifying yields:
-
-$$
-\frac{\left(V_{m,c} - b\right)^2}{\left(V_{m,c} - b\right)^3}
-= \frac{2\,V_{m,c}^3}{\,6\,V_{m,c}^4\,} \quad\Longrightarrow\quad
-\frac{1}{\,V_{m,c} - b\,}
-= \frac{1}{\,3\,V_{m,c}\,}.
-$$
-
-Thus $V_{m,c} = 3\,b$. Substituting $V_{m,c} = 3b$ back into the first derivative condition determines $T_c$ and then $P_c$:
-
-$$
-T_c = \frac{8\,a}{\,27\,R\,b}, 
-\quad
-P_c = \frac{a}{\,27\,b^2}.
-$$
-
-**Result:**
-
-$$
-\boxed{
-V_{m,c} \;=\; 3\,b, \quad
-T_c \;=\; \frac{8\,a}{27\,R\,b}, \quad
-P_c \;=\; \frac{a}{27\,b^2}.
-}
-$$
-
-These formulas express the van der Waals critical volume, temperature, and pressure in terms of $a$ and $b$.
-```
-
----
-
 ```{code-cell} ipython3
 :tags: [hide-input]
+
+import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
-import numpy as np
+from matplotlib.lines import Line2D
+from labellines import labelLines
+from scipy.constants import R
 from myst_nb import glue
 
-# Set plot style
-plt.style.use('seaborn-v0_8-colorblind')
+# Define styles for species
+style_for_species = {"Ar": 'o', "O2": '^', "H2O": 's', "CO2": 'p'}
+label_for_species = {"Ar": "Ar", "O2": "O$_2$", "H2O": "H$_2$O", "CO2": "CO$_2$"}
+line_style_for_species = {"Ar": "-", "O2": "--", "H2O": "-.", "CO2": ":"}
+color_for_temperature = {0.9: "blue", 1.0: "blue", 1.1: "red", 1.2: "magenta", 2.0: "red"}
+color_for_species = {"Ar": "black", "O2": "blue", "H2O": "red", "CO2": "magenta"}
 
-# Increase font size for better readability
-plt.rcParams.update({'font.size': 18})
-
-# Gas constant in L·bar/(K·mol)
-R = 0.08314  
-
-# Van der Waals parameters for Helium
-a_He = 0.0346   # L²·bar/mol²
-b_He = 0.0238   # L/mol
-
-def van_der_waals_pressure(a, b, T, V):
-    """
-    Calculate the van der Waals pressure for given parameters.
-
-    Parameters
-    ----------
-    a : float
-        Attraction parameter (L²·bar/mol²).
-    b : float
-        Excluded volume parameter (L/mol).
-    T : float
-        Temperature (K).
-    V : ndarray
-        Molar volume array (L/mol).
-
-    Returns
-    -------
-    ndarray
-        Pressure in bar for each volume.
-    """
-    return R * T / (V - b) - a / V**2
-
-def plot_vdw_isotherms(ax, a, b, Tc, Pc, Vc):
-    """
-    Plot van der Waals isotherms for temperatures ranging from 0.8 T_c to 1.2 T_c.
-
-    Parameters
-    ----------
-    ax : matplotlib.axes.Axes
-        The axes on which to plot.
-    a, b : float
-        van der Waals parameters.
-    Tc, Pc, Vc : float
-        Critical temperature, pressure, and molar volume.
-    """
-    # Reduced temperature range
-    Tr = np.linspace(0.8, 1.2, 3)
-    # Reduced volume range
-    Vr = np.linspace(0.4, 8, 1000)
-
-    # Actual T and V arrays
-    T_vals = Tc * Tr
-    V_vals = Vc * Vr
-
-    # Plot each isotherm
-    for i, T_i in enumerate(T_vals):
-        P_vals = van_der_waals_pressure(a, b, T_i, V_vals)
-        ax.plot(V_vals, P_vals, label=rf"vdW: $T = {Tr[i]:.1f}\,T_c$")
-
-    ax.set_ylim(-0.4 * Pc, 2.6 * Pc)
-    ax.set_xlabel(r"$V_m$ (L/mol)")
-    ax.set_ylabel(r"$P$ (bar)")
-    ax.legend()
-
-# Create a figure
-fig, axs = plt.subplot_mosaic([[0]], figsize=(12, 6))
-
-# Load experimental data for Helium
-df_He = pd.read_excel("_static/lecture-04/He_data.xlsx")
-
-# Plot experimental data at ~0.8 T_c
-axs[0].plot(df_He["Volume (l/mol)"], df_He["Pressure (bar)"], 
-            label="Experiment, $T \\approx 0.8\,T_c$", color="black")
-
-# Compute critical constants for Helium
-Tc_He = 8 * a_He / (27 * R * b_He)
-Pc_He = a_He / (27 * b_He**2)
-Vc_He = 3 * b_He
-
-# Plot theoretical van der Waals isotherms
-plot_vdw_isotherms(axs[0], a_He, b_He, Tc_He, Pc_He, Vc_He)
-
-# Save figure for later embedding with myst_nb's glue
-glue("vdw_isotherms", fig, display=False)
-
-# Close figure to prevent duplicate display
-plt.close(fig)
-```
-
-```{glue:figure} vdw_isotherms
-:name: vdw-isotherms
-:figwidth: 100%
-:align: center
-
-Comparison of experimental $P$-$V$ data for Helium near $0.8\,T_c$ (black solid line) and theoretical van der Waals isotherms spanning $0.8\,T_c$ to $1.2\,T_c$. The experimental data aligns reasonably well with the model at lower pressures and highlights deviations at higher pressures.
-```
-
-### Physical Insight
-
-At $T < T_c$, isotherms show non-ideal behavior with regions corresponding to phase coexistence (plateaus where liquid and gas are in equilibrium). At $T = T_c$, the isotherm has a point of inflection. For $T > T_c$, there are no phase boundaries.
-
----
-
-## $P$-$V$ Diagrams: Phases and Phase Transitions
-
-In $P$-$V$ diagrams at constant temperature, the **van der Waals isotherms** can exhibit a non-monotonic region where a naive application would predict negative compressibility. Physical systems avoid this instability by undergoing phase separation into coexisting liquid and gas phases. The equal-area Maxwell construction (discussed in detail in later lectures) addresses this.
-
-Below the critical temperature ($T < T_c$), the isotherm has three segments:
-
-- A low-pressure, large-volume (gas) region.
-- A middle, unstable region.
-- A high-pressure, small-volume (liquid) region.
-
-At equilibrium, the system is a mixture of liquid and gas with a flat $P$-$V$ tie line. At exactly $T = T_c$, these two distinct phases merge.
-
----
-
-```{code-cell} ipython3
-:tags: [hide-input]
-import pandas as pd
-import matplotlib.pyplot as plt
-import numpy as np
-
-# Set plot style
-plt.style.use('seaborn-v0_8-colorblind')
-plt.rcParams.update({'font.size': 18})
-
-# Gas constant in L·bar/(K·mol)
-R = 0.08314  
-
-# Van der Waals parameters for Helium
-a_He = 0.0346   # L²·bar/mol²
-b_He = 0.0238   # L/mol
-
-def van_der_waals_pressure(a, b, T, V):
-    """
-    Calculate the van der Waals pressure for given parameters.
-    """
-    return R * T / (V - b) - a / V**2
-
-# Load experimental data for Helium
-df_He = pd.read_excel("_static/lecture-04/He_data.xlsx")
-
-# Identify discontinuities to show phase boundaries
-dPdV = np.gradient(df_He["Pressure (bar)"], df_He["Volume (l/mol)"])
-discontinuities = np.where(np.abs(np.diff(dPdV)) > 0.1)[0]
+# Paths to data files
+paths = [
+    f"_static/section-04/isothermal-properties-for-{species}-Tr={T_r}.csv"
+    for species in ["argon", "oxygen", "water", "carbon-dioxide"]
+    for T_r in [1.0, 1.2, 2.0]
+]
 
 # Create figure
-fig, ax = plt.subplots(figsize=(14, 6))
+fig, ax = plt.subplots(figsize=(4, 4))
 
-# Plot the experimental data in black
-ax.plot(df_He["Volume (l/mol)"], df_He["Pressure (bar)"], color="black", linestyle="-")
+# Load and plot data
+for i, path in enumerate(paths):
+    df = pd.read_csv(path)
+    df.rename(columns={"Temperature (K)": "T", "Pressure (bar)": "P_bar", "Volume (m3/mol)": "Vm"}, inplace=True)
+    df["P"] = df["P_bar"] * 1e5  # Convert bar to Pa
+    df["Z"] = df["P"] * df["Vm"] / (R * df["T"])
+    
+    species = df["substance"].values[0]
+    T_r = df["Tr"].values[0].round(1)
+    color = color_for_temperature[T_r]
+    linestyle = line_style_for_species[species]
+    label = f"$T_r = {T_r}$" if i % 4 == 0 else None
+    
+    line = ax.plot(df["Pr"], df["Z"], color=color, linestyle=linestyle, alpha=0.5, label=label)
+    if label:
+        labelLines(line, align=False, xvals=[2], zorder=2.5)
 
-# Add vertical lines at approximate phase boundaries
-for idx in [discontinuities[0], discontinuities[1]]:
-    ax.axvline(x=df_He["Volume (l/mol)"][idx], color="blue", linestyle="-")
+# Create legend
+legend_elements = [Line2D([0], [0], c='k', label=label_for_species[s], ls=line_style_for_species[s], alpha=0.5) 
+                   for s in line_style_for_species]
+ax.legend(handles=legend_elements, loc='lower right')
 
-# Apply log scales
-ax.set_xscale('log')
-ax.set_yscale('log')
+# Set labels and grid
+ax.set_xlim(0, 8)
+ax.set_ylim(0, 1.25)
+ax.set_xlabel("Reduced Pressure ($P_r = P / P_c$)")
+ax.set_ylabel("$Z$")
+ax.grid(True, linestyle="--", alpha=0.7)
 
-# Label axes
-ax.set_xlabel(r"$V_m$ (L/mol)")
-ax.set_ylabel(r"$P$ (bar)")
-
-# Annotate liquid/gas volumes
-V_l = df_He["Volume (l/mol)"][discontinuities[1]]
-V_g = df_He["Volume (l/mol)"][discontinuities[0]]
-P_text_min = ax.get_ylim()[0] + 0.1
-P_text_max = ax.get_ylim()[1] - 0.2
-
-ax.text(V_l, P_text_min, "$\leftarrow$ liquid", ha='right', va='center', color="blue", rotation=90)
-ax.text(V_l * 1.1, P_text_max, 
-        rf"$V_m = {V_l:.2f}\,\mathrm{{L/mol}} = {V_l / b_He:.2f}\,b$", 
-        ha='left', va='top', color="blue")
-
-ax.text(V_g, P_text_min, "$\\rightarrow$ gas", ha='left', va='center', color="blue")
-ax.text(V_g * 1.1, P_text_max, 
-        rf"$V_g = {V_g:.2f}\,\mathrm{{L/mol}} = {V_g / b_He:.2f}\,b$", 
-        ha='left', va='top', color="blue")
-
-mid_label = (V_l + V_g) / 2
-ax.text(mid_label, P_text_min, "liquid-gas mixture", ha='center', va='center', color="blue")
-
-# Save figure for later embedding with myst_nb's glue
-glue("vdw_phase_diagram", fig, display=False)
-
-# Close figure to prevent duplicate display
+plt.tight_layout()
+glue('corresponding-states', fig, display=False)
 plt.close(fig)
 ```
 
-```{glue:figure} vdw_phase_diagram
-:name: vdw-phase-diagram
+```{glue:figure} corresponding-states
+:name: corresponding-states
 :figwidth: 100%
 :align: center
 
-Experimental $P$-$V$ data for Helium at $T \approx 0.8\,T_c$ plotted on a log-log scale. Vertical lines mark approximate discontinuities in the derivative $\partial P/\partial V$, illustrating transitions from liquid to gas via a coexistence region. The annotations highlight estimated molar volumes for the liquid-like and gas-like phases.
+Compressibility factor $Z$ of argon, oxygen, water, and carbon dioxide plotted over a range of reduced pressures for different reduced temperatures. These data illustrate how real gases exhibit similar trends when expressed in terms of their critical properties, in accordance with the principle of corresponding states.
 ```
 
----
+Redefining $V_\text{m}$, $P$, and $T$ as fractions $V_{\text{m},r}$, $P_r$, and $T_r$ of their critical values:
 
-## Comparisons – Ideal vs. van der Waals Behavior
-
-### Ideal Gas
-
-$$
-P V = R T \quad \Rightarrow \quad P = \frac{R T}{V_m}.
-$$
-
-This simple linear relationship in $1/V_m$ ignores both molecular volume and intermolecular forces. As a result, ideal isotherms never show a phase transition. The ideal gas law breaks down near condensation conditions.
-
-### van der Waals Gas
-
-Incorporating $a$ and $b$:
-
-- Predicts non-ideal behavior at high pressures and/or low temperatures.
-- Captures the existence of a critical point and the qualitative features of phase transitions.
-- Reduces to ideal behavior in the limit $a \to 0$ and $b \to 0$.
-
----
-
-## The Principle of Corresponding States
-
-### Core Idea
-
-All fluids, when compared at corresponding states (same reduced temperature $T_r = T/T_c$, reduced pressure $P_r = P/P_c$, and reduced volume $V_{m,r} = V_m/V_{m,c}$), exhibit similar behavior. This is known as the **principle of corresponding states**.
-
-### Reduced van der Waals Equation
-
-By dividing $P$, $V_m$, and $T$ by their critical values, we can rewrite the vdW equation in a universal form:
-
-$$
-\boxed{\left(P_r + \frac{3}{V_{m,r}^2}\right) (V_{m,r} - \tfrac{1}{3}) = \tfrac{8}{3} T_r.}
-$$
-
-### Implication
-
-Once you know the critical constants of one fluid, you can predict the qualitative behavior of all others simply by using the reduced variables. Thus, helium and benzene, despite their vast differences, follow the same pattern when scaled by their critical values.
-
----
-
-```{code-cell} ipython3
-:tags: [hide-input]
-import pandas as pd
-import matplotlib.pyplot as plt
-import numpy as np
-
-# Set plot style
-plt.style.use('seaborn-v0_8-colorblind')
-plt.rcParams.update({'font.size': 18})
-
-# Gas constant in L·bar/(K·mol)
-R = 0.08314  
-
-# van der Waals parameters for Helium
-a_He = 0.0346    # L²·bar/mol²
-b_He = 0.0238    # L/mol
-
-# van der Waals parameters for Benzene
-a_Benzene = 18.24   # L²·bar/mol²
-b_Benzene = 0.1193  # L/mol
-
-def van_der_waals_pressure(a, b, T, V):
-    """
-    Calculate the van der Waals pressure for given parameters.
-    """
-    return R * T / (V - b) - a / V**2
-
-def plot_reduced_isotherms(ax, a, b, Tc, Pc, Vc, label, linestyle="-"):
-    """
-    Plot reduced van der Waals isotherms (Pr vs. Vr) for T = 0.8-1.2 T_c.
-
-    Parameters
-    ----------
-    ax : matplotlib.axes.Axes
-        Axis on which to plot.
-    a, b : float
-        van der Waals parameters.
-    Tc, Pc, Vc : float
-        Critical temperature, pressure, and volume.
-    label : str
-        Label for the substance in the legend.
-    linestyle : str, optional
-        Line style for the isotherms.
-    """
-    # Reduced T and V ranges
-    Tr = np.linspace(0.8, 1.2, 3)
-    Vr = np.linspace(0.4, 8, 1000)
-
-    # Loop over each reduced temperature
-    for T_val in Tr:
-        # Actual T and V
-        T_actual = Tc * T_val
-        V_actual = Vc * Vr
-
-        # Calculate van der Waals pressure
-        P_vals = van_der_waals_pressure(a, b, T_actual, V_actual)
-        P_reduced = P_vals / Pc
-
-        ax.plot(Vr, P_reduced, linestyle=linestyle,
-                label=rf"{label}, $T = {T_val:.1f}\,T_c$")
-
-    ax.set_xlabel(r"$V_{m,r}$")
-    ax.set_ylabel(r"$P_r$")
-    ax.legend()
-
-# Create figure
-fig, ax = plt.subplots(figsize=(12, 6))
-
-# Critical constants for Helium
-Tc_He = 8 * a_He / (27 * R * b_He)
-Pc_He = a_He / (27 * b_He**2)
-Vc_He = 3 * b_He
-
-# Critical constants for Benzene
-Tc_Benzene = 8 * a_Benzene / (27 * R * b_Benzene)
-Pc_Benzene = a_Benzene / (27 * b_Benzene**2)
-Vc_Benzene = 3 * b_Benzene
-
-# Plot Helium in reduced coordinates
-plot_reduced_isotherms(ax, a_He, b_He, Tc_He, Pc_He, Vc_He, "He")
-
-# Plot Benzene in reduced coordinates
-plot_reduced_isotherms(ax, a_Benzene, b_Benzene, Tc_Benzene, Pc_Benzene,
-                       Vc_Benzene, "Benzene", linestyle="--")
-
-ax.set_ylim(-0.4, 2.6)
-
-# Save figure for later embedding with myst_nb's glue
-glue("vdw_reduced_isotherms", fig, display=False)
-
-# Close figure to prevent duplicate display
-plt.close(fig)
+```{math}
+V_\text{m} = V_{\text{m},r} V_{\text{m},c}, \quad P = P_r P_c, \quad T = T_r T_c,
 ```
 
-```{glue:figure} vdw_reduced_isotherms
-:name: vdw-reduced-isotherms
-:figwidth: 100%
-:align: center
+and substituting these definitions into Equation {eq}`van-der-waals-eos` reveals a significant result:
 
-Reduced $P$-$V$ isotherms ($P_r$ vs. $V_{m,r}$) for Helium and Benzene at three temperatures $T = 0.8\,T_c$, $1.0\,T_c$, and $1.2\,T_c$. The data for both substances collapse onto comparable curves in reduced coordinates, illustrating the principle of corresponding states (i.e., fluids exhibit universal behavior when scaled by their respective critical properties).
+```{math}
+:label: van-der-waals-eos-corresponding-states
+\left( P_r + \frac{3}{V_{\text{m},r}^2} \right) \left( V_{\text{m},r} - \frac{1}{3} \right) = \frac{8}{3} T_r.
 ```
 
-<!-- **Estimating Molecular Sizes**:
-From $b$, one can infer a characteristic molecular volume and thus estimate particle diameters. These estimates (e.g., ~3.4 Å for He, ~5.8 Å for benzene) agree reasonably well with typical molecular dimensions. -->
+This result—called the principle of corresponding states—illustrates that the equations of state for all van der Waals fluids are alike when expressed relative to their critical properties.
 
----
+```{tip}
+Calculate the value of the compressibility factor for a van der Waals fluid at the critical point? Do you notice anything interesting?
+```
 
-## Summary & Key Takeaways
+````{admonition} Complete Derivation of the Corresponding States Equation
+:class: dropdown
 
-- **van der Waals EoS**: Incorporates finite size (parameter $b$) and intermolecular attractions (parameter $a$).
-- **Critical Point**: Marks the end of the liquid-gas coexistence curve. Derived conditions give $V_{m,c}, P_c, T_c$ in terms of $a$ and $b$.
-- **Phase Behavior**: vdW isotherms predict liquid-gas phase transitions below $T_c$ and supercritical fluids above $T_c$.
-- **Corresponding States**: Rescaling by critical properties yields universal behavior for all substances. This highlights the generality of the van der Waals form and guides the prediction of properties of unknown fluids by analogy.
+**1. Substitute the Definitions of $V_\text{m}$, $P$, and $T$ Into Equation {eq}`van-der-waals-eos`:**
+
+```{math}
+\left( P_r P_c + \frac{a_\text{m}}{V_{\text{m},r}^2 V_{\text{m},c}^2} \right) \left( V_{\text{m},r} V_{\text{m},c} - b_\text{m} \right) = R T_r T_c.
+```
+
+**2. Divide Both Sides by $P_c V_{\text{m},c}$:**
+
+```{math}
+\left( P_r + \frac{a_\text{m}}{V_{\text{m},r}^2 V_{\text{m},c}^2 P_c} \right) \left( V_{\text{m},r} - \frac{b_\text{m}}{V_{\text{m},c}} \right) = \frac{R T_c}{P_c V_{\text{m},c}} T_r.
+```
+
+**3. Substitute the Definitions of $P_c$, $V_{\text{m},c}$, and $T_c$ In Terms of $a_\text{m}$, $b_\text{m}$, and $R$:**
+
+```{math}
+\begin{aligned}
+\left( P_r + \frac{a_\text{m}}{V_{\text{m},r}^2} \cdot \frac{1}{9 b_\text{m}^2} \cdot \frac{27 b_\text{m}^2}{a_\text{m}} \right) \left( V_{\text{m},r} - \frac{b_\text{m}}{3 b_\text{m}} \right) &= R \cdot \frac{8 a_\text{m}}{27 b_\text{m} R} \cdot \frac{27 b_\text{m}^2}{a_\text{m}} \cdot \frac{1}{3 b_\text{m}} T_r \\
+\left( P_r + \frac{3}{V_{\text{m},r}^2} \right) \left( V_{\text{m},r} - \frac{1}{3} \right) &= \frac{8}{3} T_r.
+\end{aligned}
+```
+
+````
