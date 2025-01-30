@@ -173,7 +173,7 @@ The van der Waals equation of state is one of the simplest models for real gases
     ```
 * - Per Mole
   - ```{math}
-    \left( P + \frac{a_\text{m} n^2}{V^2} \right) \left( V - b_\text{m} n \right) = R T
+    \left( P + \frac{a_\text{m} n^2}{V^2} \right) \left( V - b_\text{m} n \right) = n R T
     ```
   - ```{math}
     :label: van-der-waals-eos

@@ -15,3 +15,7 @@ parts:
       - file: chapter-01/section-02.md
       - file: chapter-01/section-03.md
       - file: chapter-01/section-04.md
+  # - caption: Module 2. Statistical Mechanics
+  #   numbered: true
+  #   chapters:
+  #     - file: chapter-02/section-01.md

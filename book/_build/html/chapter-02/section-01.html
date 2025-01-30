@@ -1,0 +1,865 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Canonical Ensemble &#8212; Physical Chemistry II</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/myfile.css?v=536cf54f" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/mermaid@11.2.0/dist/mermaid.esm.min.mjs"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@mermaid-js/layout-elk@0.1.4/dist/mermaid-layout-elk.esm.min.mjs"></script>
+    <script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11.2.0/dist/mermaid.esm.min.mjs";import elkLayouts from "https://cdn.jsdelivr.net/npm/@mermaid-js/layout-elk@0.1.4/dist/mermaid-layout-elk.esm.min.mjs";mermaid.registerLayoutLoaders(elkLayouts);mermaid.initialize({startOnLoad:false});</script>
+    <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+    <script type="module">
+import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11.2.0/dist/mermaid.esm.min.mjs";
+window.addEventListener("load", () => mermaid.run());
+</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapter-02/section-01';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Physical Chemistry II - Home"/>
+    <img src="../_static/logo.png" class="logo__image only-dark pst-js-only" alt="Physical Chemistry II - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Welcome to Physical Chemistry II
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Module 1. Equations of State</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../chapter-01/section-01.html">1. Course Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter-01/section-02.html">2. Kinetic Theory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter-01/section-03.html">3. Ideal Gases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter-01/section-04.html">4. Real Gases</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fchapter-02/section-01.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/chapter-02/section-01.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Canonical Ensemble</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#motivations-connecting-microscopic-states-to-macroscopic-observables">Motivations — Connecting Microscopic States to Macroscopic Observables</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#predicting-the-future-of-chemical-systems">Predicting the Future of Chemical Systems</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#probability-distributions-the-fundamental-postulate">Probability Distributions &amp; the Fundamental Postulate</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#probability-distributions-in-statistical-mechanics">Probability Distributions in Statistical Mechanics</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#names-interpretations">Names &amp; Interpretations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-ergodic-hypothesis">The Ergodic Hypothesis</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#microstates-macrostates-degeneracy">Microstates, Macrostates, &amp; Degeneracy</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#microstates">Microstates</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#macrostates">Macrostates</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#degeneracy">Degeneracy</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#microcanonical-ensemble-isolated-systems">Microcanonical Ensemble &amp; Isolated Systems</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-microcanonical-ensemble">The Microcanonical Ensemble</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-2d-box-with-five-particles">Example: 2D Box with Five Particles</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linking-thermodynamics-statistics">Linking Thermodynamics &amp; Statistics</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-simple-example-average-number-of-particles">A Simple Example: Average Number of Particles</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#other-averages">Other Averages</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-big-picture">The Big Picture</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="canonical-ensemble">
+<h1>Canonical Ensemble<a class="headerlink" href="#canonical-ensemble" title="Link to this heading">#</a></h1>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading">#</a></h2>
+<pre  class="mermaid">
+        ---
+config:
+  layout: elk
+  look: handDrawn
+  theme: neutral
+
+---
+flowchart LR
+  %% Beginnings and ending
+  CM([Classical mechanics])
+  QM([Quantum mechanics])
+  Th([Thermodynamics])
+
+  %% Processes
+  KT[[Kinetic theory]]
+  SM[[Statistical mechanics]]
+
+  %% Inputs/Outputs
+  StateCM[/&quot;&lt;i&gt;r&lt;sup&gt;N&lt;/sup&gt;&lt;/i&gt;, &lt;i&gt;p&lt;sup&gt;N&lt;/sup&gt;&lt;/i&gt;&quot;/]
+  StateQM[/&quot;&amp;Psi;(&lt;i&gt;r&lt;sup&gt;N&lt;/sup&gt;&lt;/i&gt;)&quot;/]
+  
+  %% Decision
+  LimitCM{&quot;Classical limit?&quot;}
+
+  subgraph Microscopic World
+    QM
+    CM
+    StateCM
+    StateQM
+    LimitCM
+  end
+  
+  subgraph Bridges
+    KT
+    SM
+  end
+  
+  subgraph Macroscopic World
+    Th
+  end
+  
+  CM --&gt; StateCM
+  StateCM --&gt; KT --&gt; Th
+  StateCM --&gt; SM --&gt; Th
+  
+  QM --&gt; LimitCM
+  LimitCM -- Yes --&gt; CM
+  LimitCM -- No --&gt; StateQM --&gt; SM
+    </pre><p>In chemistry, our main goal is often to <strong>predict</strong> and <strong>control</strong> the future of chemical systems. For example:</p>
+<ul class="simple">
+<li><p>If we mix two reagents, will they react or remain inert?</p></li>
+<li><p>Will they be miscible (like ethanol in water) or immiscible (like oil in water)?</p></li>
+</ul>
+<p><strong>Thermodynamics</strong> gives us powerful laws for understanding energy changes and equilibria, but these laws describe the system at a <strong>macroscopic</strong> level (e.g., temperature, pressure, volume, composition). <strong>Statistical mechanics</strong> helps us connect these macroscopic observables to the microscopic world of molecules, atoms, and their interactions. It uses the results of <strong>quantum mechanics</strong> (and sometimes <strong>classical mechanics</strong>) to interpret and predict the behavior of a large number of particles.</p>
+<!-- We will organize our discussion using five main sections ("chalkboards"), each of which addresses a crucial piece of the puzzle. -->
+</section>
+<hr class="docutils" />
+<section id="motivations-connecting-microscopic-states-to-macroscopic-observables">
+<h2>Motivations — Connecting Microscopic States to Macroscopic Observables<a class="headerlink" href="#motivations-connecting-microscopic-states-to-macroscopic-observables" title="Link to this heading">#</a></h2>
+<section id="predicting-the-future-of-chemical-systems">
+<h3>Predicting the Future of Chemical Systems<a class="headerlink" href="#predicting-the-future-of-chemical-systems" title="Link to this heading">#</a></h3>
+<p>Thermodynamics tells us that the equilibrium state of a system is determined by minimizing a free energy (e.g., the Gibbs free energy at constant temperature and pressure). However, it does not directly tell us <strong>how</strong> molecules arrange themselves or <strong>why</strong> certain processes occur at the molecular level. This is where <strong>statistical mechanics</strong> excels.</p>
+<ol class="arabic simple">
+<li><p><strong>The Hard Way</strong>: Simulate each particle quantum mechanically or classically.</p>
+<ul class="simple">
+<li><p><strong>Quantum Dynamics</strong>: Solve the many-body time-dependent Schrödinger equation for each electron and nucleus. This is quickly intractable for large systems.</p></li>
+<li><p><strong>Classical Dynamics</strong>: Solve Newton’s equations of motion for every particle in the system. This can handle larger systems (up to millions or billions of particles), but still falls short of the <span class="math notranslate nohighlight">\(\sim 10^{23}\)</span> particles encountered in everyday laboratory-scale chemistry.</p></li>
+</ul>
+</li>
+<li><p><strong>The Easy Way</strong>: Use <strong>statistical mechanics</strong> and <strong>thermodynamics</strong>:</p>
+<ul class="simple">
+<li><p>Thermodynamics provides general relationships (e.g., equilibrium occurs at minimum free energy).</p></li>
+<li><p>Statistical mechanics <strong>computes</strong> free energy from the <strong>microscopic</strong> properties of molecules, thereby revealing <em>why</em> the thermodynamics “rules” hold.</p></li>
+</ul>
+</li>
+</ol>
+<p>In essence, <strong>statistical mechanics</strong> bridges the gap: it starts from <strong>microscopic states</strong> (positions, momenta, wavefunctions, etc.) and delivers <strong>macroscopic observables</strong> (pressure, temperature, free energy, etc.).</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="probability-distributions-the-fundamental-postulate">
+<h2>Probability Distributions &amp; the Fundamental Postulate<a class="headerlink" href="#probability-distributions-the-fundamental-postulate" title="Link to this heading">#</a></h2>
+<section id="probability-distributions-in-statistical-mechanics">
+<h3>Probability Distributions in Statistical Mechanics<a class="headerlink" href="#probability-distributions-in-statistical-mechanics" title="Link to this heading">#</a></h3>
+<p>Instead of tracking exactly which microstate the system is in at every moment, we use <strong>ensembles</strong>—conceptual collections of many virtual copies of our system under the same macroscopic conditions. We then describe the likelihood (probability) of being in each microstate.</p>
+<p>One of the most important assumptions in statistical mechanics is the <strong>Fundamental “Equal A Priori Probability” Postulate</strong>, often stated as:</p>
+<blockquote>
+<div><p>For an <strong>isolated system</strong> with an <strong>exactly known energy</strong> and <strong>exactly known composition</strong>, the system can be found with <strong>equal probability</strong> in any microstate consistent with that knowledge.</p>
+</div></blockquote>
+</section>
+<section id="names-interpretations">
+<h3>Names &amp; Interpretations<a class="headerlink" href="#names-interpretations" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Principle of Indifference</strong>: In the absence of any additional information, all states are equally probable.</p></li>
+<li><p><strong>Sherlock Holmes Principle</strong>: “When you have eliminated the impossible, whatever remains, however improbable, must be the truth.”</p></li>
+</ul>
+</section>
+<section id="the-ergodic-hypothesis">
+<h3>The Ergodic Hypothesis<a class="headerlink" href="#the-ergodic-hypothesis" title="Link to this heading">#</a></h3>
+<p>Closely related is the <strong>ergodic hypothesis</strong>:</p>
+<div class="math notranslate nohighlight">
+\[
+\text{time average} = \text{ensemble average}.
+\]</div>
+<p>It states that measuring an observable (e.g., energy) of a <strong>single</strong> system over a long time yields the same average as measuring an <strong>ensemble</strong> of many identical systems once. This hypothesis is generally (but not always) assumed in chemistry.</p>
+<p><strong>Non-ergodic systems</strong> (e.g., glass slowly turning into quartz over geological timescales) violate this assumption, as they do not sample all energetically accessible states on a human timescale.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="microstates-macrostates-degeneracy">
+<h2>Microstates, Macrostates, &amp; Degeneracy<a class="headerlink" href="#microstates-macrostates-degeneracy" title="Link to this heading">#</a></h2>
+<section id="microstates">
+<h3>Microstates<a class="headerlink" href="#microstates" title="Link to this heading">#</a></h3>
+<p>A <strong>microstate</strong> is any unique (microscopic) configuration of a system consistent with its macroscopic constraints (e.g., total energy, number of particles, volume). Microstates can be described by:</p>
+<ul class="simple">
+<li><p>Classical positions and momenta of all particles: <span class="math notranslate nohighlight">\(\{(\mathbf{r}_i, \mathbf{p}_i)\}\)</span>.</p></li>
+<li><p>Quantum mechanical wavefunction specifying all electrons and nuclei.</p></li>
+<li><p>Spin configurations in magnetic systems.</p></li>
+<li><p>Complete quantum numbers specifying each particle’s state.</p></li>
+</ul>
+</section>
+<section id="macrostates">
+<h3>Macrostates<a class="headerlink" href="#macrostates" title="Link to this heading">#</a></h3>
+<p>A <strong>macrostate</strong> is specified by the <strong>minimum set of thermodynamic variables</strong> (e.g., <span class="math notranslate nohighlight">\(N, P, V, T\)</span>) that describe the system on a bulk scale. Many different microstates can correspond to the <strong>same</strong> macrostate.</p>
+<p>Examples:</p>
+<ul class="simple">
+<li><p>A gas in a container described by <span class="math notranslate nohighlight">\((N, V, T)\)</span>.</p></li>
+<li><p>A solution described by <span class="math notranslate nohighlight">\((T, P, \text{composition})\)</span>.</p></li>
+</ul>
+</section>
+<section id="degeneracy">
+<h3>Degeneracy<a class="headerlink" href="#degeneracy" title="Link to this heading">#</a></h3>
+<p>An <strong>energy level</strong> may correspond to more than one distinct microstate—this number is called the <strong>degeneracy</strong> <span class="math notranslate nohighlight">\(\Omega\)</span>. Formally:</p>
+<blockquote>
+<div><p><span class="math notranslate nohighlight">\(\Omega\)</span> = number of microstates all having the same energy <span class="math notranslate nohighlight">\(E\)</span>.</p>
+</div></blockquote>
+<p>This distinction is crucial:</p>
+<ul class="simple">
+<li><p><strong>Microstate</strong>: One <strong>specific</strong> arrangement (or wavefunction) of the system.</p></li>
+<li><p><strong>Energy level</strong>: A <strong>value</strong> of energy the system can have.</p></li>
+<li><p><strong>Degeneracy</strong>: How many microstates share that energy.</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="microcanonical-ensemble-isolated-systems">
+<h2>Microcanonical Ensemble &amp; Isolated Systems<a class="headerlink" href="#microcanonical-ensemble-isolated-systems" title="Link to this heading">#</a></h2>
+<section id="the-microcanonical-ensemble">
+<h3>The Microcanonical Ensemble<a class="headerlink" href="#the-microcanonical-ensemble" title="Link to this heading">#</a></h3>
+<p>An <strong>isolated</strong> system has a boundary through which <strong>no</strong> matter or energy is exchanged. Such a system has exactly known:</p>
+<ol class="arabic simple">
+<li><p><strong>Energy</strong> <span class="math notranslate nohighlight">\(E\)</span></p></li>
+<li><p><strong>Number of particles</strong> <span class="math notranslate nohighlight">\(N\)</span></p></li>
+<li><p><strong>Volume</strong> <span class="math notranslate nohighlight">\(V\)</span> (or area <span class="math notranslate nohighlight">\(A\)</span> in 2D)</p></li>
+</ol>
+<p>The collection of all microstates consistent with these constraints is called the <strong>microcanonical ensemble</strong>. According to the fundamental postulate, each microstate in this ensemble is <strong>equally likely</strong>.</p>
+<p>Mathematically, if there are <span class="math notranslate nohighlight">\(\Omega\)</span> microstates all sharing the same <span class="math notranslate nohighlight">\(E, N, V\)</span>, then</p>
+<div class="math notranslate nohighlight">
+\[
+P_i = \frac{1}{\Omega}, \quad i = 1, 2, \dots, \Omega.
+\]</div>
+</section>
+<section id="example-2d-box-with-five-particles">
+<h3>Example: 2D Box with Five Particles<a class="headerlink" href="#example-2d-box-with-five-particles" title="Link to this heading">#</a></h3>
+<p>Imagine a system of five non-interacting particles confined to a 2D box. The constraints are:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(N=5\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(E=E_0\)</span></p></li>
+<li><p>Area <span class="math notranslate nohighlight">\(A=L^2\)</span></p></li>
+</ul>
+<p>Each microstate corresponds to a distinct arrangement of the five particles (and their momenta). Since the system is isolated, all these microstates must share the same total energy <span class="math notranslate nohighlight">\(E_0\)</span>. By the postulate, each is <strong>equally</strong> probable.</p>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">myst_nb</span><span class="w"> </span><span class="kn">import</span> <span class="n">glue</span>
+
+<span class="c1"># For reproducibility</span>
+<span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">(</span><span class="n">seed</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+
+<span class="c1"># Define the number of particles and the box dimension</span>
+<span class="n">N</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">L</span> <span class="o">=</span> <span class="mi">10</span>
+
+<span class="c1"># Create a 3x3 grid of subplots</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">nrows</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">ncols</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">12</span><span class="p">))</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+        <span class="c1"># Random positions in [0, L)</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="n">N</span><span class="p">)</span> <span class="o">*</span> <span class="n">L</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="n">N</span><span class="p">)</span> <span class="o">*</span> <span class="n">L</span>
+
+        <span class="c1"># Random momenta centered around 0</span>
+        <span class="n">px</span> <span class="o">=</span> <span class="p">(</span><span class="n">rng</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="n">N</span><span class="p">)</span> <span class="o">-</span> <span class="mf">0.5</span><span class="p">)</span> <span class="o">*</span> <span class="mi">2</span>
+        <span class="n">py</span> <span class="o">=</span> <span class="p">(</span><span class="n">rng</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="n">N</span><span class="p">)</span> <span class="o">-</span> <span class="mf">0.5</span><span class="p">)</span> <span class="o">*</span> <span class="mi">2</span>
+
+        <span class="c1"># Plot positions</span>
+        <span class="n">axs</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Positions&#39;</span><span class="p">)</span>
+        <span class="c1"># Plot momenta as arrows</span>
+        <span class="n">axs</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">quiver</span><span class="p">(</span>
+            <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">px</span><span class="p">,</span> <span class="n">py</span><span class="p">,</span>
+            <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span>
+            <span class="n">angles</span><span class="o">=</span><span class="s1">&#39;xy&#39;</span><span class="p">,</span>
+            <span class="n">scale_units</span><span class="o">=</span><span class="s1">&#39;xy&#39;</span><span class="p">,</span>
+            <span class="n">scale</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+            <span class="n">alpha</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span>
+            <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Momenta&#39;</span>
+        <span class="p">)</span>
+
+        <span class="c1"># Set axis limits and aspect ratio</span>
+        <span class="n">axs</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">L</span><span class="p">)</span>
+        <span class="n">axs</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">L</span><span class="p">)</span>
+        <span class="n">axs</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">set_aspect</span><span class="p">(</span><span class="s1">&#39;equal&#39;</span><span class="p">)</span>
+
+        <span class="c1"># Remove tick labels for a cleaner look</span>
+        <span class="n">axs</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">([])</span>
+        <span class="n">axs</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">([])</span>
+
+        <span class="c1"># Add a descriptive title</span>
+        <span class="n">microstate_index</span> <span class="o">=</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">i</span> <span class="o">+</span> <span class="n">j</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="n">axs</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;Microstate </span><span class="si">{</span><span class="n">microstate_index</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;Macrostate: $N = </span><span class="si">{</span><span class="n">N</span><span class="si">}</span><span class="s2">, E = E_0, A = L^2$&quot;</span>
+        <span class="p">)</span>
+
+<span class="c1"># Add a main title</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s2">&quot;Microcanonical Ensemble: 9 Example Microstates&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+
+<span class="c1"># Save figure for later embedding with myst_nb&#39;s glue</span>
+<span class="n">glue</span><span class="p">(</span><span class="s2">&quot;microcanonical_ensemble&quot;</span><span class="p">,</span> <span class="n">fig</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="c1"># Close figure to prevent duplicate display</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">(</span><span class="n">fig</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<figure class="align-center" id="microcanonical-ensemble" style="width: 100%">
+<img alt="../_images/40afc49867f05f66e9521304a6389406fba092c98d7a51b221d00a2c5f786d44.png" src="../_images/40afc49867f05f66e9521304a6389406fba092c98d7a51b221d00a2c5f786d44.png" />
+<figcaption>
+<p><span class="caption-text"><strong>Microcanonical Ensemble</strong>: This figure shows nine representative microstates of an isolated 2D system containing five <strong>classical</strong> (i.e., well-defined positions and momenta) and non-interacting particles. All nine microstates share the same macrostate constraints—namely <span class="math notranslate nohighlight">\(N = 5\)</span>, <span class="math notranslate nohighlight">\(E = E_0\)</span>, and a box area <span class="math notranslate nohighlight">\(A = L^2\)</span>—yet differ in the precise distribution of positions and momenta among the particles.</span><a class="headerlink" href="#microcanonical-ensemble" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+<hr class="docutils" />
+<section id="linking-thermodynamics-statistics">
+<h2>Linking Thermodynamics &amp; Statistics<a class="headerlink" href="#linking-thermodynamics-statistics" title="Link to this heading">#</a></h2>
+<section id="a-simple-example-average-number-of-particles">
+<h3>A Simple Example: Average Number of Particles<a class="headerlink" href="#a-simple-example-average-number-of-particles" title="Link to this heading">#</a></h3>
+<p>In an isolated system, <span class="math notranslate nohighlight">\(N\)</span> is constant. Therefore, the <strong>average number of particles</strong> <span class="math notranslate nohighlight">\(\langle N\rangle\)</span> trivially equals <span class="math notranslate nohighlight">\(N\)</span>. Formally:</p>
+<div class="math notranslate nohighlight">
+\[
+\langle N \rangle
+= \sum_{i=1}^{\Omega} N_i \, P_i
+= \sum_{i=1}^{\Omega} 5 \cdot \frac{1}{\Omega}
+= 5.
+\]</div>
+<p>Although this result is obvious, it demonstrates the basic approach in statistical mechanics: a <strong>weighted average</strong> over all microstates, with probabilities given by <span class="math notranslate nohighlight">\(P_i\)</span>.</p>
+</section>
+<section id="other-averages">
+<h3>Other Averages<a class="headerlink" href="#other-averages" title="Link to this heading">#</a></h3>
+<p>By the same principle, we can compute <strong>average energy</strong> <span class="math notranslate nohighlight">\(\langle E\rangle\)</span> or <strong>average volume</strong> <span class="math notranslate nohighlight">\(\langle V\rangle\)</span>. For an isolated system, these remain constant, so the average equals the known value. In more complex systems (e.g., a <strong>canonical ensemble</strong> exchanging heat but not matter with surroundings), the probability distribution is no longer uniform, and <span class="math notranslate nohighlight">\(\langle E\rangle\)</span> can fluctuate in more interesting ways.</p>
+</section>
+<section id="the-big-picture">
+<h3>The Big Picture<a class="headerlink" href="#the-big-picture" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><strong>Statistical Mechanics</strong>:</p>
+<ul class="simple">
+<li><p>Tells us how to compute probabilities of different microstates.</p></li>
+<li><p>Links microscopic details to macroscopic observables (e.g., <span class="math notranslate nohighlight">\(T, P, \langle E\rangle\)</span>).</p></li>
+</ul>
+</li>
+<li><p><strong>Thermodynamics</strong>:</p>
+<ul class="simple">
+<li><p>Summarizes the macroscopic laws (e.g., equilibrium at minimum free energy).</p></li>
+<li><p>Provides relationships such as <span class="math notranslate nohighlight">\(dU = TdS - PdV + \dots\)</span>.</p></li>
+</ul>
+</li>
+<li><p><strong>Quantum/ Classical Mechanics</strong>:</p>
+<ul class="simple">
+<li><p>Determines the energy levels or potential energy surfaces relevant to each microstate.</p></li>
+</ul>
+</li>
+</ol>
+<p>Putting them all together allows us to predict <strong>equilibrium constants</strong>, <strong>reaction rates</strong> (with the help of kinetics), <strong>phase behavior</strong> (miscibility, vapor pressure, etc.), and <strong>countless</strong> other chemical phenomena.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p><strong>Motivations</strong>: We need to connect the <em>microscopic</em> (positions, momenta, wavefunctions) to the <em>macroscopic</em> (energy, pressure, volume, composition) to predict and understand chemical phenomena.</p></li>
+<li><p><strong>Probability Distributions &amp; Fundamental Postulate</strong>: In an isolated system of fixed <span class="math notranslate nohighlight">\(E\)</span> and <span class="math notranslate nohighlight">\(N\)</span>, each accessible microstate is equally probable. This is the cornerstone of statistical mechanics.</p></li>
+<li><p><strong>Microstates, Macrostates, &amp; Degeneracy</strong>: A single macrostate corresponds to many possible microstates. Degeneracy <span class="math notranslate nohighlight">\(\Omega\)</span> counts how many microstates share a given energy.</p></li>
+<li><p><strong>Microcanonical Ensemble &amp; Isolated Systems</strong>: All microstates with the same <span class="math notranslate nohighlight">\(E, N, V\)</span> are equally likely. This is the simplest ensemble in statistical mechanics.</p></li>
+<li><p><strong>Linking Thermodynamics &amp; Statistics</strong>: Averages of thermodynamic quantities emerge from probability-weighted sums over microstates. This is how macroscopic observables arise from microscopic theory.</p></li>
+</ol>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./chapter-02"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#motivations-connecting-microscopic-states-to-macroscopic-observables">Motivations — Connecting Microscopic States to Macroscopic Observables</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#predicting-the-future-of-chemical-systems">Predicting the Future of Chemical Systems</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#probability-distributions-the-fundamental-postulate">Probability Distributions &amp; the Fundamental Postulate</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#probability-distributions-in-statistical-mechanics">Probability Distributions in Statistical Mechanics</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#names-interpretations">Names &amp; Interpretations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-ergodic-hypothesis">The Ergodic Hypothesis</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#microstates-macrostates-degeneracy">Microstates, Macrostates, &amp; Degeneracy</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#microstates">Microstates</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#macrostates">Macrostates</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#degeneracy">Degeneracy</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#microcanonical-ensemble-isolated-systems">Microcanonical Ensemble &amp; Isolated Systems</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-microcanonical-ensemble">The Microcanonical Ensemble</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-2d-box-with-five-particles">Example: 2D Box with Five Particles</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linking-thermodynamics-statistics">Linking Thermodynamics &amp; Statistics</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-simple-example-average-number-of-particles">A Simple Example: Average Number of Particles</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#other-averages">Other Averages</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-big-picture">The Big Picture</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Robert B. Wexler
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
