@@ -19,3 +19,7 @@ parts:
     numbered: true
     chapters:
       - file: chapter-02/section-01.md
+  - caption: Appendices
+    numbered: false
+    chapters:
+      - file: appendices/appendix-a.md
