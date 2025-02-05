@@ -19,6 +19,7 @@ parts:
     numbered: true
     chapters:
       - file: chapter-02/section-01.md
+      - file: chapter-02/section-02.md
   - caption: Appendices
     numbered: false
     chapters:
