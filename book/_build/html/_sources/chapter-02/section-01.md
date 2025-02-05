@@ -174,7 +174,7 @@ Grand canonical ensemble
 
 ## Probability of a Microstate in the Microcanonical Ensemble
 
-In an **isolated system**—one that exchanges neither energy nor matter with the surroundings—the appropriate statistical description is the **microcanonical ensemble**.
+In an **isolated system**—one that exchanges neither energy nor matter with its surroundings—the appropriate statistical description is the **microcanonical ensemble**.
 
 ```{code-cell} ipython3
 :tags: [hide-input]
@@ -213,7 +213,7 @@ plt.close(fig)
 :figwidth: 100%
 :align: center
 
-An isolated system, exchanging neither energy nor matter with the surroundings.
+An isolated system, exchanging neither energy nor matter with its surroundings.
 ```
 
 ### Fundamental Postulate of Statistical Mechanics
