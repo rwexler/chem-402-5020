@@ -16,7 +16,7 @@ kernelspec:
 
 ## Checklist of Key Concepts
 
-### Section 1: Course Introduction
+### Section 1.1. Course Introduction
 
 - **Thermodynamic Systems**
   - **System vs. Surroundings**
@@ -30,7 +30,7 @@ kernelspec:
   - **Heat**: energy transfer due to temperature difference
   - **Work**: energy transfer when a force acts through a distance
 
-### Section 2: Kinetic Theory
+### Section 1.2. Kinetic Theory
 
 - **Kinetic Theory Assumptions**
   1. Large number of particles (identical, random motion)
@@ -45,7 +45,7 @@ kernelspec:
   - Average translational kinetic energy per particle $\langle E_{\text{kin}} \rangle = \frac{3}{2} k_{\text{B}} T$
   - Relates temperature to average particle velocity
 
-### Section 3: Ideal Gases
+### Section 1.3. Ideal Gases
 
 - **Classical Gas Laws**
   - **Boyle** ($P \propto 1/V$ at constant $T,\,N$)
@@ -58,7 +58,7 @@ kernelspec:
 - **Absolute Temperature Scale**
   - Kelvin scale derived by extrapolating volumes to zero at $-273.15\,^\circ\text{C}$
 
-### Section 4: Real Gases
+### Section 1.4. Real Gases
 
 - **Deviations from Ideal Behavior**
   - Become significant at high $P$, high density, or low $T$
@@ -72,9 +72,7 @@ kernelspec:
 
 ---
 
-## 2. Checklist of Most Important Equations
-
-Below are frequently used equations along with brief statements of when/why they are valid.
+## Checklist of Most Important Equations
 
 1. **Ideal Gas Law**
 
