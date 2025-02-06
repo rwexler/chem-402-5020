@@ -12,7 +12,7 @@ kernelspec:
   name: python3
 ---
 
-# Course Introduction
+# 1.1. Course Introduction
 
 ## Overview
 
