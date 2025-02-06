@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>3. Ideal Gases &#8212; Physical Chemistry II</title>
+    <title>1.3. Ideal Gases &#8212; Physical Chemistry II</title>
   
   
   
@@ -67,8 +67,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'chapter-01/section-03';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="4. Real Gases" href="section-04.html" />
-    <link rel="prev" title="2. Kinetic Theory" href="section-02.html" />
+    <link rel="next" title="1.4. Real Gases" href="section-04.html" />
+    <link rel="prev" title="1.2. Kinetic Theory" href="section-02.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -174,15 +174,16 @@
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Module 1. Equations of State</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="section-01.html">1. Course Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="section-02.html">2. Kinetic Theory</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">3. Ideal Gases</a></li>
-<li class="toctree-l1"><a class="reference internal" href="section-04.html">4. Real Gases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="section-01.html">1.1. Course Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="section-02.html">1.2. Kinetic Theory</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">1.3. Ideal Gases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="section-04.html">1.4. Real Gases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="review.html">Review</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Module 2. Statistical Mechanics</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../chapter-02/section-01.html">5. Introduction to Statistical Mechanics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../chapter-02/section-02.html">6. Canonical Ensemble</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter-02/section-01.html">1. Introduction to Statistical Mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter-02/section-02.html">2. Canonical Ensemble</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendices</span></p>
 <ul class="nav bd-sidenav">
@@ -369,7 +370,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Ideal Gases</h1>
+    <h1>1.3. Ideal Gases</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -379,18 +380,18 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">3.1. Overview</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gas-laws">3.2. Gas Laws</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deriving-an-equation-of-state">3.3. Deriving an Equation of State</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#total-differential">3.3.1. Total Differential</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#total-differential-of-volume">3.3.2. Total Differential of Volume</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#partial-derivatives-via-gas-laws">3.3.3. Partial Derivatives via Gas Laws</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#integrating-the-total-differential">3.3.4. Integrating the Total Differential</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gas-laws">Gas Laws</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deriving-an-equation-of-state">Deriving an Equation of State</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#total-differential">Total Differential</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#total-differential-of-volume">Total Differential of Volume</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#partial-derivatives-via-gas-laws">Partial Derivatives via Gas Laws</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#integrating-the-total-differential">Integrating the Total Differential</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ideal-gas-assumptions">3.4. Ideal Gas Assumptions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estimating-particle-distances">3.5. Estimating Particle Distances</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#absolute-temperature-scale">3.6. Absolute Temperature Scale</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ideal-gas-assumptions">Ideal Gas Assumptions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estimating-particle-distances">Estimating Particle Distances</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#absolute-temperature-scale">Absolute Temperature Scale</a></li>
 </ul>
             </nav>
         </div>
@@ -403,14 +404,14 @@
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="ideal-gases">
-<h1><span class="section-number">3. </span>Ideal Gases<a class="headerlink" href="#ideal-gases" title="Link to this heading">#</a></h1>
+<h1>1.3. Ideal Gases<a class="headerlink" href="#ideal-gases" title="Link to this heading">#</a></h1>
 <section id="overview">
-<h2><span class="section-number">3.1. </span>Overview<a class="headerlink" href="#overview" title="Link to this heading">#</a></h2>
+<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading">#</a></h2>
 <p>Ideal gases are a central model in thermodynamics. By simplifying microscopic interactions and treating molecules as non-interacting point particles, we can accurately predict many macroscopic properties for gases under appropriate conditions. This section reviews the classical gas laws, derives the ideal gas equation of state, and discusses the assumptions underlying the ideal gas model.</p>
 <hr class="docutils" />
 </section>
 <section id="gas-laws">
-<span id="section-gas-laws"></span><h2><span class="section-number">3.2. </span>Gas Laws<a class="headerlink" href="#gas-laws" title="Link to this heading">#</a></h2>
+<span id="section-gas-laws"></span><h2>Gas Laws<a class="headerlink" href="#gas-laws" title="Link to this heading">#</a></h2>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
 <summary aria-label="Toggle hidden content">
@@ -481,7 +482,7 @@
 <figure class="align-center" id="fig-gas-laws" style="width: 100%">
 <img alt="../_images/d012ee3c5e4e3ae5eacec5e6042796c3c84a7998f6d89d97e8d8b074cb3ff995.png" src="../_images/d012ee3c5e4e3ae5eacec5e6042796c3c84a7998f6d89d97e8d8b074cb3ff995.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 3.1 </span><span class="caption-text">Four classical gas laws (blue) shown in chronological order: Boyle’s law,<a class="footnote-reference brackets" href="#id3" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> Charles’s law, Gay-Lussac’s law, and Avogadro’s law.</span><a class="headerlink" href="#fig-gas-laws" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 6 </span><span class="caption-text">Four classical gas laws (blue) shown in chronological order: Boyle’s law,<a class="footnote-reference brackets" href="#id3" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> Charles’s law, Gay-Lussac’s law, and Avogadro’s law.</span><a class="headerlink" href="#fig-gas-laws" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>All gases follow these relationships when at least one of the following conditions is met:</p>
@@ -494,26 +495,26 @@
 </section>
 <hr class="docutils" />
 <section id="deriving-an-equation-of-state">
-<h2><span class="section-number">3.3. </span>Deriving an Equation of State<a class="headerlink" href="#deriving-an-equation-of-state" title="Link to this heading">#</a></h2>
+<h2>Deriving an Equation of State<a class="headerlink" href="#deriving-an-equation-of-state" title="Link to this heading">#</a></h2>
 <p>In <a class="reference internal" href="section-01.html"><span class="std std-doc">Section 1</span></a>, we defined an <strong>equation of state</strong> as a mathematical relationship among state variables. Above, each gas law relates <em>two</em> state variables (among <span class="math notranslate nohighlight">\(P, V, T, N\)</span>) under conditions where two other variables remain constant. To derive a single equation of state that relates <em>all</em> four variables, we can combine these laws and use multivariate calculus (as covered in <a class="reference external" href="https://math.wustl.edu/calculus-iii">Math 233</a>).</p>
 <section id="total-differential">
-<h3><span class="section-number">3.3.1. </span>Total Differential<a class="headerlink" href="#total-differential" title="Link to this heading">#</a></h3>
+<h3>Total Differential<a class="headerlink" href="#total-differential" title="Link to this heading">#</a></h3>
 <p>The total differential <span class="math notranslate nohighlight">\(df\)</span> of a function <span class="math notranslate nohighlight">\(f\)</span> of <span class="math notranslate nohighlight">\(m\)</span> variables <span class="math notranslate nohighlight">\(x_1, \ldots, x_m\)</span> is</p>
 <div class="math notranslate nohighlight" id="equation-total-differential">
-<span class="eqno">(3.1)<a class="headerlink" href="#equation-total-differential" title="Link to this equation">#</a></span>\[df = \sum_{i=1}^m \left( \frac{\partial f}{\partial x_i} \right)_{\{ x_j | j \neq i \}} dx_i,\]</div>
+<span class="eqno">(4)<a class="headerlink" href="#equation-total-differential" title="Link to this equation">#</a></span>\[df = \sum_{i=1}^m \left( \frac{\partial f}{\partial x_i} \right)_{\{ x_j | j \neq i \}} dx_i,\]</div>
 <p>where <span class="math notranslate nohighlight">\(\left(\partial f / \partial x_i\right)_{\{ x_j | j \neq i \}}\)</span> is the <strong>partial derivative</strong> of <span class="math notranslate nohighlight">\(f\)</span> with respect to <span class="math notranslate nohighlight">\(x_i\)</span>, holding all other variables constant, and <span class="math notranslate nohighlight">\(dx_i\)</span> represents an <strong>infinitesimal change</strong> in <span class="math notranslate nohighlight">\(x_i\)</span>.</p>
 </section>
 <section id="total-differential-of-volume">
-<h3><span class="section-number">3.3.2. </span>Total Differential of Volume<a class="headerlink" href="#total-differential-of-volume" title="Link to this heading">#</a></h3>
+<h3>Total Differential of Volume<a class="headerlink" href="#total-differential-of-volume" title="Link to this heading">#</a></h3>
 <p>From Boyle’s, Charles’s, and Avogadro’s laws, we can treat <span class="math notranslate nohighlight">\(V\)</span> as a function of <span class="math notranslate nohighlight">\(P, T,\)</span> and <span class="math notranslate nohighlight">\(N\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[V = V(P, T, N).\]</div>
-<p>Applying Equation <a class="reference internal" href="#equation-total-differential">(3.1)</a> to <span class="math notranslate nohighlight">\(V\)</span>:</p>
+<p>Applying Equation <a class="reference internal" href="#equation-total-differential">(4)</a> to <span class="math notranslate nohighlight">\(V\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[dV = \left( \frac{\partial V}{\partial P} \right)_{T,N} dP \;+\; \left( \frac{\partial V}{\partial T} \right)_{P,N} dT \;+\; \left( \frac{\partial V}{\partial N} \right)_{P,T} dN.\]</div>
 </section>
 <section id="partial-derivatives-via-gas-laws">
-<h3><span class="section-number">3.3.3. </span>Partial Derivatives via Gas Laws<a class="headerlink" href="#partial-derivatives-via-gas-laws" title="Link to this heading">#</a></h3>
+<h3>Partial Derivatives via Gas Laws<a class="headerlink" href="#partial-derivatives-via-gas-laws" title="Link to this heading">#</a></h3>
 <p>Using the gas laws in differential form, one finds:</p>
 <div class="math notranslate nohighlight">
 \[dV \;=\; -\frac{V}{P}\,dP \;+\; \frac{V}{T}\,dT \;+\; \frac{V}{N}\,dN.\]</div>
@@ -522,20 +523,20 @@
 \[d \ln P \;+\; d \ln V \;=\; d \ln T \;+\; d \ln N.\]</div>
 </section>
 <section id="integrating-the-total-differential">
-<h3><span class="section-number">3.3.4. </span>Integrating the Total Differential<a class="headerlink" href="#integrating-the-total-differential" title="Link to this heading">#</a></h3>
+<h3>Integrating the Total Differential<a class="headerlink" href="#integrating-the-total-differential" title="Link to this heading">#</a></h3>
 <p>Integrate from an initial state <span class="math notranslate nohighlight">\((P_i, V_i, T_i, N_i)\)</span> to a final state <span class="math notranslate nohighlight">\((P_f, V_f, T_f, N_f)\)</span>. By properties of logarithms, we obtain</p>
 <div class="math notranslate nohighlight">
 \[\frac{P_f V_f}{N_f T_f} \;=\; \frac{P_i V_i}{N_i T_i}.\]</div>
 <p>Because both initial and final states are arbitrary, the ratio <span class="math notranslate nohighlight">\(PV / NT\)</span> must be a constant. We thus arrive at the <strong>ideal gas equation of state</strong>:</p>
 <div class="math notranslate nohighlight" id="equation-ideal-gas-equation-of-state">
-<span class="eqno">(3.2)<a class="headerlink" href="#equation-ideal-gas-equation-of-state" title="Link to this equation">#</a></span>\[PV \;=\; N k_\text{B} T \;=\; nRT,\]</div>
+<span class="eqno">(5)<a class="headerlink" href="#equation-ideal-gas-equation-of-state" title="Link to this equation">#</a></span>\[PV \;=\; N k_\text{B} T \;=\; nRT,\]</div>
 <p>where <span class="math notranslate nohighlight">\(n = N / N_\text{A}\)</span> is the number of moles and <span class="math notranslate nohighlight">\(R = k_\text{B} N_\text{A}\)</span> is the <a class="reference external" href="https://physics.nist.gov/cgi-bin/cuu/Value?r">molar gas constant</a> (<span class="math notranslate nohighlight">\(R = 8.314\,\text{J mol}^{-1}\text{K}^{-1}\)</span>).</p>
 </section>
 </section>
 <hr class="docutils" />
 <section id="ideal-gas-assumptions">
-<h2><span class="section-number">3.4. </span>Ideal Gas Assumptions<a class="headerlink" href="#ideal-gas-assumptions" title="Link to this heading">#</a></h2>
-<p>A gas described by Equation <a class="reference internal" href="#equation-ideal-gas-equation-of-state">(3.2)</a> is called <em>ideal</em> because, under low pressures, low densities, or high temperatures, we can adopt simplifying assumptions from kinetic theory:</p>
+<h2>Ideal Gas Assumptions<a class="headerlink" href="#ideal-gas-assumptions" title="Link to this heading">#</a></h2>
+<p>A gas described by Equation <a class="reference internal" href="#equation-ideal-gas-equation-of-state">(5)</a> is called <em>ideal</em> because, under low pressures, low densities, or high temperatures, we can adopt simplifying assumptions from kinetic theory:</p>
 <ol class="arabic simple">
 <li><p>Particles have negligible volume (point particles).</p></li>
 <li><p>Particles experience no intermolecular forces except during elastic collisions.</p></li>
@@ -545,14 +546,14 @@
 </section>
 <hr class="docutils" />
 <section id="estimating-particle-distances">
-<h2><span class="section-number">3.5. </span>Estimating Particle Distances<a class="headerlink" href="#estimating-particle-distances" title="Link to this heading">#</a></h2>
-<p>Rearranging Equation <a class="reference internal" href="#equation-ideal-gas-equation-of-state">(3.2)</a>, the average distance <span class="math notranslate nohighlight">\(\langle d \rangle\)</span> between particles is:</p>
+<h2>Estimating Particle Distances<a class="headerlink" href="#estimating-particle-distances" title="Link to this heading">#</a></h2>
+<p>Rearranging Equation <a class="reference internal" href="#equation-ideal-gas-equation-of-state">(5)</a>, the average distance <span class="math notranslate nohighlight">\(\langle d \rangle\)</span> between particles is:</p>
 <div class="math notranslate nohighlight" id="equation-average-distance-between-particles">
-<span class="eqno">(3.3)<a class="headerlink" href="#equation-average-distance-between-particles" title="Link to this equation">#</a></span>\[\langle d \rangle = \left(\frac{V}{N}\right)^{1/3} \;=\; \left(\frac{k_\text{B} T}{P}\right)^{1/3}.\]</div>
+<span class="eqno">(6)<a class="headerlink" href="#equation-average-distance-between-particles" title="Link to this equation">#</a></span>\[\langle d \rangle = \left(\frac{V}{N}\right)^{1/3} \;=\; \left(\frac{k_\text{B} T}{P}\right)^{1/3}.\]</div>
 <p>This simple expression shows that increasing temperature or reducing pressure <em>increases</em> the typical separation between gas particles.</p>
 <div class="dropdown admonition">
 <p class="admonition-title">Example: Distance Between Air Molecules at 300 K and 1 bar</p>
-<p>Using Equation <a class="reference internal" href="#equation-average-distance-between-particles">(3.3)</a>:</p>
+<p>Using Equation <a class="reference internal" href="#equation-average-distance-between-particles">(6)</a>:</p>
 <div class="math notranslate nohighlight">
 \[\langle d \rangle 
 = \left( \frac{k_\text{B} \cdot 300\,\text{K}}{1.01325 \times 10^5\,\text{Pa}} \right)^{1/3}
@@ -573,7 +574,7 @@
 </div>
 </section>
 <section id="absolute-temperature-scale">
-<h2><span class="section-number">3.6. </span>Absolute Temperature Scale<a class="headerlink" href="#absolute-temperature-scale" title="Link to this heading">#</a></h2>
+<h2>Absolute Temperature Scale<a class="headerlink" href="#absolute-temperature-scale" title="Link to this heading">#</a></h2>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
 <summary aria-label="Toggle hidden content">
@@ -620,7 +621,7 @@
 <figure class="align-center" id="fig-absolute-temperature" style="width: 100%">
 <img alt="../_images/742ec685462e571f5a73d567a17f42bc98878665f9566a389cdb37129ff692e8.png" src="../_images/742ec685462e571f5a73d567a17f42bc98878665f9566a389cdb37129ff692e8.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 3.2 </span><span class="caption-text">Linear relationship between the per-molecule volume <span class="math notranslate nohighlight">\(v\)</span> and Celsius temperature for O₂ at 1 Pa.<a class="footnote-reference brackets" href="#id4" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a><br />
+<p><span class="caption-number">Fig. 7 </span><span class="caption-text">Linear relationship between the per-molecule volume <span class="math notranslate nohighlight">\(v\)</span> and Celsius temperature for O₂ at 1 Pa.<a class="footnote-reference brackets" href="#id4" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a><br />
 The red line is an ordinary least squares fit whose intercept at -273.15 °C signals the theoretical <em>zero-volume</em> limit, defining absolute zero (0 K).</span><a class="headerlink" href="#fig-absolute-temperature" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
@@ -678,7 +679,7 @@ The red line is an ordinary least squares fit whose intercept at -273.15 °C s
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">2. </span>Kinetic Theory</p>
+        <p class="prev-next-title">1.2. Kinetic Theory</p>
       </div>
     </a>
     <a class="right-next"
@@ -686,7 +687,7 @@ The red line is an ordinary least squares fit whose intercept at -273.15 °C s
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">4. </span>Real Gases</p>
+        <p class="prev-next-title">1.4. Real Gases</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -707,18 +708,18 @@ The red line is an ordinary least squares fit whose intercept at -273.15 °C s
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">3.1. Overview</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gas-laws">3.2. Gas Laws</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deriving-an-equation-of-state">3.3. Deriving an Equation of State</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#total-differential">3.3.1. Total Differential</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#total-differential-of-volume">3.3.2. Total Differential of Volume</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#partial-derivatives-via-gas-laws">3.3.3. Partial Derivatives via Gas Laws</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#integrating-the-total-differential">3.3.4. Integrating the Total Differential</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gas-laws">Gas Laws</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deriving-an-equation-of-state">Deriving an Equation of State</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#total-differential">Total Differential</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#total-differential-of-volume">Total Differential of Volume</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#partial-derivatives-via-gas-laws">Partial Derivatives via Gas Laws</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#integrating-the-total-differential">Integrating the Total Differential</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ideal-gas-assumptions">3.4. Ideal Gas Assumptions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estimating-particle-distances">3.5. Estimating Particle Distances</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#absolute-temperature-scale">3.6. Absolute Temperature Scale</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ideal-gas-assumptions">Ideal Gas Assumptions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estimating-particle-distances">Estimating Particle Distances</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#absolute-temperature-scale">Absolute Temperature Scale</a></li>
 </ul>
   </nav></div>
 

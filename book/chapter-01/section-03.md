@@ -12,7 +12,7 @@ kernelspec:
   name: python3
 ---
 
-# Ideal Gases
+# 1.3. Ideal Gases
 
 ## Overview
 

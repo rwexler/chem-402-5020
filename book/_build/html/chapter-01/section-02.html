@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>2. Kinetic Theory &#8212; Physical Chemistry II</title>
+    <title>1.2. Kinetic Theory &#8212; Physical Chemistry II</title>
   
   
   
@@ -67,8 +67,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'chapter-01/section-02';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="3. Ideal Gases" href="section-03.html" />
-    <link rel="prev" title="1. Course Introduction" href="section-01.html" />
+    <link rel="next" title="1.3. Ideal Gases" href="section-03.html" />
+    <link rel="prev" title="1.1. Course Introduction" href="section-01.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -174,15 +174,16 @@
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Module 1. Equations of State</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="section-01.html">1. Course Introduction</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">2. Kinetic Theory</a></li>
-<li class="toctree-l1"><a class="reference internal" href="section-03.html">3. Ideal Gases</a></li>
-<li class="toctree-l1"><a class="reference internal" href="section-04.html">4. Real Gases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="section-01.html">1.1. Course Introduction</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">1.2. Kinetic Theory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="section-03.html">1.3. Ideal Gases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="section-04.html">1.4. Real Gases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="review.html">Review</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Module 2. Statistical Mechanics</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../chapter-02/section-01.html">5. Introduction to Statistical Mechanics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../chapter-02/section-02.html">6. Canonical Ensemble</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter-02/section-01.html">1. Introduction to Statistical Mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter-02/section-02.html">2. Canonical Ensemble</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendices</span></p>
 <ul class="nav bd-sidenav">
@@ -369,7 +370,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Kinetic Theory</h1>
+    <h1>1.2. Kinetic Theory</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -379,20 +380,20 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">2.1. Overview</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#foundational-assumptions-of-kinetic-theory">2.2. Foundational Assumptions of Kinetic Theory</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deriving-pressure-from-particle-wall-collisions">2.3. Deriving Pressure from Particle-Wall Collisions</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#microscopic-picture-of-pressure">2.3.1. Microscopic Picture of Pressure</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#particle-momentum-change">2.3.1.1. Particle Momentum Change</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#time-between-collisions">2.3.1.2. Time Between Collisions</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#force-on-the-wall">2.3.1.3. Force on the Wall</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#foundational-assumptions-of-kinetic-theory">Foundational Assumptions of Kinetic Theory</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deriving-pressure-from-particle-wall-collisions">Deriving Pressure from Particle-Wall Collisions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#microscopic-picture-of-pressure">Microscopic Picture of Pressure</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#particle-momentum-change">Particle Momentum Change</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#time-between-collisions">Time Between Collisions</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#force-on-the-wall">Force on the Wall</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#total-pressure">2.3.2. Total Pressure</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#total-pressure">Total Pressure</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kinetic-energy-and-temperature">2.4. Kinetic Energy and Temperature</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estimating-particle-speeds">2.5. Estimating Particle Speeds</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kinetic-energy-and-temperature">Kinetic Energy and Temperature</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estimating-particle-speeds">Estimating Particle Speeds</a></li>
 </ul>
             </nav>
         </div>
@@ -405,14 +406,14 @@
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="kinetic-theory">
-<h1><span class="section-number">2. </span>Kinetic Theory<a class="headerlink" href="#kinetic-theory" title="Link to this heading">#</a></h1>
+<h1>1.2. Kinetic Theory<a class="headerlink" href="#kinetic-theory" title="Link to this heading">#</a></h1>
 <section id="overview">
-<h2><span class="section-number">2.1. </span>Overview<a class="headerlink" href="#overview" title="Link to this heading">#</a></h2>
+<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading">#</a></h2>
 <p>Kinetic theory connects the microscopic motion of gas particles to macroscopic properties such as pressure and temperature. This section introduces the fundamental assumptions of kinetic theory, derives key equations, and highlights their physical relevance.</p>
 </section>
 <hr class="docutils" />
 <section id="foundational-assumptions-of-kinetic-theory">
-<h2><span class="section-number">2.2. </span>Foundational Assumptions of Kinetic Theory<a class="headerlink" href="#foundational-assumptions-of-kinetic-theory" title="Link to this heading">#</a></h2>
+<h2>Foundational Assumptions of Kinetic Theory<a class="headerlink" href="#foundational-assumptions-of-kinetic-theory" title="Link to this heading">#</a></h2>
 <ol class="arabic">
 <li><p><strong>Large Number of Particles</strong>:
 A gas contains a very large number of identical particles moving randomly in all directions.</p></li>
@@ -432,7 +433,7 @@ Particle motion follows Newton’s second law:</p>
 </section>
 <hr class="docutils" />
 <section id="deriving-pressure-from-particle-wall-collisions">
-<h2><span class="section-number">2.3. </span>Deriving Pressure from Particle-Wall Collisions<a class="headerlink" href="#deriving-pressure-from-particle-wall-collisions" title="Link to this heading">#</a></h2>
+<h2>Deriving Pressure from Particle-Wall Collisions<a class="headerlink" href="#deriving-pressure-from-particle-wall-collisions" title="Link to this heading">#</a></h2>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
 <summary aria-label="Toggle hidden content">
@@ -498,51 +499,51 @@ Particle motion follows Newton’s second law:</p>
 <figure class="align-center" id="fig-gas-in-container" style="width: 100%">
 <img alt="../_images/e02e7de3d45af02cee190256cc5d1497021366c4e768a9b744b9178c9935b014.png" src="../_images/e02e7de3d45af02cee190256cc5d1497021366c4e768a9b744b9178c9935b014.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 2.1 </span><span class="caption-text">A two-dimensional representation of a single gas particle in a cuboid container (gray). Velocity components are shown in red. The length <span class="math notranslate nohighlight">\(L_y\)</span> is not depicted, as it extends perpendicular to the plane of view.</span><a class="headerlink" href="#fig-gas-in-container" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 5 </span><span class="caption-text">A two-dimensional representation of a single gas particle in a cuboid container (gray). Velocity components are shown in red. The length <span class="math notranslate nohighlight">\(L_y\)</span> is not depicted, as it extends perpendicular to the plane of view.</span><a class="headerlink" href="#fig-gas-in-container" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <section id="microscopic-picture-of-pressure">
-<h3><span class="section-number">2.3.1. </span>Microscopic Picture of Pressure<a class="headerlink" href="#microscopic-picture-of-pressure" title="Link to this heading">#</a></h3>
+<h3>Microscopic Picture of Pressure<a class="headerlink" href="#microscopic-picture-of-pressure" title="Link to this heading">#</a></h3>
 <p>Pressure is the force exerted per unit area on the container walls. On a microscopic level, this force comes from the collective effect of countless collisions of gas particles with the walls.</p>
 <section id="particle-momentum-change">
-<h4><span class="section-number">2.3.1.1. </span>Particle Momentum Change<a class="headerlink" href="#particle-momentum-change" title="Link to this heading">#</a></h4>
+<h4>Particle Momentum Change<a class="headerlink" href="#particle-momentum-change" title="Link to this heading">#</a></h4>
 <p>For an elastic collision of a particle of mass <span class="math notranslate nohighlight">\(m\)</span> moving with velocity <span class="math notranslate nohighlight">\(v_x\)</span> in the <span class="math notranslate nohighlight">\(x\)</span>-direction, the momentum change is:</p>
 <div class="math notranslate nohighlight">
 \[\Delta p_x = 2 m v_x.\]</div>
 </section>
 <section id="time-between-collisions">
-<h4><span class="section-number">2.3.1.2. </span>Time Between Collisions<a class="headerlink" href="#time-between-collisions" title="Link to this heading">#</a></h4>
+<h4>Time Between Collisions<a class="headerlink" href="#time-between-collisions" title="Link to this heading">#</a></h4>
 <p>If the container has length <span class="math notranslate nohighlight">\(L_x\)</span> in the <span class="math notranslate nohighlight">\(x\)</span>-direction, the time between two consecutive collisions of the same particle with that wall is:</p>
 <div class="math notranslate nohighlight">
 \[\Delta t = \frac{2 L_x}{v_x}.\]</div>
 </section>
 <section id="force-on-the-wall">
-<h4><span class="section-number">2.3.1.3. </span>Force on the Wall<a class="headerlink" href="#force-on-the-wall" title="Link to this heading">#</a></h4>
+<h4>Force on the Wall<a class="headerlink" href="#force-on-the-wall" title="Link to this heading">#</a></h4>
 <p>A single particle’s average force on the wall (in the <span class="math notranslate nohighlight">\(x\)</span>-direction) is then:</p>
 <div class="math notranslate nohighlight">
 \[F_{\text{p}, x} = \frac{\Delta p_x}{\Delta t} = \frac{m v_x^2}{L_x}.\]</div>
 </section>
 </section>
 <section id="total-pressure">
-<h3><span class="section-number">2.3.2. </span>Total Pressure<a class="headerlink" href="#total-pressure" title="Link to this heading">#</a></h3>
+<h3>Total Pressure<a class="headerlink" href="#total-pressure" title="Link to this heading">#</a></h3>
 <p>For <span class="math notranslate nohighlight">\(N\)</span> identical particles with isotropic motion in a volume <span class="math notranslate nohighlight">\(V\)</span>, the total pressure <span class="math notranslate nohighlight">\(P\)</span> is:</p>
 <div class="math notranslate nohighlight">
 \[P = \frac{1}{V} \sum_{i=1}^N \frac{1}{3} m v_i^2,\]</div>
 <p>where <span class="math notranslate nohighlight">\(v_i\)</span> is the speed of the <span class="math notranslate nohighlight">\(i\)</span>-th particle. Using the average speed squared <span class="math notranslate nohighlight">\(\langle v^2 \rangle\)</span>, we get:</p>
 <div class="math notranslate nohighlight" id="equation-pressure-kinetic-theory">
-<span class="eqno">(2.1)<a class="headerlink" href="#equation-pressure-kinetic-theory" title="Link to this equation">#</a></span>\[P = \frac{N m \langle v^2 \rangle}{3 V}.\]</div>
+<span class="eqno">(1)<a class="headerlink" href="#equation-pressure-kinetic-theory" title="Link to this equation">#</a></span>\[P = \frac{N m \langle v^2 \rangle}{3 V}.\]</div>
 <p>This equation shows how the macroscopic pressure depends on the microscopic speeds of the particles.</p>
 </section>
 </section>
 <hr class="docutils" />
 <section id="kinetic-energy-and-temperature">
-<h2><span class="section-number">2.4. </span>Kinetic Energy and Temperature<a class="headerlink" href="#kinetic-energy-and-temperature" title="Link to this heading">#</a></h2>
+<h2>Kinetic Energy and Temperature<a class="headerlink" href="#kinetic-energy-and-temperature" title="Link to this heading">#</a></h2>
 <p>The average translational kinetic energy per particle is:</p>
 <div class="math notranslate nohighlight">
 \[\langle E_\text{kin} \rangle = \frac{1}{2} m \langle v^2 \rangle.\]</div>
 <p>From the ideal gas equation of state <span class="math notranslate nohighlight">\(P V = N k_\text{B} T\)</span> (to be discussed in <a class="reference internal" href="section-03.html"><span class="std std-doc">Section 3</span></a>), one can show that</p>
 <div class="math notranslate nohighlight" id="equation-equipartition-theorem">
-<span class="eqno">(2.2)<a class="headerlink" href="#equation-equipartition-theorem" title="Link to this equation">#</a></span>\[\frac{1}{2} m \langle v^2 \rangle = \frac{3}{2} k_\text{B} T,\]</div>
+<span class="eqno">(2)<a class="headerlink" href="#equation-equipartition-theorem" title="Link to this equation">#</a></span>\[\frac{1}{2} m \langle v^2 \rangle = \frac{3}{2} k_\text{B} T,\]</div>
 <p>where <span class="math notranslate nohighlight">\(k_\text{B}\)</span> is the Boltzmann constant and <span class="math notranslate nohighlight">\(T\)</span> is the absolute temperature. This result—called the equipartition theorem—indicates that the temperature is directly proportional to the average kinetic energy of the particles.</p>
 <div class="dropdown admonition">
 <p class="admonition-title">Complete Derivation of the Relationship Between Kinetic Energy and Temperature</p>
@@ -571,7 +572,7 @@ We define the average of the velocity squared as</p>
 \[E_{\text{kin}} \;=\; \frac{1}{2}\,N\,m\,\langle v^2 \rangle.\]</div>
 </div>
 <p><strong>4. Relating Pressure to Kinetic Energy</strong>:
-From Equation <a class="reference internal" href="#equation-pressure-kinetic-theory">(2.1)</a>, the pressure <span class="math notranslate nohighlight">\(P\)</span> in a volume <span class="math notranslate nohighlight">\(V\)</span> can be written as</p>
+From Equation <a class="reference internal" href="#equation-pressure-kinetic-theory">(1)</a>, the pressure <span class="math notranslate nohighlight">\(P\)</span> in a volume <span class="math notranslate nohighlight">\(V\)</span> can be written as</p>
 <div class="math notranslate nohighlight">
 \[P \;=\; \frac{N\,m\,\langle v^2 \rangle}{3\,V}.\]</div>
 <p>Recognizing that <span class="math notranslate nohighlight">\(N m \langle v^2 \rangle / 2 = E_{\text{kin}}\)</span>, we see:</p>
@@ -602,10 +603,10 @@ Dividing both sides by <span class="math notranslate nohighlight">\(N\)</span>, 
 </section>
 <hr class="docutils" />
 <section id="estimating-particle-speeds">
-<h2><span class="section-number">2.5. </span>Estimating Particle Speeds<a class="headerlink" href="#estimating-particle-speeds" title="Link to this heading">#</a></h2>
-<p>By rearranging Equation <a class="reference internal" href="#equation-equipartition-theorem">(2.2)</a>, we obtain the root-mean-square (rms) speed:</p>
+<h2>Estimating Particle Speeds<a class="headerlink" href="#estimating-particle-speeds" title="Link to this heading">#</a></h2>
+<p>By rearranging Equation <a class="reference internal" href="#equation-equipartition-theorem">(2)</a>, we obtain the root-mean-square (rms) speed:</p>
 <div class="math notranslate nohighlight" id="equation-rms-speed">
-<span class="eqno">(2.3)<a class="headerlink" href="#equation-rms-speed" title="Link to this equation">#</a></span>\[v_{\text{rms}} = \sqrt{\frac{3 k_\text{B} T}{m}}.\]</div>
+<span class="eqno">(3)<a class="headerlink" href="#equation-rms-speed" title="Link to this equation">#</a></span>\[v_{\text{rms}} = \sqrt{\frac{3 k_\text{B} T}{m}}.\]</div>
 <p>This expression shows that:</p>
 <ul class="simple">
 <li><p>Hotter gases (larger <span class="math notranslate nohighlight">\(T\)</span>) have faster particles.</p></li>
@@ -671,7 +672,7 @@ Dividing both sides by <span class="math notranslate nohighlight">\(N\)</span>, 
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">1. </span>Course Introduction</p>
+        <p class="prev-next-title">1.1. Course Introduction</p>
       </div>
     </a>
     <a class="right-next"
@@ -679,7 +680,7 @@ Dividing both sides by <span class="math notranslate nohighlight">\(N\)</span>, 
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">3. </span>Ideal Gases</p>
+        <p class="prev-next-title">1.3. Ideal Gases</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -700,20 +701,20 @@ Dividing both sides by <span class="math notranslate nohighlight">\(N\)</span>, 
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">2.1. Overview</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#foundational-assumptions-of-kinetic-theory">2.2. Foundational Assumptions of Kinetic Theory</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deriving-pressure-from-particle-wall-collisions">2.3. Deriving Pressure from Particle-Wall Collisions</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#microscopic-picture-of-pressure">2.3.1. Microscopic Picture of Pressure</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#particle-momentum-change">2.3.1.1. Particle Momentum Change</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#time-between-collisions">2.3.1.2. Time Between Collisions</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#force-on-the-wall">2.3.1.3. Force on the Wall</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#foundational-assumptions-of-kinetic-theory">Foundational Assumptions of Kinetic Theory</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deriving-pressure-from-particle-wall-collisions">Deriving Pressure from Particle-Wall Collisions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#microscopic-picture-of-pressure">Microscopic Picture of Pressure</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#particle-momentum-change">Particle Momentum Change</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#time-between-collisions">Time Between Collisions</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#force-on-the-wall">Force on the Wall</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#total-pressure">2.3.2. Total Pressure</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#total-pressure">Total Pressure</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kinetic-energy-and-temperature">2.4. Kinetic Energy and Temperature</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estimating-particle-speeds">2.5. Estimating Particle Speeds</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kinetic-energy-and-temperature">Kinetic Energy and Temperature</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estimating-particle-speeds">Estimating Particle Speeds</a></li>
 </ul>
   </nav></div>
 

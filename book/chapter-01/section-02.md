@@ -12,7 +12,7 @@ kernelspec:
   name: python3
 ---
 
-# Kinetic Theory
+# 1.2. Kinetic Theory
 
 ## Overview
 
