@@ -67,7 +67,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'chapter-02/section-03';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Appendix A. Differential Calculus" href="../appendices/appendix-a.html" />
+    <link rel="next" title="Review" href="review.html" />
     <link rel="prev" title="2.2. Canonical Ensemble" href="section-02.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -185,6 +185,7 @@
 <li class="toctree-l1"><a class="reference internal" href="section-01.html">2.1. Introduction to Statistical Mechanics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="section-02.html">2.2. Canonical Ensemble</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">2.3. Ensemble Averages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="review.html">Review</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendices</span></p>
 <ul class="nav bd-sidenav">
@@ -388,7 +389,11 @@
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#internal-energy-of-a-two-state-system">Internal Energy of a Two-State System</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#heat-capacity-at-constant-volume">Heat Capacity at Constant Volume</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#heat-capacity-at-constant-volume">Heat Capacity at Constant Volume</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#heat-capacity-and-energy-fluctuations">Heat Capacity and Energy Fluctuations</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pressure">Pressure</a></li>
 </ul>
             </nav>
         </div>
@@ -541,16 +546,29 @@
 </section>
 <section id="heat-capacity-at-constant-volume">
 <h2>Heat Capacity at Constant Volume<a class="headerlink" href="#heat-capacity-at-constant-volume" title="Link to this heading">#</a></h2>
-<p>The heat capacity at constant volume <span class="math notranslate nohighlight">\(C_V\)</span> (to be discussed in Module 3) is defined as the partial derivative of the internal energy <span class="math notranslate nohighlight">\(U\)</span> with respect to temperature <span class="math notranslate nohighlight">\(T\)</span> at constant number of particles <span class="math notranslate nohighlight">\(N\)</span> and volume <span class="math notranslate nohighlight">\(V\)</span>.</p>
-<div class="dropdown admonition">
-<p class="admonition-title">What Does Heat Capacity Describe?</p>
 <p>In Section 1.1, heat was defined as “energy transferred because of a temperature difference.” Heat capacity describes the amount of heat required to change the temperature of a system.</p>
-</div>
+<p>The heat capacity at constant volume <span class="math notranslate nohighlight">\(C_V\)</span> (to be discussed in Module 3) is defined as the partial derivative of the internal energy <span class="math notranslate nohighlight">\(U\)</span> with respect to temperature <span class="math notranslate nohighlight">\(T\)</span> at constant number of particles <span class="math notranslate nohighlight">\(N\)</span> and volume <span class="math notranslate nohighlight">\(V\)</span>.</p>
 <div class="math notranslate nohighlight">
 \[C_V \overset{\text{def}}{=} \left( \frac{\partial U}{\partial T} \right)_{N, V}\]</div>
-<p>Substituting Equation <a class="reference internal" href="#equation-eq-ensemble-average-internal-energy">(15)</a>, we get</p>
+<section id="heat-capacity-and-energy-fluctuations">
+<h3>Heat Capacity and Energy Fluctuations<a class="headerlink" href="#heat-capacity-and-energy-fluctuations" title="Link to this heading">#</a></h3>
+<p>In basic statistics, the variance <span class="math notranslate nohighlight">\(\sigma^2\)</span> of a random variable <span class="math notranslate nohighlight">\(X\)</span> is defined as the expected value of the square of the deviation of <span class="math notranslate nohighlight">\(X\)</span> from <span class="math notranslate nohighlight">\(\langle X \rangle\)</span>.</p>
 <div class="math notranslate nohighlight">
-\[C_V = -\left( \frac{\partial^2 \ln Q}{\partial \beta^2} \right)_{N, V}\]</div>
+\[\sigma_X^2 \overset{\text{def}}{=} \langle (X - \langle X \rangle)^2 \rangle = \langle X^2 \rangle - \langle X \rangle^2\]</div>
+<p>In statistical mechanics, these <em>deviations</em> describe <em>fluctuations</em> in a property of a system. The variance <span class="math notranslate nohighlight">\(\sigma_E^2\)</span> of the total energy <span class="math notranslate nohighlight">\(E\)</span> in the canonical ensemble is</p>
+<div class="math notranslate nohighlight">
+\[\sigma_E^2 \overset{\text{def}}{=} \langle (E - \langle E \rangle)^2 \rangle = \langle E^2 \rangle - \langle E \rangle^2\]</div>
+<p>where <span class="math notranslate nohighlight">\(\langle E^2 \rangle\)</span> is the ensemble average of the square of the total energy <span class="math notranslate nohighlight">\(E\)</span>. Analyzing the second partial derivative of <span class="math notranslate nohighlight">\(\ln Q\)</span> with respect to <span class="math notranslate nohighlight">\(\beta\)</span>, we can show that</p>
+<div class="math notranslate nohighlight">
+\[\sigma_E^2 = \left( \frac{\partial^2 \ln Q}{\partial \beta^2} \right)_{N, V} = k_{\text{B}} T^2 C_V\]</div>
+<!-- Derivation of this result -->
+</section>
+</section>
+<section id="pressure">
+<h2>Pressure<a class="headerlink" href="#pressure" title="Link to this heading">#</a></h2>
+<p>In Module 3, we will establish that the pressure <span class="math notranslate nohighlight">\(P\)</span> of a system is defined as the negative partial derivative of the internal energy <span class="math notranslate nohighlight">\(U\)</span> with respect to volume <span class="math notranslate nohighlight">\(V\)</span> at constant number of particles <span class="math notranslate nohighlight">\(N\)</span> (and entropy <span class="math notranslate nohighlight">\(S\)</span>).</p>
+<div class="math notranslate nohighlight">
+\[P \overset{\text{def}}{=} -\left( \frac{\partial U}{\partial V} \right)_{N} = k_{\text{B}} T \left( \frac{\partial \ln Q}{\partial V} \right)_{N, T}\]</div>
 </section>
 </section>
 
@@ -594,11 +612,11 @@
       </div>
     </a>
     <a class="right-next"
-       href="../appendices/appendix-a.html"
+       href="review.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Appendix A. Differential Calculus</p>
+        <p class="prev-next-title">Review</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -626,7 +644,11 @@
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#internal-energy-of-a-two-state-system">Internal Energy of a Two-State System</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#heat-capacity-at-constant-volume">Heat Capacity at Constant Volume</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#heat-capacity-at-constant-volume">Heat Capacity at Constant Volume</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#heat-capacity-and-energy-fluctuations">Heat Capacity and Energy Fluctuations</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pressure">Pressure</a></li>
 </ul>
   </nav></div>
 
