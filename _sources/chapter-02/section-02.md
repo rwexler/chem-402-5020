@@ -12,7 +12,7 @@ kernelspec:
   name: python3
 ---
 
-# Canonical Ensemble
+# 2.2. Canonical Ensemble
 
 ## Overview
 
@@ -324,5 +324,5 @@ plt.close(fig)
 :figwidth: 100%
 :align: center
 
-Partition function of a two-state system and the probabilities of finding it in each state as a function of temperature.
+Partition function of a two-state system and the probabilities of finding it in each state as a function of temperature. The energy difference between the two states is 0.01 eV.
 ```
