@@ -17,10 +17,11 @@ parts:
       - file: chapter-01/section-04.md
       - file: chapter-01/review.md
   - caption: Module 2. Statistical Mechanics
-    numbered: true
+    numbered: false
     chapters:
       - file: chapter-02/section-01.md
       - file: chapter-02/section-02.md
+      - file: chapter-02/section-03.md
   - caption: Appendices
     numbered: false
     chapters:

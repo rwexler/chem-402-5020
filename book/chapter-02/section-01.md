@@ -12,7 +12,7 @@ kernelspec:
   name: python3
 ---
 
-# Introduction to Statistical Mechanics
+# 2.1. Introduction to Statistical Mechanics
 
 ## Overview
 
