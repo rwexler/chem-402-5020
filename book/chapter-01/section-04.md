@@ -573,7 +573,7 @@ V_\text{m}^3 - \left( b_\text{m} + \frac{R T}{P} \right) V_\text{m}^2 + \frac{a_
 At the critical point, Equation {eq}`van-der-waals-eos-expanded` simplifies to:
 
 ```{math}
-\left( V_\text{m} - V_{\text{m},c} \right)^3 = V_{\text{m},c}^3 - 3 V_{\text{m},c} V_\text{m}^2 + 3 V_{\text{m},c}^2 V_\text{m} - V_\text{m}^3 = 0.
+\left( V_\text{m} - V_{\text{m},c} \right)^3 = V_\text{m}^3 - 3 V_{\text{m},c} V_\text{m}^2 + 3 V_{\text{m},c}^2 V_\text{m} - V_{\text{m},c}^3 = 0.
 ```
 
 Comparing these equations:
