@@ -184,20 +184,40 @@ Internal energy of a two-state system as a function of temperature. The energy d
 
 ## Heat Capacity at Constant Volume
 
-The heat capacity at constant volume $C_V$ (to be discussed in Module 3) is defined as the partial derivative of the internal energy $U$ with respect to temperature $T$ at constant number of particles $N$ and volume $V$.
-
-```{admonition} What Does Heat Capacity Describe?
-:class: dropdown
-
 In Section 1.1, heat was defined as "energy transferred because of a temperature difference." Heat capacity describes the amount of heat required to change the temperature of a system.
-```
+
+The heat capacity at constant volume $C_V$ (to be discussed in Module 3) is defined as the partial derivative of the internal energy $U$ with respect to temperature $T$ at constant number of particles $N$ and volume $V$.
 
 ```{math}
 C_V \overset{\text{def}}{=} \left( \frac{\partial U}{\partial T} \right)_{N, V}
 ```
 
-Substituting Equation {eq}`eq:ensemble-average-internal-energy`, we get
+### Heat Capacity and Energy Fluctuations
+
+In basic statistics, the variance $\sigma^2$ of a random variable $X$ is defined as the expected value of the square of the deviation of $X$ from $\langle X \rangle$.
 
 ```{math}
-C_V = -\left( \frac{\partial^2 \ln Q}{\partial \beta^2} \right)_{N, V}
+\sigma_X^2 \overset{\text{def}}{=} \langle (X - \langle X \rangle)^2 \rangle = \langle X^2 \rangle - \langle X \rangle^2
+```
+
+In statistical mechanics, these *deviations* describe *fluctuations* in a property of a system. The variance $\sigma_E^2$ of the total energy $E$ in the canonical ensemble is
+
+```{math}
+\sigma_E^2 \overset{\text{def}}{=} \langle (E - \langle E \rangle)^2 \rangle = \langle E^2 \rangle - \langle E \rangle^2
+```
+
+where $\langle E^2 \rangle$ is the ensemble average of the square of the total energy $E$. Analyzing the second partial derivative of $\ln Q$ with respect to $\beta$, we can show that
+
+```{math}
+\sigma_E^2 = \left( \frac{\partial^2 \ln Q}{\partial \beta^2} \right)_{N, V} = k_{\text{B}} T^2 C_V
+```
+
+<!-- Derivation of this result -->
+
+## Pressure
+
+In Module 3, we will establish that the pressure $P$ of a system is defined as the negative partial derivative of the internal energy $U$ with respect to volume $V$ at constant number of particles $N$ (and entropy $S$).
+
+```{math}
+P \overset{\text{def}}{=} -\left( \frac{\partial U}{\partial V} \right)_{N} = k_{\text{B}} T \left( \frac{\partial \ln Q}{\partial V} \right)_{N, T}
 ```
