@@ -16,110 +16,112 @@ kernelspec:
 
 ## Overview
 
-In Section 2.1, we introduced the idea that "macroscopic properties are expected values of microscopic properties," where expected values account for the probabilities of different microstates. In Section 2.2, we derived the probability (density function) of finding a closed system in a particular microstate. In this section, we will combine these concepts to calculate macroscopic properties from expected values of microscopic properties, which we will refer to as **ensemble averages**.
+In Section 2.1, we introduced the concept that *macroscopic properties are expected values of microscopic properties*, emphasizing that these expected values account for the probabilities of different microstates. In Section 2.2, we derived the probability distribution (in the canonical ensemble) for a closed system’s microstates. Now, in this section, we connect these ideas to calculate **ensemble averages** that determine macroscopic properties.
 
 ## Thermodynamic Equilibrium
 
-In Section 1.1, we defined **thermodynamic equilibrium** as "a state of simultaneous mechanical, thermal, and chemical equilibrium." We will now define mechanical, thermal, and chemical equilibrium.
+Recall from Section 1.1 that **thermodynamic equilibrium** is a state of simultaneous mechanical, thermal, and chemical equilibrium. Below are definitions of each type of equilibrium:
 
 ```{glossary}
 Thermal contact
-    A state in which two systems in contact can exchange energy.
+    A state in which two systems can exchange energy.
 
 Chemical contact
-    A state in which two systems in contact can exchange matter.
+    A state in which two systems can exchange matter.
 
 Mechanical equilibrium
-    A state in which the net force on all particles in a system is zero.
+    A state where the net force on every particle in the system is zero.
 
 Thermal equilibrium
-    A state in which the net exchange of energy between all systems in thermal contact is zero.
+    A state where there is no net exchange of energy between systems in thermal contact.
 
 Chemical equilibrium
-    A state in which the net exchange of matter between all systems in chemical contact is zero.
+    A state where there is no net exchange of matter between systems in chemical contact.
 ```
 
 ## Internal Energy
 
-The internal energy $U$ of a macroscopic system in thermodynamic equilibrium is defined as the ensemble average $\langle \cdot \rangle$ of the total energy $E$ of the system.
+The **internal energy** $U$ of a macroscopic system at thermodynamic equilibrium is defined as the ensemble average $\langle E \rangle$ of the total microscopic energy $E$:
 
 ```{math}
-U \overset{\text{def}}{=} \langle E \rangle = \sum_{i = 1}^M E_i p_i
+U \;=\; \langle E \rangle \;=\; \sum_{i=1}^M E_i\,p_i,
 ```
 
-where $E_i$ is the energy of microstate $i$ and $p_i$ is the probability of finding the system in microstate $i$. Substituting the probability (density function) for the canonical ensemble (i.e., the canonical distribution) from Section 2.2, we get
+where $E_i$ is the energy of microstate $i$, $p_i$ is the probability of that microstate, and $M$ is the total number of microstates.
+
+For the **canonical ensemble**, using the Boltzmann factor and the partition function $Q$, we have
 
 ```{math}
 :label: eq:ensemble-average-internal-energy-sum
-U = \sum_{i = 1}^M E_i \frac{e^{-\beta E_i}}{Q} = \frac{1}{Q} \sum_{i = 1}^M E_i e^{-\beta E_i}
+U \;=\; \frac{1}{Q} \sum_{i=1}^M E_i\,e^{-\beta E_i},
 ```
 
-where $Q$ is the partition function for the canonical ensemble (i.e., the canonical partition function) from Section 2.2.
+where $\beta = 1/(k_{\text{B}} T)$ and
 
-```{admonition} Why can we factor out the partition function?
+```{math}
+Q \;=\; \sum_{i=1}^M e^{-\beta E_i}.
+```
+
+```{admonition} Why can we factor out $Q$?
 :class: dropdown
-Since the partition function is defined at constant number of particles, volume, and temperature, it does not depend on the (microstate) index of summation. Therefore, the partition function is a constant and can be factored out of the sum.
+Since $Q$ is defined at fixed $N, V,$ and $T$, it does not depend on the microstate index $i$. Consequently, $Q$ behaves as a constant with respect to the summation over $i$.
 ```
 
-### Partial Derivative of the Partition Function with Respect to $\beta$
+### Partial Derivative of the Partition Function
 
-If we take the partial derivative of the partition function with respect to $\beta$, we get an interesting result.
+Taking the partial derivative of $Q$ with respect to $\beta$ yields:
 
 ```{math}
-\left( \frac{\partial Q}{\partial \beta} \right)_{N, V} = \left( \frac{\partial}{\partial \beta} \sum_{i = 1}^M e^{-\beta E_i} \right)_{N, V} = \sum_{i = 1}^M \left( \frac{\partial}{\partial \beta} e^{-\beta E_i} \right)_{N, V} = -\sum_{i = 1}^M E_i e^{-\beta E_i}
+\left(\frac{\partial Q}{\partial \beta}\right)_{N,V}
+=\; \sum_{i=1}^M \frac{\partial}{\partial \beta}\left(e^{-\beta E_i}\right)
+=\; -\sum_{i=1}^M E_i\,e^{-\beta E_i}.
 ```
 
-Substituting this result into Equation {eq}`eq:ensemble-average-internal-energy-sum`, we get
+Substitute into the expression for $U$:
 
 ```{math}
-:label: eq:ensemble-average-internal-energy
-U = - \frac{1}{Q} \left( \frac{\partial Q}{\partial \beta} \right)_{N, V} = -\left( \frac{\partial \ln Q}{\partial \beta} \right)_{N, V}
+U 
+=\; -\frac{1}{Q}\,\left(\frac{\partial Q}{\partial \beta}\right)_{N,V}
+=\; -\left(\frac{\partial \ln Q}{\partial \beta}\right)_{N,V}.
 ```
 
-````{admonition} Where did the natural logarithm come from?
+````{admonition} Where does the natural log come in?
 :class: dropdown
-Applying the chain rule to the partial derivative of the natural logarithm of the partition function with respect to $\beta$ gives
+Using the chain rule,
 
 ```{math}
-\left( \frac{\partial \ln Q}{\partial \beta} \right)_{N, V} = \left( \frac{\partial \ln Q}{\partial Q} \frac{\partial Q}{\partial \beta} \right)_{N, V} = \frac{1}{Q} \left( \frac{\partial Q}{\partial \beta} \right)_{N, V}
+\frac{\partial \ln Q}{\partial \beta}
+=\; \frac{1}{Q} \left(\frac{\partial Q}{\partial \beta}\right).
 ```
 ````
 
-### Internal Energy of a Two-State System
+### Example: Two-State System
 
-In Section 2.2, we derived the canonical partition function for a two-state system as
-
-```{math}
-Q_{\text{two-state}} = e^{-\beta E_1} + e^{-\beta E_2}
-```
-
-Substituting this result into Equation {eq}`eq:ensemble-average-internal-energy`, we get
+For a two-state system with energies $E_1$ and $E_2$, the partition function is
 
 ```{math}
-U_{\text{two-state}} = -\left( \frac{\partial \ln Q_{\text{two-state}}}{\partial \beta} \right)_{N, V} = -\left[ \frac{\partial}{\partial \beta} \ln \left( e^{-\beta E_1} + e^{-\beta E_2} \right) \right]_{N, V}
+Q_{\text{two-state}} = e^{-\beta E_1} + e^{-\beta E_2}.
 ```
 
-Applying the chain rule to the partial derivative, we get
+Then the internal energy is
 
 ```{math}
-U_{\text{two-state}} = \frac{E_1 e^{-\beta E_1} + E_2 e^{-\beta E_2}}{e^{-\beta E_1} + e^{-\beta E_2}}
+U_{\text{two-state}}
+=\; -\frac{\partial}{\partial \beta}\,\ln\left(e^{-\beta E_1} + e^{-\beta E_2}\right)
+=\; \frac{E_1\, e^{-\beta E_1} + E_2\, e^{-\beta E_2}}{e^{-\beta E_1} + e^{-\beta E_2}},
 ```
+
+which is the ensemble average $\langle E\rangle$.
 
 ````{admonition} Consistency Check
 :class: dropdown
-Since the denominator is $Q_{\text{two-state}}$, we can write $U_{\text{two-state}}$ as
-
+Since $Q_{\text{two-state}} = e^{-\beta E_1} + e^{-\beta E_2}$, we see
 ```{math}
-U_{\text{two-state}} = \frac{E_1 e^{-\beta E_1} + E_2 e^{-\beta E_2}}{Q_{\text{two-state}}}
+U_{\text{two-state}}
+=\; \frac{E_1 e^{-\beta E_1} + E_2 e^{-\beta E_2}}{Q_{\text{two-state}}}
+=\; E_1\,p_1 + E_2\,p_2
+=\; \langle E\rangle.
 ```
-
-Applying the definition of the canonical distribution, we get
-
-```{math}
-U_{\text{two-state}} = E_1 p_1 + E_2 p_2 = \sum_{i = 1}^2 E_i p_i = \langle E \rangle,
-```
-
-which demonstrates that Equation {eq}`eq:ensemble-average-internal-energy` is consistent with the definition of an ensemble average.
 ````
 
 ```{code-cell} ipython3
@@ -133,11 +135,11 @@ from labellines import labelLines
 from myst_nb import glue
 from matplotlib.patches import Rectangle
 
-k_B = k / eV  # Boltzmann constant in eV/K
+kB = k / eV  # Boltzmann constant in eV/K
 
 # Define the partition function for a two-state system
 def partition_function_two_state(E1, E2, T):
-    beta = 1 / (k_B * T)
+    beta = 1 / (kB * T)
     return np.exp(-beta * E1) + np.exp(-beta * E2)
 
 # Calculate the partition function for a two-state system
@@ -147,7 +149,7 @@ T_values = np.linspace(1, 1000, 1000)
 Q_values = [partition_function_two_state(E1, E2, T) for T in T_values]
 
 # Calculate the internal energy for a two-state system
-beta_values = 1 / (k_B * T_values)
+beta_values = 1 / (kB * T_values)
 ln_Q_values = np.log(Q_values)
 U_values = -np.gradient(ln_Q_values, beta_values)
 
@@ -184,40 +186,103 @@ Internal energy of a two-state system as a function of temperature. The energy d
 
 ## Heat Capacity at Constant Volume
 
-In Section 1.1, heat was defined as "energy transferred because of a temperature difference." Heat capacity describes the amount of heat required to change the temperature of a system.
-
-The heat capacity at constant volume $C_V$ (to be discussed in Module 3) is defined as the partial derivative of the internal energy $U$ with respect to temperature $T$ at constant number of particles $N$ and volume $V$.
+From Section 1.1, **heat** is energy transferred due to a temperature difference. The **heat capacity** at constant volume, $C_V$, measures how much heat is required to change a system’s temperature at fixed $N$ and $V$:
 
 ```{math}
-C_V \overset{\text{def}}{=} \left( \frac{\partial U}{\partial T} \right)_{N, V}
+C_V 
+\;=\; \left(\frac{\partial U}{\partial T}\right)_{N,V}.
 ```
 
 ### Heat Capacity and Energy Fluctuations
 
-In basic statistics, the variance $\sigma^2$ of a random variable $X$ is defined as the expected value of the square of the deviation of $X$ from $\langle X \rangle$.
+In statistics, the variance $\sigma_X^2$ of a random variable $X$ is $\sigma_X^2 = \langle (X - \langle X\rangle)^2\rangle$. In statistical mechanics, $\sigma_E^2$ represents fluctuations in total energy:
 
 ```{math}
-\sigma_X^2 \overset{\text{def}}{=} \langle (X - \langle X \rangle)^2 \rangle = \langle X^2 \rangle - \langle X \rangle^2
+\sigma_E^2 
+=\; \langle E^2\rangle - \langle E\rangle^2.
 ```
 
-In statistical mechanics, these *deviations* describe *fluctuations* in a property of a system. The variance $\sigma_E^2$ of the total energy $E$ in the canonical ensemble is
+One can show that
 
 ```{math}
-\sigma_E^2 \overset{\text{def}}{=} \langle (E - \langle E \rangle)^2 \rangle = \langle E^2 \rangle - \langle E \rangle^2
+\sigma_E^2 
+=\; \left(\frac{\partial^2 \ln Q}{\partial \beta^2}\right)_{N,V}
+=\; k_{\text{B}}\,T^2\,C_V,
 ```
 
-where $\langle E^2 \rangle$ is the ensemble average of the square of the total energy $E$. Analyzing the second partial derivative of $\ln Q$ with respect to $\beta$, we can show that
+which implies
 
 ```{math}
-\sigma_E^2 = \left( \frac{\partial^2 \ln Q}{\partial \beta^2} \right)_{N, V} = k_{\text{B}} T^2 C_V
+C_V 
+=\; \frac{\sigma_E^2}{k_{\text{B}}\,T^2}.
 ```
 
-<!-- Derivation of this result -->
+```{admonition} What does the relationship mean physically?
+:class: dropdown
+A larger heat capacity corresponds to bigger energy fluctuations, indicating the system readily absorbs or releases energy. Conversely, smaller energy fluctuations suggest the system is less prone to exchanging energy with its surroundings.
+```
+
+````{admonition} Complete Derivation of the $C_V$ and $\sigma_E^2$ Relationship
+:class: dropdown
+**1. Demonstrate that $\left( \partial^2 \ln Q / \partial \beta^2 \right)_{N, V} = \sigma_E^2$**
+
+```{math}
+\begin{align*}
+\left( \frac{\partial^2 \ln Q}{\partial \beta^2} \right)_{N, V} &= \left( \frac{\partial}{\partial \beta} \frac{\partial \ln Q}{\partial \beta} \right)_{N, V} \\
+&= -\left( \frac{\partial \langle E \rangle}{\partial \beta} \right)_{N, V} \\
+&= -\left( \frac{\partial}{\partial \beta} \sum_{i = 1}^M E_i p_i \right)_{N, V} \\
+&= -\left( \frac{\partial}{\partial \beta} \frac{1}{Q} \sum_{i = 1}^M E_i e^{-\beta E_i} \right)_{N, V} \\
+&= -\left[ \frac{1}{Q} \sum_{i = 1}^M \left( -E_i^2 e^{-\beta E_i} \right) + \left( -\frac{1}{Q^2} \right) \left( \frac{\partial Q}{\partial \beta}\right)_{N, V} \sum_{i = 1}^M E_i e^{-\beta E_i} \right] \\
+&= \frac{1}{Q} \sum_{i = 1}^M E_i^2 e^{-\beta E_i} + \left[ \frac{1}{Q} \left( \frac{\partial Q}{\partial \beta} \right)_{N, V} \right] \frac{1}{Q} \sum_{i = 1}^M E_i e^{-\beta E_i} \\
+&= \langle E^2 \rangle + \left[ -\langle E \rangle \right] \langle E \rangle \\
+&= \langle E^2 \rangle - \langle E \rangle^2 \\
+&= \sigma_E^2
+\end{align*}
+```
+
+**2. Establish that $\left( \partial T / \partial \beta \right)_{N, V} = -k_{\text{B}} T^2$**
+
+```{math}
+\begin{align*}
+\beta &= \frac{1}{k_{\text{B}} T} \\
+T &= \frac{1}{k_{\text{B}} \beta} \\
+\frac{\partial T}{\partial \beta} &= -\frac{1}{k_{\text{B}} \beta^2} \\
+&= -\frac{1}{k_{\text{B}} \left( \frac{1}{k_{\text{B}} T} \right)^2} \\
+&= -k_{\text{B}} T^2
+\end{align*}
+```
+
+**3. Prove that $\left( \partial^2 \ln Q / \partial \beta^2 \right)_{N, V} = k_{\text{B}} T^2 C_V$**
+
+```{math}
+\begin{align*}
+\left( \frac{\partial^2 \ln Q}{\partial \beta^2} \right)_{N, V} &= -\left( \frac{\partial \langle E \rangle}{\partial \beta} \right)_{N, V} \\
+&= -\left( \frac{\partial \langle E \rangle}{\partial T} \frac{\partial T}{\partial \beta} \right)_{N, V} \\
+&= k_{\text{B}} T^2 \left( \frac{\partial \langle E \rangle}{\partial T} \right)_{N, V} \\
+&= k_{\text{B}} T^2 C_V
+\end{align*}
+```
+
+**4. Set Results from Step 1 and 3 Equal to Each Other and Solve for $C_V$**
+
+```{math}
+\begin{align*}
+\sigma_E^2 &= k_{\text{B}} T^2 C_V \\
+C_V &= \frac{\sigma_E^2}{k_{\text{B}} T^2}
+\end{align*}
+```
+````
 
 ## Pressure
 
-In Module 3, we will establish that the pressure $P$ of a system is defined as the negative partial derivative of the internal energy $U$ with respect to volume $V$ at constant number of particles $N$ (and entropy $S$).
+In Module 5, we will derive:
+
+1. $A = -k_{\text{B}}\,T\ln Q$, where $A$ is the Helmholtz free energy.
+2. $P = -\left(\frac{\partial A}{\partial V}\right)_{N,T}$, where $P$ is pressure.
+
+Combining these, we find
 
 ```{math}
-P \overset{\text{def}}{=} -\left( \frac{\partial U}{\partial V} \right)_{N} = k_{\text{B}} T \left( \frac{\partial \ln Q}{\partial V} \right)_{N, T}
+P
+=\; k_{\text{B}}\,T \left(\frac{\partial \ln Q}{\partial V}\right)_{N,T}.
 ```
