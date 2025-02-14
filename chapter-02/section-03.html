@@ -385,8 +385,8 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#thermodynamic-equilibrium">Thermodynamic Equilibrium</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#internal-energy">Internal Energy</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#partial-derivative-of-the-partition-function-with-respect-to-beta">Partial Derivative of the Partition Function with Respect to <span class="math notranslate nohighlight">\(\beta\)</span></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#internal-energy-of-a-two-state-system">Internal Energy of a Two-State System</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#partial-derivative-of-the-partition-function">Partial Derivative of the Partition Function</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-two-state-system">Example: Two-State System</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#heat-capacity-at-constant-volume">Heat Capacity at Constant Volume</a><ul class="nav section-nav flex-column">
@@ -409,72 +409,79 @@
 <h1>2.3. Ensemble Averages<a class="headerlink" href="#ensemble-averages" title="Link to this heading">#</a></h1>
 <section id="overview">
 <h2>Overview<a class="headerlink" href="#overview" title="Link to this heading">#</a></h2>
-<p>In Section 2.1, we introduced the idea that “macroscopic properties are expected values of microscopic properties,” where expected values account for the probabilities of different microstates. In Section 2.2, we derived the probability (density function) of finding a closed system in a particular microstate. In this section, we will combine these concepts to calculate macroscopic properties from expected values of microscopic properties, which we will refer to as <strong>ensemble averages</strong>.</p>
+<p>In Section 2.1, we introduced the concept that <em>macroscopic properties are expected values of microscopic properties</em>, emphasizing that these expected values account for the probabilities of different microstates. In Section 2.2, we derived the probability distribution (in the canonical ensemble) for a closed system’s microstates. Now, in this section, we connect these ideas to calculate <strong>ensemble averages</strong> that determine macroscopic properties.</p>
 </section>
 <section id="thermodynamic-equilibrium">
 <h2>Thermodynamic Equilibrium<a class="headerlink" href="#thermodynamic-equilibrium" title="Link to this heading">#</a></h2>
-<p>In Section 1.1, we defined <strong>thermodynamic equilibrium</strong> as “a state of simultaneous mechanical, thermal, and chemical equilibrium.” We will now define mechanical, thermal, and chemical equilibrium.</p>
+<p>Recall from Section 1.1 that <strong>thermodynamic equilibrium</strong> is a state of simultaneous mechanical, thermal, and chemical equilibrium. Below are definitions of each type of equilibrium:</p>
 <dl class="simple glossary">
-<dt id="term-Thermal-contact">Thermal contact<a class="headerlink" href="#term-Thermal-contact" title="Link to this term">#</a></dt><dd><p>A state in which two systems in contact can exchange energy.</p>
+<dt id="term-Thermal-contact">Thermal contact<a class="headerlink" href="#term-Thermal-contact" title="Link to this term">#</a></dt><dd><p>A state in which two systems can exchange energy.</p>
 </dd>
-<dt id="term-Chemical-contact">Chemical contact<a class="headerlink" href="#term-Chemical-contact" title="Link to this term">#</a></dt><dd><p>A state in which two systems in contact can exchange matter.</p>
+<dt id="term-Chemical-contact">Chemical contact<a class="headerlink" href="#term-Chemical-contact" title="Link to this term">#</a></dt><dd><p>A state in which two systems can exchange matter.</p>
 </dd>
-<dt id="term-Mechanical-equilibrium">Mechanical equilibrium<a class="headerlink" href="#term-Mechanical-equilibrium" title="Link to this term">#</a></dt><dd><p>A state in which the net force on all particles in a system is zero.</p>
+<dt id="term-Mechanical-equilibrium">Mechanical equilibrium<a class="headerlink" href="#term-Mechanical-equilibrium" title="Link to this term">#</a></dt><dd><p>A state where the net force on every particle in the system is zero.</p>
 </dd>
-<dt id="term-Thermal-equilibrium">Thermal equilibrium<a class="headerlink" href="#term-Thermal-equilibrium" title="Link to this term">#</a></dt><dd><p>A state in which the net exchange of energy between all systems in thermal contact is zero.</p>
+<dt id="term-Thermal-equilibrium">Thermal equilibrium<a class="headerlink" href="#term-Thermal-equilibrium" title="Link to this term">#</a></dt><dd><p>A state where there is no net exchange of energy between systems in thermal contact.</p>
 </dd>
-<dt id="term-Chemical-equilibrium">Chemical equilibrium<a class="headerlink" href="#term-Chemical-equilibrium" title="Link to this term">#</a></dt><dd><p>A state in which the net exchange of matter between all systems in chemical contact is zero.</p>
+<dt id="term-Chemical-equilibrium">Chemical equilibrium<a class="headerlink" href="#term-Chemical-equilibrium" title="Link to this term">#</a></dt><dd><p>A state where there is no net exchange of matter between systems in chemical contact.</p>
 </dd>
 </dl>
 </section>
 <section id="internal-energy">
 <h2>Internal Energy<a class="headerlink" href="#internal-energy" title="Link to this heading">#</a></h2>
-<p>The internal energy <span class="math notranslate nohighlight">\(U\)</span> of a macroscopic system in thermodynamic equilibrium is defined as the ensemble average <span class="math notranslate nohighlight">\(\langle \cdot \rangle\)</span> of the total energy <span class="math notranslate nohighlight">\(E\)</span> of the system.</p>
+<p>The <strong>internal energy</strong> <span class="math notranslate nohighlight">\(U\)</span> of a macroscopic system at thermodynamic equilibrium is defined as the ensemble average <span class="math notranslate nohighlight">\(\langle E \rangle\)</span> of the total microscopic energy <span class="math notranslate nohighlight">\(E\)</span>:</p>
 <div class="math notranslate nohighlight">
-\[U \overset{\text{def}}{=} \langle E \rangle = \sum_{i = 1}^M E_i p_i\]</div>
-<p>where <span class="math notranslate nohighlight">\(E_i\)</span> is the energy of microstate <span class="math notranslate nohighlight">\(i\)</span> and <span class="math notranslate nohighlight">\(p_i\)</span> is the probability of finding the system in microstate <span class="math notranslate nohighlight">\(i\)</span>. Substituting the probability (density function) for the canonical ensemble (i.e., the canonical distribution) from Section 2.2, we get</p>
+\[U \;=\; \langle E \rangle \;=\; \sum_{i=1}^M E_i\,p_i,\]</div>
+<p>where <span class="math notranslate nohighlight">\(E_i\)</span> is the energy of microstate <span class="math notranslate nohighlight">\(i\)</span>, <span class="math notranslate nohighlight">\(p_i\)</span> is the probability of that microstate, and <span class="math notranslate nohighlight">\(M\)</span> is the total number of microstates.</p>
+<p>For the <strong>canonical ensemble</strong>, using the Boltzmann factor and the partition function <span class="math notranslate nohighlight">\(Q\)</span>, we have</p>
 <div class="math notranslate nohighlight" id="equation-eq-ensemble-average-internal-energy-sum">
-<span class="eqno">(14)<a class="headerlink" href="#equation-eq-ensemble-average-internal-energy-sum" title="Link to this equation">#</a></span>\[U = \sum_{i = 1}^M E_i \frac{e^{-\beta E_i}}{Q} = \frac{1}{Q} \sum_{i = 1}^M E_i e^{-\beta E_i}\]</div>
-<p>where <span class="math notranslate nohighlight">\(Q\)</span> is the partition function for the canonical ensemble (i.e., the canonical partition function) from Section 2.2.</p>
+<span class="eqno">(14)<a class="headerlink" href="#equation-eq-ensemble-average-internal-energy-sum" title="Link to this equation">#</a></span>\[U \;=\; \frac{1}{Q} \sum_{i=1}^M E_i\,e^{-\beta E_i},\]</div>
+<p>where <span class="math notranslate nohighlight">\(\beta = 1/(k_{\text{B}} T)\)</span> and</p>
+<div class="math notranslate nohighlight">
+\[Q \;=\; \sum_{i=1}^M e^{-\beta E_i}.\]</div>
 <div class="dropdown admonition">
-<p class="admonition-title">Why can we factor out the partition function?</p>
-<p>Since the partition function is defined at constant number of particles, volume, and temperature, it does not depend on the (microstate) index of summation. Therefore, the partition function is a constant and can be factored out of the sum.</p>
+<p class="admonition-title">Why can we factor out <span class="math notranslate nohighlight">\(Q\)</span>?</p>
+<p>Since <span class="math notranslate nohighlight">\(Q\)</span> is defined at fixed <span class="math notranslate nohighlight">\(N, V,\)</span> and <span class="math notranslate nohighlight">\(T\)</span>, it does not depend on the microstate index <span class="math notranslate nohighlight">\(i\)</span>. Consequently, <span class="math notranslate nohighlight">\(Q\)</span> behaves as a constant with respect to the summation over <span class="math notranslate nohighlight">\(i\)</span>.</p>
 </div>
-<section id="partial-derivative-of-the-partition-function-with-respect-to-beta">
-<h3>Partial Derivative of the Partition Function with Respect to <span class="math notranslate nohighlight">\(\beta\)</span><a class="headerlink" href="#partial-derivative-of-the-partition-function-with-respect-to-beta" title="Link to this heading">#</a></h3>
-<p>If we take the partial derivative of the partition function with respect to <span class="math notranslate nohighlight">\(\beta\)</span>, we get an interesting result.</p>
+<section id="partial-derivative-of-the-partition-function">
+<h3>Partial Derivative of the Partition Function<a class="headerlink" href="#partial-derivative-of-the-partition-function" title="Link to this heading">#</a></h3>
+<p>Taking the partial derivative of <span class="math notranslate nohighlight">\(Q\)</span> with respect to <span class="math notranslate nohighlight">\(\beta\)</span> yields:</p>
 <div class="math notranslate nohighlight">
-\[\left( \frac{\partial Q}{\partial \beta} \right)_{N, V} = \left( \frac{\partial}{\partial \beta} \sum_{i = 1}^M e^{-\beta E_i} \right)_{N, V} = \sum_{i = 1}^M \left( \frac{\partial}{\partial \beta} e^{-\beta E_i} \right)_{N, V} = -\sum_{i = 1}^M E_i e^{-\beta E_i}\]</div>
-<p>Substituting this result into Equation <a class="reference internal" href="#equation-eq-ensemble-average-internal-energy-sum">(14)</a>, we get</p>
-<div class="math notranslate nohighlight" id="equation-eq-ensemble-average-internal-energy">
-<span class="eqno">(15)<a class="headerlink" href="#equation-eq-ensemble-average-internal-energy" title="Link to this equation">#</a></span>\[U = - \frac{1}{Q} \left( \frac{\partial Q}{\partial \beta} \right)_{N, V} = -\left( \frac{\partial \ln Q}{\partial \beta} \right)_{N, V}\]</div>
+\[\left(\frac{\partial Q}{\partial \beta}\right)_{N,V}
+=\; \sum_{i=1}^M \frac{\partial}{\partial \beta}\left(e^{-\beta E_i}\right)
+=\; -\sum_{i=1}^M E_i\,e^{-\beta E_i}.\]</div>
+<p>Substitute into the expression for <span class="math notranslate nohighlight">\(U\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[U 
+=\; -\frac{1}{Q}\,\left(\frac{\partial Q}{\partial \beta}\right)_{N,V}
+=\; -\left(\frac{\partial \ln Q}{\partial \beta}\right)_{N,V}.\]</div>
 <div class="dropdown admonition">
-<p class="admonition-title">Where did the natural logarithm come from?</p>
-<p>Applying the chain rule to the partial derivative of the natural logarithm of the partition function with respect to <span class="math notranslate nohighlight">\(\beta\)</span> gives</p>
+<p class="admonition-title">Where does the natural log come in?</p>
+<p>Using the chain rule,</p>
 <div class="math notranslate nohighlight">
-\[\left( \frac{\partial \ln Q}{\partial \beta} \right)_{N, V} = \left( \frac{\partial \ln Q}{\partial Q} \frac{\partial Q}{\partial \beta} \right)_{N, V} = \frac{1}{Q} \left( \frac{\partial Q}{\partial \beta} \right)_{N, V}\]</div>
+\[\frac{\partial \ln Q}{\partial \beta}
+=\; \frac{1}{Q} \left(\frac{\partial Q}{\partial \beta}\right).\]</div>
 </div>
 </section>
-<section id="internal-energy-of-a-two-state-system">
-<h3>Internal Energy of a Two-State System<a class="headerlink" href="#internal-energy-of-a-two-state-system" title="Link to this heading">#</a></h3>
-<p>In Section 2.2, we derived the canonical partition function for a two-state system as</p>
+<section id="example-two-state-system">
+<h3>Example: Two-State System<a class="headerlink" href="#example-two-state-system" title="Link to this heading">#</a></h3>
+<p>For a two-state system with energies <span class="math notranslate nohighlight">\(E_1\)</span> and <span class="math notranslate nohighlight">\(E_2\)</span>, the partition function is</p>
 <div class="math notranslate nohighlight">
-\[Q_{\text{two-state}} = e^{-\beta E_1} + e^{-\beta E_2}\]</div>
-<p>Substituting this result into Equation <a class="reference internal" href="#equation-eq-ensemble-average-internal-energy">(15)</a>, we get</p>
+\[Q_{\text{two-state}} = e^{-\beta E_1} + e^{-\beta E_2}.\]</div>
+<p>Then the internal energy is</p>
 <div class="math notranslate nohighlight">
-\[U_{\text{two-state}} = -\left( \frac{\partial \ln Q_{\text{two-state}}}{\partial \beta} \right)_{N, V} = -\left[ \frac{\partial}{\partial \beta} \ln \left( e^{-\beta E_1} + e^{-\beta E_2} \right) \right]_{N, V}\]</div>
-<p>Applying the chain rule to the partial derivative, we get</p>
-<div class="math notranslate nohighlight">
-\[U_{\text{two-state}} = \frac{E_1 e^{-\beta E_1} + E_2 e^{-\beta E_2}}{e^{-\beta E_1} + e^{-\beta E_2}}\]</div>
+\[U_{\text{two-state}}
+=\; -\frac{\partial}{\partial \beta}\,\ln\left(e^{-\beta E_1} + e^{-\beta E_2}\right)
+=\; \frac{E_1\, e^{-\beta E_1} + E_2\, e^{-\beta E_2}}{e^{-\beta E_1} + e^{-\beta E_2}},\]</div>
+<p>which is the ensemble average <span class="math notranslate nohighlight">\(\langle E\rangle\)</span>.</p>
 <div class="dropdown admonition">
 <p class="admonition-title">Consistency Check</p>
-<p>Since the denominator is <span class="math notranslate nohighlight">\(Q_{\text{two-state}}\)</span>, we can write <span class="math notranslate nohighlight">\(U_{\text{two-state}}\)</span> as</p>
+<p>Since <span class="math notranslate nohighlight">\(Q_{\text{two-state}} = e^{-\beta E_1} + e^{-\beta E_2}\)</span>, we see</p>
 <div class="math notranslate nohighlight">
-\[U_{\text{two-state}} = \frac{E_1 e^{-\beta E_1} + E_2 e^{-\beta E_2}}{Q_{\text{two-state}}}\]</div>
-<p>Applying the definition of the canonical distribution, we get</p>
-<div class="math notranslate nohighlight">
-\[U_{\text{two-state}} = E_1 p_1 + E_2 p_2 = \sum_{i = 1}^2 E_i p_i = \langle E \rangle,\]</div>
-<p>which demonstrates that Equation <a class="reference internal" href="#equation-eq-ensemble-average-internal-energy">(15)</a> is consistent with the definition of an ensemble average.</p>
+\[U_{\text{two-state}}
+=\; \frac{E_1 e^{-\beta E_1} + E_2 e^{-\beta E_2}}{Q_{\text{two-state}}}
+=\; E_1\,p_1 + E_2\,p_2
+=\; \langle E\rangle.\]</div>
 </div>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
@@ -491,11 +498,11 @@
 <span class="kn">from</span><span class="w"> </span><span class="nn">myst_nb</span><span class="w"> </span><span class="kn">import</span> <span class="n">glue</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib.patches</span><span class="w"> </span><span class="kn">import</span> <span class="n">Rectangle</span>
 
-<span class="n">k_B</span> <span class="o">=</span> <span class="n">k</span> <span class="o">/</span> <span class="n">eV</span>  <span class="c1"># Boltzmann constant in eV/K</span>
+<span class="n">kB</span> <span class="o">=</span> <span class="n">k</span> <span class="o">/</span> <span class="n">eV</span>  <span class="c1"># Boltzmann constant in eV/K</span>
 
 <span class="c1"># Define the partition function for a two-state system</span>
 <span class="k">def</span><span class="w"> </span><span class="nf">partition_function_two_state</span><span class="p">(</span><span class="n">E1</span><span class="p">,</span> <span class="n">E2</span><span class="p">,</span> <span class="n">T</span><span class="p">):</span>
-    <span class="n">beta</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="n">k_B</span> <span class="o">*</span> <span class="n">T</span><span class="p">)</span>
+    <span class="n">beta</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="n">kB</span> <span class="o">*</span> <span class="n">T</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">beta</span> <span class="o">*</span> <span class="n">E1</span><span class="p">)</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">beta</span> <span class="o">*</span> <span class="n">E2</span><span class="p">)</span>
 
 <span class="c1"># Calculate the partition function for a two-state system</span>
@@ -505,7 +512,7 @@
 <span class="n">Q_values</span> <span class="o">=</span> <span class="p">[</span><span class="n">partition_function_two_state</span><span class="p">(</span><span class="n">E1</span><span class="p">,</span> <span class="n">E2</span><span class="p">,</span> <span class="n">T</span><span class="p">)</span> <span class="k">for</span> <span class="n">T</span> <span class="ow">in</span> <span class="n">T_values</span><span class="p">]</span>
 
 <span class="c1"># Calculate the internal energy for a two-state system</span>
-<span class="n">beta_values</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="n">k_B</span> <span class="o">*</span> <span class="n">T_values</span><span class="p">)</span>
+<span class="n">beta_values</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="n">kB</span> <span class="o">*</span> <span class="n">T_values</span><span class="p">)</span>
 <span class="n">ln_Q_values</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">Q_values</span><span class="p">)</span>
 <span class="n">U_values</span> <span class="o">=</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">gradient</span><span class="p">(</span><span class="n">ln_Q_values</span><span class="p">,</span> <span class="n">beta_values</span><span class="p">)</span>
 
@@ -546,29 +553,81 @@
 </section>
 <section id="heat-capacity-at-constant-volume">
 <h2>Heat Capacity at Constant Volume<a class="headerlink" href="#heat-capacity-at-constant-volume" title="Link to this heading">#</a></h2>
-<p>In Section 1.1, heat was defined as “energy transferred because of a temperature difference.” Heat capacity describes the amount of heat required to change the temperature of a system.</p>
-<p>The heat capacity at constant volume <span class="math notranslate nohighlight">\(C_V\)</span> (to be discussed in Module 3) is defined as the partial derivative of the internal energy <span class="math notranslate nohighlight">\(U\)</span> with respect to temperature <span class="math notranslate nohighlight">\(T\)</span> at constant number of particles <span class="math notranslate nohighlight">\(N\)</span> and volume <span class="math notranslate nohighlight">\(V\)</span>.</p>
+<p>From Section 1.1, <strong>heat</strong> is energy transferred due to a temperature difference. The <strong>heat capacity</strong> at constant volume, <span class="math notranslate nohighlight">\(C_V\)</span>, measures how much heat is required to change a system’s temperature at fixed <span class="math notranslate nohighlight">\(N\)</span> and <span class="math notranslate nohighlight">\(V\)</span>:</p>
 <div class="math notranslate nohighlight">
-\[C_V \overset{\text{def}}{=} \left( \frac{\partial U}{\partial T} \right)_{N, V}\]</div>
+\[C_V 
+\;=\; \left(\frac{\partial U}{\partial T}\right)_{N,V}.\]</div>
 <section id="heat-capacity-and-energy-fluctuations">
 <h3>Heat Capacity and Energy Fluctuations<a class="headerlink" href="#heat-capacity-and-energy-fluctuations" title="Link to this heading">#</a></h3>
-<p>In basic statistics, the variance <span class="math notranslate nohighlight">\(\sigma^2\)</span> of a random variable <span class="math notranslate nohighlight">\(X\)</span> is defined as the expected value of the square of the deviation of <span class="math notranslate nohighlight">\(X\)</span> from <span class="math notranslate nohighlight">\(\langle X \rangle\)</span>.</p>
+<p>In statistics, the variance <span class="math notranslate nohighlight">\(\sigma_X^2\)</span> of a random variable <span class="math notranslate nohighlight">\(X\)</span> is <span class="math notranslate nohighlight">\(\sigma_X^2 = \langle (X - \langle X\rangle)^2\rangle\)</span>. In statistical mechanics, <span class="math notranslate nohighlight">\(\sigma_E^2\)</span> represents fluctuations in total energy:</p>
 <div class="math notranslate nohighlight">
-\[\sigma_X^2 \overset{\text{def}}{=} \langle (X - \langle X \rangle)^2 \rangle = \langle X^2 \rangle - \langle X \rangle^2\]</div>
-<p>In statistical mechanics, these <em>deviations</em> describe <em>fluctuations</em> in a property of a system. The variance <span class="math notranslate nohighlight">\(\sigma_E^2\)</span> of the total energy <span class="math notranslate nohighlight">\(E\)</span> in the canonical ensemble is</p>
+\[\sigma_E^2 
+=\; \langle E^2\rangle - \langle E\rangle^2.\]</div>
+<p>One can show that</p>
 <div class="math notranslate nohighlight">
-\[\sigma_E^2 \overset{\text{def}}{=} \langle (E - \langle E \rangle)^2 \rangle = \langle E^2 \rangle - \langle E \rangle^2\]</div>
-<p>where <span class="math notranslate nohighlight">\(\langle E^2 \rangle\)</span> is the ensemble average of the square of the total energy <span class="math notranslate nohighlight">\(E\)</span>. Analyzing the second partial derivative of <span class="math notranslate nohighlight">\(\ln Q\)</span> with respect to <span class="math notranslate nohighlight">\(\beta\)</span>, we can show that</p>
+\[\sigma_E^2 
+=\; \left(\frac{\partial^2 \ln Q}{\partial \beta^2}\right)_{N,V}
+=\; k_{\text{B}}\,T^2\,C_V,\]</div>
+<p>which implies</p>
 <div class="math notranslate nohighlight">
-\[\sigma_E^2 = \left( \frac{\partial^2 \ln Q}{\partial \beta^2} \right)_{N, V} = k_{\text{B}} T^2 C_V\]</div>
-<!-- Derivation of this result -->
+\[C_V 
+=\; \frac{\sigma_E^2}{k_{\text{B}}\,T^2}.\]</div>
+<div class="dropdown admonition">
+<p class="admonition-title">What does the relationship mean physically?</p>
+<p>A larger heat capacity corresponds to bigger energy fluctuations, indicating the system readily absorbs or releases energy. Conversely, smaller energy fluctuations suggest the system is less prone to exchanging energy with its surroundings.</p>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Complete Derivation of the <span class="math notranslate nohighlight">\(C_V\)</span> and <span class="math notranslate nohighlight">\(\sigma_E^2\)</span> Relationship</p>
+<p><strong>1. Demonstrate that <span class="math notranslate nohighlight">\(\left( \partial^2 \ln Q / \partial \beta^2 \right)_{N, V} = \sigma_E^2\)</span></strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+\left( \frac{\partial^2 \ln Q}{\partial \beta^2} \right)_{N, V} &amp;= \left( \frac{\partial}{\partial \beta} \frac{\partial \ln Q}{\partial \beta} \right)_{N, V} \\
+&amp;= -\left( \frac{\partial \langle E \rangle}{\partial \beta} \right)_{N, V} \\
+&amp;= -\left( \frac{\partial}{\partial \beta} \sum_{i = 1}^M E_i p_i \right)_{N, V} \\
+&amp;= -\left( \frac{\partial}{\partial \beta} \frac{1}{Q} \sum_{i = 1}^M E_i e^{-\beta E_i} \right)_{N, V} \\
+&amp;= -\left[ \frac{1}{Q} \sum_{i = 1}^M \left( -E_i^2 e^{-\beta E_i} \right) + \left( -\frac{1}{Q^2} \right) \left( \frac{\partial Q}{\partial \beta}\right)_{N, V} \sum_{i = 1}^M E_i e^{-\beta E_i} \right] \\
+&amp;= \frac{1}{Q} \sum_{i = 1}^M E_i^2 e^{-\beta E_i} + \left[ \frac{1}{Q} \left( \frac{\partial Q}{\partial \beta} \right)_{N, V} \right] \frac{1}{Q} \sum_{i = 1}^M E_i e^{-\beta E_i} \\
+&amp;= \langle E^2 \rangle + \left[ -\langle E \rangle \right] \langle E \rangle \\
+&amp;= \langle E^2 \rangle - \langle E \rangle^2 \\
+&amp;= \sigma_E^2
+\end{align*}\end{split}\]</div>
+<p><strong>2. Establish that <span class="math notranslate nohighlight">\(\left( \partial T / \partial \beta \right)_{N, V} = -k_{\text{B}} T^2\)</span></strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+\beta &amp;= \frac{1}{k_{\text{B}} T} \\
+T &amp;= \frac{1}{k_{\text{B}} \beta} \\
+\frac{\partial T}{\partial \beta} &amp;= -\frac{1}{k_{\text{B}} \beta^2} \\
+&amp;= -\frac{1}{k_{\text{B}} \left( \frac{1}{k_{\text{B}} T} \right)^2} \\
+&amp;= -k_{\text{B}} T^2
+\end{align*}\end{split}\]</div>
+<p><strong>3. Prove that <span class="math notranslate nohighlight">\(\left( \partial^2 \ln Q / \partial \beta^2 \right)_{N, V} = k_{\text{B}} T^2 C_V\)</span></strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+\left( \frac{\partial^2 \ln Q}{\partial \beta^2} \right)_{N, V} &amp;= -\left( \frac{\partial \langle E \rangle}{\partial \beta} \right)_{N, V} \\
+&amp;= -\left( \frac{\partial \langle E \rangle}{\partial T} \frac{\partial T}{\partial \beta} \right)_{N, V} \\
+&amp;= k_{\text{B}} T^2 \left( \frac{\partial \langle E \rangle}{\partial T} \right)_{N, V} \\
+&amp;= k_{\text{B}} T^2 C_V
+\end{align*}\end{split}\]</div>
+<p><strong>4. Set Results from Step 1 and 3 Equal to Each Other and Solve for <span class="math notranslate nohighlight">\(C_V\)</span></strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+\sigma_E^2 &amp;= k_{\text{B}} T^2 C_V \\
+C_V &amp;= \frac{\sigma_E^2}{k_{\text{B}} T^2}
+\end{align*}\end{split}\]</div>
+</div>
 </section>
 </section>
 <section id="pressure">
 <h2>Pressure<a class="headerlink" href="#pressure" title="Link to this heading">#</a></h2>
-<p>In Module 3, we will establish that the pressure <span class="math notranslate nohighlight">\(P\)</span> of a system is defined as the negative partial derivative of the internal energy <span class="math notranslate nohighlight">\(U\)</span> with respect to volume <span class="math notranslate nohighlight">\(V\)</span> at constant number of particles <span class="math notranslate nohighlight">\(N\)</span> (and entropy <span class="math notranslate nohighlight">\(S\)</span>).</p>
+<p>In Module 5, we will derive:</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(A = -k_{\text{B}}\,T\ln Q\)</span>, where <span class="math notranslate nohighlight">\(A\)</span> is the Helmholtz free energy.</p></li>
+<li><p><span class="math notranslate nohighlight">\(P = -\left(\frac{\partial A}{\partial V}\right)_{N,T}\)</span>, where <span class="math notranslate nohighlight">\(P\)</span> is pressure.</p></li>
+</ol>
+<p>Combining these, we find</p>
 <div class="math notranslate nohighlight">
-\[P \overset{\text{def}}{=} -\left( \frac{\partial U}{\partial V} \right)_{N} = k_{\text{B}} T \left( \frac{\partial \ln Q}{\partial V} \right)_{N, T}\]</div>
+\[P
+=\; k_{\text{B}}\,T \left(\frac{\partial \ln Q}{\partial V}\right)_{N,T}.\]</div>
 </section>
 </section>
 
@@ -640,8 +699,8 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#thermodynamic-equilibrium">Thermodynamic Equilibrium</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#internal-energy">Internal Energy</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#partial-derivative-of-the-partition-function-with-respect-to-beta">Partial Derivative of the Partition Function with Respect to <span class="math notranslate nohighlight">\(\beta\)</span></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#internal-energy-of-a-two-state-system">Internal Energy of a Two-State System</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#partial-derivative-of-the-partition-function">Partial Derivative of the Partition Function</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-two-state-system">Example: Two-State System</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#heat-capacity-at-constant-volume">Heat Capacity at Constant Volume</a><ul class="nav section-nav flex-column">
