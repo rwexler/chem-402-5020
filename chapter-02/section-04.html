@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Review &#8212; Physical Chemistry II</title>
+    <title>2.4. Molecular Partition Functions &#8212; Physical Chemistry II</title>
   
   
   
@@ -64,11 +64,11 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'chapter-02/review';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapter-02/section-04';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Appendix A. Differential Calculus" href="../appendices/appendix-a.html" />
-    <link rel="prev" title="2.4. Molecular Partition Functions" href="section-04.html" />
+    <link rel="next" title="Review" href="review.html" />
+    <link rel="prev" title="2.3. Ensemble Averages" href="section-03.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -185,8 +185,8 @@
 <li class="toctree-l1"><a class="reference internal" href="section-01.html">2.1. Introduction to Statistical Mechanics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="section-02.html">2.2. Canonical Ensemble</a></li>
 <li class="toctree-l1"><a class="reference internal" href="section-03.html">2.3. Ensemble Averages</a></li>
-<li class="toctree-l1"><a class="reference internal" href="section-04.html">2.4. Molecular Partition Functions</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Review</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">2.4. Molecular Partition Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="review.html">Review</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendices</span></p>
 <ul class="nav bd-sidenav">
@@ -267,7 +267,7 @@
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fchapter-02/review.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fchapter-02/section-04.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -297,7 +297,7 @@
       
       
       
-      <li><a href="../_sources/chapter-02/review.md" target="_blank"
+      <li><a href="../_sources/chapter-02/section-04.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -373,7 +373,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Review</h1>
+    <h1>2.4. Molecular Partition Functions</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -383,13 +383,10 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#checklist-of-key-concepts">Checklist of Key Concepts</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#section-2-1-introduction-to-statistical-mechanics">Section 2.1: Introduction to Statistical Mechanics</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#section-2-2-canonical-ensemble">Section 2.2: Canonical Ensemble</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#section-2-3-ensemble-averages">Section 2.3: Ensemble Averages</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#checklist-of-most-important-equations">2. Checklist of Most Important Equations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#partition-function-for-distinguishable-particles">Partition Function for Distinguishable Particles</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#partition-function-for-indistinguishable-particles">Partition Function for Indistinguishable Particles</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#partition-function-for-molecules">Partition Function for Molecules</a></li>
 </ul>
             </nav>
         </div>
@@ -401,213 +398,208 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="review">
-<h1>Review<a class="headerlink" href="#review" title="Link to this heading">#</a></h1>
-<section id="checklist-of-key-concepts">
-<h2>Checklist of Key Concepts<a class="headerlink" href="#checklist-of-key-concepts" title="Link to this heading">#</a></h2>
-<section id="section-2-1-introduction-to-statistical-mechanics">
-<h3>Section 2.1: Introduction to Statistical Mechanics<a class="headerlink" href="#section-2-1-introduction-to-statistical-mechanics" title="Link to this heading">#</a></h3>
-<ol class="arabic simple">
-<li><p><strong>Microscopic–Macroscopic Connection</strong></p>
-<ul class="simple">
-<li><p>Macroscopic (thermodynamic) properties can be understood as <strong>statistical averages</strong> of microscopic properties.</p></li>
-<li><p>“Expected value” (ensemble average) is the central idea: <span class="math notranslate nohighlight">\(\langle X \rangle = \sum X_i\,p_i\)</span>.</p></li>
-</ul>
-</li>
-<li><p><strong>Arithmetic Average vs. Expected Value</strong></p>
-<ul class="simple">
-<li><p>Arithmetic average: <span class="math notranslate nohighlight">\(\bar{X} = \frac{1}{M}\sum X_i\)</span>.</p></li>
-<li><p>Expected value: <span class="math notranslate nohighlight">\(\langle X \rangle = \sum X_i\,p_i\)</span>, where <span class="math notranslate nohighlight">\(p_i\)</span> is the probability of microstate <span class="math notranslate nohighlight">\(i\)</span>.</p></li>
-</ul>
-</li>
-<li><p><strong>Microstates and Ensembles</strong></p>
-<ul class="simple">
-<li><p><strong>Microcanonical ensemble</strong>: <span class="math notranslate nohighlight">\((N, V, E)\)</span> — all accessible microstates have the same <span class="math notranslate nohighlight">\(E\)</span>.</p></li>
-<li><p><strong>Canonical ensemble</strong>: <span class="math notranslate nohighlight">\((N, V, T)\)</span> — system can exchange energy with a heat bath.</p></li>
-<li><p><strong>Grand canonical ensemble</strong>: <span class="math notranslate nohighlight">\((\mu, V, T)\)</span> — system exchanges both energy and particles with the reservoir.</p></li>
-</ul>
-</li>
-<li><p><strong>Fundamental Postulate (Microcanonical)</strong></p>
-<ul class="simple">
-<li><p>For an isolated system, <strong>each accessible microstate is equally probable</strong>.</p></li>
-</ul>
-</li>
-</ol>
+  <section class="tex2jax_ignore mathjax_ignore" id="molecular-partition-functions">
+<h1>2.4. Molecular Partition Functions<a class="headerlink" href="#molecular-partition-functions" title="Link to this heading">#</a></h1>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading">#</a></h2>
+<p>In Sections 2.2 and 2.3, we derived the canonical partition function and the ensemble averages for systems of one particle. In this section, we extend these concepts to closed systems of <strong>many identical and independent particles with internal degrees of freedom</strong>. We will also introduce the concept of <strong>indistinguishability</strong>, which is central to the statistical mechanics of quantum systems.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Assumption (Single Occupancy):</strong>
+Throughout this section, we assume that each one‐particle microstate can be occupied by <strong>at most one</strong> particle. Under this assumption, the total number of ways to place <span class="math notranslate nohighlight">\(N\)</span> distinguishable particles in <span class="math notranslate nohighlight">\(M\)</span> one‐particle microstates is <span class="math notranslate nohighlight">\(\tfrac{M!}{(M-N)!}\)</span> rather than <span class="math notranslate nohighlight">\(M^N\)</span>. If multiple occupancy were allowed, the counting would differ accordingly (e.g., <span class="math notranslate nohighlight">\(M^N\)</span> for unlimited occupancy).</p>
+</div>
 </section>
-<section id="section-2-2-canonical-ensemble">
-<h3>Section 2.2: Canonical Ensemble<a class="headerlink" href="#section-2-2-canonical-ensemble" title="Link to this heading">#</a></h3>
-<ol class="arabic">
-<li><p><strong>Closed System</strong></p>
-<ul class="simple">
-<li><p>Exchanges energy (heat) with surroundings; cannot exchange matter.</p></li>
-</ul>
-</li>
-<li><p><strong>Boltzmann Factor and Partition Function</strong></p>
-<ul>
-<li><p>Probability of microstate <span class="math notranslate nohighlight">\(i\)</span>:</p>
-<div class="math notranslate nohighlight">
-\[
-       p_i = \frac{e^{-\beta E_i}}{Q},
-       \quad
-       \beta = \frac{1}{k_{\text{B}} T}.
-     \]</div>
-</li>
-<li><p><strong>Partition function</strong> <span class="math notranslate nohighlight">\(Q\)</span>: normalizes probabilities; sum of Boltzmann factors over all states:</p>
-<div class="math notranslate nohighlight">
-\[
-       Q = \sum_{i} e^{-\beta E_i}.
-     \]</div>
-</li>
-</ul>
-</li>
-<li><p><strong>Two-State System</strong></p>
-<ul>
-<li><p>Simplest nontrivial example: energies <span class="math notranslate nohighlight">\(E_1\)</span> and <span class="math notranslate nohighlight">\(E_2\)</span>.</p></li>
-<li><p>Partition function: <span class="math notranslate nohighlight">\(Q = e^{-\beta E_1} + e^{-\beta E_2}\)</span>.</p></li>
-<li><p>Probabilities:</p>
-<div class="math notranslate nohighlight">
-\[
-       p_1 = \frac{1}{1 + e^{-\beta\,\Delta E}},
-       \quad
-       p_2 = 1 - p_1,
-       \quad
-       \Delta E = E_2 - E_1.
-     \]</div>
-</li>
-</ul>
-</li>
-<li><p><strong>Interpretation of <span class="math notranslate nohighlight">\(Q\)</span></strong></p>
-<ul class="simple">
-<li><p>“Effective number” of thermally accessible microstates; as <span class="math notranslate nohighlight">\(T \to 0\)</span>, few states are accessible; as <span class="math notranslate nohighlight">\(T \to \infty\)</span>, many states are accessible.</p></li>
-</ul>
-</li>
-</ol>
-</section>
-<section id="section-2-3-ensemble-averages">
-<h3>Section 2.3: Ensemble Averages<a class="headerlink" href="#section-2-3-ensemble-averages" title="Link to this heading">#</a></h3>
-<ol class="arabic">
-<li><p><strong>Internal Energy</strong></p>
-<ul>
-<li><p><span class="math notranslate nohighlight">\(U \equiv \langle E \rangle\)</span>.</p></li>
-<li><p>In canonical ensemble:</p>
-<div class="math notranslate nohighlight">
-\[
-       U = \frac{1}{Q}\sum_i E_i\, e^{-\beta E_i} = -\left(\frac{\partial \ln Q}{\partial \beta}\right)_{N,V}.
-     \]</div>
-</li>
-</ul>
-</li>
-<li><p><strong>Heat Capacity (<span class="math notranslate nohighlight">\(C_V\)</span>)</strong></p>
-<ul>
-<li><p><span class="math notranslate nohighlight">\(C_V = \bigl(\frac{\partial U}{\partial T}\bigr)_{N,V}\)</span>.</p></li>
-<li><p>Also relates to <strong>energy fluctuations</strong>:</p>
-<div class="math notranslate nohighlight">
-\[
-       \sigma_E^2 \;=\; \langle(E - \langle E\rangle)^2\rangle \;=\; k_{\text{B}}\,T^2\,C_V.
-     \]</div>
-</li>
-</ul>
-</li>
-<li><p><strong>Pressure</strong> (brief introduction)</p>
-<ul class="simple">
-<li><p>Later formal definition involves <span class="math notranslate nohighlight">\(\bigl(\frac{\partial U}{\partial V}\bigr)_{S}\)</span>.</p></li>
-<li><p>In canonical ensemble, <span class="math notranslate nohighlight">\(\displaystyle P \;=\; k_{\text{B}}\,T\,\bigl(\frac{\partial\ln Q}{\partial V}\bigr)_{N,T}\)</span>.</p></li>
-</ul>
-</li>
-</ol>
-</section>
-</section>
+<section id="partition-function-for-distinguishable-particles">
+<h2>Partition Function for Distinguishable Particles<a class="headerlink" href="#partition-function-for-distinguishable-particles" title="Link to this heading">#</a></h2>
+<div class="dropdown admonition">
+<p class="admonition-title">Two Distinguishable Particles in a Four-State System</p>
+<p>The <span class="math notranslate nohighlight">\(N\)</span>-particle microstates of a system of two distinguishable particles in a four-state system are given by the following table:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>N-Particle Microstate</p></th>
+<th class="head"><p>1-Particle Microstate 1</p></th>
+<th class="head"><p>1-Particle Microstate 2</p></th>
+<th class="head"><p>1-Particle Microstate 3</p></th>
+<th class="head"><p>1-Particle Microstate 4</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>I</p></td>
+<td><p>a</p></td>
+<td><p>b</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>II</p></td>
+<td><p>a</p></td>
+<td></td>
+<td><p>b</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>III</p></td>
+<td><p>a</p></td>
+<td></td>
+<td></td>
+<td><p>b</p></td>
+</tr>
+<tr class="row-odd"><td><p>IV</p></td>
+<td></td>
+<td><p>a</p></td>
+<td><p>b</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>V</p></td>
+<td></td>
+<td><p>a</p></td>
+<td></td>
+<td><p>b</p></td>
+</tr>
+<tr class="row-odd"><td><p>VI</p></td>
+<td></td>
+<td></td>
+<td><p>a</p></td>
+<td><p>b</p></td>
+</tr>
+<tr class="row-even"><td><p>VII</p></td>
+<td><p>b</p></td>
+<td><p>a</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>VIII</p></td>
+<td><p>b</p></td>
+<td></td>
+<td><p>a</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>IX</p></td>
+<td><p>b</p></td>
+<td></td>
+<td></td>
+<td><p>a</p></td>
+</tr>
+<tr class="row-odd"><td><p>X</p></td>
+<td></td>
+<td><p>b</p></td>
+<td><p>a</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>XI</p></td>
+<td></td>
+<td><p>b</p></td>
+<td></td>
+<td><p>a</p></td>
+</tr>
+<tr class="row-odd"><td><p>XII</p></td>
+<td></td>
+<td></td>
+<td><p>b</p></td>
+<td><p>a</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><br />
+The number of <span class="math notranslate nohighlight">\(N\)</span>-particle microstates of this system is <span class="math notranslate nohighlight">\(12\)</span>.</p>
+<p>Here, we treat each of the four one‐particle states as an exclusive “slot,” so two distinguishable particles must occupy different states, yielding <span class="math notranslate nohighlight">\(4 \times 3 = 12\)</span> arrangements rather than <span class="math notranslate nohighlight">\(4 \times 4 = 16\)</span>.</p>
 <hr class="docutils" />
-<section id="checklist-of-most-important-equations">
-<h2>2. Checklist of Most Important Equations<a class="headerlink" href="#checklist-of-most-important-equations" title="Link to this heading">#</a></h2>
-<ol class="arabic">
-<li><p><strong>Expected Value of a General Variable</strong></p>
+<p>In general, the number of <span class="math notranslate nohighlight">\(N\)</span>-particle microstates of a system of <span class="math notranslate nohighlight">\(N\)</span> distinguishable particles in a system with <span class="math notranslate nohighlight">\(M\)</span> one-particle microstates is given by the number of permutations of <span class="math notranslate nohighlight">\(N\)</span> particles in <span class="math notranslate nohighlight">\(M\)</span> states:</p>
 <div class="math notranslate nohighlight">
-\[
-     \langle X \rangle \;=\;\sum_i X_i\,p_i
-     \quad\text{or}\quad
-     \int X(\omega)\,p(\omega)\,d\omega.
-   \]</div>
-<ul class="simple">
-<li><p><strong>Applicability</strong>: general definition in statistical mechanics/probability theory.</p></li>
-</ul>
-</li>
-<li><p><strong>Microcanonical Ensemble (Fundamental Postulate)</strong></p>
+\[\frac{M!}{(M - N)!}\]</div>
+<p>This assumes no more than one particle per one‐particle state.</p>
+</div>
+<p>The total energy <span class="math notranslate nohighlight">\(E\)</span> of a system of <span class="math notranslate nohighlight">\(N\)</span> distinguishable and independent particles is given by the sum of the energies <span class="math notranslate nohighlight">\(\varepsilon\)</span> of each particle (<span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(b\)</span>, <span class="math notranslate nohighlight">\(c\)</span>, etc.):</p>
 <div class="math notranslate nohighlight">
-\[
-     p_i \;=\;\frac{1}{M}
-     \quad\text{(for all accessible microstates)}.
-   \]</div>
-<ul class="simple">
-<li><p><strong>Applicability</strong>: isolated system with fixed <span class="math notranslate nohighlight">\((N, V, E)\)</span>.</p></li>
-</ul>
-</li>
-<li><p><strong>Canonical Ensemble Probability</strong></p>
+\[E_l = \varepsilon_i^a + \varepsilon_j^b + \varepsilon_k^c + \cdots\]</div>
+<p>where <span class="math notranslate nohighlight">\(i\)</span>, <span class="math notranslate nohighlight">\(j\)</span>, and <span class="math notranslate nohighlight">\(k\)</span> are the indices of the (<em>one-particle</em>) microstates of the particles <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(b\)</span>, and <span class="math notranslate nohighlight">\(c\)</span>, respectively, and <span class="math notranslate nohighlight">\(l\)</span> is the index of the (<em>many-particle</em> or <em>N-particle</em>) microstate of the system.</p>
+<p>The canonical partition function <span class="math notranslate nohighlight">\(Q\)</span> for a system of <span class="math notranslate nohighlight">\(N\)</span> distinguishable and independent particles is given by the sum over all possible microstates:</p>
 <div class="math notranslate nohighlight">
-\[
-     p_i \;=\;\frac{e^{-\beta\,E_i}}{Q},
-     \quad
-     \beta = \frac{1}{k_{\text{B}}\,T},
-   \]</div>
-<ul class="simple">
-<li><p><strong>Applicability</strong>: closed system in thermal equilibrium with a heat bath at temperature <span class="math notranslate nohighlight">\(T\)</span>.</p></li>
-</ul>
-</li>
-<li><p><strong>Canonical Partition Function</strong></p>
+\[Q = \sum_l e^{-\beta E_l} = \sum_{i = 1}^M \sum_{j = 1}^M \sum_{k = 1}^M \cdots e^{-\beta (\varepsilon_i^a + \varepsilon_j^b + \varepsilon_k^c + \cdots)} = \sum_{i = 1}^M e^{-\beta \varepsilon_i^a} \sum_{j = 1}^M e^{-\beta \varepsilon_j^b} \sum_{k = 1}^M e^{-\beta \varepsilon_k^c} \cdots = \boxed{q_a^N q_b^N q_c^N \cdots}\]</div>
+<p>where <span class="math notranslate nohighlight">\(q_a\)</span>, <span class="math notranslate nohighlight">\(q_b\)</span>, and <span class="math notranslate nohighlight">\(q_c\)</span> are the canonical partition functions for the particles <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(b\)</span>, and <span class="math notranslate nohighlight">\(c\)</span>, respectively.</p>
+<p>If the particles are identical, we can write the canonical partition function as</p>
 <div class="math notranslate nohighlight">
-\[
-     Q \;=\;\sum_i e^{-\beta\,E_i}.
-   \]</div>
-<ul class="simple">
-<li><p><strong>Applicability</strong>: all systems that can be described by <span class="math notranslate nohighlight">\((N, V, T)\)</span>; sum or integral runs over all microstates.</p></li>
-</ul>
-</li>
-<li><p><strong>Internal Energy in the Canonical Ensemble</strong></p>
+\[Q = q^N\]</div>
+<p>where <span class="math notranslate nohighlight">\(q\)</span> is the canonical partition function for one particle.</p>
+</section>
+<section id="partition-function-for-indistinguishable-particles">
+<h2>Partition Function for Indistinguishable Particles<a class="headerlink" href="#partition-function-for-indistinguishable-particles" title="Link to this heading">#</a></h2>
+<div class="dropdown admonition">
+<p class="admonition-title">Two Indistinguishable Particles in a Four-State System</p>
+<p>The <span class="math notranslate nohighlight">\(N\)</span>-particle microstates of a system of two indistinguishable particles in a four-state system are given by the following table:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>N-Particle Microstate</p></th>
+<th class="head"><p>1-Particle Microstate 1</p></th>
+<th class="head"><p>1-Particle Microstate 2</p></th>
+<th class="head"><p>1-Particle Microstate 3</p></th>
+<th class="head"><p>1-Particle Microstate 4</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>I</p></td>
+<td><p>x</p></td>
+<td><p>x</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>II</p></td>
+<td><p>x</p></td>
+<td></td>
+<td><p>x</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>III</p></td>
+<td><p>x</p></td>
+<td></td>
+<td></td>
+<td><p>x</p></td>
+</tr>
+<tr class="row-odd"><td><p>IV</p></td>
+<td></td>
+<td><p>x</p></td>
+<td><p>x</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>V</p></td>
+<td></td>
+<td><p>x</p></td>
+<td></td>
+<td><p>x</p></td>
+</tr>
+<tr class="row-odd"><td><p>VI</p></td>
+<td></td>
+<td></td>
+<td><p>x</p></td>
+<td><p>x</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><br />
+The number of <span class="math notranslate nohighlight">\(N\)</span>-particle microstates of this system is <span class="math notranslate nohighlight">\(6\)</span>.</p>
+<hr class="docutils" />
+<p>In general, the number of <span class="math notranslate nohighlight">\(N\)</span>-particle microstates of a system of <span class="math notranslate nohighlight">\(N\)</span> indistinguishable particles in a system with <span class="math notranslate nohighlight">\(M\)</span> one-particle microstates is given by the number of combinations of <span class="math notranslate nohighlight">\(N\)</span> particles in <span class="math notranslate nohighlight">\(M\)</span> states:</p>
 <div class="math notranslate nohighlight">
-\[
-     U \;=\;\langle E\rangle
-     \;=\;\frac{1}{Q}\,\sum_i E_i\,e^{-\beta E_i}
-     \;=\;-\left(\frac{\partial \ln Q}{\partial \beta}\right)_{N,V}.
-   \]</div>
-<ul class="simple">
-<li><p><strong>Applicability</strong>: same as above (canonical ensemble).</p></li>
-</ul>
-</li>
-<li><p><strong>Heat Capacity at Constant Volume</strong></p>
+\[\frac{1}{N!} \frac{M!}{(M - N)!}\]</div>
+<p>This assumes no more than one particle per one‐particle state.</p>
+</div>
+<p>If the particles are indistinguishable and identical, we can write the canonical partition function as</p>
 <div class="math notranslate nohighlight">
-\[
-     C_V
-     \;=\;
-     \left(\frac{\partial U}{\partial T}\right)_{N,V}.
-   \]</div>
-<ul class="simple">
-<li><p><strong>Applicability</strong>: measures how internal energy changes with <span class="math notranslate nohighlight">\(T\)</span> when <span class="math notranslate nohighlight">\(N, V\)</span> are constant.</p></li>
-</ul>
-</li>
-<li><p><strong>Energy Fluctuations</strong></p>
+\[Q = \frac{q^N}{N!}\]</div>
+</section>
+<section id="partition-function-for-molecules">
+<h2>Partition Function for Molecules<a class="headerlink" href="#partition-function-for-molecules" title="Link to this heading">#</a></h2>
+<p>Within the Born-Oppenheimer approximation, the total energy of a molecule is given by the sum of the translational, rotational, vibrational, and electronic energies:</p>
 <div class="math notranslate nohighlight">
-\[
-     \sigma_E^2
-     \;=\;\langle E^2\rangle - \langle E\rangle^2
-     \;=\;
-     k_{\text{B}}\,T^2\,C_V.
-   \]</div>
-<ul class="simple">
-<li><p><strong>Applicability</strong>: canonical ensemble; relates variance in energy to the heat capacity.</p></li>
-</ul>
-</li>
-<li><p><strong>Pressure (Canonical)</strong></p>
+\[\varepsilon_{\lambda} = \varepsilon_i^{\text{trans}} + \varepsilon_j^{\text{rot}} + \varepsilon_k^{\text{vib}} + \varepsilon_l^{\text{elec}}\]</div>
+<p>where <span class="math notranslate nohighlight">\(i\)</span>, <span class="math notranslate nohighlight">\(j\)</span>, <span class="math notranslate nohighlight">\(k\)</span>, and <span class="math notranslate nohighlight">\(l\)</span> are the indices of the (<em>one-degree-of-freedom</em>) microstates of the translational, rotational, vibrational, and electronic energies, respectively, and <span class="math notranslate nohighlight">\(\lambda\)</span> is the index of the (<em>many-degree-of-freedom</em>) microstate of the molecule.</p>
+<p>The canonical partition function <span class="math notranslate nohighlight">\(q\)</span> for a molecule is given by the sum over all possible microstates:</p>
 <div class="math notranslate nohighlight">
-\[
-     P
-     \;=\;
-     k_{\text{B}}\,T \,\left(\frac{\partial \ln Q}{\partial V}\right)_{N,T}.
-   \]</div>
-<ul class="simple">
-<li><p><strong>Applicability</strong>: canonical ensemble; a precursor to more rigorous derivation using thermodynamic potentials.</p></li>
-</ul>
-</li>
-</ol>
+\[\begin{split}\begin{aligned}
+q &amp;= \sum_{\lambda} e^{-\beta \varepsilon_{\lambda}} = \sum_{i} \sum_{j} \sum_{k} \sum_{l} e^{-\beta (\varepsilon_i^{\text{trans}} + \varepsilon_j^{\text{rot}} + \varepsilon_k^{\text{vib}} + \varepsilon_l^{\text{elec}})} = \sum_{i} e^{-\beta \varepsilon_i^{\text{trans}}} \sum_{j} e^{-\beta \varepsilon_j^{\text{rot}}} \sum_{k} e^{-\beta \varepsilon_k^{\text{vib}}} \sum_{l} e^{-\beta \varepsilon_l^{\text{elec}}} \\
+&amp;= q_{\text{trans}} q_{\text{rot}} q_{\text{vib}} q_{\text{elec}}
+\end{aligned}\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(q_{\text{trans}}\)</span>, <span class="math notranslate nohighlight">\(q_{\text{rot}}\)</span>, <span class="math notranslate nohighlight">\(q_{\text{vib}}\)</span>, and <span class="math notranslate nohighlight">\(q_{\text{elec}}\)</span> are the canonical partition functions for the translational, rotational, vibrational, and electronic energies, respectively.</p>
 </section>
 </section>
 
@@ -642,20 +634,20 @@
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="section-04.html"
+       href="section-03.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">2.4. Molecular Partition Functions</p>
+        <p class="prev-next-title">2.3. Ensemble Averages</p>
       </div>
     </a>
     <a class="right-next"
-       href="../appendices/appendix-a.html"
+       href="review.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Appendix A. Differential Calculus</p>
+        <p class="prev-next-title">Review</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -676,13 +668,10 @@
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#checklist-of-key-concepts">Checklist of Key Concepts</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#section-2-1-introduction-to-statistical-mechanics">Section 2.1: Introduction to Statistical Mechanics</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#section-2-2-canonical-ensemble">Section 2.2: Canonical Ensemble</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#section-2-3-ensemble-averages">Section 2.3: Ensemble Averages</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#checklist-of-most-important-equations">2. Checklist of Most Important Equations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#partition-function-for-distinguishable-particles">Partition Function for Distinguishable Particles</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#partition-function-for-indistinguishable-particles">Partition Function for Indistinguishable Particles</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#partition-function-for-molecules">Partition Function for Molecules</a></li>
 </ul>
   </nav></div>
 
