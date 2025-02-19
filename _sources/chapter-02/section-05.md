@@ -12,7 +12,7 @@ kernelspec:
   name: python3
 ---
 
-# 2.4. Particle in a Box
+# 2.5. Particle in a Box
 
 ## Overview
 
