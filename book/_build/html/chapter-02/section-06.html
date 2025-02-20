@@ -387,6 +387,20 @@
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-of-the-one-dimensional-harmonic-oscillator">Review of the One-Dimensional Harmonic Oscillator</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#partition-function-for-a-harmonic-oscillator">Partition Function for a Harmonic Oscillator</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluation-of-the-sum">Evaluation of the Sum</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ensemble-averages-for-a-harmonic-oscillator">Ensemble Averages for a Harmonic Oscillator</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#natural-logarithm-of-the-partition-function">Natural Logarithm of the Partition Function</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#internal-energy">Internal Energy</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#heat-capacity-at-constant-volume">Heat Capacity at Constant Volume</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#einstein-model">Einstein Model</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dulong-petit-law">Dulong-Petit Law</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -536,9 +550,201 @@
 <figure class="align-center" id="id1" style="width: 100%">
 <img alt="../_images/9bb5b52df8d59477dab5ccc5dd84aa926cec2bc961cc27ffb6b07499c897b099.png" src="../_images/9bb5b52df8d59477dab5ccc5dd84aa926cec2bc961cc27ffb6b07499c897b099.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 17 </span><span class="caption-text">A one-dimensional harmonic oscillator. The energy levels <span class="math notranslate nohighlight">\(E_n\)</span> are shown as horizontal blue lines, while the wavefunctions <span class="math notranslate nohighlight">\(\psi_n\)</span> are shown as red curves.</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 17 </span><span class="caption-text">Enery levels and wavefunctions for a one-dimensional harmonic oscillator. The energy levels <span class="math notranslate nohighlight">\(E_n\)</span> are shown as blue lines, while the wavefunctions <span class="math notranslate nohighlight">\(\psi_n\)</span> are shown as red curves.</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
+<p>For a one-dimensional harmonic oscillator of frequency <span class="math notranslate nohighlight">\(\omega\)</span>, the quantized energy levels are given by</p>
+<div class="math notranslate nohighlight">
+\[E_n = \hbar \omega \left( n + \frac{1}{2} \right) \quad \text{for} \; n = 0, 1, 2, \ldots,\]</div>
+<p>where <span class="math notranslate nohighlight">\(\hbar\)</span> is the <a class="reference external" href="https://physics.nist.gov/cgi-bin/cuu/Value?hbar">reduced Planck constant</a> and <span class="math notranslate nohighlight">\(n\)</span> is a positive integer.</p>
+</section>
+<section id="partition-function-for-a-harmonic-oscillator">
+<h2>Partition Function for a Harmonic Oscillator<a class="headerlink" href="#partition-function-for-a-harmonic-oscillator" title="Link to this heading">#</a></h2>
+<p>The partition function for a one-dimensional harmonic oscillator is:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+q &amp;= \sum_{n=0}^{\infty} e^{-\beta E_n} \\
+&amp;= \sum_{n=0}^{\infty} e^{-\beta \hbar \omega (n + 1/2)} \\
+&amp;= e^{-\beta \hbar \omega / 2} \sum_{n=0}^{\infty} e^{-\beta \hbar \omega n} \\
+\end{aligned}\end{split}\]</div>
+<section id="evaluation-of-the-sum">
+<h3>Evaluation of the Sum<a class="headerlink" href="#evaluation-of-the-sum" title="Link to this heading">#</a></h3>
+<p>The <span class="math notranslate nohighlight">\(\sum_{n=0}^{\infty} e^{-\beta \hbar \omega n}\)</span> term is a geometric series, which can be evaluated as</p>
+<div class="math notranslate nohighlight">
+\[\sum_{n=0}^{\infty} x^n = \frac{1}{1 - x} \quad \text{for} \; |x| &lt; 1.\]</div>
+<p>Substituting <span class="math notranslate nohighlight">\(x = e^{-\beta \hbar \omega}\)</span> gives:</p>
+<div class="math notranslate nohighlight">
+\[q = \frac{e^{-\beta \hbar \omega / 2}}{1 - e^{-\beta \hbar \omega}}.\]</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Is <span class="math notranslate nohighlight">\(|x| &lt; 1\)</span>?</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+|x| &amp;&lt; 1 \\
+\left| e^{-\beta \hbar \omega} \right| &amp;&lt; 1 \\
+e^{-\beta \hbar \omega} &amp;&lt; 1 \\
+\beta \hbar \omega &amp;&gt; 0 \\
+\beta &amp;&gt; 0.
+\end{aligned}\end{split}\]</div>
+</div>
+</section>
+</section>
+<section id="ensemble-averages-for-a-harmonic-oscillator">
+<h2>Ensemble Averages for a Harmonic Oscillator<a class="headerlink" href="#ensemble-averages-for-a-harmonic-oscillator" title="Link to this heading">#</a></h2>
+<section id="natural-logarithm-of-the-partition-function">
+<h3>Natural Logarithm of the Partition Function<a class="headerlink" href="#natural-logarithm-of-the-partition-function" title="Link to this heading">#</a></h3>
+<p>Taking the logarithm of <span class="math notranslate nohighlight">\(q\)</span>:</p>
+<div class="math notranslate nohighlight" id="equation-harmonic-oscillator-lnq">
+<span class="eqno">(21)<a class="headerlink" href="#equation-harmonic-oscillator-lnq" title="Link to this equation">#</a></span>\[\ln q = -\frac{\beta \hbar \omega}{2} - \ln(1 - e^{-\beta \hbar \omega}).\]</div>
+</section>
+<section id="internal-energy">
+<h3>Internal Energy<a class="headerlink" href="#internal-energy" title="Link to this heading">#</a></h3>
+<p>The internal energy <span class="math notranslate nohighlight">\(U\)</span> is found via:</p>
+<div class="math notranslate nohighlight">
+\[U = -\left( \frac{\partial \ln q}{\partial \beta} \right)_{N, V} = \frac{\hbar \omega}{2} + \frac{\hbar \omega}{e^{\beta \hbar \omega} - 1}.\]</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Derivative of <span class="math notranslate nohighlight">\(\ln(1 - e^{-\beta \hbar \omega})\)</span></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+\left[ \frac{\partial}{\partial \beta} \ln(1 - e^{-\beta \hbar \omega}) \right]_{N, V} &amp;= \left[ \frac{\partial \ln f}{\partial f} \frac{\partial f}{\partial \beta} \right]_{N, V} &amp;&amp; \text{where} \; f = 1 - e^{-\beta \hbar \omega} \\
+&amp;= \frac{1}{f} \left[ \frac{\partial}{\partial \beta} (1 - e^{-\beta \hbar \omega}) \right]_{N, V} \\
+&amp;= \frac{\hbar \omega e^{-\beta \hbar \omega}}{1 - e^{-\beta \hbar \omega}} \cdot \frac{e^{\beta \hbar \omega}}{e^{\beta \hbar \omega}} \\
+&amp;= \frac{\hbar \omega}{e^{\beta \hbar \omega} - 1}.
+\end{aligned}\end{split}\]</div>
+</div>
+<p>We often define the vibrational temperature <span class="math notranslate nohighlight">\(\Theta_{\text{vib}}\)</span> as</p>
+<div class="math notranslate nohighlight">
+\[\Theta_{\text{vib}} = \frac{\hbar \omega}{k_{\text{B}}}.\]</div>
+<p>Hence,</p>
+<div class="math notranslate nohighlight">
+\[U = \frac{\hbar \omega}{2} + \frac{\hbar \omega}{e^{\Theta_{\text{vib}} / T} - 1}.\]</div>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">mpl_toolkits.mplot3d.art3d</span><span class="w"> </span><span class="kn">import</span> <span class="n">Poly3DCollection</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy.constants</span><span class="w"> </span><span class="kn">import</span> <span class="n">k</span><span class="p">,</span> <span class="n">eV</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">labellines</span><span class="w"> </span><span class="kn">import</span> <span class="n">labelLines</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">myst_nb</span><span class="w"> </span><span class="kn">import</span> <span class="n">glue</span>
+
+<span class="n">kB</span> <span class="o">=</span> <span class="n">k</span> <span class="o">/</span> <span class="n">eV</span>  <span class="c1"># Boltzmann constant in eV/K</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplot_mosaic</span><span class="p">([[</span><span class="mi">0</span><span class="p">]],</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+
+<span class="n">Theta_vib</span> <span class="o">=</span> <span class="mi">805</span>  <span class="c1"># K, for a Cl2 molecule</span>
+<span class="n">hbar_omega</span> <span class="o">=</span> <span class="n">kB</span> <span class="o">*</span> <span class="n">Theta_vib</span>
+<span class="n">T</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">1000</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">Tr</span> <span class="o">=</span> <span class="n">T</span> <span class="o">/</span> <span class="n">Theta_vib</span>
+
+<span class="n">U</span> <span class="o">=</span> <span class="n">hbar_omega</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">+</span> <span class="n">hbar_omega</span> <span class="o">/</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">Theta_vib</span> <span class="o">/</span> <span class="n">T</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Tr</span><span class="p">,</span> <span class="n">U</span> <span class="o">/</span> <span class="n">hbar_omega</span><span class="p">,</span> <span class="s2">&quot;k-&quot;</span><span class="p">)</span>
+
+<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$T / \Theta_{\text</span><span class="si">{vib}</span><span class="s2">}$&quot;</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$U / \left( \hbar \omega \right)$&quot;</span><span class="p">)</span>
+
+<span class="n">zero_point_energy</span> <span class="o">=</span> <span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">Tr</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">Tr</span><span class="p">)],</span> <span class="p">[</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">],</span> <span class="s2">&quot;b--&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Zero-point energy&quot;</span><span class="p">)</span>
+<span class="n">labelLines</span><span class="p">(</span><span class="n">zero_point_energy</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mf">2.5</span><span class="p">)</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">Tr</span><span class="p">[</span><span class="n">Tr</span> <span class="o">&gt;=</span> <span class="mf">0.5</span><span class="p">]</span>
+<span class="n">kT</span> <span class="o">=</span> <span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="s2">&quot;r--&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;$U \rightarrow k_{\text</span><span class="si">{B}</span><span class="s2">} T$&quot;</span><span class="p">)</span>
+<span class="n">labelLines</span><span class="p">(</span><span class="n">kT</span><span class="p">,</span> <span class="n">xvals</span><span class="o">=</span><span class="p">[</span><span class="n">Tr</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="mi">3</span> <span class="o">/</span> <span class="mi">4</span><span class="p">],</span> <span class="n">zorder</span><span class="o">=</span><span class="mf">2.5</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">glue</span><span class="p">(</span><span class="s2">&quot;harmonic_oscillator_energy&quot;</span><span class="p">,</span> <span class="n">fig</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">(</span><span class="n">fig</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<figure class="align-center" id="id2" style="width: 100%">
+<img alt="../_images/54639f431ca0624b6f6131fac8c83dfe72866c8aba3dd08f74b25687f4a533ee.png" src="../_images/54639f431ca0624b6f6131fac8c83dfe72866c8aba3dd08f74b25687f4a533ee.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 18 </span><span class="caption-text">Internal energy of a harmonic oscillator as a function of temperature. The zero-point energy is shown as a blue dashed line, while the high-temperature limit is shown as a red dashed line.</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<!-- Derivation of low- and high-temperature limits for the internal energy of a harmonic oscillator. -->
+</section>
+<section id="heat-capacity-at-constant-volume">
+<h3>Heat Capacity at Constant Volume<a class="headerlink" href="#heat-capacity-at-constant-volume" title="Link to this heading">#</a></h3>
+<p>In Section 2.3, we showed that</p>
+<div class="math notranslate nohighlight">
+\[\sigma_E^2 = \left( \frac{\partial^2 \ln q}{\partial \beta^2} \right)_{N, V} = k_{\text{B}} T^2 C_V.\]</div>
+<p>From Equation <a class="reference internal" href="#equation-harmonic-oscillator-lnq">(21)</a>, it follows that:</p>
+<div class="math notranslate nohighlight">
+\[C_V = k_{\text{B}} \left( \frac{\hbar \omega}{k_{\text{B}} T} \right)^2 \frac{e^{\hbar \omega / k_{\text{B}} T}}{\left( e^{\hbar \omega / k_{\text{B}} T} - 1 \right)^2} = k_{\text{B}} \left( \frac{\Theta_{\text{vib}}}{T} \right)^2 \frac{e^{\Theta_{\text{vib}} / T}}{\left( e^{\Theta_{\text{vib}} / T} - 1 \right)^2}.\]</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Complete Derivation of <span class="math notranslate nohighlight">\(C_V\)</span></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+\sigma_E^2 &amp;= \left[ \frac{\partial^2}{\partial \beta^2} \left( -\frac{\beta \hbar \omega}{2} - \ln(1 - e^{-\beta \hbar \omega}) \right) \right]_{N, V} \\
+&amp;= \left[ \frac{\partial}{\partial \beta} \left( -\frac{\hbar \omega}{2} - \frac{\hbar \omega}{e^{\beta \hbar \omega} - 1} \right) \right]_{N, V} \\
+&amp;= -\hbar \omega \left( \frac{\partial g^{-1}}{\partial g} \frac{\partial g}{\partial \beta} \right)_{N, V} &amp;&amp; \text{where} \; g = e^{\beta \hbar \omega} - 1 \\
+&amp;= \frac{\hbar \omega}{g^2} \left[ \frac{\partial}{\partial \beta} \left( e^{\beta \hbar \omega} - 1 \right) \right]_{N, V} \\
+&amp;= \left( \hbar \omega \right)^2 \frac{e^{\beta \hbar \omega}}{\left( e^{\beta \hbar \omega} - 1 \right)^2} \\
+\end{aligned}\end{split}\]</div>
+</div>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplot_mosaic</span><span class="p">([[</span><span class="mi">0</span><span class="p">]],</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+
+<span class="n">Cv</span> <span class="o">=</span> <span class="n">kB</span> <span class="o">*</span> <span class="p">(</span><span class="n">Theta_vib</span> <span class="o">/</span> <span class="n">T</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">Theta_vib</span> <span class="o">/</span> <span class="n">T</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">Theta_vib</span> <span class="o">/</span> <span class="n">T</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
+
+<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Tr</span><span class="p">,</span> <span class="n">Cv</span> <span class="o">/</span> <span class="n">kB</span><span class="p">,</span> <span class="s2">&quot;k-&quot;</span><span class="p">)</span>
+
+<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span>
+    <span class="s1">&#39;$C_V </span><span class="se">\\</span><span class="s1">rightarrow 0$&#39;</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="mf">0.15</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="n">Tr</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">/</span> <span class="mi">3</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">),</span>
+    <span class="n">arrowprops</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">arrowstyle</span><span class="o">=</span><span class="s1">&#39;-&gt;&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">),</span>
+    <span class="n">bbox</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">boxstyle</span><span class="o">=</span><span class="s1">&#39;round,pad=0.3&#39;</span><span class="p">,</span> <span class="n">fc</span><span class="o">=</span><span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">ec</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">),</span>
+    <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span>
+<span class="p">)</span>
+
+<span class="n">high_T</span> <span class="o">=</span> <span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="n">Tr</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="s2">&quot;r--&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;$C_V </span><span class="se">\\</span><span class="s2">rightarrow k_{</span><span class="se">\\</span><span class="s2">text</span><span class="si">{B}</span><span class="s2">}$&quot;</span><span class="p">)</span>
+<span class="n">labelLines</span><span class="p">(</span><span class="n">high_T</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mf">2.5</span><span class="p">)</span>
+
+<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$T / \Theta_{\text</span><span class="si">{vib}</span><span class="s2">}$&quot;</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$C_V / k_{\text</span><span class="si">{B}</span><span class="s2">}$&quot;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">glue</span><span class="p">(</span><span class="s2">&quot;harmonic_oscillator_heat_capacity&quot;</span><span class="p">,</span> <span class="n">fig</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">(</span><span class="n">fig</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<figure class="align-center" id="id3" style="width: 100%">
+<img alt="../_images/d91ac4ae095085f8fa74f058239922e1778dc5520c7ff5d3d2b9fbc797f6cf44.png" src="../_images/d91ac4ae095085f8fa74f058239922e1778dc5520c7ff5d3d2b9fbc797f6cf44.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 19 </span><span class="caption-text">Heat capacity at constant volume of a harmonic oscillator as a function of temperature. The low-temperature limit is shown as a blue arrow, while the high-temperature limit is shown as a red dashed line.</span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+<section id="einstein-model">
+<h2>Einstein Model<a class="headerlink" href="#einstein-model" title="Link to this heading">#</a></h2>
+<p>The Einstein model is a simple model for an atomic crystal, where <span class="math notranslate nohighlight">\(N\)</span> identical atoms are situated at lattice sites and vibrate (each with the same frequency) about these sites as independent (i.e., non-interacting), three-dimensional harmonic oscillators. Since the atoms are situated at lattice sites, they can be treated as distinguishable. For the Einstein model, the partition function is</p>
+<div class="math notranslate nohighlight">
+\[Q = q^{3N} = \left( \frac{e^{-\beta \hbar \omega / 2}}{1 - e^{-\beta \hbar \omega}} \right)^{3N}.\]</div>
+<p>One can show that</p>
+<div class="math notranslate nohighlight">
+\[U = \frac{3}{2} N \hbar \omega + \frac{3N \hbar \omega}{e^{\beta \hbar \omega} - 1},\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[C_V = 3 N k_{\text{B}} \left( \frac{\hbar \omega}{k_{\text{B}} T} \right)^2 \frac{e^{\hbar \omega / k_{\text{B}} T}}{\left( e^{\hbar \omega / k_{\text{B}} T} - 1 \right)^2}.\]</div>
+<section id="dulong-petit-law">
+<h3>Dulong-Petit Law<a class="headerlink" href="#dulong-petit-law" title="Link to this heading">#</a></h3>
+</section>
 </section>
 </section>
 
@@ -609,6 +815,20 @@
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-of-the-one-dimensional-harmonic-oscillator">Review of the One-Dimensional Harmonic Oscillator</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#partition-function-for-a-harmonic-oscillator">Partition Function for a Harmonic Oscillator</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluation-of-the-sum">Evaluation of the Sum</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ensemble-averages-for-a-harmonic-oscillator">Ensemble Averages for a Harmonic Oscillator</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#natural-logarithm-of-the-partition-function">Natural Logarithm of the Partition Function</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#internal-energy">Internal Energy</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#heat-capacity-at-constant-volume">Heat Capacity at Constant Volume</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#einstein-model">Einstein Model</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dulong-petit-law">Dulong-Petit Law</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
