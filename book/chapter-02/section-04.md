@@ -127,7 +127,7 @@ where $i$, $j$, and $k$ are the indices of the (*one-particle*) microstates of t
 The canonical partition function $Q$ for a system of $N$ distinguishable and independent particles is given by the sum over all possible microstates:
 
 ```{math}
-Q = \sum_l e^{-\beta E_l} = \sum_{i = 1}^M \sum_{j = 1}^M \sum_{k = 1}^M \cdots e^{-\beta (\varepsilon_i^a + \varepsilon_j^b + \varepsilon_k^c + \cdots)} = \sum_{i = 1}^M e^{-\beta \varepsilon_i^a} \sum_{j = 1}^M e^{-\beta \varepsilon_j^b} \sum_{k = 1}^M e^{-\beta \varepsilon_k^c} \cdots = \boxed{q_a^N q_b^N q_c^N \cdots}
+Q = \sum_l e^{-\beta E_l} = \sum_{i = 1}^M \sum_{j = 1}^M \sum_{k = 1}^M \cdots e^{-\beta (\varepsilon_i^a + \varepsilon_j^b + \varepsilon_k^c + \cdots)} = \sum_{i = 1}^M e^{-\beta \varepsilon_i^a} \sum_{j = 1}^M e^{-\beta \varepsilon_j^b} \sum_{k = 1}^M e^{-\beta \varepsilon_k^c} \cdots = \boxed{q_a q_b q_c \cdots}
 ```
 
 where $q_a$, $q_b$, and $q_c$ are the canonical partition functions for the particles $a$, $b$, and $c$, respectively.
