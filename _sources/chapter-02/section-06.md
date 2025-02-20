@@ -363,3 +363,47 @@ C_V = 3 N k_{\text{B}} \left( \frac{\hbar \omega}{k_{\text{B}} T} \right)^2 \fra
 ```
 
 ### Dulong-Petit Law
+
+```{code-cell} ipython3
+:tags: [hide-input]
+
+# https://en.wikipedia.org/wiki/Heat_capacities_of_the_elements_(data_page)
+
+import pandas as pd
+
+df = pd.read_csv("../_static/chapter-02/section-06/dulong_petit.csv")
+df = df[df.Source == "use"].copy()
+df["Atomic Number"] = df["Atomic Number"].astype(int)
+df["Molar (J/mol·K)"] = df["Molar (J/mol·K)"].astype(float)
+df["Molar (R)"] = df["Molar (J/mol·K)"] / 8.314
+df["Absolute Deviation"] = np.abs(df["Molar (R)"] - 3)
+
+# Remove elemental gases
+elemental_gases = ["H", "He", "N", "O", "F", "Ne", "Cl", "Ar", "Kr", "Xe", "Rn"]
+df = df[~df.Symbol.isin(elemental_gases)]
+
+fig, axs = plt.subplot_mosaic([[0]], figsize=(4, 4))
+
+axs[0].scatter(df["Atomic Number"], df["Molar (R)"], color="black")
+axs[0].set_xlabel("Atomic Number")
+axs[0].set_ylabel(r"Heat Capacity ($k_{\text{B}}$)")
+
+# Annotate outliers
+outliers = df[df["Absolute Deviation"] > 1]
+for _, row in outliers.iterrows():
+    axs[0].annotate(row["Symbol"], (row["Atomic Number"], row["Molar (R)"]))
+
+# Plot Dulong-Petit law
+dulong_petit = axs[0].plot([0, 100], [3, 3], "r--", label="Dulong-Petit law")
+labelLines(dulong_petit, zorder=2.5)
+
+plt.tight_layout()
+glue("dulong_petit", fig, display=False)
+plt.close(fig)
+```
+
+```{glue:figure} dulong_petit
+:figwidth: 100%
+:align: center
+Heat capacity of elemental solids as a function of atomic number. The Dulong-Petit law is shown as a red dashed line.
+```

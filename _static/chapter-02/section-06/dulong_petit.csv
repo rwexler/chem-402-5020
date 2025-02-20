@@ -1,0 +1,355 @@
+Atomic Number,Symbol,Element Name,Notes,Source,Molar (J/mol·K),Specific (J/g·K)
+1,H,hydrogen,"H2, gas",use,28.836,14.304
+1,H,hydrogen,"H2, gas",CRC,28.836,14.304
+1,H,hydrogen,"H2, gas",WEL,28.82,
+1,H,hydrogen,"H2, gas",LNG,28.84,
+2,He,helium,gas,use,20.786,5.193
+2,He,helium,gas,CRC,20.786,5.193
+2,He,helium,gas,WEL,20.786,
+2,He,helium,gas,LNG,20.786,
+3,Li,lithium,,use,24.860,3.582
+3,Li,lithium,,CRC,24.860,3.582
+3,Li,lithium,,WEL,24.8,
+3,Li,lithium,,LNG,24.8,
+4,Be,beryllium,,use,16.443,1.825
+4,Be,beryllium,,CRC,16.443,1.825
+4,Be,beryllium,,WEL,16.4,
+4,Be,beryllium,,LNG,16.38,
+5,B,boron,rhombic,use,11.087,1.026
+5,B,boron,rhombic,CRC,11.087,1.026
+5,B,boron,rhombic,WEL,11.1,
+5,B,boron,rhombic,LNG,11.1,
+6,C,carbon,graphite,use,8.517,0.709
+6,C,carbon,graphite,CRC,8.517,0.709
+6,C,carbon,graphite,WEL,8.53,
+6,C,carbon,graphite,LNG,8.517,
+6,C,carbon,"diamond, nonstd state",use,6.115,0.509
+6,C,carbon,"diamond, nonstd state",WEL,6.115,
+6,C,carbon,"diamond, nonstd state",LNG,6.116,
+7,N,nitrogen,"N2, gas",use,29.124,1.040
+7,N,nitrogen,"N2, gas",CRC,29.124,1.040
+7,N,nitrogen,"N2, gas",WEL,29.12,
+7,N,nitrogen,"N2, gas",LNG,29.124,
+8,O,oxygen,"O2, gas",use,29.378,0.918
+8,O,oxygen,"O2, gas",CRC,29.378,0.918
+8,O,oxygen,"O2, gas",WEL,29.4,
+8,O,oxygen,"O2, gas",LNG,29.4,
+9,F,fluorine,"F2, gas",use,31.304,0.824
+9,F,fluorine,"F2, gas",CRC,31.304,0.824
+9,F,fluorine,"F2, gas",WEL,31.3,
+9,F,fluorine,"F2, gas",LNG,31.30,
+10,Ne,neon,gas,use,20.786,1.030
+10,Ne,neon,gas,CRC,20.786,1.030
+10,Ne,neon,gas,WEL,20.786,
+10,Ne,neon,gas,LNG,20.786,
+11,Na,sodium,,use,28.230,1.228
+11,Na,sodium,,CRC,28.230,1.228
+11,Na,sodium,,WEL,28.2,
+11,Na,sodium,,LNG,28.15,
+12,Mg,magnesium,,use,24.869,1.023
+12,Mg,magnesium,,CRC,24.869,1.023
+12,Mg,magnesium,,WEL,24.9,
+12,Mg,magnesium,,LNG,24.87,
+13,Al,aluminium,,use,24.200,0.897
+13,Al,aluminium,,CRC,24.200,0.897
+13,Al,aluminium,,WEL,24.4,
+13,Al,aluminium,,LNG,24.4,
+14,Si,silicon,,use,19.789,0.705
+14,Si,silicon,,CRC,19.789,0.705
+14,Si,silicon,,WEL,20.0,
+14,Si,silicon,,LNG,20.00,
+15,P,phosphorus,white,use,23.824,0.769
+15,P,phosphorus,white,CRC,23.824,0.769
+15,P,phosphorus,white,WEL,23.84,
+15,P,phosphorus,white,LNG,23.83,
+15,P,phosphorus,"red, nonstd state",use,21.19,0.684
+15,P,phosphorus,"red, nonstd state",WEL,21.2,
+15,P,phosphorus,"red, nonstd state",LNG,21.19,
+16,S,sulfur,rhombic,use,22.75,0.710
+16,S,sulfur,rhombic,CRC,22.75,0.710
+16,S,sulfur,rhombic,WEL,22.6,
+16,S,sulfur,rhombic,LNG,22.60,
+16,S,sulfur,"monoclinic, nonstd state",use,23.23,0.724
+16,S,sulfur,"monoclinic, nonstd state",LNG,23.23,
+17,Cl,chlorine,Cl2 gas,use,33.949,0.479
+17,Cl,chlorine,Cl2 gas,CRC,33.949,0.479
+17,Cl,chlorine,Cl2 gas,WEL,33.91,
+17,Cl,chlorine,Cl2 gas,LNG,33.95,
+18,Ar,argon,gas,use,20.786,0.520
+18,Ar,argon,gas,CRC,20.786,0.520
+18,Ar,argon,gas,WEL,20.786,
+18,Ar,argon,gas,LNG,20.79,
+19,K,potassium,,use,29.600,0.757
+19,K,potassium,,CRC,29.600,0.757
+19,K,potassium,,WEL,29.6,
+19,K,potassium,,LNG,29.60,
+20,Ca,calcium,,use,25.929,0.647
+20,Ca,calcium,,CRC,25.929,0.647
+20,Ca,calcium,,WEL,25.3,
+20,Ca,calcium,,LNG,25.9,
+21,Sc,scandium,,use,25.52,0.568
+21,Sc,scandium,,CRC,25.52,0.568
+21,Sc,scandium,,WEL,25.5,
+21,Sc,scandium,,LNG,25.52,
+22,Ti,titanium,,use,25.060,0.523
+22,Ti,titanium,,CRC,25.060,0.523
+22,Ti,titanium,,WEL,25.0,
+22,Ti,titanium,,LNG,25.0,
+23,V,vanadium,,use,24.89,0.489
+23,V,vanadium,,CRC,24.89,0.489
+23,V,vanadium,,WEL,24.9,
+23,V,vanadium,,LNG,24.90,
+24,Cr,chromium,,use,23.35,0.449
+24,Cr,chromium,,CRC,23.35,0.449
+24,Cr,chromium,,WEL,23.3,
+24,Cr,chromium,,LNG,23.43,
+25,Mn,manganese,,use,26.32,0.479
+25,Mn,manganese,,CRC,26.32,0.479
+25,Mn,manganese,,WEL,26.3,
+25,Mn,manganese,,LNG,26.30,
+26,Fe,iron,alpha,use,25.10,0.449
+26,Fe,iron,alpha,CRC,25.10,0.449
+26,Fe,iron,alpha,WEL,25.1,
+26,Fe,iron,alpha,LNG,25.09,
+27,Co,cobalt,,use,24.81,0.421
+27,Co,cobalt,,CRC,24.81,0.421
+27,Co,cobalt,,WEL,24.8,
+27,Co,cobalt,,LNG,24.8,
+28,Ni,nickel,,use,26.07,0.444
+28,Ni,nickel,,CRC,26.07,0.444
+28,Ni,nickel,,WEL,26.1,
+28,Ni,nickel,,LNG,26.1,
+29,Cu,copper,,use,24.440,0.385
+29,Cu,copper,,CRC,24.440,0.385
+29,Cu,copper,,WEL,24.43,
+29,Cu,copper,,LNG,24.44,
+30,Zn,zinc,,use,25.390,0.388
+30,Zn,zinc,,CRC,25.390,0.388
+30,Zn,zinc,,WEL,25.4,
+30,Zn,zinc,,LNG,25.40,
+31,Ga,gallium,,use,25.86,0.371
+31,Ga,gallium,,CRC,25.86,0.371
+31,Ga,gallium,,WEL,25.9,
+31,Ga,gallium,,LNG,26.06,
+32,Ge,germanium,,use,23.222,0.320
+32,Ge,germanium,,CRC,23.222,0.320
+32,Ge,germanium,,WEL,23.35,
+32,Ge,germanium,,LNG,23.3,
+33,As,arsenic,"alpha, gray",use,24.64,0.329
+33,As,arsenic,"alpha, gray",CRC,24.64,0.329
+33,As,arsenic,"alpha, gray",WEL,24.6,
+33,As,arsenic,"alpha, gray",LNG,24.64,
+34,Se,selenium,hexagonal,use,25.363,0.321
+34,Se,selenium,hexagonal,CRC,25.363,0.321
+34,Se,selenium,hexagonal,WEL,25.36,
+34,Se,selenium,hexagonal,LNG,24.98,
+36,Kr,krypton,gas,use,20.786,0.248
+36,Kr,krypton,gas,CRC,20.786,0.248
+36,Kr,krypton,gas,WEL,20.786,
+36,Kr,krypton,gas,LNG,20.786,
+37,Rb,rubidium,,use,31.060,0.363
+37,Rb,rubidium,,CRC,31.060,0.363
+37,Rb,rubidium,,WEL,31.1,
+37,Rb,rubidium,,LNG,31.06,
+38,Sr,strontium,,use,26.4,0.301
+38,Sr,strontium,,CRC,26.4,0.301
+38,Sr,strontium,,WEL,26,
+38,Sr,strontium,,LNG,26.79,
+39,Y,yttrium,,use,26.53,0.298
+39,Y,yttrium,,CRC,26.53,0.298
+39,Y,yttrium,,WEL,26.5,
+39,Y,yttrium,,LNG,26.51,
+40,Zr,zirconium,,use,25.36,0.278
+40,Zr,zirconium,,CRC,25.36,0.278
+40,Zr,zirconium,,WEL,25.4,
+40,Zr,zirconium,,LNG,25.40,
+41,Nb,niobium,,use,24.60,0.265
+41,Nb,niobium,,CRC,24.60,0.265
+41,Nb,niobium,,WEL,24.6,
+41,Nb,niobium,,LNG,24.67,
+42,Mo,molybdenum,,use,24.06,0.251
+42,Mo,molybdenum,,CRC,24.06,0.251
+42,Mo,molybdenum,,WEL,24.1,
+42,Mo,molybdenum,,LNG,24.13,
+43,Tc,technetium,,use,24.27,
+43,Tc,technetium,,LNG,24.27,
+44,Ru,ruthenium,,use,24.06,0.238
+44,Ru,ruthenium,,CRC,24.06,0.238
+44,Ru,ruthenium,,WEL,24.1,
+44,Ru,ruthenium,,LNG,24.1,
+45,Rh,rhodium,,use,24.98,0.243
+45,Rh,rhodium,,CRC,24.98,0.243
+45,Rh,rhodium,,WEL,25.0,
+45,Rh,rhodium,,LNG,24.98,
+46,Pd,palladium,,use,25.98,0.244
+46,Pd,palladium,,CRC,25.98,0.246 [sic]
+46,Pd,palladium,,WEL,26.0,
+46,Pd,palladium,,LNG,25.94,
+47,Ag,silver,,use,25.350,0.235
+47,Ag,silver,,CRC,25.350,0.235
+47,Ag,silver,,WEL,25.4,
+47,Ag,silver,,LNG,25.4,
+48,Cd,cadmium,,use,26.020,0.232
+48,Cd,cadmium,,CRC,26.020,0.232
+48,Cd,cadmium,,WEL,26.0,
+48,Cd,cadmium,,LNG,25.9,
+49,In,indium,,use,26.74,0.233
+49,In,indium,,CRC,26.74,0.233
+49,In,indium,,WEL,26.7,
+49,In,indium,,LNG,26.7,
+50,Sn,tin,white,use,27.112,0.228
+50,Sn,tin,white,CRC,27.112,0.228
+50,Sn,tin,white,WEL,27.0,
+50,Sn,tin,white,LNG,26.99,
+50,Sn,tin,"gray, nonstd state",use,25.77,0.217
+50,Sn,tin,"gray, nonstd state",WEL,25.8,
+50,Sn,tin,"gray, nonstd state",LNG,25.77,
+51,Sb,antimony,,use,25.23,0.207
+51,Sb,antimony,,CRC,25.23,0.207
+51,Sb,antimony,,WEL,25.2,
+51,Sb,antimony,,LNG,25.2,
+52,Te,tellurium,,use,25.73,0.202
+52,Te,tellurium,,CRC,25.73,0.202
+52,Te,tellurium,,WEL,25.7,
+52,Te,tellurium,,LNG,25.70,
+54,Xe,xenon,gas,use,20.786,0.158
+54,Xe,xenon,gas,CRC,20.786,0.158
+54,Xe,xenon,gas,WEL,20.786,
+54,Xe,xenon,gas,LNG,20.786,
+55,Cs,caesium,,use,32.210,0.242
+55,Cs,caesium,,CRC,32.210,0.242
+55,Cs,caesium,,WEL,32.2,
+55,Cs,caesium,,LNG,32.20,
+56,Ba,barium,,use,28.07,0.204
+56,Ba,barium,,CRC,28.07,0.204
+56,Ba,barium,,WEL,28.1,
+56,Ba,barium,,LNG,28.10,
+57,La,lanthanum,,use,27.11,0.195
+57,La,lanthanum,,CRC,27.11,0.195
+57,La,lanthanum,,WEL,27.1,
+57,La,lanthanum,,LNG,27.11,
+58,Ce,cerium,"gamma, fcc",use,26.94,0.192
+58,Ce,cerium,"gamma, fcc",CRC,26.94,0.192
+58,Ce,cerium,"gamma, fcc",WEL,26.9,
+58,Ce,cerium,"gamma, fcc",LNG,26.9,
+59,Pr,praseodymium,,use,27.20,0.193
+59,Pr,praseodymium,,CRC,27.20,0.193
+59,Pr,praseodymium,,WEL,27.2,
+59,Pr,praseodymium,,LNG,27.20,
+60,Nd,neodymium,,use,27.45,0.190
+60,Nd,neodymium,,CRC,27.45,0.190
+60,Nd,neodymium,,WEL,27.4,
+60,Nd,neodymium,,LNG,27.5,
+62,Sm,samarium,,use,29.54,0.197
+62,Sm,samarium,,CRC,29.54,0.197
+62,Sm,samarium,,WEL,29.5,
+62,Sm,samarium,,LNG,29.54,
+63,Eu,europium,,use,27.66,0.182
+63,Eu,europium,,CRC,27.66,0.182
+63,Eu,europium,,WEL,27.7,
+63,Eu,europium,,LNG,27.66,
+64,Gd,gadolinium,,use,37.03,0.236
+64,Gd,gadolinium,,CRC,37.03,0.236
+64,Gd,gadolinium,,WEL,37.0,
+64,Gd,gadolinium,,LNG,37.03,
+65,Tb,terbium,,use,28.91,0.182
+65,Tb,terbium,,CRC,28.91,0.182
+65,Tb,terbium,,WEL,28.9,
+65,Tb,terbium,,LNG,28.91,
+66,Dy,dysprosium,,use,27.7,0.170
+66,Dy,dysprosium,,CRC,27.7,0.170
+66,Dy,dysprosium,,WEL,27.2,
+66,Dy,dysprosium,,LNG,27.7,
+67,Ho,holmium,,use,27.15,0.165
+67,Ho,holmium,,CRC,27.15,0.165
+67,Ho,holmium,,WEL,27.2,
+67,Ho,holmium,,LNG,27.15,
+68,Er,erbium,,use,28.12,0.168
+68,Er,erbium,,CRC,28.12,0.168
+68,Er,erbium,,WEL,28.1,
+68,Er,erbium,,LNG,28.12,
+69,Tm,thulium,,use,27.03,0.160
+69,Tm,thulium,,CRC,27.03,0.160
+69,Tm,thulium,,WEL,27.0,
+69,Tm,thulium,,LNG,27.03,
+70,Yb,ytterbium,,use,26.74,0.155
+70,Yb,ytterbium,,CRC,26.74,0.155
+70,Yb,ytterbium,,WEL,26.7,
+70,Yb,ytterbium,,LNG,26.74,
+71,Lu,lutetium,,use,26.86,0.154
+71,Lu,lutetium,,CRC,26.86,0.154
+71,Lu,lutetium,,WEL,26.9,
+71,Lu,lutetium,,LNG,26.86,
+72,Hf,hafnium,hexagonal,use,25.73,0.144
+72,Hf,hafnium,hexagonal,CRC,25.73,0.144
+72,Hf,hafnium,hexagonal,WEL,25.7,
+72,Hf,hafnium,hexagonal,LNG,25.69,
+73,Ta,tantalum,,use,25.36,0.140
+73,Ta,tantalum,,CRC,25.36,0.140
+73,Ta,tantalum,,WEL,25.4,
+73,Ta,tantalum,,LNG,25.40,
+74,W,tungsten,,use,24.27,0.132
+74,W,tungsten,,CRC,24.27,0.132
+74,W,tungsten,,WEL,24.3,
+74,W,tungsten,,LNG,24.3,
+75,Re,rhenium,,use,25.48,0.137
+75,Re,rhenium,,CRC,25.48,0.137
+75,Re,rhenium,,WEL,25.5,
+75,Re,rhenium,,LNG,25.5,
+76,Os,osmium,,use,24.7,0.130
+76,Os,osmium,,CRC,24.7,0.130
+76,Os,osmium,,WEL,25,
+76,Os,osmium,,LNG,24.7,
+77,Ir,iridium,,use,25.10,0.131
+77,Ir,iridium,,CRC,25.10,0.131
+77,Ir,iridium,,WEL,25.1,
+77,Ir,iridium,,LNG,25.06,
+78,Pt,platinum,,use,25.86,0.133
+78,Pt,platinum,,CRC,25.86,0.133
+78,Pt,platinum,,WEL,25.9,
+79,Au,gold,,use,25.418,0.129
+79,Au,gold,,CRC,25.418,0.129
+79,Au,gold,,WEL,25.42,
+79,Au,gold,,LNG,25.36,
+80,Hg,mercury,liquid,use,27.983,0.140
+80,Hg,mercury,liquid,CRC,27.983,0.140
+80,Hg,mercury,liquid,WEL,27.98,
+80,Hg,mercury,liquid,LNG,28.00,
+81,Tl,thallium,,use,26.32,0.129
+81,Tl,thallium,,CRC,26.32,0.129
+81,Tl,thallium,,WEL,26.3,
+81,Tl,thallium,,LNG,26.32,
+82,Pb,lead,,use,26.650,0.129
+82,Pb,lead,,CRC,26.650,0.129
+82,Pb,lead,,WEL,26.4,
+82,Pb,lead,,LNG,26.84,
+83,Bi,bismuth,,use,25.52,0.122
+83,Bi,bismuth,,CRC,25.52,0.122
+83,Bi,bismuth,,WEL,25.5,
+83,Bi,bismuth,,LNG,25.5,
+84,Po,polonium,,use,26.4,
+84,Po,polonium,,LNG,26.4,
+86,Rn,radon,gas,use,20.786,0.094
+86,Rn,radon,gas,CRC,20.786,0.094
+86,Rn,radon,gas,WEL,20.79,
+86,Rn,radon,gas,LNG,20.79,
+87,Fr,francium,,use,31.80,
+87,Fr,francium,,LNG,31.80,
+89,Ac,actinium,,use,27.2,0.120
+89,Ac,actinium,,CRC,27.2,0.120
+89,Ac,actinium,,WEL,27.2,
+89,Ac,actinium,,LNG,27.2,
+90,Th,thorium,,use,26.230,0.113
+90,Th,thorium,,CRC,26.230,0.113
+90,Th,thorium,,WEL,27.3,
+90,Th,thorium,,LNG,27.32,
+92,U,uranium,,use,27.665,0.116
+92,U,uranium,,CRC,27.665,0.116
+92,U,uranium,,WEL,27.7,
+92,U,uranium,,LNG,27.66,
+93,Np,neptunium,,use,29.46,
+93,Np,neptunium,,LNG,29.46,
+94,Pu,plutonium,,use,35.5,
+94,Pu,plutonium,,LNG,35.5,
+95,Am,americium,,use,62.7,
+95,Am,americium,,LNG,62.7,
