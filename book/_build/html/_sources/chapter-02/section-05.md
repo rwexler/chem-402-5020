@@ -147,7 +147,7 @@ We often define the thermal de Broglie wavelength $\Lambda$ as
 
 ```{math}
 \Lambda 
-= \left(\frac{2 \pi m k_{\text{B}} T}{h^2}\right)^{\!1/2}.
+= \left(\frac{h^2}{2 \pi m k_{\text{B}} T}\right)^{\!1/2}.
 ```
 
 ````{admonition} What is the thermal de Broglie wavelength?
