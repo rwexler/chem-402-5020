@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Review &#8212; Physical Chemistry II</title>
+    <title>2.8. Molecular Statistical Mechanics &#8212; Physical Chemistry II</title>
   
   
   
@@ -64,11 +64,11 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'chapter-02/review';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapter-02/section-08';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="3.1. Conservation of Energy" href="../chapter-03/section-01.html" />
-    <link rel="prev" title="2.8. Molecular Statistical Mechanics" href="section-08.html" />
+    <link rel="next" title="Review" href="review.html" />
+    <link rel="prev" title="2.7. Linear Rigid Rotor" href="section-07.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -189,8 +189,8 @@
 <li class="toctree-l1"><a class="reference internal" href="section-05.html">2.5. Particle in a Box</a></li>
 <li class="toctree-l1"><a class="reference internal" href="section-06.html">2.6. Harmonic Oscillator</a></li>
 <li class="toctree-l1"><a class="reference internal" href="section-07.html">2.7. Linear Rigid Rotor</a></li>
-<li class="toctree-l1"><a class="reference internal" href="section-08.html">2.8. Molecular Statistical Mechanics</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Review</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">2.8. Molecular Statistical Mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="review.html">Review</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Module 3. First Law &amp; Enthalpy</span></p>
 <ul class="nav bd-sidenav">
@@ -275,7 +275,7 @@
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fchapter-02/review.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fchapter-02/section-08.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -305,7 +305,7 @@
       
       
       
-      <li><a href="../_sources/chapter-02/review.md" target="_blank"
+      <li><a href="../_sources/chapter-02/section-08.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -381,7 +381,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Review</h1>
+    <h1>2.8. Molecular Statistical Mechanics</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -391,13 +391,12 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#checklist-of-key-concepts">Checklist of Key Concepts</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#section-2-1-introduction-to-statistical-mechanics">Section 2.1: Introduction to Statistical Mechanics</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#section-2-2-canonical-ensemble">Section 2.2: Canonical Ensemble</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#section-2-3-ensemble-averages">Section 2.3: Ensemble Averages</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#checklist-of-most-important-equations">2. Checklist of Most Important Equations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#symmetry-of-linear-rigid-rotors">Symmetry of Linear Rigid Rotors</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nonlinear-rigid-rotors">Nonlinear Rigid Rotors</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vibrations-of-polyatomic-molecules">Vibrations of Polyatomic Molecules</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#electronic-partition-function">Electronic Partition Function</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
 </ul>
             </nav>
         </div>
@@ -409,213 +408,87 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="review">
-<h1>Review<a class="headerlink" href="#review" title="Link to this heading">#</a></h1>
-<section id="checklist-of-key-concepts">
-<h2>Checklist of Key Concepts<a class="headerlink" href="#checklist-of-key-concepts" title="Link to this heading">#</a></h2>
-<section id="section-2-1-introduction-to-statistical-mechanics">
-<h3>Section 2.1: Introduction to Statistical Mechanics<a class="headerlink" href="#section-2-1-introduction-to-statistical-mechanics" title="Link to this heading">#</a></h3>
-<ol class="arabic simple">
-<li><p><strong>Microscopic–Macroscopic Connection</strong></p>
-<ul class="simple">
-<li><p>Macroscopic (thermodynamic) properties can be understood as <strong>statistical averages</strong> of microscopic properties.</p></li>
-<li><p>“Expected value” (ensemble average) is the central idea: <span class="math notranslate nohighlight">\(\langle X \rangle = \sum X_i\,p_i\)</span>.</p></li>
-</ul>
-</li>
-<li><p><strong>Arithmetic Average vs. Expected Value</strong></p>
-<ul class="simple">
-<li><p>Arithmetic average: <span class="math notranslate nohighlight">\(\bar{X} = \frac{1}{M}\sum X_i\)</span>.</p></li>
-<li><p>Expected value: <span class="math notranslate nohighlight">\(\langle X \rangle = \sum X_i\,p_i\)</span>, where <span class="math notranslate nohighlight">\(p_i\)</span> is the probability of microstate <span class="math notranslate nohighlight">\(i\)</span>.</p></li>
-</ul>
-</li>
-<li><p><strong>Microstates and Ensembles</strong></p>
-<ul class="simple">
-<li><p><strong>Microcanonical ensemble</strong>: <span class="math notranslate nohighlight">\((N, V, E)\)</span> — all accessible microstates have the same <span class="math notranslate nohighlight">\(E\)</span>.</p></li>
-<li><p><strong>Canonical ensemble</strong>: <span class="math notranslate nohighlight">\((N, V, T)\)</span> — system can exchange energy with a heat bath.</p></li>
-<li><p><strong>Grand canonical ensemble</strong>: <span class="math notranslate nohighlight">\((\mu, V, T)\)</span> — system exchanges both energy and particles with the reservoir.</p></li>
-</ul>
-</li>
-<li><p><strong>Fundamental Postulate (Microcanonical)</strong></p>
-<ul class="simple">
-<li><p>For an isolated system, <strong>each accessible microstate is equally probable</strong>.</p></li>
-</ul>
-</li>
-</ol>
+  <section class="tex2jax_ignore mathjax_ignore" id="molecular-statistical-mechanics">
+<h1>2.8. Molecular Statistical Mechanics<a class="headerlink" href="#molecular-statistical-mechanics" title="Link to this heading">#</a></h1>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading">#</a></h2>
 </section>
-<section id="section-2-2-canonical-ensemble">
-<h3>Section 2.2: Canonical Ensemble<a class="headerlink" href="#section-2-2-canonical-ensemble" title="Link to this heading">#</a></h3>
-<ol class="arabic">
-<li><p><strong>Closed System</strong></p>
-<ul class="simple">
-<li><p>Exchanges energy (heat) with surroundings; cannot exchange matter.</p></li>
-</ul>
-</li>
-<li><p><strong>Boltzmann Factor and Partition Function</strong></p>
-<ul>
-<li><p>Probability of microstate <span class="math notranslate nohighlight">\(i\)</span>:</p>
-<div class="math notranslate nohighlight">
-\[
-       p_i = \frac{e^{-\beta E_i}}{Q},
-       \quad
-       \beta = \frac{1}{k_{\text{B}} T}.
-     \]</div>
-</li>
-<li><p><strong>Partition function</strong> <span class="math notranslate nohighlight">\(Q\)</span>: normalizes probabilities; sum of Boltzmann factors over all states:</p>
-<div class="math notranslate nohighlight">
-\[
-       Q = \sum_{i} e^{-\beta E_i}.
-     \]</div>
-</li>
-</ul>
-</li>
-<li><p><strong>Two-State System</strong></p>
-<ul>
-<li><p>Simplest nontrivial example: energies <span class="math notranslate nohighlight">\(E_1\)</span> and <span class="math notranslate nohighlight">\(E_2\)</span>.</p></li>
-<li><p>Partition function: <span class="math notranslate nohighlight">\(Q = e^{-\beta E_1} + e^{-\beta E_2}\)</span>.</p></li>
-<li><p>Probabilities:</p>
-<div class="math notranslate nohighlight">
-\[
-       p_1 = \frac{1}{1 + e^{-\beta\,\Delta E}},
-       \quad
-       p_2 = 1 - p_1,
-       \quad
-       \Delta E = E_2 - E_1.
-     \]</div>
-</li>
-</ul>
-</li>
-<li><p><strong>Interpretation of <span class="math notranslate nohighlight">\(Q\)</span></strong></p>
-<ul class="simple">
-<li><p>“Effective number” of thermally accessible microstates; as <span class="math notranslate nohighlight">\(T \to 0\)</span>, few states are accessible; as <span class="math notranslate nohighlight">\(T \to \infty\)</span>, many states are accessible.</p></li>
-</ul>
-</li>
-</ol>
+<section id="symmetry-of-linear-rigid-rotors">
+<h2>Symmetry of Linear Rigid Rotors<a class="headerlink" href="#symmetry-of-linear-rigid-rotors" title="Link to this heading">#</a></h2>
 </section>
-<section id="section-2-3-ensemble-averages">
-<h3>Section 2.3: Ensemble Averages<a class="headerlink" href="#section-2-3-ensemble-averages" title="Link to this heading">#</a></h3>
-<ol class="arabic">
-<li><p><strong>Internal Energy</strong></p>
-<ul>
-<li><p><span class="math notranslate nohighlight">\(U \equiv \langle E \rangle\)</span>.</p></li>
-<li><p>In canonical ensemble:</p>
-<div class="math notranslate nohighlight">
-\[
-       U = \frac{1}{Q}\sum_i E_i\, e^{-\beta E_i} = -\left(\frac{\partial \ln Q}{\partial \beta}\right)_{N,V}.
-     \]</div>
-</li>
-</ul>
-</li>
-<li><p><strong>Heat Capacity (<span class="math notranslate nohighlight">\(C_V\)</span>)</strong></p>
-<ul>
-<li><p><span class="math notranslate nohighlight">\(C_V = \bigl(\frac{\partial U}{\partial T}\bigr)_{N,V}\)</span>.</p></li>
-<li><p>Also relates to <strong>energy fluctuations</strong>:</p>
-<div class="math notranslate nohighlight">
-\[
-       \sigma_E^2 \;=\; \langle(E - \langle E\rangle)^2\rangle \;=\; k_{\text{B}}\,T^2\,C_V.
-     \]</div>
-</li>
-</ul>
-</li>
-<li><p><strong>Pressure</strong> (brief introduction)</p>
-<ul class="simple">
-<li><p>Later formal definition involves <span class="math notranslate nohighlight">\(\bigl(\frac{\partial U}{\partial V}\bigr)_{S}\)</span>.</p></li>
-<li><p>In canonical ensemble, <span class="math notranslate nohighlight">\(\displaystyle P \;=\; k_{\text{B}}\,T\,\bigl(\frac{\partial\ln Q}{\partial V}\bigr)_{N,T}\)</span>.</p></li>
-</ul>
-</li>
-</ol>
+<section id="nonlinear-rigid-rotors">
+<h2>Nonlinear Rigid Rotors<a class="headerlink" href="#nonlinear-rigid-rotors" title="Link to this heading">#</a></h2>
 </section>
+<section id="vibrations-of-polyatomic-molecules">
+<h2>Vibrations of Polyatomic Molecules<a class="headerlink" href="#vibrations-of-polyatomic-molecules" title="Link to this heading">#</a></h2>
 </section>
-<hr class="docutils" />
-<section id="checklist-of-most-important-equations">
-<h2>2. Checklist of Most Important Equations<a class="headerlink" href="#checklist-of-most-important-equations" title="Link to this heading">#</a></h2>
-<ol class="arabic">
-<li><p><strong>Expected Value of a General Variable</strong></p>
-<div class="math notranslate nohighlight">
-\[
-     \langle X \rangle \;=\;\sum_i X_i\,p_i
-     \quad\text{or}\quad
-     \int X(\omega)\,p(\omega)\,d\omega.
-   \]</div>
-<ul class="simple">
-<li><p><strong>Applicability</strong>: general definition in statistical mechanics/probability theory.</p></li>
-</ul>
-</li>
-<li><p><strong>Microcanonical Ensemble (Fundamental Postulate)</strong></p>
-<div class="math notranslate nohighlight">
-\[
-     p_i \;=\;\frac{1}{M}
-     \quad\text{(for all accessible microstates)}.
-   \]</div>
-<ul class="simple">
-<li><p><strong>Applicability</strong>: isolated system with fixed <span class="math notranslate nohighlight">\((N, V, E)\)</span>.</p></li>
-</ul>
-</li>
-<li><p><strong>Canonical Ensemble Probability</strong></p>
-<div class="math notranslate nohighlight">
-\[
-     p_i \;=\;\frac{e^{-\beta\,E_i}}{Q},
-     \quad
-     \beta = \frac{1}{k_{\text{B}}\,T},
-   \]</div>
-<ul class="simple">
-<li><p><strong>Applicability</strong>: closed system in thermal equilibrium with a heat bath at temperature <span class="math notranslate nohighlight">\(T\)</span>.</p></li>
-</ul>
-</li>
-<li><p><strong>Canonical Partition Function</strong></p>
-<div class="math notranslate nohighlight">
-\[
-     Q \;=\;\sum_i e^{-\beta\,E_i}.
-   \]</div>
-<ul class="simple">
-<li><p><strong>Applicability</strong>: all systems that can be described by <span class="math notranslate nohighlight">\((N, V, T)\)</span>; sum or integral runs over all microstates.</p></li>
-</ul>
-</li>
-<li><p><strong>Internal Energy in the Canonical Ensemble</strong></p>
-<div class="math notranslate nohighlight">
-\[
-     U \;=\;\langle E\rangle
-     \;=\;\frac{1}{Q}\,\sum_i E_i\,e^{-\beta E_i}
-     \;=\;-\left(\frac{\partial \ln Q}{\partial \beta}\right)_{N,V}.
-   \]</div>
-<ul class="simple">
-<li><p><strong>Applicability</strong>: same as above (canonical ensemble).</p></li>
-</ul>
-</li>
-<li><p><strong>Heat Capacity at Constant Volume</strong></p>
-<div class="math notranslate nohighlight">
-\[
-     C_V
-     \;=\;
-     \left(\frac{\partial U}{\partial T}\right)_{N,V}.
-   \]</div>
-<ul class="simple">
-<li><p><strong>Applicability</strong>: measures how internal energy changes with <span class="math notranslate nohighlight">\(T\)</span> when <span class="math notranslate nohighlight">\(N, V\)</span> are constant.</p></li>
-</ul>
-</li>
-<li><p><strong>Energy Fluctuations</strong></p>
-<div class="math notranslate nohighlight">
-\[
-     \sigma_E^2
-     \;=\;\langle E^2\rangle - \langle E\rangle^2
-     \;=\;
-     k_{\text{B}}\,T^2\,C_V.
-   \]</div>
-<ul class="simple">
-<li><p><strong>Applicability</strong>: canonical ensemble; relates variance in energy to the heat capacity.</p></li>
-</ul>
-</li>
-<li><p><strong>Pressure (Canonical)</strong></p>
-<div class="math notranslate nohighlight">
-\[
-     P
-     \;=\;
-     k_{\text{B}}\,T \,\left(\frac{\partial \ln Q}{\partial V}\right)_{N,T}.
-   \]</div>
-<ul class="simple">
-<li><p><strong>Applicability</strong>: canonical ensemble; a precursor to more rigorous derivation using thermodynamic potentials.</p></li>
-</ul>
-</li>
-</ol>
+<section id="electronic-partition-function">
+<h2>Electronic Partition Function<a class="headerlink" href="#electronic-partition-function" title="Link to this heading">#</a></h2>
+</section>
+<section id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table" id="tab-partfunc">
+<caption><span class="caption-number">Table 8 </span><span class="caption-text">Partition functions for various systems. Repeated entries are denoted by a down arrow.</span><a class="headerlink" href="#tab-partfunc" title="Link to this table">#</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>System</p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(q_{\text{trans}}\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(q_{\text{rot}}\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(q_{\text{vib}}\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(q_{\text{elec}}\)</span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Atom</p></td>
+<td><p><span class="math notranslate nohighlight">\(\dfrac{V}{\Lambda^3}\)</span></p></td>
+<td></td>
+<td></td>
+<td><p><span class="math notranslate nohighlight">\(g_1\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>Diatomic</p></td>
+<td><p><span class="math notranslate nohighlight">\(\downarrow\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\dfrac{T}{\sigma\,\Theta_{\text{rot}}}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\dfrac{e^{-\Theta_{\text{vib}}/(2T)}}{1-e^{-\Theta_{\text{vib}}/T}}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\downarrow\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Polyatomic</strong></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><em>Linear</em></p></td>
+<td><p><span class="math notranslate nohighlight">\(\downarrow\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\downarrow\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\displaystyle\prod_{j=1}^\alpha \dfrac{e^{-\Theta_{\text{vib},j}/(2T)}}{1-e^{-\Theta_{\text{vib},j}/T}}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\downarrow\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Nonlinear</em></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Spherical</p></td>
+<td><p><span class="math notranslate nohighlight">\(\downarrow\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\dfrac{\sqrt{\pi}}{\sigma}\left(\dfrac{T}{\Theta_{\text{rot}}}\right)^{3/2}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\downarrow\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\downarrow\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>Symmetric</p></td>
+<td><p><span class="math notranslate nohighlight">\(\downarrow\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\dfrac{\sqrt{\pi}}{\sigma}\left(\dfrac{T}{\Theta_{\text{rot,A}}}\right)\left(\dfrac{T}{\Theta_{\text{rot,C}}}\right)^{1/2}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\downarrow\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\downarrow\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>Asymmetric</p></td>
+<td><p><span class="math notranslate nohighlight">\(\downarrow\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\dfrac{\sqrt{\pi}}{\sigma}\left(\dfrac{T^3}{\Theta_{\text{rot,A}}\,\Theta_{\text{rot,B}}\,\Theta_{\text{rot,C}}}\right)^{1/2}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\downarrow\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\downarrow\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
 </section>
 </section>
 
@@ -650,20 +523,20 @@
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="section-08.html"
+       href="section-07.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">2.8. Molecular Statistical Mechanics</p>
+        <p class="prev-next-title">2.7. Linear Rigid Rotor</p>
       </div>
     </a>
     <a class="right-next"
-       href="../chapter-03/section-01.html"
+       href="review.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">3.1. Conservation of Energy</p>
+        <p class="prev-next-title">Review</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -684,13 +557,12 @@
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#checklist-of-key-concepts">Checklist of Key Concepts</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#section-2-1-introduction-to-statistical-mechanics">Section 2.1: Introduction to Statistical Mechanics</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#section-2-2-canonical-ensemble">Section 2.2: Canonical Ensemble</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#section-2-3-ensemble-averages">Section 2.3: Ensemble Averages</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#checklist-of-most-important-equations">2. Checklist of Most Important Equations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#symmetry-of-linear-rigid-rotors">Symmetry of Linear Rigid Rotors</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nonlinear-rigid-rotors">Nonlinear Rigid Rotors</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vibrations-of-polyatomic-molecules">Vibrations of Polyatomic Molecules</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#electronic-partition-function">Electronic Partition Function</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
 </ul>
   </nav></div>
 

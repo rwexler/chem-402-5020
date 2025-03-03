@@ -1,0 +1,821 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>3.1. Conservation of Energy &#8212; Physical Chemistry II</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/myfile.css?v=536cf54f" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapter-03/section-01';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Appendix A. Differential Calculus" href="../appendices/appendix-a.html" />
+    <link rel="prev" title="Review" href="../chapter-02/review.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Physical Chemistry II - Home"/>
+    <img src="../_static/logo.png" class="logo__image only-dark pst-js-only" alt="Physical Chemistry II - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Welcome to Physical Chemistry II
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Module 1. Equations of State</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../chapter-01/section-01.html">1.1. Course Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter-01/section-02.html">1.2. Kinetic Theory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter-01/section-03.html">1.3. Ideal Gases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter-01/section-04.html">1.4. Real Gases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter-01/review.html">Review</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Module 2. Statistical Mechanics</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../chapter-02/section-01.html">2.1. Introduction to Statistical Mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter-02/section-02.html">2.2. Canonical Ensemble</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter-02/section-03.html">2.3. Ensemble Averages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter-02/section-04.html">2.4. Molecular Partition Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter-02/section-05.html">2.5. Particle in a Box</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter-02/section-06.html">2.6. Harmonic Oscillator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter-02/section-07.html">2.7. Linear Rigid Rotor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter-02/section-08.html">2.8. Molecular Statistical Mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter-02/review.html">Review</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Module 3. First Law &amp; Enthalpy</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">3.1. Conservation of Energy</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendices</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../appendices/appendix-a.html">Appendix A. Differential Calculus</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fchapter-03/section-01.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/chapter-03/section-01.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>3.1. Conservation of Energy</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conservation-of-mechanical-energy">Conservation of Mechanical Energy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mechanical-equivalent-of-heat">Mechanical Equivalent of Heat</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#first-law-of-thermodynamics">First Law of Thermodynamics</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#differential-form">Differential Form</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-work">Types of Work</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-1-work-for-gas-expansion-against-constant-pressure">Example 1. Work for Gas Expansion Against Constant Pressure</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-2-work-in-expanding-a-water-bubble">Example 2. Work in Expanding a Water Bubble</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-3-work-to-stretch-a-hookean-fiber">Example 3. Work to Stretch a Hookean Fiber</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="conservation-of-energy">
+<h1>3.1. Conservation of Energy<a class="headerlink" href="#conservation-of-energy" title="Link to this heading">#</a></h1>
+<blockquote>
+<div><p><em>“The total energy of the world, kinetic plus potential, is a constant when we look closely enough… [If we see energy not conserved, then] this is due to a lack of appreciation of what it is that we see.”</em><br />
+— Richard Feynman</p>
+</div></blockquote>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading">#</a></h2>
+<p>In this section, we introduce the principle of <strong>conservation of energy</strong> and the <strong>First Law of Thermodynamics</strong>, which unifies the ideas of heat and work into one fundamental statement.</p>
+</section>
+<section id="conservation-of-mechanical-energy">
+<h2>Conservation of Mechanical Energy<a class="headerlink" href="#conservation-of-mechanical-energy" title="Link to this heading">#</a></h2>
+<p>Between 1732 and 1736, Bernoulli and Euler combined the discoveries of Newton (laws of motion) and Leibniz (the connection between weight × vertical displacement and weight × velocity squared) into an early form of the law of conservation of mechanical energy. A simple example is the interchange between potential and kinetic energy:</p>
+<div class="math notranslate nohighlight">
+\[\frac{1}{2} m v^2 = m g h.\]</div>
+<p>When an object (mass <span class="math notranslate nohighlight">\(m\)</span>) of height <span class="math notranslate nohighlight">\(h\)</span> is dropped, its gravitational potential energy <span class="math notranslate nohighlight">\(mgh\)</span> is converted into kinetic energy <span class="math notranslate nohighlight">\(\tfrac{1}{2}mv^2\)</span>, assuming negligible air resistance.</p>
+<div class="tip admonition">
+<p class="admonition-title">Apollo 15</p>
+<p>During the Apollo 15 mission, astronaut David Scott famously dropped a hammer and a feather on the Moon. With negligible air resistance, both hit the ground simultaneously. This illustrates that in free fall, all objects (no matter their mass) accelerate at the same rate, and thus gain the same velocity over the same drop distance:</p>
+<div class="math notranslate nohighlight">
+\[\frac{1}{2}\,\cancel{m} v^2 = \cancel{m} g h
+\quad\Rightarrow\quad
+v = \sqrt{2 g h}.\]</div>
+<a class="reference internal image-reference" href="https://upload.wikimedia.org/wikipedia/commons/6/62/AS15-88-11866_-_Apollo_15_flag%2C_rover%2C_LM%2C_Irwin_-_restoration1.jpg"><img alt="https://upload.wikimedia.org/wikipedia/commons/6/62/AS15-88-11866_-_Apollo_15_flag%2C_rover%2C_LM%2C_Irwin_-_restoration1.jpg" class="align-center" src="https://upload.wikimedia.org/wikipedia/commons/6/62/AS15-88-11866_-_Apollo_15_flag%2C_rover%2C_LM%2C_Irwin_-_restoration1.jpg" style="width: 50%;" /></a>
+</div>
+</section>
+<section id="mechanical-equivalent-of-heat">
+<h2>Mechanical Equivalent of Heat<a class="headerlink" href="#mechanical-equivalent-of-heat" title="Link to this heading">#</a></h2>
+<figure class="align-center" id="joule-apparatus">
+<a class="reference internal image-reference" href="https://upload.wikimedia.org/wikipedia/commons/c/c3/Joule%27s_Apparatus_%28Harper%27s_Scan%29.png"><img alt="https://upload.wikimedia.org/wikipedia/commons/c/c3/Joule%27s_Apparatus_%28Harper%27s_Scan%29.png" src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Joule%27s_Apparatus_%28Harper%27s_Scan%29.png" style="width: 50%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 22 </span><span class="caption-text">Joule’s apparatus for measuring the mechanical equivalent of heat.</span><a class="headerlink" href="#joule-apparatus" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>In 1847, James Prescott Joule measured how mechanical work converts into heat. He famously found that dropping a total of <span class="math notranslate nohighlight">\(778\)</span> lb<span class="math notranslate nohighlight">\(\cdot\)</span>ft of weight (e.g., by turning a paddle in water) raised the temperature of <span class="math notranslate nohighlight">\(1\)</span> lb of water by <span class="math notranslate nohighlight">\(1\,^\circ\text{F}\)</span>. Converting to SI units:</p>
+<div class="math notranslate nohighlight">
+\[\text{MEH} 
+= \frac{778 \;\text{lb}\cdot\text{ft}}{1\;\text{lb}\,^\circ\text{F}}
+\approx \frac{1{,}055 \;\text{J}}{(453.6 \;\text{g water}) \cdot (5/9\,^\circ\text{C})}
+\approx 4.18 \;\text{J}\,\text{g}^{-1}\,{^\circ\text{C}}^{-1}.\]</div>
+<p>Here, <span class="math notranslate nohighlight">\(4.18\,\text{J}\,\text{g}^{-1}\,{^\circ\text{C}}^{-1}\)</span> is the <strong>specific heat</strong> of water—i.e., the heat capacity per gram.</p>
+</section>
+<section id="first-law-of-thermodynamics">
+<h2>First Law of Thermodynamics<a class="headerlink" href="#first-law-of-thermodynamics" title="Link to this heading">#</a></h2>
+<p>Joule’s work revealed that heat and mechanical energy are interconvertible. To include heat (<span class="math notranslate nohighlight">\(q\)</span>) and work (<span class="math notranslate nohighlight">\(w\)</span>) in one statement of energy conservation, we use:</p>
+<div class="math notranslate nohighlight">
+\[\Delta U = q + w,\]</div>
+<p>where</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\Delta U\)</span> is the <strong>change in internal energy</strong>,</p></li>
+<li><p><span class="math notranslate nohighlight">\(q\)</span> is the heat <strong>absorbed by</strong> the system,</p></li>
+<li><p><span class="math notranslate nohighlight">\(w\)</span> is the work <strong>done on</strong> the system.</p></li>
+</ul>
+<section id="differential-form">
+<h3>Differential Form<a class="headerlink" href="#differential-form" title="Link to this heading">#</a></h3>
+<p>In differential form,</p>
+<div class="math notranslate nohighlight">
+\[dU = \delta q + \delta w 
+\quad\Longleftrightarrow\quad
+\boxed{\delta q = dU - \delta w.}\]</div>
+<p>The notation <span class="math notranslate nohighlight">\(\delta\)</span> is used to remind us that <span class="math notranslate nohighlight">\(q\)</span> and <span class="math notranslate nohighlight">\(w\)</span> are <strong>path functions</strong>, not state functions.</p>
+</section>
+</section>
+<section id="types-of-work">
+<h2>Types of Work<a class="headerlink" href="#types-of-work" title="Link to this heading">#</a></h2>
+<p>In Module 1.1, we defined work as “energy transferred when a force acts over a distance.” Mathematically:</p>
+<div class="math notranslate nohighlight">
+\[\delta w = \vec{F}\cdot d\vec{r} 
+= (F_x,\,F_y,\,F_z)\cdot(dx,\,dy,\,dz) 
+= F_x\,dx + F_y\,dy + F_z\,dz.\]</div>
+<p>Many physical processes fit a “generalized force” <span class="math notranslate nohighlight">\(\times\)</span> “generalized displacement” pattern:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>Generalized “Force”</p></th>
+<th class="head text-center"><p>Generalized “Displacement”</p></th>
+<th class="head text-center"><p><span class="math notranslate nohighlight">\(\delta w\)</span></p></th>
+<th class="head text-center"><p>Example</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>Mechanical <span class="math notranslate nohighlight">\(F\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(x\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(F \,dx\)</span></p></td>
+<td class="text-center"><p>Lifting a weight</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>Linear tension <span class="math notranslate nohighlight">\(k\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(l=x - x_0\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(k \,dl\)</span></p></td>
+<td class="text-center"><p>Stretching a spring</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>Surface tension <span class="math notranslate nohighlight">\(\gamma\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(A\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(\pm\,\gamma \, dA\)</span></p></td>
+<td class="text-center"><p>Blowing a soap bubble</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>Pressure <span class="math notranslate nohighlight">\(P\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(V\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(-P\,dV\)</span></p></td>
+<td class="text-center"><p>Compressing a gas</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>Chemical <span class="math notranslate nohighlight">\(\mu\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(N\)</span> or <span class="math notranslate nohighlight">\(n\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(\mu\,dN\)</span></p></td>
+<td class="text-center"><p>Forming a molecule</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>Electrical <span class="math notranslate nohighlight">\(E\)</span></p></td>
+<td class="text-center"><p>Charge <span class="math notranslate nohighlight">\(q_{\text{el}}\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(E\,dq_{\text{el}}\)</span></p></td>
+<td class="text-center"><p>Moving an electric charge</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Sign convention</strong> in chemistry:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(w&gt;0\)</span> when work is <strong>done on</strong> the system (system’s energy goes up).</p></li>
+<li><p><span class="math notranslate nohighlight">\(w&lt;0\)</span> when work is <strong>done by</strong> the system (system’s energy goes down).</p></li>
+</ul>
+<hr class="docutils" />
+<section id="example-1-work-for-gas-expansion-against-constant-pressure">
+<h3>Example 1. Work for Gas Expansion Against Constant Pressure<a class="headerlink" href="#example-1-work-for-gas-expansion-against-constant-pressure" title="Link to this heading">#</a></h3>
+<p>Calculate the work necessary to expand an ideal gas from <span class="math notranslate nohighlight">\(20\,\mathrm{L}\)</span> to <span class="math notranslate nohighlight">\(85\,\mathrm{L}\)</span> against a constant external pressure of <span class="math notranslate nohighlight">\(2.5\,\mathrm{bar}\)</span>.</p>
+<div class="dropdown admonition">
+<p class="admonition-title">Solution</p>
+<ol class="arabic">
+<li><p><strong>Convert Units to SI</strong></p>
+<div class="math notranslate nohighlight">
+\[P_{\mathrm{ext}} = 2.5\,\mathrm{bar} = 2.5\times10^5\,\mathrm{Pa},\quad
+V_i = 20\,\mathrm{L} = 20\times10^{-3}\,\mathrm{m^3},\quad
+V_f = 85\,\mathrm{L} = 85\times10^{-3}\,\mathrm{m^3}.\]</div>
+</li>
+<li><p><strong>Set Up the Work Integral</strong><br />
+For a constant external pressure,</p>
+<div class="math notranslate nohighlight">
+\[\delta w = -P_{\mathrm{ext}}\,dV 
+\quad \Longrightarrow\quad
+w = -\int_{V_i}^{V_f} P_{\mathrm{ext}}\,dV.\]</div>
+</li>
+<li><p><strong>Perform the Integration</strong></p>
+<div class="math notranslate nohighlight">
+\[w 
+= -P_{\mathrm{ext}}\int_{V_i}^{V_f} dV
+= -P_{\mathrm{ext}}\bigl(V_f - V_i\bigr).\]</div>
+</li>
+<li><p><strong>Numerical Result</strong></p>
+<div class="math notranslate nohighlight">
+\[w 
+= -\bigl(2.5\times10^5\,\mathrm{Pa}\bigr)
+  \Bigl[\bigl(85\times10^{-3}\bigr) - \bigl(20\times10^{-3}\bigr)\Bigr]\mathrm{m^3}
+= -16{,}250\,\mathrm{J}
+= \boxed{-16\,\mathrm{kJ}}.\]</div>
+</li>
+<li><p><strong>Interpretation</strong></p>
+<ul class="simple">
+<li><p>The <strong>negative sign</strong> indicates the system (gas) does <span class="math notranslate nohighlight">\(16\,\mathrm{kJ}\)</span> of work <strong>on the surroundings</strong>.</p></li>
+<li><p>According to the convention <span class="math notranslate nohighlight">\(\Delta U = q + w\)</span>, if no heat is exchanged (<span class="math notranslate nohighlight">\(q=0\)</span>), the gas would lose <span class="math notranslate nohighlight">\(16\,\mathrm{kJ}\)</span> in internal energy because it expands.</p></li>
+</ul>
+</li>
+</ol>
+</div>
+</section>
+<hr class="docutils" />
+<section id="example-2-work-in-expanding-a-water-bubble">
+<h3>Example 2. Work in Expanding a Water Bubble<a class="headerlink" href="#example-2-work-in-expanding-a-water-bubble" title="Link to this heading">#</a></h3>
+<p>Calculate the work necessary to expand a water “bubble” (two surfaces) with surface tension <span class="math notranslate nohighlight">\(\gamma = 72\,\mathrm{J/m^2}\)</span> from a radius of <span class="math notranslate nohighlight">\(1\,\mathrm{cm}\)</span> to <span class="math notranslate nohighlight">\(3.25\,\mathrm{cm}\)</span>.</p>
+<div class="dropdown admonition">
+<p class="admonition-title">Solution</p>
+<ol class="arabic">
+<li><p><strong>Convert Units</strong></p>
+<div class="math notranslate nohighlight">
+\[\gamma = 72\,\mathrm{J/m^2}, \quad
+r_i = 1\times10^{-2}\,\mathrm{m}, \quad
+r_f = 3.25\times10^{-2}\,\mathrm{m}.\]</div>
+</li>
+<li><p><strong>Identify the Surface Area Change</strong></p>
+<ul>
+<li><p>For a <strong>single</strong> spherical surface, <span class="math notranslate nohighlight">\(A = 4\pi r^2\)</span>, so <span class="math notranslate nohighlight">\(dA = 8\pi r\,dr\)</span>.</p></li>
+<li><p>A bubble has <strong>two</strong> surfaces (inner and outer), so its total area is <span class="math notranslate nohighlight">\(2 \times 4\pi r^2 = 8\pi r^2\)</span>. Hence,</p>
+<div class="math notranslate nohighlight">
+\[\text{(bubble area)} = 8\pi r^2 
+\quad\Longrightarrow\quad
+dA = 16\pi r\,dr.\]</div>
+</li>
+</ul>
+</li>
+<li><p><strong>Write the Work Expression</strong><br />
+Since <span class="math notranslate nohighlight">\(\delta w = -\gamma\,dA\)</span> (negative sign for expansion work done <strong>by</strong> the system):</p>
+<div class="math notranslate nohighlight">
+\[w = - \int_{A_i}^{A_f} \gamma \,dA 
+  = - \gamma \bigl(A_f - A_i\bigr).\]</div>
+</li>
+<li><p><strong>Perform the Integral</strong><br />
+Substituting <span class="math notranslate nohighlight">\(A = 8\pi r^2\)</span> for the bubble:</p>
+<div class="math notranslate nohighlight">
+\[\Delta A = A_f - A_i
+= 8\pi \bigl(r_f^2 - r_i^2\bigr).\]</div>
+<p>Thus,</p>
+<div class="math notranslate nohighlight">
+\[w = -\,\gamma\,\Delta A 
+   = -\,\gamma \,8\pi\bigl(r_f^2 - r_i^2\bigr).\]</div>
+</li>
+<li><p><strong>Calculate Numerically</strong></p>
+<div class="math notranslate nohighlight">
+\[w 
+= -\,72\,\mathrm{J/m^2}
+  \,\times\,8\pi
+  \Bigl[\bigl(3.25\times10^{-2}\bigr)^2 
+        - \bigl(1\times10^{-2}\bigr)^2\Bigr]\mathrm{m^2}.\]</div>
+<p>Evaluate numerically (you should find):</p>
+<div class="math notranslate nohighlight">
+\[w \approx \boxed{-1.7\,\mathrm{J}}.\]</div>
+</li>
+<li><p><strong>Interpretation</strong></p>
+<ul class="simple">
+<li><p>Expanding the bubble (from smaller to larger radius) <strong>does work on</strong> the surroundings, giving <span class="math notranslate nohighlight">\(w&lt;0\)</span> from the system’s perspective.</p></li>
+<li><p>If no heat is supplied, the system’s internal energy would decrease by <span class="math notranslate nohighlight">\(1.7\,\mathrm{J}\)</span>.</p></li>
+</ul>
+</li>
+</ol>
+</div>
+</section>
+<hr class="docutils" />
+<section id="example-3-work-to-stretch-a-hookean-fiber">
+<h3>Example 3. Work to Stretch a Hookean Fiber<a class="headerlink" href="#example-3-work-to-stretch-a-hookean-fiber" title="Link to this heading">#</a></h3>
+<p>Calculate the work required to stretch a fiber obeying Hooke’s law, with <span class="math notranslate nohighlight">\(k=100\,\mathrm{N/cm}\)</span>, by <span class="math notranslate nohighlight">\(0.15\,\mathrm{cm}\)</span>.</p>
+<div class="dropdown admonition">
+<p class="admonition-title">Solution</p>
+<ol class="arabic">
+<li><p><strong>Convert Units</strong></p>
+<div class="math notranslate nohighlight">
+\[k = 100\,\frac{\mathrm{N}}{\mathrm{cm}}
+  = 100\times10^2\,\frac{\mathrm{N}}{\mathrm{m}}
+  = 10^4\,\frac{\mathrm{N}}{\mathrm{m}}, 
+  \quad
+l = 0.15\,\mathrm{cm} = 0.15\times10^{-2}\,\mathrm{m}.\]</div>
+</li>
+<li><p><strong>Write the Work Expression</strong><br />
+Hooke’s law for tension: <span class="math notranslate nohighlight">\(F = k\,\Delta l\)</span>. The infinitesimal work is:</p>
+<div class="math notranslate nohighlight">
+\[\delta w = F\,dx = k(x - x_0)\,dx.\]</div>
+</li>
+<li><p><strong>Integrate</strong><br />
+If we stretch from <span class="math notranslate nohighlight">\(x_0\)</span> to <span class="math notranslate nohighlight">\(x = x_0 + l\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[w 
+= \int_{x_0}^{x_0 + l} k\,(x - x_0)\,dx
+= \frac{1}{2} \,k\,(l)^2.\]</div>
+</li>
+<li><p><strong>Substitute Numbers</strong></p>
+<div class="math notranslate nohighlight">
+\[w 
+= \tfrac{1}{2}\,(10^4)\,
+  \Bigl(0.15\times10^{-2}\,\mathrm{m}\Bigr)^2 
+= 0.5\times10^4
+  \times\bigl(0.15\times10^{-2}\bigr)^2\,\mathrm{J}.\]</div>
+<p>Numerically,</p>
+<div class="math notranslate nohighlight">
+\[w \approx 1.1\times10^{-2}\,\mathrm{J}.\]</div>
+</li>
+<li><p><strong>Interpretation</strong></p>
+<ul class="simple">
+<li><p>This is the energy required (work done <strong>on</strong> the system) to stretch the fiber by <span class="math notranslate nohighlight">\(0.15\,\mathrm{cm}\)</span>.</p></li>
+<li><p>The positive sign indicates the system absorbs energy (an external force pulls on the fiber).</p></li>
+</ul>
+</li>
+</ol>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./chapter-03"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../chapter-02/review.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Review</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../appendices/appendix-a.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Appendix A. Differential Calculus</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conservation-of-mechanical-energy">Conservation of Mechanical Energy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mechanical-equivalent-of-heat">Mechanical Equivalent of Heat</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#first-law-of-thermodynamics">First Law of Thermodynamics</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#differential-form">Differential Form</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-work">Types of Work</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-1-work-for-gas-expansion-against-constant-pressure">Example 1. Work for Gas Expansion Against Constant Pressure</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-2-work-in-expanding-a-water-bubble">Example 2. Work in Expanding a Water Bubble</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-3-work-to-stretch-a-hookean-fiber">Example 3. Work to Stretch a Hookean Fiber</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Robert B. Wexler
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
