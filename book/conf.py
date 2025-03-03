@@ -39,3 +39,4 @@ source_suffix = {
     '.md': 'markdown'
 }
 myst_fence_as_directive = ["mermaid"]
+latex_elements = {'preamble': '\\usepackage{siunitx}'}

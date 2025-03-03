@@ -25,7 +25,13 @@ parts:
       - file: chapter-02/section-04.md
       - file: chapter-02/section-05.md
       - file: chapter-02/section-06.md
+      - file: chapter-02/section-07.md
+      - file: chapter-02/section-08.md
       - file: chapter-02/review.md
+  - caption: Module 3. First Law & Enthalpy
+    numbered: false
+    chapters:
+      - file: chapter-03/section-01.md
   - caption: Appendices
     numbered: false
     chapters:
