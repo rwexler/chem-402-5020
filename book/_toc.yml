@@ -32,7 +32,9 @@ parts:
     numbered: false
     chapters:
       - file: chapter-03/section-01.md
+      - file: chapter-03/section-02.md
   - caption: Appendices
     numbered: false
     chapters:
       - file: appendices/appendix-a.md
+      # - file: appendices/appendix-b.md

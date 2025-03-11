@@ -124,7 +124,7 @@ Many physical processes fit a “generalized force” $\times$ “generalized di
 
 ---
 
-### Example 1. Work for Gas Expansion Against Constant Pressure
+### Example 1. Expanding Against Constant Pressure
 
 Calculate the work necessary to expand an ideal gas from $20\,\mathrm{L}$ to $85\,\mathrm{L}$ against a constant external pressure of $2.5\,\mathrm{bar}$.  
 
@@ -169,7 +169,7 @@ Calculate the work necessary to expand an ideal gas from $20\,\mathrm{L}$ to $85
 
 ---
 
-### Example 2. Work in Expanding a Water Bubble
+### Example 2. Expanding a Water Bubble
 
 Calculate the work necessary to expand a water “bubble” (two surfaces) with surface tension $\gamma = 72\,\mathrm{J/m^2}$ from a radius of $1\,\mathrm{cm}$ to $3.25\,\mathrm{cm}$.
 
@@ -231,7 +231,7 @@ Calculate the work necessary to expand a water “bubble” (two surfaces) with 
 
 ---
 
-### Example 3. Work to Stretch a Hookean Fiber
+### Example 3. Stretching a Hookean Fiber
 
 Calculate the work required to stretch a fiber obeying Hooke’s law, with $k=100\,\mathrm{N/cm}$, by $0.15\,\mathrm{cm}$.
 

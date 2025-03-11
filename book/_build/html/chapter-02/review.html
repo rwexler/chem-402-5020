@@ -34,9 +34,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css?v=b4b7a797" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../_static/myfile.css?v=536cf54f" />
   
@@ -195,6 +195,7 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Module 3. First Law &amp; Enthalpy</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../chapter-03/section-01.html">3.1. Conservation of Energy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter-03/section-02.html">3.2. Applications of the First Law</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendices</span></p>
 <ul class="nav bd-sidenav">
@@ -391,10 +392,15 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#checklist-of-key-concepts">Checklist of Key Concepts</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#checklist-of-key-concepts">1. Checklist of Key Concepts</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#section-2-1-introduction-to-statistical-mechanics">Section 2.1: Introduction to Statistical Mechanics</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#section-2-2-canonical-ensemble">Section 2.2: Canonical Ensemble</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#section-2-3-ensemble-averages">Section 2.3: Ensemble Averages</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#section-2-4-molecular-partition-functions">Section 2.4: Molecular Partition Functions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#section-2-5-particle-in-a-box">Section 2.5: Particle in a Box</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#section-2-6-harmonic-oscillator">Section 2.6: Harmonic Oscillator</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#section-2-7-linear-rigid-rotor">Section 2.7: Linear Rigid Rotor</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#section-2-8-molecular-statistical-mechanics">Section 2.8: Molecular Statistical Mechanics</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#checklist-of-most-important-equations">2. Checklist of Most Important Equations</a></li>
@@ -412,27 +418,36 @@
   <section class="tex2jax_ignore mathjax_ignore" id="review">
 <h1>Review<a class="headerlink" href="#review" title="Link to this heading">#</a></h1>
 <section id="checklist-of-key-concepts">
-<h2>Checklist of Key Concepts<a class="headerlink" href="#checklist-of-key-concepts" title="Link to this heading">#</a></h2>
+<h2>1. Checklist of Key Concepts<a class="headerlink" href="#checklist-of-key-concepts" title="Link to this heading">#</a></h2>
 <section id="section-2-1-introduction-to-statistical-mechanics">
 <h3>Section 2.1: Introduction to Statistical Mechanics<a class="headerlink" href="#section-2-1-introduction-to-statistical-mechanics" title="Link to this heading">#</a></h3>
-<ol class="arabic simple">
+<ol class="arabic">
 <li><p><strong>Microscopic–Macroscopic Connection</strong></p>
 <ul class="simple">
 <li><p>Macroscopic (thermodynamic) properties can be understood as <strong>statistical averages</strong> of microscopic properties.</p></li>
-<li><p>“Expected value” (ensemble average) is the central idea: <span class="math notranslate nohighlight">\(\langle X \rangle = \sum X_i\,p_i\)</span>.</p></li>
+<li><p>“Expected value” (ensemble average) is the central idea:</p></li>
 </ul>
+<div class="math notranslate nohighlight">
+\[\langle X \rangle \;=\; \sum_i X_i\,p_i.\]</div>
 </li>
 <li><p><strong>Arithmetic Average vs. Expected Value</strong></p>
 <ul class="simple">
-<li><p>Arithmetic average: <span class="math notranslate nohighlight">\(\bar{X} = \frac{1}{M}\sum X_i\)</span>.</p></li>
-<li><p>Expected value: <span class="math notranslate nohighlight">\(\langle X \rangle = \sum X_i\,p_i\)</span>, where <span class="math notranslate nohighlight">\(p_i\)</span> is the probability of microstate <span class="math notranslate nohighlight">\(i\)</span>.</p></li>
+<li><p>Arithmetic average:</p></li>
 </ul>
+<div class="math notranslate nohighlight">
+\[\bar{X} \;=\; \frac{1}{M}\sum_{i=1}^M X_i.\]</div>
+<ul class="simple">
+<li><p>Expected value:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\langle X \rangle \;=\; \sum_i X_i\,p_i,
+\quad p_i = \text{probability of microstate } i.\]</div>
 </li>
 <li><p><strong>Microstates and Ensembles</strong></p>
 <ul class="simple">
-<li><p><strong>Microcanonical ensemble</strong>: <span class="math notranslate nohighlight">\((N, V, E)\)</span> — all accessible microstates have the same <span class="math notranslate nohighlight">\(E\)</span>.</p></li>
-<li><p><strong>Canonical ensemble</strong>: <span class="math notranslate nohighlight">\((N, V, T)\)</span> — system can exchange energy with a heat bath.</p></li>
-<li><p><strong>Grand canonical ensemble</strong>: <span class="math notranslate nohighlight">\((\mu, V, T)\)</span> — system exchanges both energy and particles with the reservoir.</p></li>
+<li><p><strong>Microcanonical ensemble</strong> <span class="math notranslate nohighlight">\((N, V, E)\)</span>: system is isolated, fixed total energy <span class="math notranslate nohighlight">\(E\)</span>.</p></li>
+<li><p><strong>Canonical ensemble</strong> <span class="math notranslate nohighlight">\((N, V, T)\)</span>: system in thermal contact with a reservoir at temperature <span class="math notranslate nohighlight">\(T\)</span>.</p></li>
+<li><p><strong>Grand canonical ensemble</strong> <span class="math notranslate nohighlight">\((\mu, V, T)\)</span>: system can exchange both energy and particles with a reservoir.</p></li>
 </ul>
 </li>
 <li><p><strong>Fundamental Postulate (Microcanonical)</strong></p>
@@ -442,84 +457,339 @@
 </li>
 </ol>
 </section>
+<hr class="docutils" />
 <section id="section-2-2-canonical-ensemble">
 <h3>Section 2.2: Canonical Ensemble<a class="headerlink" href="#section-2-2-canonical-ensemble" title="Link to this heading">#</a></h3>
 <ol class="arabic">
 <li><p><strong>Closed System</strong></p>
 <ul class="simple">
-<li><p>Exchanges energy (heat) with surroundings; cannot exchange matter.</p></li>
+<li><p>Exchanges energy (heat) with surroundings; no exchange of matter.</p></li>
 </ul>
 </li>
 <li><p><strong>Boltzmann Factor and Partition Function</strong></p>
-<ul>
-<li><p>Probability of microstate <span class="math notranslate nohighlight">\(i\)</span>:</p>
-<div class="math notranslate nohighlight">
-\[
-       p_i = \frac{e^{-\beta E_i}}{Q},
-       \quad
-       \beta = \frac{1}{k_{\text{B}} T}.
-     \]</div>
-</li>
-<li><p><strong>Partition function</strong> <span class="math notranslate nohighlight">\(Q\)</span>: normalizes probabilities; sum of Boltzmann factors over all states:</p>
-<div class="math notranslate nohighlight">
-\[
-       Q = \sum_{i} e^{-\beta E_i}.
-     \]</div>
-</li>
+<ul class="simple">
+<li><p>Probability of microstate <span class="math notranslate nohighlight">\(i\)</span>:</p></li>
 </ul>
+<div class="math notranslate nohighlight">
+\[p_i \;=\; \frac{e^{-\beta E_i}}{Q},
+\quad \beta \;=\;\frac{1}{k_{\text{B}}\,T}.\]</div>
+<ul class="simple">
+<li><p><strong>Partition function</strong> <span class="math notranslate nohighlight">\(Q\)</span>:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[Q \;=\; \sum_{i} e^{-\beta E_i},\]</div>
+<p>which normalizes probabilities.</p>
 </li>
 <li><p><strong>Two-State System</strong></p>
-<ul>
-<li><p>Simplest nontrivial example: energies <span class="math notranslate nohighlight">\(E_1\)</span> and <span class="math notranslate nohighlight">\(E_2\)</span>.</p></li>
-<li><p>Partition function: <span class="math notranslate nohighlight">\(Q = e^{-\beta E_1} + e^{-\beta E_2}\)</span>.</p></li>
-<li><p>Probabilities:</p>
-<div class="math notranslate nohighlight">
-\[
-       p_1 = \frac{1}{1 + e^{-\beta\,\Delta E}},
-       \quad
-       p_2 = 1 - p_1,
-       \quad
-       \Delta E = E_2 - E_1.
-     \]</div>
-</li>
+<ul class="simple">
+<li><p>A simple example with energies <span class="math notranslate nohighlight">\(E_1\)</span> and <span class="math notranslate nohighlight">\(E_2\)</span>.</p></li>
+<li><p>Partition function:</p></li>
 </ul>
+<div class="math notranslate nohighlight">
+\[Q \;=\; e^{-\beta E_1} + e^{-\beta E_2}.\]</div>
+<ul class="simple">
+<li><p>Probabilities (if <span class="math notranslate nohighlight">\(\Delta E = E_2 - E_1\)</span>):</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[p_1 = \frac{1}{1 + e^{-\beta\,\Delta E}},
+\quad
+p_2 = 1 - p_1.\]</div>
 </li>
 <li><p><strong>Interpretation of <span class="math notranslate nohighlight">\(Q\)</span></strong></p>
 <ul class="simple">
-<li><p>“Effective number” of thermally accessible microstates; as <span class="math notranslate nohighlight">\(T \to 0\)</span>, few states are accessible; as <span class="math notranslate nohighlight">\(T \to \infty\)</span>, many states are accessible.</p></li>
+<li><p><span class="math notranslate nohighlight">\(Q\)</span> is like an “effective count” of accessible microstates.</p></li>
+<li><p>At low <span class="math notranslate nohighlight">\(T\)</span>, only the lowest energy states matter; at high <span class="math notranslate nohighlight">\(T\)</span>, many states are accessible.</p></li>
 </ul>
 </li>
 </ol>
 </section>
+<hr class="docutils" />
 <section id="section-2-3-ensemble-averages">
 <h3>Section 2.3: Ensemble Averages<a class="headerlink" href="#section-2-3-ensemble-averages" title="Link to this heading">#</a></h3>
 <ol class="arabic">
 <li><p><strong>Internal Energy</strong></p>
-<ul>
+<ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(U \equiv \langle E \rangle\)</span>.</p></li>
-<li><p>In canonical ensemble:</p>
-<div class="math notranslate nohighlight">
-\[
-       U = \frac{1}{Q}\sum_i E_i\, e^{-\beta E_i} = -\left(\frac{\partial \ln Q}{\partial \beta}\right)_{N,V}.
-     \]</div>
-</li>
+<li><p>In the canonical ensemble:</p></li>
 </ul>
-</li>
-<li><p><strong>Heat Capacity (<span class="math notranslate nohighlight">\(C_V\)</span>)</strong></p>
-<ul>
-<li><p><span class="math notranslate nohighlight">\(C_V = \bigl(\frac{\partial U}{\partial T}\bigr)_{N,V}\)</span>.</p></li>
-<li><p>Also relates to <strong>energy fluctuations</strong>:</p>
 <div class="math notranslate nohighlight">
-\[
-       \sigma_E^2 \;=\; \langle(E - \langle E\rangle)^2\rangle \;=\; k_{\text{B}}\,T^2\,C_V.
-     \]</div>
+\[U
+\;=\;
+\frac{1}{Q} \sum_i E_i\, e^{-\beta E_i}
+\;=\;
+-\,\bigl(\tfrac{\partial \ln Q}{\partial \beta}\bigr)_{N,V}.\]</div>
 </li>
+<li><p><strong>Heat Capacity <span class="math notranslate nohighlight">\((C_V)\)</span></strong></p>
+<ul class="simple">
+<li><p>Measures how internal energy changes with temperature:</p></li>
 </ul>
+<div class="math notranslate nohighlight">
+\[C_V = \bigl(\tfrac{\partial U}{\partial T}\bigr)_{N,V}.\]</div>
+<ul class="simple">
+<li><p>Also related to <strong>energy fluctuations</strong>:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\sigma_E^2
+\;=\;
+\langle (E - \langle E\rangle)^2\rangle
+\;=\;
+k_{\text{B}}\,T^2\,C_V.\]</div>
 </li>
 <li><p><strong>Pressure</strong> (brief introduction)</p>
 <ul class="simple">
-<li><p>Later formal definition involves <span class="math notranslate nohighlight">\(\bigl(\frac{\partial U}{\partial V}\bigr)_{S}\)</span>.</p></li>
-<li><p>In canonical ensemble, <span class="math notranslate nohighlight">\(\displaystyle P \;=\; k_{\text{B}}\,T\,\bigl(\frac{\partial\ln Q}{\partial V}\bigr)_{N,T}\)</span>.</p></li>
+<li><p>In the canonical ensemble:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[P
+\;=\;
+k_{\text{B}}\,T\,
+\bigl(\tfrac{\partial\ln Q}{\partial V}\bigr)_{N,T}.\]</div>
+</li>
+</ol>
+</section>
+<hr class="docutils" />
+<section id="section-2-4-molecular-partition-functions">
+<h3>Section 2.4: Molecular Partition Functions<a class="headerlink" href="#section-2-4-molecular-partition-functions" title="Link to this heading">#</a></h3>
+<ol class="arabic">
+<li><p><strong>Many Identical and Independent Particles</strong></p>
+<ul class="simple">
+<li><p>For <span class="math notranslate nohighlight">\(N\)</span> <strong>distinguishable</strong> particles, each in a one‐particle partition function <span class="math notranslate nohighlight">\(q\)</span>, the total partition function is</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[Q \;=\; q^N
+\quad (\text{if particles are distinct}).\]</div>
+<ul class="simple">
+<li><p>For <strong>indistinguishable</strong> particles (e.g., identical atoms/molecules obeying single occupancy),</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[Q \;=\; \frac{q^N}{N!}.\]</div>
+</li>
+<li><p><strong>Molecular Partition Function</strong></p>
+<ul class="simple">
+<li><p>Within Born–Oppenheimer, a molecule’s energy decomposes into translational, rotational, vibrational, and electronic parts:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\varepsilon = \varepsilon_{\text{trans}} + \varepsilon_{\text{rot}} + \varepsilon_{\text{vib}} + \varepsilon_{\text{elec}}.\]</div>
+<ul class="simple">
+<li><p>Thus,</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[q
+\;=\;
+q_{\text{trans}}\,
+q_{\text{rot}}\,
+q_{\text{vib}}\,
+q_{\text{elec}}.\]</div>
+</li>
+</ol>
+</section>
+<hr class="docutils" />
+<section id="section-2-5-particle-in-a-box">
+<h3>Section 2.5: Particle in a Box<a class="headerlink" href="#section-2-5-particle-in-a-box" title="Link to this heading">#</a></h3>
+<ol class="arabic">
+<li><p><strong>Quantum Levels</strong></p>
+<ul class="simple">
+<li><p>For a 1D box <span class="math notranslate nohighlight">\((0 \le x \le L)\)</span>,</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[E_n = \frac{h^2}{8mL^2}\,n^2,\;\; n=1,2,3,\dots\]</div>
+<ul class="simple">
+<li><p>In 3D (a rectangular box of sides <span class="math notranslate nohighlight">\(L_x, L_y, L_z\)</span>):</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[E_{n_x,n_y,n_z}
+\;=\;
+\frac{h^2}{8m}
+\left(\frac{n_x^2}{L_x^2} + \frac{n_y^2}{L_y^2} + \frac{n_z^2}{L_z^2}\right).\]</div>
+</li>
+<li><p><strong>Partition Function (3D Box)</strong></p>
+<ul class="simple">
+<li><p>For a cubic box of volume <span class="math notranslate nohighlight">\(V = L^3\)</span>:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[q
+\;=\;
+\sum_{n_x=1}^\infty \sum_{n_y=1}^\infty \sum_{n_z=1}^\infty
+\exp\!\Bigl[
+ -\beta \frac{h^2}{8mL^2}\,(n_x^2 + n_y^2 + n_z^2)
+ \Bigr].\]</div>
+<ul class="simple">
+<li><p>At high <span class="math notranslate nohighlight">\(T\)</span> or large <span class="math notranslate nohighlight">\(L\)</span>, we approximate the sum by an integral and obtain the <strong>classical</strong> partition function:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[q_{\text{trans}}
+\;=\;
+\frac{V}{\Lambda^3},
+\quad
+\Lambda
+\;=\;
+\sqrt{\frac{h^2}{2\pi m k_{\text{B}} T}}\,\,
+\text{(thermal de Broglie wavelength).}\]</div>
+</li>
+<li><p><strong>Many-Particle System (Ideal Gas)</strong></p>
+<ul class="simple">
+<li><p>For <span class="math notranslate nohighlight">\(N\)</span> indistinguishable, non-interacting particles:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[Q
+\;=\;
+\frac{q^N}{N!}
+\;=\;
+\frac{1}{N!}
+\biggl(\frac{V}{\Lambda^3}\biggr)^{\!N}.\]</div>
+<ul class="simple">
+<li><p>Leads directly to the ideal gas law and to:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[U \;=\; \frac{3}{2}\,N\,k_{\text{B}}T,
+\quad
+C_V \;=\; \frac{3}{2}\,N\,k_{\text{B}},
+\quad
+P = \frac{N\,k_{\text{B}}\,T}{V}.\]</div>
+</li>
+</ol>
+</section>
+<hr class="docutils" />
+<section id="section-2-6-harmonic-oscillator">
+<h3>Section 2.6: Harmonic Oscillator<a class="headerlink" href="#section-2-6-harmonic-oscillator" title="Link to this heading">#</a></h3>
+<ol class="arabic">
+<li><p><strong>Quantum Harmonic Oscillator</strong></p>
+<ul class="simple">
+<li><p>Energy levels for a 1D harmonic oscillator of frequency <span class="math notranslate nohighlight">\(\omega\)</span>:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[E_n
+\;=\;
+\hbar\omega\,\Bigl(n + \tfrac{1}{2}\Bigr),
+\quad
+n=0,1,2,\dots\]</div>
+</li>
+<li><p><strong>Partition Function</strong></p>
+<ul class="simple">
+<li><p>Summing over these energy levels:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[q
+\;=\;
+\sum_{n=0}^{\infty} e^{-\beta E_n}
+\;=\;
+\frac{e^{-\frac{1}{2}\,\beta\,\hbar\omega}}{1 - e^{-\beta\,\hbar\omega}}.\]</div>
+</li>
+<li><p><strong>Ensemble Averages</strong></p>
+<ul class="simple">
+<li><p><strong>Internal Energy</strong>:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[U
+\;=\;
+\frac{\hbar\omega}{2}
+\;+\;
+\frac{\hbar\omega}{\,e^{\beta\,\hbar\omega}-1\,}.\]</div>
+<ul class="simple">
+<li><p><strong>Heat Capacity</strong>:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[C_V
+\;=\;
+k_{\text{B}}
+\Bigl(\frac{\hbar\omega}{k_{\text{B}} T}\Bigr)^{2}\,
+\frac{\,e^{\hbar\omega/(k_{\text{B}}T)}\,}
+     {\bigl(e^{\hbar\omega/(k_{\text{B}}T)} - 1\bigr)^{2}}.\]</div>
+<ul class="simple">
+<li><p>At high temperature (<span class="math notranslate nohighlight">\(k_{\text{B}}T \gg \hbar\omega\)</span>), each harmonic oscillator recovers the <strong>classical limit</strong> <span class="math notranslate nohighlight">\(U \to k_{\text{B}}T\)</span> and <span class="math notranslate nohighlight">\(C_V \to k_{\text{B}}\)</span>.</p></li>
+</ul>
+</li>
+</ol>
+<!-- 4. **Einstein Model** (for solids)
+   - Considers each atom as a 3D harmonic oscillator with the same $\omega$.
+   - Provides a simple route to the Dulong–Petit law ($C_V \approx 3 N k_{\text{B}}$) at high $T$. -->
+</section>
+<hr class="docutils" />
+<section id="section-2-7-linear-rigid-rotor">
+<h3>Section 2.7: Linear Rigid Rotor<a class="headerlink" href="#section-2-7-linear-rigid-rotor" title="Link to this heading">#</a></h3>
+<ol class="arabic">
+<li><p><strong>Energy Levels</strong></p>
+<ul class="simple">
+<li><p>For a rigid, linear rotor of moment of inertia <span class="math notranslate nohighlight">\(I\)</span>:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[E_J
+\;=\;
+\frac{\hbar^2}{2I}\,J\,(J+1),
+\quad
+J=0,1,2,\dots\]</div>
+<ul class="simple">
+<li><p>Each level <span class="math notranslate nohighlight">\(E_J\)</span> has degeneracy <span class="math notranslate nohighlight">\(g_J = 2J + 1\)</span>.</p></li>
+</ul>
+</li>
+<li><p><strong>Rotational Partition Function</strong></p>
+<ul class="simple">
+<li><p>Exact form:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[q_{\text{rot}}
+\;=\;
+\sum_{J=0}^\infty
+(2J + 1)\, e^{-\beta \,\frac{\hbar^2}{2I}\,J\,(J+1)}.\]</div>
+<ul class="simple">
+<li><p>Define the <strong>rotational temperature</strong> <span class="math notranslate nohighlight">\(\Theta_{\text{rot}} = \frac{\hbar^2}{2k_{\text{B}}I}\)</span>.</p></li>
+<li><p><strong>High-temperature limit</strong> (<span class="math notranslate nohighlight">\(k_{\text{B}}T \gg \frac{\hbar^2}{2I}\)</span>) gives</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[q_{\text{rot}}
+\;\approx\;
+\frac{T}{\Theta_{\text{rot}}}
+\quad (\text{for a heteronuclear diatomic}).\]</div>
+<ul class="simple">
+<li><p>For a <strong>homonuclear</strong> diatomic, include a symmetry factor <span class="math notranslate nohighlight">\(\sigma=2\)</span>, so</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[q_{\text{rot}}
+\;\approx\;
+\frac{T}{\sigma\,\Theta_{\text{rot}}}.\]</div>
+</li>
+<li><p><strong>Ensemble Averages</strong> (High-<span class="math notranslate nohighlight">\(T\)</span> Approximation)</p>
+<ul class="simple">
+<li><p><strong>Internal Energy</strong> (<span class="math notranslate nohighlight">\(U_{\text{rot}}\)</span>):</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[U_{\text{rot}} \;\approx\; k_{\text{B}}\,T.\]</div>
+<p>(One linear rotor has 2 rotational degrees of freedom <span class="math notranslate nohighlight">\(\rightarrow \frac{2}{2} k_{\text{B}}T\)</span>.)</p>
+<ul class="simple">
+<li><p><strong>Heat Capacity</strong>:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[C_V^{(\text{rot})} \;\approx\; k_{\text{B}}.\]</div>
+</li>
+</ol>
+</section>
+<hr class="docutils" />
+<section id="section-2-8-molecular-statistical-mechanics">
+<h3>Section 2.8: Molecular Statistical Mechanics<a class="headerlink" href="#section-2-8-molecular-statistical-mechanics" title="Link to this heading">#</a></h3>
+<ol class="arabic">
+<li><p><strong>Combining All Degrees of Freedom</strong></p>
+<ul class="simple">
+<li><p>For a general molecule, the total one‐molecule partition function is</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[q
+\;=\;
+q_{\text{trans}}\,
+q_{\text{rot}}\,
+q_{\text{vib}}\,
+q_{\text{elec}}.\]</div>
+<ul class="simple">
+<li><p>Extends to polyatomic molecules with more complex rotational constants <span class="math notranslate nohighlight">\(\Theta_{\text{rot,A}}, \Theta_{\text{rot,B}}, \Theta_{\text{rot,C}}\)</span> and multiple vibrational frequencies <span class="math notranslate nohighlight">\(\Theta_{\text{vib},j}\)</span>.</p></li>
+</ul>
+</li>
+<li><p><strong>Symmetry Considerations</strong></p>
+<ul class="simple">
+<li><p>Symmetry factor <span class="math notranslate nohighlight">\(\sigma\)</span> must be included for molecules with indistinguishable orientations (e.g., homonuclear diatomics, symmetrical polyatomics).</p></li>
+</ul>
+</li>
+<li><p><strong>Summary Table</strong></p>
+<ul class="simple">
+<li><p>Often, we tabulate <span class="math notranslate nohighlight">\(q_{\text{trans}}, q_{\text{rot}}, q_{\text{vib}}, q_{\text{elec}}\)</span> for different molecule types (linear, nonlinear, spherical top, symmetric top, etc.), applying high-temperature (classical) or more exact quantum results as needed.</p></li>
 </ul>
 </li>
 </ol>
@@ -528,94 +798,141 @@
 <hr class="docutils" />
 <section id="checklist-of-most-important-equations">
 <h2>2. Checklist of Most Important Equations<a class="headerlink" href="#checklist-of-most-important-equations" title="Link to this heading">#</a></h2>
-<ol class="arabic">
-<li><p><strong>Expected Value of a General Variable</strong></p>
+<p>Below is a <strong>unified list</strong> of the major equations from Sections 2.1–2.8.</p>
+<p>A. <strong>Expected Value of a General Variable</strong></p>
 <div class="math notranslate nohighlight">
-\[
-     \langle X \rangle \;=\;\sum_i X_i\,p_i
-     \quad\text{or}\quad
-     \int X(\omega)\,p(\omega)\,d\omega.
-   \]</div>
+\[\langle X \rangle
+\;=\;
+\sum_i X_i\,p_i
+\quad\text{or}\quad
+\int X(\omega)\,p(\omega)\,d\omega.\]</div>
 <ul class="simple">
 <li><p><strong>Applicability</strong>: general definition in statistical mechanics/probability theory.</p></li>
 </ul>
-</li>
-<li><p><strong>Microcanonical Ensemble (Fundamental Postulate)</strong></p>
+<hr class="docutils" />
+<p>B. <strong>Microcanonical Ensemble (Fundamental Postulate)</strong></p>
 <div class="math notranslate nohighlight">
-\[
-     p_i \;=\;\frac{1}{M}
-     \quad\text{(for all accessible microstates)}.
-   \]</div>
+\[p_i
+\;=\;
+\frac{1}{M}
+\quad(\text{for all accessible microstates}).\]</div>
 <ul class="simple">
-<li><p><strong>Applicability</strong>: isolated system with fixed <span class="math notranslate nohighlight">\((N, V, E)\)</span>.</p></li>
+<li><p><strong>Applicability</strong>: isolated system, <span class="math notranslate nohighlight">\((N, V, E)\)</span>.</p></li>
 </ul>
-</li>
-<li><p><strong>Canonical Ensemble Probability</strong></p>
+<hr class="docutils" />
+<p>C. <strong>Canonical Ensemble Probability</strong></p>
 <div class="math notranslate nohighlight">
-\[
-     p_i \;=\;\frac{e^{-\beta\,E_i}}{Q},
-     \quad
-     \beta = \frac{1}{k_{\text{B}}\,T},
-   \]</div>
+\[p_i
+\;=\;
+\frac{\,e^{-\beta\,E_i}\,}{Q},
+\quad
+\beta = \frac{1}{k_{\text{B}}\,T}.\]</div>
 <ul class="simple">
-<li><p><strong>Applicability</strong>: closed system in thermal equilibrium with a heat bath at temperature <span class="math notranslate nohighlight">\(T\)</span>.</p></li>
+<li><p><strong>Applicability</strong>: closed system in thermal contact at <span class="math notranslate nohighlight">\(T\)</span>.</p></li>
 </ul>
-</li>
-<li><p><strong>Canonical Partition Function</strong></p>
+<hr class="docutils" />
+<p>D. <strong>Canonical Partition Function</strong></p>
 <div class="math notranslate nohighlight">
-\[
-     Q \;=\;\sum_i e^{-\beta\,E_i}.
-   \]</div>
+\[Q
+\;=\;
+\sum_i e^{-\beta\,E_i}.\]</div>
 <ul class="simple">
-<li><p><strong>Applicability</strong>: all systems that can be described by <span class="math notranslate nohighlight">\((N, V, T)\)</span>; sum or integral runs over all microstates.</p></li>
+<li><p><strong>Applicability</strong>: <span class="math notranslate nohighlight">\((N, V, T)\)</span> ensemble; sum/integral over all microstates.</p></li>
 </ul>
-</li>
-<li><p><strong>Internal Energy in the Canonical Ensemble</strong></p>
+<hr class="docutils" />
+<p>E. <strong>Internal Energy (Canonical)</strong></p>
 <div class="math notranslate nohighlight">
-\[
-     U \;=\;\langle E\rangle
-     \;=\;\frac{1}{Q}\,\sum_i E_i\,e^{-\beta E_i}
-     \;=\;-\left(\frac{\partial \ln Q}{\partial \beta}\right)_{N,V}.
-   \]</div>
-<ul class="simple">
-<li><p><strong>Applicability</strong>: same as above (canonical ensemble).</p></li>
-</ul>
-</li>
-<li><p><strong>Heat Capacity at Constant Volume</strong></p>
+\[U
+\;=\;
+\langle E\rangle
+\;=\;
+\frac{1}{Q}\,\sum_i E_i\,e^{-\beta E_i}
+\;=\;
+-\bigl(\tfrac{\partial \ln Q}{\partial \beta}\bigr)_{N,V}.\]</div>
+<hr class="docutils" />
+<p>F. <strong>Heat Capacity at Constant Volume</strong></p>
 <div class="math notranslate nohighlight">
-\[
-     C_V
-     \;=\;
-     \left(\frac{\partial U}{\partial T}\right)_{N,V}.
-   \]</div>
-<ul class="simple">
-<li><p><strong>Applicability</strong>: measures how internal energy changes with <span class="math notranslate nohighlight">\(T\)</span> when <span class="math notranslate nohighlight">\(N, V\)</span> are constant.</p></li>
-</ul>
-</li>
-<li><p><strong>Energy Fluctuations</strong></p>
+\[C_V
+\;=\;
+\bigl(\tfrac{\partial U}{\partial T}\bigr)_{N,V}.\]</div>
+<p>Also,</p>
 <div class="math notranslate nohighlight">
-\[
-     \sigma_E^2
-     \;=\;\langle E^2\rangle - \langle E\rangle^2
-     \;=\;
-     k_{\text{B}}\,T^2\,C_V.
-   \]</div>
-<ul class="simple">
-<li><p><strong>Applicability</strong>: canonical ensemble; relates variance in energy to the heat capacity.</p></li>
-</ul>
-</li>
-<li><p><strong>Pressure (Canonical)</strong></p>
+\[\sigma_E^2
+\;=\;
+k_{\text{B}}\,T^2\,C_V.\]</div>
+<hr class="docutils" />
+<p>G. <strong>Pressure (Canonical)</strong></p>
 <div class="math notranslate nohighlight">
-\[
-     P
-     \;=\;
-     k_{\text{B}}\,T \,\left(\frac{\partial \ln Q}{\partial V}\right)_{N,T}.
-   \]</div>
+\[P
+\;=\;
+k_{\text{B}}\,T \,\bigl(\tfrac{\partial \ln Q}{\partial V}\bigr)_{N,T}.\]</div>
+<hr class="docutils" />
+<p>H. <strong>Molecular Systems: Indistinguishability Factor</strong></p>
+<div class="math notranslate nohighlight">
+\[Q
+\;=\;
+\frac{q^N}{N!},\]</div>
 <ul class="simple">
-<li><p><strong>Applicability</strong>: canonical ensemble; a precursor to more rigorous derivation using thermodynamic potentials.</p></li>
+<li><p><strong>Applicability</strong>: identical, indistinguishable particles (e.g., ideal gases).</p></li>
 </ul>
-</li>
-</ol>
+<hr class="docutils" />
+<p>G. <strong>Translational Partition Function</strong> (Particle in a 3D box at high <span class="math notranslate nohighlight">\(T\)</span>)</p>
+<div class="math notranslate nohighlight">
+\[q_{\text{trans}}
+\;=\;
+\frac{V}{\Lambda^3},
+\quad
+\Lambda
+=
+\sqrt{\frac{h^2}{2\pi m k_{\text{B}}T}}.\]</div>
+<hr class="docutils" />
+<p>I. <strong>Harmonic Oscillator Partition Function (1D)</strong></p>
+<div class="math notranslate nohighlight">
+\[q_{\text{HO}}
+\;=\;
+\frac{\,e^{-\tfrac{1}{2}\beta\hbar\omega}\,}{1 - e^{-\beta\,\hbar\omega}}.\]</div>
+<ul class="simple">
+<li><p><strong>Internal Energy</strong>:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[U_{\text{HO}}
+\;=\;
+\frac{\hbar\omega}{2}
++
+\frac{\hbar\omega}{\,e^{\beta\,\hbar\omega}-1\,}.\]</div>
+<hr class="docutils" />
+<p>J. <strong>Rotational Partition Function (Linear Rotor, High <span class="math notranslate nohighlight">\(T\)</span>)</strong></p>
+<div class="math notranslate nohighlight">
+\[q_{\text{rot}}
+\;\approx\;
+\frac{T}{\sigma\,\Theta_{\text{rot}}},
+\quad
+\Theta_{\text{rot}} = \frac{\hbar^2}{2k_{\text{B}}\,I}.\]</div>
+<ul class="simple">
+<li><p><strong>Internal Energy</strong>:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[U_{\text{rot}} \;\approx\; k_{\text{B}}\,T.\]</div>
+<ul class="simple">
+<li><p><strong>Heat Capacity</strong>:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[C_V^{(\text{rot})} \;\approx\; k_{\text{B}}.\]</div>
+<hr class="docutils" />
+<p>K. <strong>Polyatomic Molecules</strong></p>
+<ul class="simple">
+<li><p><strong>General form</strong> (neglecting interactions):</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[q
+\;=\;
+q_{\text{trans}}\;
+q_{\text{rot}}\;
+q_{\text{vib}}\;
+q_{\text{elec}}.\]</div>
+<ul class="simple">
+<li><p>For linear vs. nonlinear rotors or multiple vibrational modes, each factor is included appropriately (with possible symmetry factors).</p></li>
+</ul>
 </section>
 </section>
 
@@ -684,10 +1001,15 @@
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#checklist-of-key-concepts">Checklist of Key Concepts</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#checklist-of-key-concepts">1. Checklist of Key Concepts</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#section-2-1-introduction-to-statistical-mechanics">Section 2.1: Introduction to Statistical Mechanics</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#section-2-2-canonical-ensemble">Section 2.2: Canonical Ensemble</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#section-2-3-ensemble-averages">Section 2.3: Ensemble Averages</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#section-2-4-molecular-partition-functions">Section 2.4: Molecular Partition Functions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#section-2-5-particle-in-a-box">Section 2.5: Particle in a Box</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#section-2-6-harmonic-oscillator">Section 2.6: Harmonic Oscillator</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#section-2-7-linear-rigid-rotor">Section 2.7: Linear Rigid Rotor</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#section-2-8-molecular-statistical-mechanics">Section 2.8: Molecular Statistical Mechanics</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#checklist-of-most-important-equations">2. Checklist of Most Important Equations</a></li>
