@@ -34,9 +34,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../_static/proof.css?v=b4b7a797" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../_static/myfile.css?v=536cf54f" />
   
@@ -200,7 +200,7 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendices</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../appendices/appendix-a.html">Appendix A. Differential Calculus</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../appendices/appendix-b.html">Appendix B. Orders of Magnitude</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../appendices/appendix-b.html">Appendix B. Thermal Energy</a></li>
 </ul>
 
     </div>
@@ -395,7 +395,7 @@
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#thermodynamic-processes">Thermodynamic Processes</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-apply-the-first-law">How to Apply the First Law</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-apply-the-first-law-of-thermodynamics">How to Apply the First Law of Thermodynamics</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-v-and-t-as-independent-variables">Example: <span class="math notranslate nohighlight">\(V\)</span> and <span class="math notranslate nohighlight">\(T\)</span> as Independent Variables</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rewrite-the-first-law">Rewrite the First Law</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#apply-constraints">Apply Constraints</a></li>
@@ -427,9 +427,6 @@
 </section>
 <section id="thermodynamic-processes">
 <h2>Thermodynamic Processes<a class="headerlink" href="#thermodynamic-processes" title="Link to this heading">#</a></h2>
-<!-- - Irreversible -->
-<!-- - Reversible -->
-<!-- - Quasi-static -->
 <dl class="simple glossary">
 <dt id="term-Quasi-static-process">Quasi-static process<a class="headerlink" href="#term-Quasi-static-process" title="Link to this term">#</a></dt><dd><p>A process carried out <em>infinitesimally slowly</em>, ensuring the system remains <em>near equilibrium</em> at each step. Any deviations from equilibrium are so small (infinitesimal) that each intermediate state is well-defined thermodynamically.</p>
 </dd>
@@ -437,15 +434,72 @@
 </dd>
 </dl>
 </section>
-<section id="how-to-apply-the-first-law">
-<h2>How to Apply the First Law<a class="headerlink" href="#how-to-apply-the-first-law" title="Link to this heading">#</a></h2>
-<ol class="arabic simple">
-<li><p>Choose two independent variables</p></li>
-<li><p>Rewrite the first law</p></li>
-<li><p>Apply constraints</p></li>
-<li><p>Define the system</p></li>
-<li><p>Integrate the first law</p></li>
-</ol>
+<section id="how-to-apply-the-first-law-of-thermodynamics">
+<h2>How to Apply the First Law of Thermodynamics<a class="headerlink" href="#how-to-apply-the-first-law-of-thermodynamics" title="Link to this heading">#</a></h2>
+<div class="dropdown admonition">
+<p class="admonition-title">1. Choose Two Independent Variables</p>
+<ul class="simple">
+<li><p><strong>How to Choose</strong>:</p>
+<ul>
+<li><p><em>Convenience</em>: What experiments can you set up most easily with the equipment at hand?</p></li>
+<li><p><em>Necessity</em>: Which variables are feasible to control or measure with the facilities available?</p></li>
+<li><p><em>Curiosity</em>: Which variables will yield the most interesting or relevant results for your study?</p></li>
+</ul>
+</li>
+<li><p>Generally, two independent variables are sufficient for many thermodynamic experiments; controlling more can become unwieldy.</p></li>
+</ul>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">2. Rewrite the First Law</p>
+<ul class="simple">
+<li><p>Express <span class="math notranslate nohighlight">\(\delta q\)</span> (the infinitesimal heat transfer) in terms of the differentials of your chosen independent variables, <span class="math notranslate nohighlight">\(X_1\)</span> and <span class="math notranslate nohighlight">\(X_2\)</span>.</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\delta q = 
+\left(\frac{\partial U}{\partial X_1}\right)_{X_2} dX_1 + 
+\left(\frac{\partial U}{\partial X_2}\right)_{X_1} dX_2 
++ \dots\]</div>
+<ul class="simple">
+<li><p>If work is done, include an appropriate term for <span class="math notranslate nohighlight">\(\delta w\)</span>. For example, if <span class="math notranslate nohighlight">\(P\)</span>–<span class="math notranslate nohighlight">\(V\)</span> work is relevant, <span class="math notranslate nohighlight">\(\delta w = -P\, dV\)</span>.</p></li>
+</ul>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">3. Apply Constraints</p>
+<ul class="simple">
+<li><p><strong>Holding Variables Constant</strong>:</p>
+<ul>
+<li><p><em>Isobaric</em>: <span class="math notranslate nohighlight">\(dP = 0\)</span></p></li>
+<li><p><em>Isochoric</em>: <span class="math notranslate nohighlight">\(dV = 0\)</span></p></li>
+<li><p><em>Isothermal</em>: <span class="math notranslate nohighlight">\(dT = 0\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>Adiabatic Boundary</strong>:</p>
+<ul>
+<li><p>If the boundary is thermally insulating, <span class="math notranslate nohighlight">\(\delta q = 0\)</span>.</p></li>
+<li><p>Note that “adiabatic” means no heat transfer; this does not necessarily imply the system is completely isolated (it can still do work, for example).</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">4. Define the System</p>
+<ul class="simple">
+<li><p>Specify the system’s equation of state if known (e.g., <span class="math notranslate nohighlight">\(PV = nRT\)</span> for an ideal gas).</p></li>
+<li><p>The equation of state helps you calculate partial derivatives (e.g., <span class="math notranslate nohighlight">\(\left(\frac{\partial U}{\partial V}\right)_T\)</span>) that appear in your expression for <span class="math notranslate nohighlight">\(\delta q\)</span>.</p></li>
+</ul>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">5. Integrate the First Law</p>
+<ul class="simple">
+<li><p>By integrating, you eliminate the differentials to get explicit relationships.</p></li>
+<li><p>In real experiments, processes are rarely perfectly quasi-static or reversible, but the differential approach can still help interpret results.</p></li>
+<li><p>The final expression links the heat exchanged <span class="math notranslate nohighlight">\((q)\)</span> to the changes in your chosen independent variables along the process path.</p></li>
+</ul>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">So What?</p>
+<p>By carefully selecting your independent variables, rewriting the First Law to account for them, and integrating under specified constraints, you can predict how energy conservation will impact measurable quantities such as heat absorbed or released. Different constraints (isobaric, isochoric, isothermal, or adiabatic) reveal how changing one variable can affect others—and the corresponding energy flow.</p>
+</div>
 </section>
 <section id="example-v-and-t-as-independent-variables">
 <h2>Example: <span class="math notranslate nohighlight">\(V\)</span> and <span class="math notranslate nohighlight">\(T\)</span> as Independent Variables<a class="headerlink" href="#example-v-and-t-as-independent-variables" title="Link to this heading">#</a></h2>
@@ -621,7 +675,7 @@ dU &amp;= \sum_{i = 1}^M E_i dp_i + \sum_{i = 1}^M p_i dE_i \\
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#thermodynamic-processes">Thermodynamic Processes</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-apply-the-first-law">How to Apply the First Law</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-apply-the-first-law-of-thermodynamics">How to Apply the First Law of Thermodynamics</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-v-and-t-as-independent-variables">Example: <span class="math notranslate nohighlight">\(V\)</span> and <span class="math notranslate nohighlight">\(T\)</span> as Independent Variables</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rewrite-the-first-law">Rewrite the First Law</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#apply-constraints">Apply Constraints</a></li>

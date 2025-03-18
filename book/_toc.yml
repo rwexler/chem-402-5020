@@ -37,4 +37,4 @@ parts:
     numbered: false
     chapters:
       - file: appendices/appendix-a.md
-      # - file: appendices/appendix-b.md
+      - file: appendices/appendix-b.md

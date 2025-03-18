@@ -195,10 +195,12 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Module 3. First Law &amp; Enthalpy</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../chapter-03/section-01.html">3.1. Conservation of Energy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter-03/section-02.html">3.2. Applications of the First Law</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendices</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../appendices/appendix-a.html">Appendix A. Differential Calculus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../appendices/appendix-b.html">Appendix B. Thermal Energy</a></li>
 </ul>
 
     </div>
@@ -556,7 +558,7 @@
 <figure class="align-center" id="id1" style="width: 100%">
 <img alt="../_images/9bb5b52df8d59477dab5ccc5dd84aa926cec2bc961cc27ffb6b07499c897b099.png" src="../_images/9bb5b52df8d59477dab5ccc5dd84aa926cec2bc961cc27ffb6b07499c897b099.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 17 </span><span class="caption-text">Enery levels and wavefunctions for a one-dimensional harmonic oscillator. The energy levels <span class="math notranslate nohighlight">\(E_n\)</span> are shown as blue lines, while the wavefunctions <span class="math notranslate nohighlight">\(\psi_n\)</span> are shown as red curves.</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 12 </span><span class="caption-text">Enery levels and wavefunctions for a one-dimensional harmonic oscillator. The energy levels <span class="math notranslate nohighlight">\(E_n\)</span> are shown as blue lines, while the wavefunctions <span class="math notranslate nohighlight">\(\psi_n\)</span> are shown as red curves.</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>For a one-dimensional harmonic oscillator of frequency <span class="math notranslate nohighlight">\(\omega\)</span>, the quantized energy levels are given by</p>
@@ -671,7 +673,7 @@ e^{-\beta \hbar \omega} &amp;&lt; 1 \\
 <figure class="align-center" id="id2" style="width: 100%">
 <img alt="../_images/54639f431ca0624b6f6131fac8c83dfe72866c8aba3dd08f74b25687f4a533ee.png" src="../_images/54639f431ca0624b6f6131fac8c83dfe72866c8aba3dd08f74b25687f4a533ee.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 18 </span><span class="caption-text">Internal energy of a harmonic oscillator as a function of temperature. The zero-point energy is shown as a blue dashed line, while the high-temperature limit is shown as a red dashed line.</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 13 </span><span class="caption-text">Internal energy of a harmonic oscillator as a function of temperature. The zero-point energy is shown as a blue dashed line, while the high-temperature limit is shown as a red dashed line.</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <!-- Derivation of low- and high-temperature limits for the internal energy of a harmonic oscillator. -->
@@ -732,7 +734,7 @@ e^{-\beta \hbar \omega} &amp;&lt; 1 \\
 <figure class="align-center" id="id3" style="width: 100%">
 <img alt="../_images/d91ac4ae095085f8fa74f058239922e1778dc5520c7ff5d3d2b9fbc797f6cf44.png" src="../_images/d91ac4ae095085f8fa74f058239922e1778dc5520c7ff5d3d2b9fbc797f6cf44.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 19 </span><span class="caption-text">Heat capacity at constant volume of a harmonic oscillator as a function of temperature. The low-temperature limit is shown as a blue arrow, while the high-temperature limit is shown as a red dashed line.</span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 14 </span><span class="caption-text">Heat capacity at constant volume of a harmonic oscillator as a function of temperature. The low-temperature limit is shown as a blue arrow, while the high-temperature limit is shown as a red dashed line.</span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
@@ -794,13 +796,20 @@ e^{-\beta \hbar \omega} &amp;&lt; 1 \\
 </div>
 </div>
 </details>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># https://en.wikipedia.org/wiki/Heat_capacities_of_the_elements_(data_page)</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../_static/chapter-02/section-06/dulong_petit.csv&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">Source</span> <span class="o">==</span> <span class="s2">&quot;use&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;pandas&#39;
+</pre></div>
 </div>
-<figure class="align-center" id="id4" style="width: 100%">
-<img alt="../_images/639220a712e025552e3c458a7d5fd6735c9083d89b0838b030e13cea404b78da.png" src="../_images/639220a712e025552e3c458a7d5fd6735c9083d89b0838b030e13cea404b78da.png" />
-<figcaption>
-<p><span class="caption-number">Fig. 20 </span><span class="caption-text">Heat capacity of elemental solids as a function of atomic number. The Dulong-Petit law is shown as a red dashed line.</span><a class="headerlink" href="#id4" title="Link to this image">#</a></p>
-</figcaption>
-</figure>
+</div>
+</div>
 </section>
 </section>
 </section>

@@ -1,0 +1,106 @@
+Traceback (most recent call last):
+  File "/Users/robertwexler/miniconda3/envs/chem-402-5020/lib/python3.10/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+    executenb(
+  File "/Users/robertwexler/miniconda3/envs/chem-402-5020/lib/python3.10/site-packages/nbclient/client.py", line 1319, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "/Users/robertwexler/miniconda3/envs/chem-402-5020/lib/python3.10/site-packages/jupyter_core/utils/__init__.py", line 165, in wrapped
+    return loop.run_until_complete(inner)
+  File "/Users/robertwexler/miniconda3/envs/chem-402-5020/lib/python3.10/asyncio/base_events.py", line 649, in run_until_complete
+    return future.result()
+  File "/Users/robertwexler/miniconda3/envs/chem-402-5020/lib/python3.10/site-packages/nbclient/client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "/Users/robertwexler/miniconda3/envs/chem-402-5020/lib/python3.10/site-packages/nbclient/client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/Users/robertwexler/miniconda3/envs/chem-402-5020/lib/python3.10/site-packages/nbclient/client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
+from scipy.constants import R
+from labellines import labelLines
+from myst_nb import glue
+from scipy.interpolate import interp1d
+
+# Load the experimental data for water at 300 K
+df = pd.read_csv("../_static/section-04/isothermal-properties-for-water-T=300.csv").iloc[:, [0, 1, 2, 3]]
+df.columns = ["T", "P", "rho_m", "V_m"]  # Rename columns
+
+# Calculate the compressibility factor
+df["P_Pa"] = df["P"] * 1e5  # Convert pressure from bar to Pa
+df["Z"] = df["P_Pa"] * df["V_m"] / (R * df["T"])
+
+# Set up figure and axis
+fig, ax = plt.subplots(figsize=(4, 4))
+ax.set_xlim(0, 1000)
+ax.set_ylim(0, 2)
+ax.set_xlabel("Pressure (bar)")
+ax.set_ylabel(r"$Z$")
+ax.grid(True, linestyle="--", alpha=0.7)
+
+# Plot experimental compressibility factor
+data_line = ax.plot(df["P"], df["Z"], "b-", label="$Z_\\text{water}$")
+labelLines(data_line, xvals=[400], zorder=2.5)
+
+# Plot ideal gas line
+x_values = np.linspace(0, 1000, 100)
+ideal_line = ax.plot(x_values, np.ones_like(x_values), "r--", label="$Z_\\text{ideal}$")
+labelLines(ideal_line, xvals=[400], zorder=2.5)
+
+# Interpolate to find intersection with ideal gas line
+interp_Z = interp1d(df["P"], df["Z"], kind='linear', fill_value="extrapolate")
+intersection_pressure = interp1d(df["Z"] - 1, df["P"], kind='linear')(0)
+intersection_Z = interp_Z(intersection_pressure)
+
+# Find pressure and Z value at minimum Z
+min_Z_index = df["Z"].idxmin()
+min_pressure = df.loc[min_Z_index, "P"]
+min_Z = df.loc[min_Z_index, "Z"]
+
+# Annotate ideal and coincidentally ideal points
+ax.annotate("Ideal",
+            xy=(0, 1), xytext=(200, 1.25),
+            arrowprops=dict(arrowstyle="->"),
+            ha='center', va='center', zorder=4)
+
+ax.annotate("Coincidentally\nideal",
+            xy=(intersection_pressure, 1), xytext=(800, 0.75),
+            arrowprops=dict(arrowstyle="->"),
+            ha='center', va='center', zorder=4)
+
+# Draw vertical lines for reference
+ax.axvline(x=min_pressure, color="black", linestyle=":")
+ax.axvline(x=intersection_pressure, color="black", linestyle=":")
+
+# Highlight regions of attractive and repulsive behavior
+ax.fill_between([min_pressure, intersection_pressure], 0, 2, color="magenta", alpha=0.2, label="Attractive")
+ax.fill_between([intersection_pressure, 1000], 0, 2, color="gray", alpha=0.2, label="Repulsive")
+
+# Annotate regions
+x_values_for_attractive = np.linspace(min_pressure, intersection_pressure, 100)
+attractive_line = ax.plot(x_values_for_attractive, np.ones_like(x_values_for_attractive) * min_Z, "m-", label="Attractive", alpha=0.0)
+labelLines(attractive_line, xvals=np.mean([min_pressure, intersection_pressure]), zorder=2.5)
+
+x_values_for_repulsive = np.linspace(intersection_pressure, 1000, 100)
+repulsive_line = ax.plot(x_values_for_repulsive, np.ones_like(x_values_for_repulsive) * min_Z, "gray", label="Repulsive", alpha=0.0)
+labelLines(repulsive_line, xvals=800, zorder=2.5)
+
+# Adjust layout and display
+plt.tight_layout()
+glue('compressibility-factor', fig, display=False)
+plt.close(fig)
+------------------
+
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mModuleNotFoundError[0m                       Traceback (most recent call last)
+Cell [0;32mIn[1], line 3[0m
+[1;32m      1[0m [38;5;28;01mimport[39;00m[38;5;250m [39m[38;5;21;01mmatplotlib[39;00m[38;5;21;01m.[39;00m[38;5;21;01mpyplot[39;00m[38;5;250m [39m[38;5;28;01mas[39;00m[38;5;250m [39m[38;5;21;01mplt[39;00m
+[1;32m      2[0m [38;5;28;01mimport[39;00m[38;5;250m [39m[38;5;21;01mnumpy[39;00m[38;5;250m [39m[38;5;28;01mas[39;00m[38;5;250m [39m[38;5;21;01mnp[39;00m
+[0;32m----> 3[0m [38;5;28;01mimport[39;00m[38;5;250m [39m[38;5;21;01mpandas[39;00m[38;5;250m [39m[38;5;28;01mas[39;00m[38;5;250m [39m[38;5;21;01mpd[39;00m
+[1;32m      4[0m [38;5;28;01mfrom[39;00m[38;5;250m [39m[38;5;21;01mscipy[39;00m[38;5;21;01m.[39;00m[38;5;21;01mconstants[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m R
+[1;32m      5[0m [38;5;28;01mfrom[39;00m[38;5;250m [39m[38;5;21;01mlabellines[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m labelLines
+
+[0;31mModuleNotFoundError[0m: No module named 'pandas'
+

@@ -18,10 +18,6 @@ kernelspec:
 
 ## Thermodynamic Processes
 
-<!-- - Irreversible -->
-<!-- - Reversible -->
-<!-- - Quasi-static -->
-
 ```{glossary}
 Quasi-static process
   A process carried out *infinitesimally slowly*, ensuring the system remains *near equilibrium* at each step. Any deviations from equilibrium are so small (infinitesimal) that each intermediate state is well-defined thermodynamically.
@@ -30,13 +26,65 @@ Reversible process
   An *idealized* process carried out *quasistatically* and with *no dissipative effects*, so that it can be undone without leaving any net change in the system or surroundings.
 ```
 
-## How to Apply the First Law
+## How to Apply the First Law of Thermodynamics
 
-1. Choose two independent variables
-2. Rewrite the first law
-3. Apply constraints
-4. Define the system
-5. Integrate the first law
+```{admonition} 1. Choose Two Independent Variables
+:class: dropdown
+
+- **How to Choose**:
+  - *Convenience*: What experiments can you set up most easily with the equipment at hand?
+  - *Necessity*: Which variables are feasible to control or measure with the facilities available?
+  - *Curiosity*: Which variables will yield the most interesting or relevant results for your study?
+- Generally, two independent variables are sufficient for many thermodynamic experiments; controlling more can become unwieldy.
+```
+
+````{admonition} 2. Rewrite the First Law
+:class: dropdown
+
+- Express $\delta q$ (the infinitesimal heat transfer) in terms of the differentials of your chosen independent variables, $X_1$ and $X_2$.
+
+```{math}
+\delta q = 
+\left(\frac{\partial U}{\partial X_1}\right)_{X_2} dX_1 + 
+\left(\frac{\partial U}{\partial X_2}\right)_{X_1} dX_2 
++ \dots
+```
+
+- If work is done, include an appropriate term for $\delta w$. For example, if $P$–$V$ work is relevant, $\delta w = -P\, dV$.
+````
+
+```{admonition} 3. Apply Constraints
+:class: dropdown
+
+- **Holding Variables Constant**:
+  - *Isobaric*: $dP = 0$
+  - *Isochoric*: $dV = 0$
+  - *Isothermal*: $dT = 0$
+- **Adiabatic Boundary**:
+  - If the boundary is thermally insulating, $\delta q = 0$.
+  - Note that “adiabatic” means no heat transfer; this does not necessarily imply the system is completely isolated (it can still do work, for example).
+```
+
+```{admonition} 4. Define the System
+:class: dropdown
+
+- Specify the system’s equation of state if known (e.g., $PV = nRT$ for an ideal gas).
+- The equation of state helps you calculate partial derivatives (e.g., $\left(\frac{\partial U}{\partial V}\right)_T$) that appear in your expression for $\delta q$.
+```
+
+```{admonition} 5. Integrate the First Law
+:class: dropdown
+
+- By integrating, you eliminate the differentials to get explicit relationships. 
+- In real experiments, processes are rarely perfectly quasi-static or reversible, but the differential approach can still help interpret results.
+- The final expression links the heat exchanged $(q)$ to the changes in your chosen independent variables along the process path.
+```
+
+```{admonition} So What?
+:class: tip
+
+By carefully selecting your independent variables, rewriting the First Law to account for them, and integrating under specified constraints, you can predict how energy conservation will impact measurable quantities such as heat absorbed or released. Different constraints (isobaric, isochoric, isothermal, or adiabatic) reveal how changing one variable can affect others—and the corresponding energy flow.
+```
 
 ## Example: $V$ and $T$ as Independent Variables
 
