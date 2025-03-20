@@ -394,7 +394,7 @@
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#symmetry-of-linear-rigid-rotors">Symmetry of Linear Rigid Rotors</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rotational-symmetry">Rotational Symmetry</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nonlinear-rigid-rotors">Nonlinear Rigid Rotors</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vibrations-of-polyatomic-molecules">Vibrations of Polyatomic Molecules</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#electronic-partition-function">Electronic Partition Function</a></li>
@@ -414,25 +414,264 @@
 <h1>2.8. Molecular Statistical Mechanics<a class="headerlink" href="#molecular-statistical-mechanics" title="Link to this heading">#</a></h1>
 <section id="overview">
 <h2>Overview<a class="headerlink" href="#overview" title="Link to this heading">#</a></h2>
+<p>In molecular statistical mechanics, one often needs to calculate the partition function for each degree of freedom (translational, rotational, vibrational, and electronic) to derive thermodynamic properties. This section summarizes common formulas for partition functions of various molecular shapes, under the approximate (rigid-rotor/harmonic-oscillator) models. We use <em>rotational temperatures</em> <span class="math notranslate nohighlight">\(\Theta_{\text{rot}}\)</span> and <em>vibrational temperatures</em> <span class="math notranslate nohighlight">\(\Theta_{\text{vib}}\)</span>, which convert molecular constants into energy units scaled by Boltzmann’s constant <span class="math notranslate nohighlight">\(k_{\text{B}}\)</span>.</p>
 </section>
-<section id="symmetry-of-linear-rigid-rotors">
-<h2>Symmetry of Linear Rigid Rotors<a class="headerlink" href="#symmetry-of-linear-rigid-rotors" title="Link to this heading">#</a></h2>
+<section id="rotational-symmetry">
+<h2>Rotational Symmetry<a class="headerlink" href="#rotational-symmetry" title="Link to this heading">#</a></h2>
+<p>The <em>rotational partition function</em> <span class="math notranslate nohighlight">\(q_{\text{rot}}\)</span> depends on:</p>
+<ol class="arabic simple">
+<li><p>The <em>rotational constants</em> (encoded by <span class="math notranslate nohighlight">\(\Theta_{\text{rot},A}\)</span>, <span class="math notranslate nohighlight">\(\Theta_{\text{rot},B}\)</span>, <span class="math notranslate nohighlight">\(\Theta_{\text{rot},C}\)</span>, etc.).</p></li>
+<li><p>The <em>rotational symmetry number</em> <span class="math notranslate nohighlight">\(\sigma\)</span>.</p></li>
+<li><p>The temperature <span class="math notranslate nohighlight">\(T\)</span>.</p></li>
+</ol>
+<p>Below is a summary table of approximate expressions for the rotational partition functions of rigid rotors in the high-temperature limit <span class="math notranslate nohighlight">\(\bigl(T \gg \Theta_{\text{rot}}\bigr)\)</span>. Here, <span class="math notranslate nohighlight">\(\Theta_{\text{rot}}\)</span> and <span class="math notranslate nohighlight">\(T\)</span> are both expressed in Kelvin, making the ratio <span class="math notranslate nohighlight">\(T/\Theta_{\text{rot}}\)</span> dimensionless.</p>
+<div class="pst-scrollable-table-container"><table class="table" id="rot-partition-functions">
+<caption><span class="caption-number">Table 8 </span><span class="caption-text">Rotational Partition Functions of Rigid Rotors</span><a class="headerlink" href="#rot-partition-functions" title="Link to this table">#</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Molecular Class</p></th>
+<th class="head"><p>Symmetry Number (<span class="math notranslate nohighlight">\(\sigma\)</span>)</p></th>
+<th class="head"><p>Rotational Partition Function (<span class="math notranslate nohighlight">\(q_{\text{rot}}\)</span>)</p></th>
+<th class="head"><p>Examples (<span class="math notranslate nohighlight">\(\sigma\)</span>)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Heteronuclear Diatomic (Linear)</strong></p></td>
+<td><p>1</p></td>
+<td><p><span class="math notranslate nohighlight">\(\frac{T}{\Theta_{\text{rot}}}\)</span></p></td>
+<td><p>CO, NO, HF, HCl, etc.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Asymmetric Polyatomic (Linear)</strong></p></td>
+<td><p>1</p></td>
+<td><p><span class="math notranslate nohighlight">\(\frac{T}{\Theta_{\text{rot}}}\)</span></p></td>
+<td><p>HCN, N₂O, FCN, etc.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Homonuclear Diatomic (Linear)</strong></p></td>
+<td><p>2</p></td>
+<td><p><span class="math notranslate nohighlight">\(\frac{T}{2\,\Theta_{\text{rot}}}\)</span></p></td>
+<td><p>H₂, O₂, N₂, etc.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Symmetric Polyatomic (Linear)</strong></p></td>
+<td><p>2</p></td>
+<td><p><span class="math notranslate nohighlight">\(\frac{T}{2\,\Theta_{\text{rot}}}\)</span></p></td>
+<td><p>CO₂, CS₂, XeF₂</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Spherical Top</strong></p></td>
+<td><p>12 for <span class="math notranslate nohighlight">\(T_d\)</span> or 24 for <span class="math notranslate nohighlight">\(O_h\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\frac{\sqrt{\pi}}{\sigma}\,\biggl(\frac{T}{\Theta_{\text{rot}}}\biggr)^{3/2}\)</span></p></td>
+<td><p>CH₄, SiH₄, SF₆, etc.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Symmetric Top</strong></p></td>
+<td><p>Varies with symmetry</p></td>
+<td><p><span class="math notranslate nohighlight">\(\frac{\sqrt{\pi}}{\sigma}\,\sqrt{\frac{T^3}{\Theta_{\text{rot},A}^2\,\Theta_{\text{rot},C}}}\)</span></p></td>
+<td><p>C₆H₆ (<span class="math notranslate nohighlight">\(\sigma=12\)</span>), NH₃ (<span class="math notranslate nohighlight">\(\sigma=3\)</span>), XeF₄ (<span class="math notranslate nohighlight">\(\sigma=8\)</span>), etc.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Asymmetric Top</strong></p></td>
+<td><p>Varies with symmetry</p></td>
+<td><p><span class="math notranslate nohighlight">\(\frac{\sqrt{\pi}}{\sigma}\,\sqrt{\frac{T^3}{\Theta_{\text{rot},A}\,\Theta_{\text{rot},B}\,\Theta_{\text{rot},C}}}\)</span></p></td>
+<td><p>H₂O (<span class="math notranslate nohighlight">\(\sigma=2\)</span>), NO₂ (<span class="math notranslate nohighlight">\(\sigma=2\)</span>), SO₂ (<span class="math notranslate nohighlight">\(\sigma=2\)</span>), most large molecules</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- https://cccbdb.nist.gov/expdiatomicsx.asp -->
+<!-- https://cccbdb.nist.gov/exptriatomicsx.asp -->
 </section>
 <section id="nonlinear-rigid-rotors">
 <h2>Nonlinear Rigid Rotors<a class="headerlink" href="#nonlinear-rigid-rotors" title="Link to this heading">#</a></h2>
+<p>Below is a visualization illustrating <em>spherical top</em>, <em>symmetric top</em>, and <em>asymmetric top</em> molecules. The semi-axes of each ellipsoid are scaled by <span class="math notranslate nohighlight">\(\sqrt{\Theta_{\text{rot}, i}}\)</span>, emphasizing how the different principal rotational constants (or equivalently, rotational temperatures) define the 3D shape of the “rotational profile.”</p>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">mpl_toolkits.mplot3d</span><span class="w"> </span><span class="kn">import</span> <span class="n">Axes3D</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">myst_nb</span><span class="w"> </span><span class="kn">import</span> <span class="n">glue</span>
+
+<span class="n">u</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">u</span><span class="p">,</span> <span class="n">v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">surface_points</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Return x, y, z for an ellipsoid with semi-axes a, b, c.&quot;&quot;&quot;</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">a</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">u</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">b</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">u</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+    <span class="n">z</span> <span class="o">=</span> <span class="n">c</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span>
+
+<span class="c1"># Rotational temperatures (sample values)</span>
+<span class="n">theta_ch4</span> <span class="o">=</span> <span class="p">(</span><span class="mf">7.54</span><span class="p">,</span> <span class="mf">7.54</span><span class="p">,</span> <span class="mf">7.54</span><span class="p">)</span>     <span class="c1"># Spherical top</span>
+<span class="n">theta_nh3</span> <span class="o">=</span> <span class="p">(</span><span class="mf">19.9</span><span class="p">,</span> <span class="mf">19.9</span><span class="p">,</span> <span class="mf">9.6</span><span class="p">)</span>      <span class="c1"># Symmetric top</span>
+<span class="n">theta_h2o</span> <span class="o">=</span> <span class="p">(</span><span class="mf">40.1</span><span class="p">,</span> <span class="mf">20.9</span><span class="p">,</span> <span class="mf">13.4</span><span class="p">)</span>     <span class="c1"># Asymmetric top</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">18</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+
+<span class="c1"># 1) CH4: Spherical top</span>
+<span class="n">ax1</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="s1">&#39;3d&#39;</span><span class="p">)</span>
+<span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">z1</span> <span class="o">=</span> <span class="n">surface_points</span><span class="p">(</span><span class="o">*</span><span class="n">theta_ch4</span><span class="p">)</span>
+<span class="n">surf1</span> <span class="o">=</span> <span class="n">ax1</span><span class="o">.</span><span class="n">plot_surface</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">z1</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;skyblue&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.4</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Spherical Top&quot;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_box_aspect</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="o">-</span><span class="mf">7.54</span><span class="p">,</span> <span class="mf">7.54</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="o">-</span><span class="mf">7.54</span><span class="p">,</span> <span class="mf">7.54</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_zlim</span><span class="p">(</span><span class="o">-</span><span class="mf">7.54</span><span class="p">,</span> <span class="mf">7.54</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">view_init</span><span class="p">(</span><span class="n">elev</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">azim</span><span class="o">=</span><span class="mi">35</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;$x$&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;$y$&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_zlabel</span><span class="p">(</span><span class="s1">&#39;$z$&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">([])</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">([])</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_zticks</span><span class="p">([])</span>
+
+<span class="c1"># Add a CH4 molecule to the plot (schematic coordinates)</span>
+<span class="n">positions</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
+    <span class="p">[</span> <span class="mf">0.0000</span><span class="p">,</span>  <span class="mf">0.0000</span><span class="p">,</span>  <span class="mf">0.0000</span><span class="p">],</span>
+    <span class="p">[</span> <span class="mf">0.6276</span><span class="p">,</span>  <span class="mf">0.6276</span><span class="p">,</span>  <span class="mf">0.6276</span><span class="p">],</span>
+    <span class="p">[</span> <span class="mf">0.6276</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.6276</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.6276</span><span class="p">],</span>
+    <span class="p">[</span><span class="o">-</span><span class="mf">0.6276</span><span class="p">,</span>  <span class="mf">0.6276</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.6276</span><span class="p">],</span>
+    <span class="p">[</span><span class="o">-</span><span class="mf">0.6276</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.6276</span><span class="p">,</span>  <span class="mf">0.6276</span><span class="p">]</span>
+<span class="p">])</span> <span class="o">*</span> <span class="mf">7.54</span><span class="o">/</span><span class="mi">2</span>
+
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">pos</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">positions</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="o">*</span><span class="n">pos</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">markeredgecolor</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">markerfacecolor</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="o">*</span><span class="n">pos</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">markeredgecolor</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">markerfacecolor</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">positions</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">pos</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span>
+                 <span class="p">[</span><span class="n">positions</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span> <span class="n">pos</span><span class="p">[</span><span class="mi">1</span><span class="p">]],</span>
+                 <span class="p">[</span><span class="n">positions</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">2</span><span class="p">],</span> <span class="n">pos</span><span class="p">[</span><span class="mi">2</span><span class="p">]],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
+
+<span class="n">ax1</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">7.54</span><span class="o">/</span><span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mf">7.54</span><span class="o">/</span><span class="mi">4</span><span class="p">,</span> <span class="mf">7.54</span><span class="o">/</span><span class="mi">16</span><span class="p">,</span> <span class="s1">&#39;CH$_4$&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+
+<span class="c1"># 2) NH3: Symmetric top</span>
+<span class="n">ax2</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="s1">&#39;3d&#39;</span><span class="p">)</span>
+<span class="n">x2</span><span class="p">,</span> <span class="n">y2</span><span class="p">,</span> <span class="n">z2</span> <span class="o">=</span> <span class="n">surface_points</span><span class="p">(</span><span class="o">*</span><span class="n">theta_nh3</span><span class="p">)</span>
+<span class="n">surf2</span> <span class="o">=</span> <span class="n">ax2</span><span class="o">.</span><span class="n">plot_surface</span><span class="p">(</span><span class="n">x2</span><span class="p">,</span> <span class="n">y2</span><span class="p">,</span> <span class="n">z2</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;salmon&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.4</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Symmetric Top&quot;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_box_aspect</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="o">-</span><span class="mf">19.9</span><span class="p">,</span> <span class="mf">19.9</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="o">-</span><span class="mf">19.9</span><span class="p">,</span> <span class="mf">19.9</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_zlim</span><span class="p">(</span><span class="o">-</span><span class="mf">19.9</span><span class="p">,</span> <span class="mf">19.9</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">view_init</span><span class="p">(</span><span class="n">elev</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">azim</span><span class="o">=</span><span class="mi">35</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;$x$&#39;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;$y$&#39;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_zlabel</span><span class="p">(</span><span class="s1">&#39;$z$&#39;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">([])</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">([])</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_zticks</span><span class="p">([])</span>
+
+<span class="n">positions</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
+    <span class="p">[</span> <span class="mf">0.0000</span><span class="p">,</span>  <span class="mf">0.0000</span><span class="p">,</span>  <span class="mf">0.0000</span><span class="p">],</span>
+    <span class="p">[</span> <span class="mf">0.0000</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.9377</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.3816</span><span class="p">],</span>
+    <span class="p">[</span> <span class="mf">0.8121</span><span class="p">,</span>  <span class="mf">0.4689</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.3816</span><span class="p">],</span>
+    <span class="p">[</span><span class="o">-</span><span class="mf">0.8121</span><span class="p">,</span>  <span class="mf">0.4689</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.3816</span><span class="p">]</span>
+<span class="p">])</span> <span class="o">*</span> <span class="mf">19.9</span><span class="o">/</span><span class="mi">2</span>
+
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">pos</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">positions</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="o">*</span><span class="n">pos</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">markeredgecolor</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">markerfacecolor</span><span class="o">=</span><span class="s1">&#39;skyblue&#39;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="o">*</span><span class="n">pos</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">markeredgecolor</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">markerfacecolor</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">positions</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">pos</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span>
+                 <span class="p">[</span><span class="n">positions</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span> <span class="n">pos</span><span class="p">[</span><span class="mi">1</span><span class="p">]],</span>
+                 <span class="p">[</span><span class="n">positions</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">2</span><span class="p">],</span> <span class="n">pos</span><span class="p">[</span><span class="mi">2</span><span class="p">]],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
+
+<span class="n">ax2</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">19.9</span><span class="o">/</span><span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mf">19.9</span><span class="o">/</span><span class="mi">4</span><span class="p">,</span> <span class="mf">19.9</span><span class="o">/</span><span class="mi">16</span><span class="p">,</span> <span class="s1">&#39;NH$_3$&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+
+<span class="c1"># 3) H2O: Asymmetric top</span>
+<span class="n">ax3</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="s1">&#39;3d&#39;</span><span class="p">)</span>
+<span class="n">x3</span><span class="p">,</span> <span class="n">y3</span><span class="p">,</span> <span class="n">z3</span> <span class="o">=</span> <span class="n">surface_points</span><span class="p">(</span><span class="o">*</span><span class="n">theta_h2o</span><span class="p">)</span>
+<span class="n">surf3</span> <span class="o">=</span> <span class="n">ax3</span><span class="o">.</span><span class="n">plot_surface</span><span class="p">(</span><span class="n">x3</span><span class="p">,</span> <span class="n">y3</span><span class="p">,</span> <span class="n">z3</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;plum&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.4</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">)</span>
+<span class="n">ax3</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Asymmetric Top&quot;</span><span class="p">)</span>
+<span class="n">ax3</span><span class="o">.</span><span class="n">set_box_aspect</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+<span class="n">ax3</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="o">-</span><span class="mf">40.1</span><span class="p">,</span> <span class="mf">40.1</span><span class="p">)</span>
+<span class="n">ax3</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="o">-</span><span class="mf">40.1</span><span class="p">,</span> <span class="mf">40.1</span><span class="p">)</span>
+<span class="n">ax3</span><span class="o">.</span><span class="n">set_zlim</span><span class="p">(</span><span class="o">-</span><span class="mf">40.1</span><span class="p">,</span> <span class="mf">40.1</span><span class="p">)</span>
+<span class="n">ax3</span><span class="o">.</span><span class="n">view_init</span><span class="p">(</span><span class="n">elev</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">azim</span><span class="o">=</span><span class="mi">35</span><span class="p">)</span>
+<span class="n">ax3</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;$x$&#39;</span><span class="p">)</span>
+<span class="n">ax3</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;$y$&#39;</span><span class="p">)</span>
+<span class="n">ax3</span><span class="o">.</span><span class="n">set_zlabel</span><span class="p">(</span><span class="s1">&#39;$z$&#39;</span><span class="p">)</span>
+<span class="n">ax3</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">([])</span>
+<span class="n">ax3</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">([])</span>
+<span class="n">ax3</span><span class="o">.</span><span class="n">set_zticks</span><span class="p">([])</span>
+
+<span class="n">positions</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
+    <span class="p">[</span> <span class="mf">0.0000</span><span class="p">,</span>  <span class="mf">0.0000</span><span class="p">,</span>  <span class="mf">0.1173</span><span class="p">],</span>
+    <span class="p">[</span> <span class="mf">0.7572</span><span class="p">,</span>  <span class="mf">0.0000</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.4692</span><span class="p">],</span>
+    <span class="p">[</span><span class="o">-</span><span class="mf">0.7572</span><span class="p">,</span>  <span class="mf">0.0000</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.4692</span><span class="p">]</span>
+<span class="p">])</span> <span class="o">*</span> <span class="mf">40.1</span><span class="o">/</span><span class="mi">2</span>
+
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">pos</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">positions</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">ax3</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="o">*</span><span class="n">pos</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">markeredgecolor</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">markerfacecolor</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">ax3</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="o">*</span><span class="n">pos</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">markeredgecolor</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">markerfacecolor</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">ax3</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">positions</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">pos</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span>
+                 <span class="p">[</span><span class="n">positions</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span> <span class="n">pos</span><span class="p">[</span><span class="mi">1</span><span class="p">]],</span>
+                 <span class="p">[</span><span class="n">positions</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">2</span><span class="p">],</span> <span class="n">pos</span><span class="p">[</span><span class="mi">2</span><span class="p">]],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
+
+<span class="n">ax3</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">40.1</span><span class="o">/</span><span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mf">40.1</span><span class="o">/</span><span class="mi">4</span><span class="p">,</span> <span class="mf">40.1</span><span class="o">/</span><span class="mi">16</span><span class="p">,</span> <span class="s1">&#39;H$_2$O&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">glue</span><span class="p">(</span><span class="s2">&quot;rotational_symmetry&quot;</span><span class="p">,</span> <span class="n">fig</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">(</span><span class="n">fig</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<figure class="align-center" id="id1" style="width: 100%">
+<img alt="../_images/d9fddeb45593d56215a6dcbfe6ae8ac2627583d5887f7871608d62e6253ba82d.png" src="../_images/d9fddeb45593d56215a6dcbfe6ae8ac2627583d5887f7871608d62e6253ba82d.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 22 </span><span class="caption-text">Approximate visualization of rotational shapes for (left) a spherical top (CH₄), (middle) a symmetric top (NH₃), and (right) an asymmetric top (H₂O). The ellipsoids are scaled by <span class="math notranslate nohighlight">\(\sqrt{\Theta_{\text{rot}}}\)</span> in each principal axis direction.</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
 </section>
 <section id="vibrations-of-polyatomic-molecules">
 <h2>Vibrations of Polyatomic Molecules<a class="headerlink" href="#vibrations-of-polyatomic-molecules" title="Link to this heading">#</a></h2>
+<p>For a diatomic molecule approximated by a <em>harmonic oscillator</em> of characteristic vibrational temperature <span class="math notranslate nohighlight">\(\Theta_{\text{vib}}\)</span>, the vibrational partition function is:</p>
+<div class="math notranslate nohighlight">
+\[q_{\text{vib}} \;=\; \frac{e^{-\Theta_{\text{vib}}/(2T)}}{\,1 - e^{-\Theta_{\text{vib}}/T}\,}.\]</div>
+<p>For a polyatomic molecule with <span class="math notranslate nohighlight">\(\alpha\)</span> normal modes (where <span class="math notranslate nohighlight">\(\alpha = 3N - 6\)</span> for a nonlinear molecule and <span class="math notranslate nohighlight">\(\alpha = 3N - 5\)</span> for a linear molecule), the vibrational partition function is the product of each mode’s contribution:</p>
+<div class="math notranslate nohighlight">
+\[q_{\text{vib}} \;=\; \prod_{j=1}^\alpha \; \frac{\,e^{-\Theta_{\text{vib},j}/(2T)}\,}{\,1 - e^{-\Theta_{\text{vib},j}/T}\,}.\]</div>
+<p>Here, <span class="math notranslate nohighlight">\(\Theta_{\text{vib},j}\)</span> is the vibrational temperature of the <span class="math notranslate nohighlight">\(j\)</span>-th normal mode.</p>
 </section>
 <section id="electronic-partition-function">
 <h2>Electronic Partition Function<a class="headerlink" href="#electronic-partition-function" title="Link to this heading">#</a></h2>
+<p>The <em>electronic partition function</em> is given by</p>
+<div class="math notranslate nohighlight">
+\[q_{\text{elec}} \;=\; \sum_{i=1}^{\infty} g_i \, e^{-\beta\,\varepsilon_i}
+\;\;\underset{\varepsilon_1 = 0}{\longrightarrow}\;\;
+g_1 \;+\; g_2\,e^{-\beta\,(\varepsilon_2 - \varepsilon_1)} \;+\;\cdots,\]</div>
+<p>where <span class="math notranslate nohighlight">\(g_i\)</span> is the degeneracy of the <span class="math notranslate nohighlight">\(i\)</span>-th electronic state, <span class="math notranslate nohighlight">\(\varepsilon_i\)</span> is that state’s electronic energy, and <span class="math notranslate nohighlight">\(\beta = 1/(k_{\text{B}} T)\)</span>. In most ground-state-dominated situations (<span class="math notranslate nohighlight">\(\varepsilon_2 - \varepsilon_1 \gg k_{\text{B}} T\)</span>), the higher-lying states contribute negligibly, and <span class="math notranslate nohighlight">\(q_{\text{elec}}\approx g_1\)</span>.</p>
+<!-- ```{dropdown} How to Find $g_1$
+:class: term-symbol-components
+
+| **Component**              | **Atomic Term Symbol**           | **Molecular Term Symbol**                                      | **Definition**                                                                                                                                                           |
+|----------------------------|----------------------------------|----------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Overall Term Symbol**    | ${}^{2S+1}L_J$                   | ${}^{2S+1}\Lambda_{\Omega,\,(g/u)}^{\pm}$                        | The complete designation for the state. For atoms, the term symbol is written as ${}^{2S+1}L_J$. For diatomic molecules, the symbol is extended to include the projection of orbital angular momentum ($\Lambda$), the total angular momentum projection ($\Omega$), and symmetry labels. |
+| **Spin Multiplicity**      | $2S+1$                           | $2S+1$                                                         | Indicates the spin multiplicity. Here, $2S+1$ (with $S$ being the total spin quantum number) defines the number of spin states.                                      |
+| **Orbital Angular Momentum** | $L$ (e.g., S, P, D, …)           | $\Lambda$                                                     | In atoms, $L$ is the total orbital angular momentum (expressed as a letter). In diatomic molecules, $\Lambda$ represents the projection of the orbital angular momentum onto the internuclear axis. |
+| **Total Angular Momentum** | $J$                             | $(\Omega)$ or as a subscript $\Omega$                          | For atoms, $J$ is the total angular momentum. For molecules, $\Omega$ is the projection of the total angular momentum along the internuclear axis.                 |
+| **Inversion Symmetry**     | —                                | $g/u$                                                         | In homonuclear diatomics, this subscript indicates symmetry under inversion through the center of mass: "gerade" ($g$) for symmetric and "ungerade" ($u$) for antisymmetric.            |
+| **Reflection Symmetry**    | —                                | $\pm$                                                         | For molecular states (notably for $\Sigma$ states), this superscript indicates the symmetry ($+$) or antisymmetry ($-$) under reflection in any plane containing the internuclear axis. |
+| **Statistical Weight ($g_i$)** | $2J+1$                           | For molecules, if the spin-orbit coupling is strong so that $J$ (or $\Omega$) is a good quantum number, then $g_i = 2J+1$. In cases where spin-orbit coupling is weak or unresolved, one may approximate $g_i$ as $(2-\delta_{0,\Lambda})(2S+1)$, where $\delta_{0,\Lambda}=1$ for $\Lambda=0$ ($\Sigma$ states) and 0 for $\Lambda>0$, accounting for the $\pm$ symmetry. The statistical weight $g_i$ is the degeneracy of the state. For atomic term symbols, it is given by $2J+1$. For molecular states, the degeneracy depends on both the spin multiplicity and the orbital contribution; nonzero $\Lambda$ states typically have an additional factor of 2 due to the reflection symmetry. |
+``` -->
 </section>
 <section id="summary">
 <h2>Summary<a class="headerlink" href="#summary" title="Link to this heading">#</a></h2>
+<p>The table below collects the main partition function formulas for atoms and molecules under typical textbook approximations (high-temperature limit for rotation, harmonic approximation for vibration, negligible excited electronic states):</p>
 <div class="pst-scrollable-table-container"><table class="table" id="tab-partfunc">
-<caption><span class="caption-number">Table 8 </span><span class="caption-text">Partition functions for various systems. Repeated entries are denoted by a down arrow.</span><a class="headerlink" href="#tab-partfunc" title="Link to this table">#</a></caption>
+<caption><span class="caption-number">Table 9 </span><span class="caption-text">Partition functions for various systems</span><a class="headerlink" href="#tab-partfunc" title="Link to this table">#</a></caption>
 <thead>
-<tr class="row-odd"><th class="head"><p>System</p></th>
+<tr class="row-odd"><th class="head"><p><strong>System</strong></p></th>
 <th class="head"><p><span class="math notranslate nohighlight">\(q_{\text{trans}}\)</span></p></th>
 <th class="head"><p><span class="math notranslate nohighlight">\(q_{\text{rot}}\)</span></p></th>
 <th class="head"><p><span class="math notranslate nohighlight">\(q_{\text{vib}}\)</span></p></th>
@@ -441,56 +680,60 @@
 </thead>
 <tbody>
 <tr class="row-even"><td><p>Atom</p></td>
-<td><p><span class="math notranslate nohighlight">\(\dfrac{V}{\Lambda^3}\)</span></p></td>
-<td></td>
-<td></td>
+<td><p><span class="math notranslate nohighlight">\(\frac{V}{\Lambda^3}\)</span></p></td>
+<td><p>—</p></td>
+<td><p>—</p></td>
 <td><p><span class="math notranslate nohighlight">\(g_1\)</span></p></td>
 </tr>
 <tr class="row-odd"><td><p>Diatomic</p></td>
-<td><p><span class="math notranslate nohighlight">\(\downarrow\)</span></p></td>
-<td><p><span class="math notranslate nohighlight">\(\dfrac{T}{\sigma\,\Theta_{\text{rot}}}\)</span></p></td>
-<td><p><span class="math notranslate nohighlight">\(\dfrac{e^{-\Theta_{\text{vib}}/(2T)}}{1-e^{-\Theta_{\text{vib}}/T}}\)</span></p></td>
-<td><p><span class="math notranslate nohighlight">\(\downarrow\)</span></p></td>
+<td><p>↓</p></td>
+<td><p><span class="math notranslate nohighlight">\(\frac{T}{\sigma\,\Theta_{\text{rot}}}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\frac{e^{-\Theta_{\text{vib}}/(2T)}}{\,1 - e^{-\Theta_{\text{vib}}/T}\,}\)</span></p></td>
+<td><p>↓</p></td>
 </tr>
 <tr class="row-even"><td><p><strong>Polyatomic</strong></p></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td><p>—</p></td>
+<td><p>—</p></td>
+<td><p>—</p></td>
+<td><p>—</p></td>
 </tr>
 <tr class="row-odd"><td><p><em>Linear</em></p></td>
-<td><p><span class="math notranslate nohighlight">\(\downarrow\)</span></p></td>
-<td><p><span class="math notranslate nohighlight">\(\downarrow\)</span></p></td>
-<td><p><span class="math notranslate nohighlight">\(\displaystyle\prod_{j=1}^\alpha \dfrac{e^{-\Theta_{\text{vib},j}/(2T)}}{1-e^{-\Theta_{\text{vib},j}/T}}\)</span></p></td>
-<td><p><span class="math notranslate nohighlight">\(\downarrow\)</span></p></td>
+<td><p>↓</p></td>
+<td><p>same as diatomic (with adjusted <span class="math notranslate nohighlight">\(\sigma\)</span>)</p></td>
+<td><p><span class="math notranslate nohighlight">\(\prod_{j=1}^{\alpha}\,\frac{e^{-\Theta_{\text{vib},j}/(2T)}}{1-e^{-\Theta_{\text{vib},j}/T}} \)</span></p></td>
+<td><p>↓</p></td>
 </tr>
 <tr class="row-even"><td><p><em>Nonlinear</em></p></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td><p>—</p></td>
+<td><p>—</p></td>
+<td><p>—</p></td>
+<td><p>—</p></td>
 </tr>
 <tr class="row-odd"><td><p>Spherical</p></td>
-<td><p><span class="math notranslate nohighlight">\(\downarrow\)</span></p></td>
-<td><p><span class="math notranslate nohighlight">\(\dfrac{\sqrt{\pi}}{\sigma}\left(\dfrac{T}{\Theta_{\text{rot}}}\right)^{3/2}\)</span></p></td>
-<td><p><span class="math notranslate nohighlight">\(\downarrow\)</span></p></td>
-<td><p><span class="math notranslate nohighlight">\(\downarrow\)</span></p></td>
+<td><p>↓</p></td>
+<td><p><span class="math notranslate nohighlight">\(\frac{\sqrt{\pi}}{\sigma}\,\bigl(\tfrac{T}{\Theta_{\text{rot}}}\bigr)^{3/2}\)</span></p></td>
+<td><p>↓</p></td>
+<td><p>↓</p></td>
 </tr>
 <tr class="row-even"><td><p>Symmetric</p></td>
-<td><p><span class="math notranslate nohighlight">\(\downarrow\)</span></p></td>
-<td><p><span class="math notranslate nohighlight">\(\dfrac{\sqrt{\pi}}{\sigma}\left(\dfrac{T}{\Theta_{\text{rot,A}}}\right)\left(\dfrac{T}{\Theta_{\text{rot,C}}}\right)^{1/2}\)</span></p></td>
-<td><p><span class="math notranslate nohighlight">\(\downarrow\)</span></p></td>
-<td><p><span class="math notranslate nohighlight">\(\downarrow\)</span></p></td>
+<td><p>↓</p></td>
+<td><p><span class="math notranslate nohighlight">\(\frac{\sqrt{\pi}}{\sigma} \sqrt{\frac{T^3}{\Theta_{\text{rot,A}}\,(\Theta_{\text{rot,C}})^2}}\)</span></p></td>
+<td><p>↓</p></td>
+<td><p>↓</p></td>
 </tr>
 <tr class="row-odd"><td><p>Asymmetric</p></td>
-<td><p><span class="math notranslate nohighlight">\(\downarrow\)</span></p></td>
-<td><p><span class="math notranslate nohighlight">\(\dfrac{\sqrt{\pi}}{\sigma}\left(\dfrac{T^3}{\Theta_{\text{rot,A}}\,\Theta_{\text{rot,B}}\,\Theta_{\text{rot,C}}}\right)^{1/2}\)</span></p></td>
-<td><p><span class="math notranslate nohighlight">\(\downarrow\)</span></p></td>
-<td><p><span class="math notranslate nohighlight">\(\downarrow\)</span></p></td>
+<td><p>↓</p></td>
+<td><p><span class="math notranslate nohighlight">\(\frac{\sqrt{\pi}}{\sigma}\,\sqrt{\frac{T^3}{\Theta_{\text{rot,A}}\,\Theta_{\text{rot,B}}\,\Theta_{\text{rot,C}}}}\)</span></p></td>
+<td><p>↓</p></td>
+<td><p>↓</p></td>
 </tr>
 </tbody>
 </table>
 </div>
+<p>The translational partition function <span class="math notranslate nohighlight">\(q_{\text{trans}} = \frac{V}{\Lambda^3}\)</span> (with <span class="math notranslate nohighlight">\(\Lambda\)</span> the thermal de Broglie wavelength) applies to all gas-phase systems. For most molecules, the total partition function can be approximated by the product</p>
+<div class="math notranslate nohighlight">
+\[q \;\approx\; q_{\text{trans}}\;q_{\text{rot}}\;q_{\text{vib}}\;q_{\text{elec}},\]</div>
+<p>with each factor evaluated using the formulas shown above, assuming the relevant excited states are not significantly populated beyond the ground state.</p>
 </section>
 </section>
 
@@ -560,7 +803,7 @@
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#symmetry-of-linear-rigid-rotors">Symmetry of Linear Rigid Rotors</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rotational-symmetry">Rotational Symmetry</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nonlinear-rigid-rotors">Nonlinear Rigid Rotors</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vibrations-of-polyatomic-molecules">Vibrations of Polyatomic Molecules</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#electronic-partition-function">Electronic Partition Function</a></li>

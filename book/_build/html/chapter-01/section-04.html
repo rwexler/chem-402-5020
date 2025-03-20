@@ -514,21 +514,13 @@
 </div>
 </div>
 </details>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-<span class="ne">----&gt; </span><span class="mi">3</span> <span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">from</span><span class="w"> </span><span class="nn">scipy.constants</span><span class="w"> </span><span class="kn">import</span> <span class="n">R</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="kn">from</span><span class="w"> </span><span class="nn">labellines</span><span class="w"> </span><span class="kn">import</span> <span class="n">labelLines</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;pandas&#39;
-</pre></div>
 </div>
-</div>
-</div>
+<figure class="align-center" id="id1" style="width: 100%">
+<img alt="../_images/7aebf82d9a32ecc1f1cbbef88916a102d99d018513673c556aeafd972681f553.png" src="../_images/7aebf82d9a32ecc1f1cbbef88916a102d99d018513673c556aeafd972681f553.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 8 </span><span class="caption-text">Compressibility factor <span class="math notranslate nohighlight">\(Z\)</span> of water at 300 K as a function of pressure, with the ideal-gas line (<span class="math notranslate nohighlight">\(Z=1\)</span>) included for comparison. The dip below <span class="math notranslate nohighlight">\(Z=1\)</span> highlights net attractive forces (most pronounced at the minimum <span class="math notranslate nohighlight">\(Z\)</span>), while crossing above <span class="math notranslate nohighlight">\(Z=1\)</span> at higher pressures reflects repulsive interactions. The point at which the real-gas curve intersects the ideal-gas line indicates a coincidental match to ideal behavior.</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
 <p>One of the ways to quantify deviations from ideal behavior is by way of the compressibility factor <span class="math notranslate nohighlight">\(Z\)</span>:</p>
 <div class="math notranslate nohighlight" id="equation-compressibility-factor">
 <span class="eqno">(7)<a class="headerlink" href="#equation-compressibility-factor" title="Link to this equation">#</a></span>\[Z = \frac{P V}{N k_\text{B} T} = \frac{P V}{n R T}.\]</div>
@@ -700,6 +692,12 @@
 </div>
 </details>
 </div>
+<figure class="align-center" id="van-der-waals-isotherms" style="width: 100%">
+<img alt="../_images/d972d2a4c525acf0a514069da4c1b12f9a26c659f4c4e4963664a3db81e5a434.png" src="../_images/d972d2a4c525acf0a514069da4c1b12f9a26c659f4c4e4963664a3db81e5a434.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 9 </span><span class="caption-text">Comparison of experimental and van der Waals isotherms for CO<sub>2</sub> at temperatures below, at, and above the critical temperature <span class="math notranslate nohighlight">\(T_c\)</span>. The subcritical isotherm (<span class="math notranslate nohighlight">\(T &lt; T_c\)</span>) displays the characteristic loop associated with phase separation, while the isotherm at <span class="math notranslate nohighlight">\(T = T_c\)</span> shows an inflection point, and supercritical conditions (<span class="math notranslate nohighlight">\(T &gt; T_c\)</span>) no longer exhibit a liquid–vapor transition.</span><a class="headerlink" href="#van-der-waals-isotherms" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
 <section id="critical-point">
 <h4>Critical Point<a class="headerlink" href="#critical-point" title="Link to this heading">#</a></h4>
 <div class="cell tag_hide-input docutils container">
@@ -966,6 +964,12 @@
 </div>
 </details>
 </div>
+<figure class="align-center" id="van-der-waals-critical-point" style="width: 100%">
+<img alt="../_images/4c49a3bf3460daecf0701a1ce4e3ea68b0095741e6de7023045ba2cb0510a425.png" src="../_images/4c49a3bf3460daecf0701a1ce4e3ea68b0095741e6de7023045ba2cb0510a425.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 10 </span><span class="caption-text">Van der Waals isotherm for CO<sub>2</sub> at <span class="math notranslate nohighlight">\(T = 0.9\,T_c\)</span>, with the Maxwell construction illustrating how the unphysical loop is replaced by a horizontal tie line defining liquid–vapor coexistence. The critical point at <span class="math notranslate nohighlight">\(T = T_c\)</span> is also shown, where the liquid and vapor phases merge.</span><a class="headerlink" href="#van-der-waals-critical-point" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
 <p>Expanding Equation <a class="reference internal" href="#equation-van-der-waals-eos">(8)</a> and rearranging terms:</p>
 <div class="math notranslate nohighlight" id="equation-van-der-waals-eos-expanded">
 <span class="eqno">(9)<a class="headerlink" href="#equation-van-der-waals-eos-expanded" title="Link to this equation">#</a></span>\[V_\text{m}^3 - \left( b_\text{m} + \frac{R T}{P} \right) V_\text{m}^2 + \frac{a_\text{m}}{P} V_\text{m} - \frac{a_\text{m} b_\text{m}}{P} = 0.\]</div>
@@ -1087,6 +1091,12 @@ T_{\text{c}} &amp;= \frac{8 a_\text{m}}{27 b_\text{m} R}.
 </div>
 </details>
 </div>
+<figure class="align-center" id="id2" style="width: 100%">
+<img alt="../_images/59cb6f9f611363fe2e9c726bd2710fa01a1208afdf2e37e71a43b6e878e663b7.png" src="../_images/59cb6f9f611363fe2e9c726bd2710fa01a1208afdf2e37e71a43b6e878e663b7.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 11 </span><span class="caption-text">Compressibility factor <span class="math notranslate nohighlight">\(Z\)</span> of argon, oxygen, water, and carbon dioxide plotted over a range of reduced pressures for different reduced temperatures. These data illustrate how real gases exhibit similar trends when expressed in terms of their critical properties, in accordance with the principle of corresponding states.</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
 <p>Redefining <span class="math notranslate nohighlight">\(V_\text{m}\)</span>, <span class="math notranslate nohighlight">\(P\)</span>, and <span class="math notranslate nohighlight">\(T\)</span> as fractions <span class="math notranslate nohighlight">\(V_{\text{m},r}\)</span>, <span class="math notranslate nohighlight">\(P_r\)</span>, and <span class="math notranslate nohighlight">\(T_r\)</span> of their critical values:</p>
 <div class="math notranslate nohighlight">
 \[V_\text{m} = V_{\text{m},r} V_{\text{m},c}, \quad P = P_r P_c, \quad T = T_r T_c,\]</div>
