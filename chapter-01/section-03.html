@@ -495,7 +495,7 @@
 <figure class="align-center" id="fig-gas-laws" style="width: 100%">
 <img alt="../_images/d012ee3c5e4e3ae5eacec5e6042796c3c84a7998f6d89d97e8d8b074cb3ff995.png" src="../_images/d012ee3c5e4e3ae5eacec5e6042796c3c84a7998f6d89d97e8d8b074cb3ff995.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 6 </span><span class="caption-text">Four classical gas laws (blue) shown in chronological order: Boyle’s law,<a class="footnote-reference brackets" href="#id2" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> Charles’s law, Gay-Lussac’s law, and Avogadro’s law.</span><a class="headerlink" href="#fig-gas-laws" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 6 </span><span class="caption-text">Four classical gas laws (blue) shown in chronological order: Boyle’s law,<a class="footnote-reference brackets" href="#id3" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> Charles’s law, Gay-Lussac’s law, and Avogadro’s law.</span><a class="headerlink" href="#fig-gas-laws" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>All gases follow these relationships when at least one of the following conditions is met:</p>
@@ -630,30 +630,27 @@
 </div>
 </div>
 </details>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-<span class="ne">----&gt; </span><span class="mi">3</span> <span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">from</span><span class="w"> </span><span class="nn">scipy.constants</span><span class="w"> </span><span class="kn">import</span> <span class="n">N_A</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="kn">import</span><span class="w"> </span><span class="nn">statsmodels.api</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sm</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;pandas&#39;
-</pre></div>
 </div>
-</div>
-</div>
+<figure class="align-center" id="fig-absolute-temperature" style="width: 100%">
+<img alt="../_images/742ec685462e571f5a73d567a17f42bc98878665f9566a389cdb37129ff692e8.png" src="../_images/742ec685462e571f5a73d567a17f42bc98878665f9566a389cdb37129ff692e8.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 7 </span><span class="caption-text">Linear relationship between the per-molecule volume <span class="math notranslate nohighlight">\(v\)</span> and Celsius temperature for O₂ at 1 Pa.<a class="footnote-reference brackets" href="#id4" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a><br />
+The red line is an ordinary least squares fit whose intercept at -273.15 °C signals the theoretical <em>zero-volume</em> limit, defining absolute zero (0 K).</span><a class="headerlink" href="#fig-absolute-temperature" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
 <p>Charles’s law states that, at constant (low) pressure, the volume per particle is directly proportional to the gas temperature. Historically, the Celsius scale was used (<span class="math notranslate nohighlight">\(0\,^\circ\text{C}\)</span> as the freezing point of water and <span class="math notranslate nohighlight">\(100\,^\circ\text{C}\)</span> as the boiling point). However, by measuring gas volume at various Celsius temperatures and extrapolating to where volume vanishes, we identify <span class="math notranslate nohighlight">\(-273.15\,^\circ\text{C}\)</span> as the limit—an unphysical negative volume indicates a <em>theoretical</em> bound. Shifting the Celsius scale by <span class="math notranslate nohighlight">\(273.15\)</span> degrees places absolute zero at <span class="math notranslate nohighlight">\(0\,\text{K}\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[T(\text{K}) \;=\; T(^\circ\text{C}) \;+\; 273.15.\]</div>
 <p>This defines the <strong>Kelvin scale</strong>, an absolute temperature scale that starts at the lowest physically meaningful temperature.</p>
 <hr class="footnotes docutils" />
 <aside class="footnote-list brackets">
-<aside class="footnote brackets" id="id2" role="doc-footnote">
+<aside class="footnote brackets" id="id3" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
 <p><a class="reference external" href="https://web.lemoyne.edu/~giunta/classicalcs/boyleform.html">Boyle’s original data</a></p>
+</aside>
+<aside class="footnote brackets" id="id4" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">2</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://webbook.nist.gov/cgi/inchi/InChI%3D1S/O2/c1-2">NIST WebBook: O₂ Data</a></p>
 </aside>
 </aside>
 </section>
