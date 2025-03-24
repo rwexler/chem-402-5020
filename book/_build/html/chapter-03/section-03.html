@@ -1,0 +1,797 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>3.3. Enthalpy &#8212; Physical Chemistry II</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/myfile.css?v=536cf54f" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapter-03/section-03';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Appendix A. Differential Calculus" href="../appendices/appendix-a.html" />
+    <link rel="prev" title="3.2. Applications of the First Law" href="section-02.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Physical Chemistry II - Home"/>
+    <img src="../_static/logo.png" class="logo__image only-dark pst-js-only" alt="Physical Chemistry II - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Welcome to Physical Chemistry II
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Module 1. Equations of State</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../chapter-01/section-01.html">1.1. Course Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter-01/section-02.html">1.2. Kinetic Theory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter-01/section-03.html">1.3. Ideal Gases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter-01/section-04.html">1.4. Real Gases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter-01/review.html">Review</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Module 2. Statistical Mechanics</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../chapter-02/section-01.html">2.1. Introduction to Statistical Mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter-02/section-02.html">2.2. Canonical Ensemble</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter-02/section-03.html">2.3. Ensemble Averages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter-02/section-04.html">2.4. Molecular Partition Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter-02/section-05.html">2.5. Particle in a Box</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter-02/section-06.html">2.6. Harmonic Oscillator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter-02/section-07.html">2.7. Linear Rigid Rotor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter-02/section-08.html">2.8. Molecular Statistical Mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter-02/review.html">Review</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Module 3. First Law &amp; Enthalpy</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="section-01.html">3.1. Conservation of Energy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="section-02.html">3.2. Applications of the First Law</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">3.3. Enthalpy</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendices</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../appendices/appendix-a.html">Appendix A. Differential Calculus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../appendices/appendix-b.html">Appendix B. Thermal Energy</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fchapter-03/section-03.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/chapter-03/section-03.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>3.3. Enthalpy</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#defining-enthalpy">Defining Enthalpy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#measuring-enthalpy-and-enthalpy-changes">Measuring Enthalpy and Enthalpy Changes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#defining-common-enthalpy-changes">Defining Common Enthalpy Changes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#standard-conditions">Standard Conditions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#standard-enthalpy-of-formation">Standard Enthalpy of Formation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#standard-enthalpy-of-reaction">Standard Enthalpy of Reaction</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="enthalpy">
+<h1>3.3. Enthalpy<a class="headerlink" href="#enthalpy" title="Link to this heading">#</a></h1>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading">#</a></h2>
+<p>Enthalpy <span class="math notranslate nohighlight">\(H\)</span> is a thermodynamic potential particularly convenient for processes at constant pressure, which is common in chemistry.</p>
+</section>
+<hr class="docutils" />
+<section id="defining-enthalpy">
+<h2>Defining Enthalpy<a class="headerlink" href="#defining-enthalpy" title="Link to this heading">#</a></h2>
+<p>Consider the first-law expression when <span class="math notranslate nohighlight">\(T\)</span> and <span class="math notranslate nohighlight">\(P\)</span> are the independent variables:</p>
+<div class="math notranslate nohighlight">
+\[\delta q 
+= \left[\left(\frac{\partial U}{\partial T}\right)_P + P \left(\frac{\partial V}{\partial T}\right)_P\right] dT 
+\;+\; \left[\left(\frac{\partial U}{\partial P}\right)_T 
++ P \left(\frac{\partial V}{\partial P}\right)_T\right] dP.\]</div>
+<p>At constant pressure, this becomes:</p>
+<div class="math notranslate nohighlight" id="equation-differential-first-law-constant-pressure">
+<span class="eqno">(22)<a class="headerlink" href="#equation-differential-first-law-constant-pressure" title="Link to this equation">#</a></span>\[\delta q_P 
+= \left[\left(\frac{\partial U}{\partial T}\right)_P + P \left(\frac{\partial V}{\partial T}\right)_P\right] dT.\]</div>
+<p>Define the heat capacity at constant pressure, <span class="math notranslate nohighlight">\(C_P\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[C_P 
+\;=\; \left(\frac{\partial U}{\partial T}\right)_P 
+\;+\; P \left(\frac{\partial V}{\partial T}\right)_P.\]</div>
+<p>We seek a state function <span class="math notranslate nohighlight">\(H\)</span> such that</p>
+<div class="math notranslate nohighlight" id="equation-differential-enthalpy">
+<span class="eqno">(23)<a class="headerlink" href="#equation-differential-enthalpy" title="Link to this equation">#</a></span>\[\delta q_P 
+= \left(\frac{\partial H}{\partial T}\right)_P \, dT.\]</div>
+<p>This motivates the definition of <strong>enthalpy</strong>:</p>
+<div class="math notranslate nohighlight" id="equation-enthalpy">
+<span class="eqno">(24)<a class="headerlink" href="#equation-enthalpy" title="Link to this equation">#</a></span>\[H \;=\; U + PV.\]</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Demonstrating That <span class="math notranslate nohighlight">\(H\)</span> Yields <span class="math notranslate nohighlight">\(\delta q_P\)</span></p>
+<p>By substituting <span class="math notranslate nohighlight">\(H = U + PV\)</span>, Equation <a class="reference internal" href="#equation-enthalpy">(24)</a>, into <span class="math notranslate nohighlight">\(\delta q_P = \left(\partial H / \partial T\right)_P dT\)</span>, Equation <a class="reference internal" href="#equation-differential-enthalpy">(23)</a>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+\delta q_P
+&amp;= \left[\frac{\partial}{\partial T} \bigl(U + PV\bigr)\right]_P dT \\[6pt]
+&amp;= \left[ \left(\frac{\partial U}{\partial T}\right)_P 
+  + P \left(\frac{\partial V}{\partial T}\right)_P 
+  + V \underbrace{\left(\frac{\partial P}{\partial T}\right)_P}_{=0}\right] dT \\[6pt]
+&amp;= \left[\left(\frac{\partial U}{\partial T}\right)_P
+  \;+\; P \left(\frac{\partial V}{\partial T}\right)_P\right] dT.
+\end{align*}\end{split}\]</div>
+<p>This matches Equation <a class="reference internal" href="#equation-differential-first-law-constant-pressure">(22)</a>, thus confirming that
+<span class="math notranslate nohighlight">\(\delta q_P = \mathrm{d}H\)</span> at constant pressure.</p>
+</div>
+</section>
+<section id="measuring-enthalpy-and-enthalpy-changes">
+<h2>Measuring Enthalpy and Enthalpy Changes<a class="headerlink" href="#measuring-enthalpy-and-enthalpy-changes" title="Link to this heading">#</a></h2>
+<p>At constant pressure, the heat absorbed or released by a process is equal to the change in enthalpy of the system:</p>
+<div class="math notranslate nohighlight">
+\[q_P 
+= \Delta H 
+= H(T_f) - H(T_i).\]</div>
+<p>If <span class="math notranslate nohighlight">\(C_P\)</span> is approximately constant over the temperature range <span class="math notranslate nohighlight">\(\Delta T = T_f - T_i\)</span>, then</p>
+<div class="math notranslate nohighlight">
+\[\Delta H 
+= \int_{T_i}^{T_f} C_P(T)\,dT 
+\;\longrightarrow\; C_P \,\Delta T.\]</div>
+<p>A typical way to measure <span class="math notranslate nohighlight">\(\Delta H\)</span> experimentally is via <strong>calorimetry</strong>. Below is a schematic of a simple calorimeter:</p>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy.constants</span><span class="w"> </span><span class="kn">import</span> <span class="n">k</span><span class="p">,</span> <span class="n">eV</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">labellines</span><span class="w"> </span><span class="kn">import</span> <span class="n">labelLines</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">myst_nb</span><span class="w"> </span><span class="kn">import</span> <span class="n">glue</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+
+<span class="c1"># Container</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="s1">&#39;k-&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Container base&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="s1">&#39;k-&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="s1">&#39;k-&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="s1">&#39;k-&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="c1"># Water</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">fill_between</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Water&#39;</span><span class="p">)</span>
+
+<span class="c1"># Thermometer</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mf">0.25</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">],</span> <span class="p">[</span><span class="mf">1.5</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">],</span> <span class="s1">&#39;r-&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Thermometer&#39;</span><span class="p">)</span>
+
+<span class="c1"># Stirrer</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">],</span> <span class="s1">&#39;k-&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Stirrer&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mf">0.25</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.75</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">],</span> <span class="s1">&#39;k-&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mf">0.25</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.75</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.6</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">],</span> <span class="s1">&#39;k-&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+
+<span class="c1"># Sample container</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mf">1.5</span><span class="p">,</span> <span class="mf">1.9</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">],</span> <span class="s1">&#39;C7-&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Sample Container&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mf">1.5</span><span class="p">,</span> <span class="mf">1.9</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">],</span> <span class="s1">&#39;C7-&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mf">1.5</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">],</span> <span class="s1">&#39;C7-&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mf">1.9</span><span class="p">,</span> <span class="mf">1.9</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">],</span> <span class="s1">&#39;C7-&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">fill_between</span><span class="p">([</span><span class="mf">1.5</span><span class="p">,</span> <span class="mf">1.9</span><span class="p">],</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">)</span>
+
+<span class="c1"># Sample inside container</span>
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>  <span class="c1"># For reproducibility</span>
+<span class="n">x_sample</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mf">1.6</span><span class="p">,</span> <span class="mf">1.8</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+<span class="n">y_sample</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x_sample</span><span class="p">,</span> <span class="n">y_sample</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;orange&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Sample&#39;</span><span class="p">)</span>
+
+<span class="c1"># Ignition source</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mf">1.7</span><span class="p">,</span> <span class="mf">1.7</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.3</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">],</span> <span class="s1">&#39;m-&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Ignition Source&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mf">1.05</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">),</span> <span class="n">loc</span><span class="o">=</span><span class="s1">&#39;center left&#39;</span><span class="p">,</span> <span class="n">borderaxespad</span><span class="o">=</span><span class="mf">0.</span><span class="p">,</span> <span class="n">frameon</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">glue</span><span class="p">(</span><span class="s2">&quot;calorimeter_diagram&quot;</span><span class="p">,</span> <span class="n">fig</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">(</span><span class="n">fig</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<figure class="align-center" id="id1" style="width: 100%">
+<img alt="../_images/9a8e274108ecaed2aad7703fb7cd3cfc19466953ff7a21d88824b9494ddd9656.png" src="../_images/9a8e274108ecaed2aad7703fb7cd3cfc19466953ff7a21d88824b9494ddd9656.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 25 </span><span class="caption-text">A simplified calorimeter. The process occurs in the sample container, which transfers heat to or from the surrounding water at constant pressure. The thermometer and stirrer ensure accurate, uniform temperature readings.</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<div class="tip admonition">
+<p class="admonition-title">Build Your Own Calorimeter</p>
+<p><strong>Question</strong>: How might you build a rudimentary calorimeter with a Styrofoam cup?</p>
+<p>Think about a simple chemical reaction in your kitchen.</p>
+<div class="dropdown admonition">
+<p class="admonition-title"><strong>Hint</strong></p>
+<p>Consider a reaction that involves dissolving a solid in water. You could use a thermometer to measure the temperature change.</p>
+</div>
+</div>
+</section>
+<section id="defining-common-enthalpy-changes">
+<h2>Defining Common Enthalpy Changes<a class="headerlink" href="#defining-common-enthalpy-changes" title="Link to this heading">#</a></h2>
+<section id="standard-conditions">
+<h3>Standard Conditions<a class="headerlink" href="#standard-conditions" title="Link to this heading">#</a></h3>
+<p>Standard conditions are defined as <span class="math notranslate nohighlight">\(P^\circ = 1\text{ bar}\)</span>. Reference databases—e.g., the <a class="reference external" href="https://doi.org/10.18434/T42S31">NIST-JANAF Thermochemical Tables</a> and <a class="reference external" href="https://atct.anl.gov/">Active Thermochemical Tables</a>—often document properties at <span class="math notranslate nohighlight">\(T = 25^\circ C\)</span> (298.15 K).</p>
+</section>
+<section id="standard-enthalpy-of-formation">
+<h3>Standard Enthalpy of Formation<a class="headerlink" href="#standard-enthalpy-of-formation" title="Link to this heading">#</a></h3>
+<p>The <strong>standard enthalpy of formation</strong>, <span class="math notranslate nohighlight">\(\Delta H_f^\circ\)</span>, is the enthalpy change when <strong>1 mole</strong> of a compound is formed from its constituent elements <strong>in their standard states</strong>.</p>
+<ul class="simple">
+<li><p>The standard state of an element is its most stable form at <span class="math notranslate nohighlight">\(P^\circ = 1\text{ bar}\)</span> (and a specified <span class="math notranslate nohighlight">\(T\)</span>).</p></li>
+<li><p>By convention, <span class="math notranslate nohighlight">\(\Delta H_f^\circ\)</span> for an element <strong>in its standard state</strong> is <strong>zero</strong>.</p></li>
+</ul>
+<div class="pst-scrollable-table-container"><table class="table" id="standard-state-elements">
+<caption><span class="caption-number">Table 11 </span><span class="caption-text">Standard State and Elements</span><a class="headerlink" href="#standard-state-elements" title="Link to this table">#</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Standard State</p></th>
+<th class="head"><p>Elements</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Monatomic ideal gas</p></td>
+<td><p>He, Ne, Ar, Kr, Xe, Rn</p></td>
+</tr>
+<tr class="row-odd"><td><p>Homonuclear diatomic ideal gas</p></td>
+<td><p>H, N, O, F, Cl</p></td>
+</tr>
+<tr class="row-even"><td><p>Liquid</p></td>
+<td><p>Br, Hg</p></td>
+</tr>
+<tr class="row-odd"><td><p>Solid</p></td>
+<td><p>All other elements</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="pst-scrollable-table-container"><table class="table" id="solid-standard-states">
+<caption><span class="caption-number">Table 12 </span><span class="caption-text">Solid Standard States</span><a class="headerlink" href="#solid-standard-states" title="Link to this table">#</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Crystal Structure</p></th>
+<th class="head"><p>Elements</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Body-centered cubic</p></td>
+<td><p>Alkali metals (Li, Na, K, Rb, Cs), Ba, group 5 transition metals (V, Nb, Ta), group 6 transition metals (Cr, Mo, W), Mn, Fe, &amp; Eu</p></td>
+</tr>
+<tr class="row-odd"><td><p>Hexagonal</p></td>
+<td><p>Be, Mg, group 3 transition metals (Sc, Y, Lu), group 4 transition metals (Ti, Zr, Hf), Tc, Re, Ru, Os, Co, group 12 transition metals (Zn, Cd), Tl, C (graphite), Se, Te, most lanthanides (La, Ce, Pr, Nd, Pm, Gd, Tb, Dy, Ho, Er, Tm)</p></td>
+</tr>
+<tr class="row-even"><td><p>Face-centered cubic</p></td>
+<td><p>Ca, Sr, Rh, Ir, group 10 transition metals (Ni, Pd, Pt), group 11 transition metals (Cu, Ag, Au), Al, Si (diamond cubic), Ge (diamond cubic), Pb, Yb</p></td>
+</tr>
+<tr class="row-odd"><td><p>Rhombohedral</p></td>
+<td><p>B, As, Sb, Bi, Sm</p></td>
+</tr>
+<tr class="row-even"><td><p>Orthorhombic</p></td>
+<td><p>Ga, P (black), S, I, U, and others</p></td>
+</tr>
+<tr class="row-odd"><td><p>Body-centered tetragonal</p></td>
+<td><p>In, Sn (<span class="math notranslate nohighlight">\(\beta\)</span>, white)</p></td>
+</tr>
+<tr class="row-even"><td><p>Simple cubic</p></td>
+<td><p>Po</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="standard-enthalpy-of-reaction">
+<h3>Standard Enthalpy of Reaction<a class="headerlink" href="#standard-enthalpy-of-reaction" title="Link to this heading">#</a></h3>
+<p>The <strong>standard enthalpy of reaction</strong>, <span class="math notranslate nohighlight">\(\Delta H_{\mathrm{rxn}}^\circ\)</span>, is the enthalpy change when a reaction is carried out under standard conditions. Mathematically:</p>
+<div class="math notranslate nohighlight" id="equation-standard-enthalpy-reaction">
+<span class="eqno">(25)<a class="headerlink" href="#equation-standard-enthalpy-reaction" title="Link to this equation">#</a></span>\[\Delta H_{\mathrm{rxn}}^\circ
+\;=\;\sum_{\text{products}} \nu_p H_p^\circ \;-\; \sum_{\text{reactants}} \nu_r H_r^\circ,\]</div>
+<p>where <span class="math notranslate nohighlight">\(\nu_p\)</span> and <span class="math notranslate nohighlight">\(\nu_r\)</span> are stoichiometric coefficients of products and reactants, respectively.</p>
+<div class="note admonition">
+<p class="admonition-title">Hess’s Law &amp; Standard Enthalpies of Formation</p>
+<p><strong>Hess’s Law</strong>: Enthalpy changes are <strong>additive</strong> and <strong>path independent</strong>. Consequently,</p>
+<div class="math notranslate nohighlight">
+\[\Delta H_{\mathrm{rxn}}^\circ 
+\;=\; \sum_{p} \nu_p \,\Delta H_{f,p}^\circ 
+\;-\;\sum_{r} \nu_r \,\Delta H_{f,r}^\circ.\]</div>
+<p>For example, consider the steam–methane reforming reaction:</p>
+<div class="math notranslate nohighlight">
+\[\text{CH}_4(g) + \text{H}_2\text{O}(g) \;\;\longrightarrow\;\; \text{CO}(g) + 3\,\text{H}_2(g).\]</div>
+<p>Directly:</p>
+<div class="math notranslate nohighlight">
+\[\Delta H_{\mathrm{rxn}}^\circ 
+= \nu_{\mathrm{CO}}\,H_{\mathrm{CO}}^\circ
++ 3\,\nu_{\mathrm{H}_2}\,H_{\mathrm{H}_2}^\circ
+- \nu_{\mathrm{CH}_4}\,H_{\mathrm{CH}_4}^\circ 
+- \nu_{\mathrm{H}_2\mathrm{O}}\,H_{\mathrm{H}_2\mathrm{O}}^\circ.\]</div>
+<p>Alternatively, break each species into formation (or reverse formation) reactions from the elemental forms, then sum their enthalpy changes:</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Breakdown of the Steam–Methane Reforming Reaction</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+\text{CH}_4(g) &amp;\longrightarrow \text{C}(s, \text{graphite}) + 2 \text{H}_2(g) &amp;\quad \Delta H^{\circ}_{\text{rxn}} &amp;= -\Delta H^{\circ}_{f, \text{CH}_4} \\
+\text{H}_2\text{O}(g) &amp;\longrightarrow \text{H}_2(g) + \tfrac{1}{2} \text{O}_2(g) &amp;\quad \Delta H^{\circ}_{\text{rxn}} &amp;= -\Delta H^{\circ}_{f, \text{H}_2\text{O}} \\
+\text{C}(s, \text{graphite}) + \tfrac{1}{2} \text{O}_2(g) &amp;\longrightarrow \text{CO}(g) &amp;\quad \Delta H^{\circ}_{\text{rxn}} &amp;= \Delta H^{\circ}_{f, \text{CO}}
+\end{align*}\end{split}\]</div>
+</div>
+</details><div class="math notranslate nohighlight">
+\[\Delta H_{\mathrm{rxn}}^\circ 
+= \bigl[-\Delta H_{f}^\circ(\text{CH}_4)\bigr] 
++ \bigl[-\Delta H_{f}^\circ(\text{H}_2\mathrm{O})\bigr] 
++ \Delta H_{f}^\circ(\text{CO})
++ 3\,\Delta H_{f}^\circ(\text{H}_2).\]</div>
+<p>Either approach gives the same result, thanks to Hess’s Law.</p>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./chapter-03"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="section-02.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">3.2. Applications of the First Law</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../appendices/appendix-a.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Appendix A. Differential Calculus</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#defining-enthalpy">Defining Enthalpy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#measuring-enthalpy-and-enthalpy-changes">Measuring Enthalpy and Enthalpy Changes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#defining-common-enthalpy-changes">Defining Common Enthalpy Changes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#standard-conditions">Standard Conditions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#standard-enthalpy-of-formation">Standard Enthalpy of Formation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#standard-enthalpy-of-reaction">Standard Enthalpy of Reaction</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Robert B. Wexler
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
