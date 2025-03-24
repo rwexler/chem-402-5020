@@ -396,16 +396,10 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#thermodynamic-processes">Thermodynamic Processes</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-apply-the-first-law-of-thermodynamics">How to Apply the First Law of Thermodynamics</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-v-and-t-as-independent-variables">Example: <span class="math notranslate nohighlight">\(V\)</span> and <span class="math notranslate nohighlight">\(T\)</span> as Independent Variables</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rewrite-the-first-law">Rewrite the First Law</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#apply-constraints">Apply Constraints</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#define-the-system">Define the System</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#integrate-the-first-law">Integrate the First Law</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#isochoric-process">Isochoric Process</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#isothermal-process">Isothermal Process</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#adiabatic-process">Adiabatic Process</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-using-v-and-t-as-independent-variables">Example: Using <span class="math notranslate nohighlight">\(V\)</span> and <span class="math notranslate nohighlight">\(T\)</span> as Independent Variables</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#first-law-in-terms-of-v-and-t">First Law in Terms of <span class="math notranslate nohighlight">\(V\)</span> and <span class="math notranslate nohighlight">\(T\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#process-constraints">Process Constraints</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#integrations-under-specific-constraints">Integrations Under Specific Constraints</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#microscopic-interpretation-of-the-first-law">Microscopic Interpretation of the First Law</a></li>
@@ -424,187 +418,268 @@
 <h1>3.2. Applications of the First Law<a class="headerlink" href="#applications-of-the-first-law" title="Link to this heading">#</a></h1>
 <section id="overview">
 <h2>Overview<a class="headerlink" href="#overview" title="Link to this heading">#</a></h2>
+<p>This section explores how to apply the First Law of Thermodynamics to various thermodynamic processes. We begin by clarifying key process definitions, then outline a step-by-step method for using the First Law under different constraints, and end with a microscopic interpretation that connects probability distributions of microstates with heat exchange.</p>
 </section>
+<hr class="docutils" />
 <section id="thermodynamic-processes">
 <h2>Thermodynamic Processes<a class="headerlink" href="#thermodynamic-processes" title="Link to this heading">#</a></h2>
 <dl class="simple glossary">
-<dt id="term-Quasi-static-process">Quasi-static process<a class="headerlink" href="#term-Quasi-static-process" title="Link to this term">#</a></dt><dd><p>A process carried out <em>infinitesimally slowly</em>, ensuring the system remains <em>near equilibrium</em> at each step. Any deviations from equilibrium are so small (infinitesimal) that each intermediate state is well-defined thermodynamically.</p>
+<dt id="term-Quasi-static-process">Quasi-static process<a class="headerlink" href="#term-Quasi-static-process" title="Link to this term">#</a></dt><dd><p>A process carried out <em>infinitesimally slowly</em> so that the system remains <em>nearly in equilibrium</em> at all times. Each intermediate state is well-defined thermodynamically.</p>
 </dd>
-<dt id="term-Reversible-process">Reversible process<a class="headerlink" href="#term-Reversible-process" title="Link to this term">#</a></dt><dd><p>An <em>idealized</em> process carried out <em>quasistatically</em> and with <em>no dissipative effects</em>, so that it can be undone without leaving any net change in the system or surroundings.</p>
+<dt id="term-Reversible-process">Reversible process<a class="headerlink" href="#term-Reversible-process" title="Link to this term">#</a></dt><dd><p>An <em>idealized</em> process that is (1) <em>quasi-static</em> and (2) free of <em>dissipative effects</em>, meaning it can be reversed with <em>no net change</em> to the system or surroundings.</p>
+</dd>
+<dt id="term-Irreversible-process">Irreversible process<a class="headerlink" href="#term-Irreversible-process" title="Link to this term">#</a></dt><dd><p>Any process that violates one or more of the conditions for reversibility (e.g., too rapid, frictional, or dissipative).</p>
 </dd>
 </dl>
+<hr class="docutils" />
+<!-- Definition of dissipative effects -->
+<!-- Examples of quasi-static, reversible, and irreversible processes -->
 </section>
 <section id="how-to-apply-the-first-law-of-thermodynamics">
 <h2>How to Apply the First Law of Thermodynamics<a class="headerlink" href="#how-to-apply-the-first-law-of-thermodynamics" title="Link to this heading">#</a></h2>
-<div class="dropdown admonition">
-<p class="admonition-title">1. Choose Two Independent Variables</p>
-<ul class="simple">
-<li><p><strong>How to Choose</strong>:</p>
-<ul>
-<li><p><em>Convenience</em>: What experiments can you set up most easily with the equipment at hand?</p></li>
-<li><p><em>Necessity</em>: Which variables are feasible to control or measure with the facilities available?</p></li>
-<li><p><em>Curiosity</em>: Which variables will yield the most interesting or relevant results for your study?</p></li>
-</ul>
-</li>
-<li><p>Generally, two independent variables are sufficient for many thermodynamic experiments; controlling more can become unwieldy.</p></li>
-</ul>
-</div>
-<div class="dropdown admonition">
-<p class="admonition-title">2. Rewrite the First Law</p>
-<ul class="simple">
-<li><p>Express <span class="math notranslate nohighlight">\(\delta q\)</span> (the infinitesimal heat transfer) in terms of the differentials of your chosen independent variables, <span class="math notranslate nohighlight">\(X_1\)</span> and <span class="math notranslate nohighlight">\(X_2\)</span>.</p></li>
-</ul>
+<p>The First Law states:</p>
 <div class="math notranslate nohighlight">
-\[\delta q = 
-\left(\frac{\partial U}{\partial X_1}\right)_{X_2} dX_1 + 
-\left(\frac{\partial U}{\partial X_2}\right)_{X_1} dX_2 
-+ \dots\]</div>
+\[dU = \delta q - \delta w,\]</div>
+<p>where <span class="math notranslate nohighlight">\(dU\)</span> is the change in internal energy, <span class="math notranslate nohighlight">\(\delta q\)</span> is the heat added to the system, and <span class="math notranslate nohighlight">\(\delta w\)</span> is the work done by the system. To make this law more useful for specific processes, follow the steps below.</p>
+<div class="dropdown admonition">
+<p class="admonition-title">Step 1. Choose Two Independent Variables</p>
 <ul class="simple">
-<li><p>If work is done, include an appropriate term for <span class="math notranslate nohighlight">\(\delta w\)</span>. For example, if <span class="math notranslate nohighlight">\(P\)</span>–<span class="math notranslate nohighlight">\(V\)</span> work is relevant, <span class="math notranslate nohighlight">\(\delta w = -P\, dV\)</span>.</p></li>
+<li><p><strong>Convenience</strong>: Which variables are easiest to control with your experimental setup?</p></li>
+<li><p><strong>Necessity</strong>: Which variables can you reliably measure or keep constant?</p></li>
+<li><p><strong>Curiosity</strong>: Which variables are most relevant to the phenomenon you wish to explore?</p></li>
+</ul>
+<p>Typically, two independent variables are sufficient (e.g., <span class="math notranslate nohighlight">\(P\)</span> and <span class="math notranslate nohighlight">\(T\)</span>, or <span class="math notranslate nohighlight">\(V\)</span> and <span class="math notranslate nohighlight">\(T\)</span>).</p>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Step 2. Rewrite the First Law</p>
+<ul>
+<li><p>Express <span class="math notranslate nohighlight">\(\delta q\)</span> and <span class="math notranslate nohighlight">\(\delta w\)</span> in terms of infinitesimal changes in your chosen variables (<span class="math notranslate nohighlight">\(X_1\)</span> and <span class="math notranslate nohighlight">\(X_2\)</span>):</p>
+<div class="math notranslate nohighlight">
+\[\delta q \;=\; \left(\frac{\partial U}{\partial X_1}\right)_{X_2} dX_1 
+ \;+\; \left(\frac{\partial U}{\partial X_2}\right)_{X_1} dX_2 
+ \;+\;\dots\]</div>
+</li>
+<li><p>Include work appropriately. For <span class="math notranslate nohighlight">\(P\)</span>-<span class="math notranslate nohighlight">\(V\)</span> work, <span class="math notranslate nohighlight">\(\delta w = -P\, dV\)</span>.</p></li>
 </ul>
 </div>
 <div class="dropdown admonition">
-<p class="admonition-title">3. Apply Constraints</p>
+<p class="admonition-title">Step 3. Apply Constraints</p>
 <ul class="simple">
-<li><p><strong>Holding Variables Constant</strong>:</p>
+<li><p><strong>Constant Variables</strong>:</p>
 <ul>
-<li><p><em>Isobaric</em>: <span class="math notranslate nohighlight">\(dP = 0\)</span></p></li>
-<li><p><em>Isochoric</em>: <span class="math notranslate nohighlight">\(dV = 0\)</span></p></li>
-<li><p><em>Isothermal</em>: <span class="math notranslate nohighlight">\(dT = 0\)</span></p></li>
+<li><p>Isobaric (<span class="math notranslate nohighlight">\(dP=0\)</span>), Isochoric (<span class="math notranslate nohighlight">\(dV=0\)</span>), Isothermal (<span class="math notranslate nohighlight">\(dT=0\)</span>).</p></li>
 </ul>
 </li>
-<li><p><strong>Adiabatic Boundary</strong>:</p>
+<li><p><strong>Adiabatic</strong>:</p>
 <ul>
 <li><p>If the boundary is thermally insulating, <span class="math notranslate nohighlight">\(\delta q = 0\)</span>.</p></li>
-<li><p>Note that “adiabatic” means no heat transfer; this does not necessarily imply the system is completely isolated (it can still do work, for example).</p></li>
+<li><p>“Adiabatic” means no heat transfer, but the system may still perform work.</p></li>
 </ul>
 </li>
 </ul>
 </div>
 <div class="dropdown admonition">
-<p class="admonition-title">4. Define the System</p>
+<p class="admonition-title">Step 4. Define the System</p>
 <ul class="simple">
-<li><p>Specify the system’s equation of state if known (e.g., <span class="math notranslate nohighlight">\(PV = nRT\)</span> for an ideal gas).</p></li>
-<li><p>The equation of state helps you calculate partial derivatives (e.g., <span class="math notranslate nohighlight">\(\left(\frac{\partial U}{\partial V}\right)_T\)</span>) that appear in your expression for <span class="math notranslate nohighlight">\(\delta q\)</span>.</p></li>
+<li><p>Specify an equation of state if known (e.g., <span class="math notranslate nohighlight">\(PV=nRT\)</span> for an ideal gas).</p></li>
+<li><p>Use the equation of state to evaluate partial derivatives—e.g., <span class="math notranslate nohighlight">\(\left(\frac{\partial U}{\partial V}\right)_T\)</span>—that appear in your expression for <span class="math notranslate nohighlight">\(\delta q\)</span>.</p></li>
 </ul>
 </div>
 <div class="dropdown admonition">
-<p class="admonition-title">5. Integrate the First Law</p>
+<p class="admonition-title">Step 5. Integrate the First Law</p>
 <ul class="simple">
-<li><p>By integrating, you eliminate the differentials to get explicit relationships.</p></li>
-<li><p>In real experiments, processes are rarely perfectly quasi-static or reversible, but the differential approach can still help interpret results.</p></li>
-<li><p>The final expression links the heat exchanged <span class="math notranslate nohighlight">\((q)\)</span> to the changes in your chosen independent variables along the process path.</p></li>
+<li><p>Integrate the differential relationships to link total heat (<span class="math notranslate nohighlight">\(q\)</span>) or work (<span class="math notranslate nohighlight">\(w\)</span>) to finite changes in state variables.</p></li>
+<li><p>Even real (irreversible) processes can be analyzed by approximating or comparing to ideal, reversible paths.</p></li>
 </ul>
 </div>
 <div class="tip admonition">
-<p class="admonition-title">So What?</p>
-<p>By carefully selecting your independent variables, rewriting the First Law to account for them, and integrating under specified constraints, you can predict how energy conservation will impact measurable quantities such as heat absorbed or released. Different constraints (isobaric, isochoric, isothermal, or adiabatic) reveal how changing one variable can affect others—and the corresponding energy flow.</p>
+<p class="admonition-title">Why It Matters</p>
+<p>Different process constraints (isobaric, isochoric, isothermal, adiabatic) dictate how heat, work, and changes in state variables interrelate. Mastering these constraints reveals how energy flows and how measurable quantities (e.g., temperature, volume, pressure) change under specific conditions.</p>
 </div>
 </section>
-<section id="example-v-and-t-as-independent-variables">
-<h2>Example: <span class="math notranslate nohighlight">\(V\)</span> and <span class="math notranslate nohighlight">\(T\)</span> as Independent Variables<a class="headerlink" href="#example-v-and-t-as-independent-variables" title="Link to this heading">#</a></h2>
-<section id="rewrite-the-first-law">
-<h3>Rewrite the First Law<a class="headerlink" href="#rewrite-the-first-law" title="Link to this heading">#</a></h3>
+<hr class="docutils" />
+<section id="example-using-v-and-t-as-independent-variables">
+<h2>Example: Using <span class="math notranslate nohighlight">\(V\)</span> and <span class="math notranslate nohighlight">\(T\)</span> as Independent Variables<a class="headerlink" href="#example-using-v-and-t-as-independent-variables" title="Link to this heading">#</a></h2>
+<p>For many systems—especially gases—choosing <span class="math notranslate nohighlight">\(V\)</span> and <span class="math notranslate nohighlight">\(T\)</span> can simplify calculations.</p>
+<section id="first-law-in-terms-of-v-and-t">
+<h3>First Law in Terms of <span class="math notranslate nohighlight">\(V\)</span> and <span class="math notranslate nohighlight">\(T\)</span><a class="headerlink" href="#first-law-in-terms-of-v-and-t" title="Link to this heading">#</a></h3>
+<p>Starting from</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}\begin{aligned}
-\delta q &amp;= dU - \delta w \\
-&amp;= dU + PdV \\
-&amp;= \left( \frac{\partial U}{\partial T} \right)_V dT + \left( \frac{\partial U}{\partial V} \right)_T dV + PdV \\
-&amp;= C_V dT + \left[ \left( \frac{\partial U}{\partial V} \right)_T + P \right] dV
-\end{aligned}\end{split}\]</div>
+\[\delta q = dU - \delta w = dU + P\,dV,\]</div>
+<p>rewrite <span class="math notranslate nohighlight">\(dU\)</span> with a total differential:</p>
+<div class="math notranslate nohighlight">
+\[dU = \left(\frac{\partial U}{\partial T}\right)_V dT 
+     \;+\; \left(\frac{\partial U}{\partial V}\right)_T dV.\]</div>
+<p>Thus,</p>
+<div class="math notranslate nohighlight">
+\[\delta q = 
+  \left(\frac{\partial U}{\partial T}\right)_V dT 
+  \;+\; \left[\left(\frac{\partial U}{\partial V}\right)_T + P\right] dV.\]</div>
+<p>If the system is an ideal gas, <span class="math notranslate nohighlight">\(\left(\frac{\partial U}{\partial V}\right)_T = 0\)</span> because <span class="math notranslate nohighlight">\(U\)</span> depends only on <span class="math notranslate nohighlight">\(T\)</span>. For a monoatomic ideal gas,</p>
+<div class="math notranslate nohighlight">
+\[U = \frac{3}{2} N k_B T, 
+\quad
+P = \frac{N k_B T}{V}, 
+\quad
+C_V = \left(\frac{\partial U}{\partial T}\right)_V = \frac{3}{2} N k_B.\]</div>
 </section>
-<section id="apply-constraints">
-<h3>Apply Constraints<a class="headerlink" href="#apply-constraints" title="Link to this heading">#</a></h3>
-<div class="pst-scrollable-table-container"><table class="table">
+<section id="process-constraints">
+<h3>Process Constraints<a class="headerlink" href="#process-constraints" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table" id="thermodynamic-process-constraints">
+<caption><span class="caption-number">Table 10 </span><span class="caption-text">Processes for an Ideal Gas (<span class="math notranslate nohighlight">\(V\)</span> and <span class="math notranslate nohighlight">\(T\)</span> as Independents)</span><a class="headerlink" href="#thermodynamic-process-constraints" title="Link to this table">#</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Constraint</p></th>
-<th class="head"><p>Equation</p></th>
-<th class="head"><p>First Law</p></th>
+<th class="head"><p>Condition</p></th>
+<th class="head"><p>Resulting <span class="math notranslate nohighlight">\(\delta q\)</span></p></th>
 </tr>
 </thead>
 <tbody>
 <tr class="row-even"><td><p>Isochoric</p></td>
 <td><p><span class="math notranslate nohighlight">\(dV = 0\)</span></p></td>
-<td><p><span class="math notranslate nohighlight">\(\delta q = C_V dT\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\delta q = C_V\, dT\)</span></p></td>
 </tr>
 <tr class="row-odd"><td><p>Isothermal</p></td>
 <td><p><span class="math notranslate nohighlight">\(dT = 0\)</span></p></td>
-<td><p><span class="math notranslate nohighlight">\(\delta q = \left[ \left( \frac{\partial U}{\partial V} \right)_T + P \right] dV\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\delta q = P\, dV\)</span></p></td>
 </tr>
 <tr class="row-even"><td><p>Adiabatic</p></td>
 <td><p><span class="math notranslate nohighlight">\(\delta q = 0\)</span></p></td>
-<td><p><span class="math notranslate nohighlight">\(C_V dT = -\left[ \left( \frac{\partial U}{\partial V} \right)_T + P \right] dV\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(C_V\, dT = -P\, dV\)</span></p></td>
 </tr>
 </tbody>
 </table>
 </div>
 </section>
-<section id="define-the-system">
-<h3>Define the System<a class="headerlink" href="#define-the-system" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p>Ideal gas</p>
-<ul>
-<li><p><span class="math notranslate nohighlight">\(U = U(T)\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(P = N k_{\text{B}} T / V\)</span></p></li>
-</ul>
+<section id="integrations-under-specific-constraints">
+<h3>Integrations Under Specific Constraints<a class="headerlink" href="#integrations-under-specific-constraints" title="Link to this heading">#</a></h3>
+<ol class="arabic">
+<li><p><strong>Isochoric (<span class="math notranslate nohighlight">\(dV = 0\)</span>)</strong></p>
+<div class="math notranslate nohighlight">
+\[\delta q = C_V\, dT 
+\quad \Longrightarrow \quad
+q = \int_{T_1}^{T_2} C_V \, dT 
+  = \frac{3}{2} N k_B \,\Delta T.\]</div>
 </li>
-<li><p>Monoatomic ideal gas</p>
-<ul>
-<li><p><span class="math notranslate nohighlight">\(C_V = \frac{3}{2} N k_{\text{B}}\)</span></p></li>
-</ul>
+<li><p><strong>Isothermal (<span class="math notranslate nohighlight">\(dT = 0\)</span>)</strong>
+Since <span class="math notranslate nohighlight">\(\delta q = P\, dV\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[q = \int_{V_1}^{V_2} \frac{N k_B T}{V} \, dV 
+  = N k_B T \ln\!\bigl(\tfrac{V_2}{V_1}\bigr).\]</div>
 </li>
-</ul>
-</section>
-<section id="integrate-the-first-law">
-<h3>Integrate the First Law<a class="headerlink" href="#integrate-the-first-law" title="Link to this heading">#</a></h3>
-<section id="isochoric-process">
-<h4>Isochoric Process<a class="headerlink" href="#isochoric-process" title="Link to this heading">#</a></h4>
+<li><p><strong>Adiabatic (<span class="math notranslate nohighlight">\(\delta q = 0\)</span>)</strong></p>
 <div class="math notranslate nohighlight">
-\[\begin{split}\begin{aligned}
-\delta q &amp;= C_V dT \\
-\int_{T_1}^{T_2} \delta q &amp;= \int_{T_1}^{T_2} C_V dT \\
-q &amp;= \int_{T_1}^{T_2} \frac{3}{2} N k_{\text{B}} dT \\
-q &amp;= \frac{3}{2} N k_{\text{B}} \left( T_2 - T_1 \right)
-\end{aligned}\end{split}\]</div>
-</section>
-<section id="isothermal-process">
-<h4>Isothermal Process<a class="headerlink" href="#isothermal-process" title="Link to this heading">#</a></h4>
+\[C_V\, dT = -P\, dV 
+\quad \Longrightarrow \quad
+\int_{T_1}^{T_2} C_V\, \frac{dT}{T} 
+= - \int_{V_1}^{V_2} \frac{N k_B}{V}\, dV.\]</div>
+<p>After integration,</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}\begin{aligned}
-\delta q &amp;= \left[ \left( \frac{\partial U}{\partial V} \right)_T + P \right] dV \\
-\int_{V_1}^{V_2} \delta q &amp;= \int_{V_1}^{V_2} P dV \\
-q &amp;= \int_{V_1}^{V_2} \frac{N k_{\text{B}} T}{V} dV \\
-q &amp;= N k_{\text{B}} T \ln \left( \frac{V_2}{V_1} \right)
-\end{aligned}\end{split}\]</div>
-</section>
-<section id="adiabatic-process">
-<h4>Adiabatic Process<a class="headerlink" href="#adiabatic-process" title="Link to this heading">#</a></h4>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{aligned}
-C_V dT &amp;= -\left[ \left( \frac{\partial U}{\partial V} \right)_T + P \right] dV \\
-\int_{T_1}^{T_2} C_V dT &amp;= -\int_{V_1}^{V_2} P dV \\
-\int_{T_1}^{T_2} \frac{C_V}{T} dT &amp;= -\int_{V_1}^{V_2} \frac{N k_{\text{B}}}{V} dV \\
-\frac{3}{2} \ln \left( \frac{T_2}{T_1} \right) &amp;= \ln \left( \frac{V_1}{V_2} \right) \\
-T_1 V_1^{2/3} &amp;= T_2 V_2^{2/3}
-\end{aligned}\end{split}\]</div>
+\[T_1 V_1^{2/3} = T_2 V_2^{2/3}.\]</div>
+</li>
+</ol>
 </section>
 </section>
-</section>
+<hr class="docutils" />
 <section id="microscopic-interpretation-of-the-first-law">
 <h2>Microscopic Interpretation of the First Law<a class="headerlink" href="#microscopic-interpretation-of-the-first-law" title="Link to this heading">#</a></h2>
+<p>From a statistical mechanics perspective, the internal energy is</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}\begin{aligned}
-U &amp;= \sum_{i = 1}^M p_i E_i \\
-dU &amp;= \sum_{i = 1}^M E_i dp_i + \sum_{i = 1}^M p_i dE_i \\
-&amp;= \sum_{i = 1}^M E_i dp_i + \sum_{i = 1}^M p_i \left( \frac{\partial E_i}{\partial N} \right)_V dN + \sum_{i = 1}^M p_i \left( \frac{\partial E_i}{\partial V} \right)_N dV \\
-&amp;= \sum_{i = 1}^M E_i dp_i + \biggl\langle \left( \frac{\partial E}{\partial V} \right)_N \biggr\rangle dV \\
-&amp;= \sum_{i = 1}^M E_i dp_i - P dV
-\end{aligned}\end{split}\]</div>
+\[U = \sum_{i=1}^M p_i E_i,\]</div>
+<p>where <span class="math notranslate nohighlight">\(p_i\)</span> is the probability of occupying the <span class="math notranslate nohighlight">\(i\)</span>-th microstate with energy <span class="math notranslate nohighlight">\(E_i\)</span>. The total differential can be written as</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}\begin{aligned}
-\delta q &amp;= \sum_{i = 1}^M E_i dp_i \\
-\delta w &amp;= \sum_{i = 1}^M p_i dE_i
-\end{aligned}\end{split}\]</div>
+\[dU 
+= \sum_{i=1}^M E_i\, dp_i 
+  + \sum_{i=1}^M p_i \, dE_i.\]</div>
+<p>For a closed system (constant <span class="math notranslate nohighlight">\(N\)</span>), and noting that</p>
+<div class="math notranslate nohighlight">
+\[\sum_{i=1}^M p_i \left(\frac{\partial E_i}{\partial V}\right)_N 
+  = \Bigl\langle \bigl(\tfrac{\partial E}{\partial V}\bigr)_N \Bigr\rangle,\]</div>
+<p>we identify pressure as</p>
+<div class="math notranslate nohighlight">
+\[P = - \Bigl\langle \bigl(\tfrac{\partial E}{\partial V}\bigr)_N \Bigr\rangle.\]</div>
+<p>Hence,</p>
+<div class="math notranslate nohighlight">
+\[dU 
+= \sum_{i=1}^M E_i\, dp_i 
+  \;-\; P\, dV.\]</div>
+<p>Comparing with <span class="math notranslate nohighlight">\(\delta q = \sum_{i=1}^M E_i\, dp_i\)</span>, we see that <strong>heat</strong> is the energy exchange via changing probabilities <span class="math notranslate nohighlight">\(p_i\)</span>, while <strong>work</strong> is the energy exchange via changes in the microstate energies themselves (e.g., volume compression).</p>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy.constants</span><span class="w"> </span><span class="kn">import</span> <span class="n">k</span><span class="p">,</span> <span class="n">eV</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">labellines</span><span class="w"> </span><span class="kn">import</span> <span class="n">labelLines</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">myst_nb</span><span class="w"> </span><span class="kn">import</span> <span class="n">glue</span>
+
+<span class="c1"># This code illustrates how microstate energies and probabilities change under heating or compression.</span>
+
+<span class="n">N_microstates</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">E_microstates</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
+<span class="n">P_microstates</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.05</span><span class="p">,</span> <span class="mf">0.05</span><span class="p">])</span>
+<span class="n">P_microstates</span> <span class="o">/=</span> <span class="n">P_microstates</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="n">constrained_layout</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">sharex</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">sharey</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="c1"># ax.set_title(&#39;Schematic of Microstates&#39;)</span>
+
+<span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;System Before Heating or Compression&#39;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N_microstates</span><span class="p">):</span>
+    <span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="n">E_microstates</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">E_microstates</span><span class="p">[</span><span class="n">i</span><span class="p">]],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;C0&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+    <span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">fill_betweenx</span><span class="p">([</span><span class="n">E_microstates</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">E_microstates</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="mf">0.1</span><span class="p">],</span> <span class="mi">0</span><span class="p">,</span> <span class="n">P_microstates</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;C1&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+    <span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">P_microstates</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="mf">0.02</span><span class="p">,</span> <span class="n">E_microstates</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="mf">0.05</span><span class="p">,</span> <span class="sa">f</span><span class="s1">&#39;$p_</span><span class="si">{</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s1">=</span><span class="si">{</span><span class="n">P_microstates</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">$&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Probability&#39;</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Energy&#39;</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;System After Heating&#39;</span><span class="p">)</span>
+
+<span class="n">P_microstates_heated</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">,</span> <span class="mf">0.15</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">])</span>  <span class="c1"># Example probabilities after heating</span>
+
+<span class="c1"># Normalize the probabilities (just in case)</span>
+<span class="n">P_microstates_heated</span> <span class="o">/=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">P_microstates_heated</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N_microstates</span><span class="p">):</span>
+    <span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="n">E_microstates</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">E_microstates</span><span class="p">[</span><span class="n">i</span><span class="p">]],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;C0&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+    <span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">fill_betweenx</span><span class="p">([</span><span class="n">E_microstates</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">E_microstates</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="mf">0.1</span><span class="p">],</span> <span class="mi">0</span><span class="p">,</span> <span class="n">P_microstates_heated</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;C1&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+    <span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">P_microstates_heated</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="mf">0.02</span><span class="p">,</span> <span class="n">E_microstates</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="mf">0.05</span><span class="p">,</span> <span class="sa">f</span><span class="s1">&#39;$p_</span><span class="si">{</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s1">=</span><span class="si">{</span><span class="n">P_microstates_heated</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">$&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">)</span>
+
+<span class="n">axs</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;System After Compression&#39;</span><span class="p">)</span>
+
+<span class="n">E_microstates_compressed</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">])</span>  <span class="c1"># Example energies after compression</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N_microstates</span><span class="p">):</span>
+    <span class="n">axs</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="n">E_microstates_compressed</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">E_microstates_compressed</span><span class="p">[</span><span class="n">i</span><span class="p">]],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;C0&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+    <span class="n">axs</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">fill_betweenx</span><span class="p">([</span><span class="n">E_microstates_compressed</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">E_microstates_compressed</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="mf">0.1</span><span class="p">],</span> <span class="mi">0</span><span class="p">,</span> <span class="n">P_microstates</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;C1&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+    <span class="n">axs</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">P_microstates</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="mf">0.02</span><span class="p">,</span> <span class="n">E_microstates_compressed</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="mf">0.05</span><span class="p">,</span> <span class="sa">f</span><span class="s1">&#39;$p_</span><span class="si">{</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s1">=</span><span class="si">{</span><span class="n">P_microstates</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">$&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">)</span>
+
+<span class="c1"># Add labels to the axes</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Probability&#39;</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Probability&#39;</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Probability&#39;</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Energy&#39;</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="n">glue</span><span class="p">(</span><span class="s2">&quot;microstates_energy_probabilities&quot;</span><span class="p">,</span> <span class="n">fig</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">(</span><span class="n">fig</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<figure class="align-center" id="id1" style="width: 100%">
+<img alt="../_images/db9716966df24f695494ea67938e7439552ed58ae2dec2e4e094264995b2a739.png" src="../_images/db9716966df24f695494ea67938e7439552ed58ae2dec2e4e094264995b2a739.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 24 </span><span class="caption-text">Schematic of microstate energies (vertical) and probabilities (horizontal). Heating changes the distribution <span class="math notranslate nohighlight">\(\{p_i\}\)</span>; compression shifts microstate energies <span class="math notranslate nohighlight">\(E_i\)</span>.</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>By connecting heat transfer to probability shifts and work to energy-level changes, the microscopic picture of the First Law becomes clearer: energy enters or leaves the system either by rearranging how likely each microstate is (heat) or by shifting the energy of each microstate itself (work).</p>
 </section>
 </section>
 
@@ -676,16 +751,10 @@ dU &amp;= \sum_{i = 1}^M E_i dp_i + \sum_{i = 1}^M p_i dE_i \\
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#thermodynamic-processes">Thermodynamic Processes</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-apply-the-first-law-of-thermodynamics">How to Apply the First Law of Thermodynamics</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-v-and-t-as-independent-variables">Example: <span class="math notranslate nohighlight">\(V\)</span> and <span class="math notranslate nohighlight">\(T\)</span> as Independent Variables</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rewrite-the-first-law">Rewrite the First Law</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#apply-constraints">Apply Constraints</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#define-the-system">Define the System</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#integrate-the-first-law">Integrate the First Law</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#isochoric-process">Isochoric Process</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#isothermal-process">Isothermal Process</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#adiabatic-process">Adiabatic Process</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-using-v-and-t-as-independent-variables">Example: Using <span class="math notranslate nohighlight">\(V\)</span> and <span class="math notranslate nohighlight">\(T\)</span> as Independent Variables</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#first-law-in-terms-of-v-and-t">First Law in Terms of <span class="math notranslate nohighlight">\(V\)</span> and <span class="math notranslate nohighlight">\(T\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#process-constraints">Process Constraints</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#integrations-under-specific-constraints">Integrations Under Specific Constraints</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#microscopic-interpretation-of-the-first-law">Microscopic Interpretation of the First Law</a></li>
