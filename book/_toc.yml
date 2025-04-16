@@ -34,6 +34,11 @@ parts:
       - file: chapter-03/section-01.md
       - file: chapter-03/section-02.md
       - file: chapter-03/section-03.md
+      - file: chapter-03/review.md
+  - caption: Module 4. Second Law & Entropy
+    numbered: false
+    chapters:
+      - file: chapter-04/section-01.md
   - caption: Appendices
     numbered: false
     chapters:
