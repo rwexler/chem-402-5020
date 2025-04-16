@@ -40,6 +40,17 @@ parts:
     chapters:
       - file: chapter-04/section-01.md
       - file: chapter-04/section-02.md
+      - file: chapter-04/section-03.md
+  - caption: Module 5. Third Law & Free Energy
+    numbered: false
+    chapters:
+      - file: chapter-05/section-01.md
+      - file: chapter-05/section-02.md
+      - file: chapter-05/section-03.md
+  - caption: Module 6. Phase Equilibria
+    numbered: false
+    chapters:
+      - file: chapter-06/section-01.md
   - caption: Appendices
     numbered: false
     chapters:
