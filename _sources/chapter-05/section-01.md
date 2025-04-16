@@ -12,7 +12,7 @@ kernelspec:
   name: python3
 ---
 
-# 4.2. Carnot Cycle
+# 5.1. Free Energy
 
 ## Overview
 

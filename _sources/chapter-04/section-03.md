@@ -12,7 +12,7 @@ kernelspec:
   name: python3
 ---
 
-# 4.2. Carnot Cycle
+# 4.3. Second Law
 
 ## Overview
 

@@ -12,7 +12,7 @@ kernelspec:
   name: python3
 ---
 
-# 4.2. Carnot Cycle
+# 6.1. Phase Diagrams
 
 ## Overview
 
