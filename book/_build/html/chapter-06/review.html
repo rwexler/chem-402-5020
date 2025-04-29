@@ -62,9 +62,13 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'chapter-06/review';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Appendix A. Differential Calculus" href="../appendices/appendix-a.html" />
+    <link rel="prev" title="6.1. Phase Diagrams" href="section-01.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -115,8 +119,6 @@
     <div class="bd-container__inner bd-page-width">
       
       
-      
-        
       
       <dialog id="pst-primary-sidebar-modal"></dialog>
       <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
@@ -212,8 +214,9 @@
 <li class="toctree-l1"><a class="reference internal" href="../chapter-05/review.html">Review</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Module 6. Phase Equilibria</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="section-01.html">6.1. Phase Diagrams</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Review</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendices</span></p>
 <ul class="nav bd-sidenav">
@@ -428,10 +431,127 @@
 <h1>Review<a class="headerlink" href="#review" title="Link to this heading">#</a></h1>
 <section id="checklist-of-key-concepts">
 <h2>1. Checklist of Key Concepts<a class="headerlink" href="#checklist-of-key-concepts" title="Link to this heading">#</a></h2>
+<ol class="arabic">
+<li><p><strong>Phase‐Equilibrium Condition</strong></p>
+<ul>
+<li><p><strong>Gibbs Equality</strong>: At equilibrium between any two phases <span class="math notranslate nohighlight">\(\alpha\)</span> and <span class="math notranslate nohighlight">\(\beta\)</span>, their molar Gibbs free energies are equal:</p>
+<div class="math notranslate nohighlight">
+\[G_\alpha = G_\beta.\]</div>
+<p>This condition holds at a phase‐transition point (e.g. melting point, boiling point) and underpins all phase‐diagram constructions.</p>
+</li>
+</ul>
+</li>
+<li><p><strong>Latent Heat &amp; Entropy Jump</strong></p>
+<ul>
+<li><p><strong>Enthalpy Change</strong>: <span class="math notranslate nohighlight">\(\Delta H_\text{trs}\)</span> is nonzero</p>
+<!-- at a first‐order transition -->
+<div class="math notranslate nohighlight">
+\[\Delta H_\text{trs} = H_\beta - H_\alpha,\]</div>
+<p>and known as the <em>latent heat</em>.</p>
+</li>
+<li><p><strong>Entropy Change</strong>: <span class="math notranslate nohighlight">\(\Delta S_\text{trs}\)</span> likewise jumps:</p>
+<div class="math notranslate nohighlight">
+\[\Delta S_\text{trs} = S_\beta - S_\alpha = \frac{\Delta H_\text{trs}}{T_\text{trs}}.\]</div>
+</li>
+</ul>
+</li>
+<li><p><strong>Chemical Potential in Open Systems</strong></p>
+<ul>
+<li><p><strong>Definition</strong>: For component <span class="math notranslate nohighlight">\(i\)</span> in an open, multi‐component system,</p>
+<div class="math notranslate nohighlight">
+\[\mu_i \;=\;\Bigl(\frac{\partial G}{\partial N_i}\Bigr)_{T,P,N_{j\neq i}},\]</div>
+<p>appears in the fundamental relation</p>
+<div class="math notranslate nohighlight">
+\[dG = -S\,dT + V\,dP + \sum_i \mu_i\,dN_i.\]</div>
+</li>
+<li><p><strong>Role</strong>: <span class="math notranslate nohighlight">\(\mu_i\)</span> is the “driving force” for matter exchange across a boundary; at phase equilibrium, the chemical potentials of each component are equal in all phases.</p></li>
+</ul>
+</li>
+<li><p><strong>Clausius–Clapeyron Equation</strong></p>
+<ul>
+<li><p><strong>Differential Form</strong>: Relates the slope of a phase boundary on a <span class="math notranslate nohighlight">\(P\)</span>–<span class="math notranslate nohighlight">\(T\)</span> diagram to latent heat and volume change:</p>
+<div class="math notranslate nohighlight">
+\[\frac{dP}{dT}
+\;=\;
+\frac{\Delta S_\text{trs}}{\Delta V_\text{trs}}
+\;=\;
+\frac{\Delta H_\text{trs}}{T\,\Delta V_\text{trs}}.\]</div>
+</li>
+<li><p><strong>Sketching Phase Diagrams</strong>: By knowing <span class="math notranslate nohighlight">\(\Delta H_\text{trs}\)</span> and <span class="math notranslate nohighlight">\(\Delta V_\text{trs}\)</span>, one can approximate the coexistence curve between two phases (e.g. solid–liquid, liquid–gas).</p></li>
+<li><p><strong>Integrated Form (Ideal Gas Approximation)</strong>:</p>
+<div class="math notranslate nohighlight">
+\[\ln\frac{P_2}{P_1}
+\approx
+-\frac{\Delta H_\text{vap}}{R}\,\Bigl(\frac{1}{T_2}-\frac{1}{T_1}\Bigr),\]</div>
+<p>useful for extracting <span class="math notranslate nohighlight">\(\Delta H_\text{vap}\)</span> from vapor‐pressure data.</p>
+</li>
+</ul>
+</li>
+</ol>
 </section>
 <hr class="docutils" />
 <section id="checklist-of-most-important-equations">
 <h2>2. Checklist of Most Important Equations<a class="headerlink" href="#checklist-of-most-important-equations" title="Link to this heading">#</a></h2>
+<!-- Assumes both phases are in stable equilibrium;  -->
+<!-- ; neglects P‐dependence of $H$ -->
+<!-- Assumes transition occurs reversibly at a single $T$. -->
+<!-- ; can break down near critical point where $\Delta V\to0$ -->
+<!-- and phases are well‐mixed -->
+<!-- interactions beyond ideal solution or  -->
+<!-- Use in heterogeneous phase equilibria (e.g., gas–solid adsorption). -->
+<!-- ; use fugacity for real gases at high pressure -->
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p><strong>Equation</strong></p></th>
+<th class="head text-left"><p><strong>Variables</strong></p></th>
+<th class="head text-left"><p><strong>Meaning &amp; Use Cases</strong></p></th>
+<th class="head text-left"><p><strong>Caveats/Approximations</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><span class="math notranslate nohighlight">\(G_\alpha = G_\beta\)</span></p></td>
+<td class="text-left"><p><span class="math notranslate nohighlight">\(G\)</span>: molar Gibbs free energy</p></td>
+<td class="text-left"><p><strong>Fundamental</strong> phase‐equilibrium criterion. Use to locate transition points in <span class="math notranslate nohighlight">\(P\)</span>–<span class="math notranslate nohighlight">\(T\)</span> space.</p></td>
+<td class="text-left"><p>Applies only at the equilibrium curve.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><span class="math notranslate nohighlight">\(\Delta H_\text{trs} = H_\beta - H_\alpha\)</span></p></td>
+<td class="text-left"><p><span class="math notranslate nohighlight">\(H\)</span>: enthalpy</p></td>
+<td class="text-left"><p><strong>Latent heat</strong> associated with phase change (fusion, vaporization). Determines heat required/​released at transition.</p></td>
+<td class="text-left"><p>Measured at constant <span class="math notranslate nohighlight">\(P\)</span>.</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><span class="math notranslate nohighlight">\(\Delta S_\text{trs} = S_\beta - S_\alpha = \dfrac{\Delta H_\text{trs}}{T_\text{trs}}\)</span></p></td>
+<td class="text-left"><p><span class="math notranslate nohighlight">\(S\)</span>: entropy; <span class="math notranslate nohighlight">\(T_\text{trs}\)</span>: transition temperature</p></td>
+<td class="text-left"><p>Quantifies <strong>entropy jump</strong> at a first‐order transition. Essential for Clapeyron equation.</p></td>
+<td class="text-left"><p>—</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><span class="math notranslate nohighlight">\(\dfrac{dP}{dT} = \dfrac{\Delta S_\text{trs}}{\Delta V_\text{trs}} = \dfrac{\Delta H_\text{trs}}{T\,\Delta V_\text{trs}}\)</span></p></td>
+<td class="text-left"><p><span class="math notranslate nohighlight">\(\Delta V_\text{trs} = V_\beta - V_\alpha\)</span>: molar volume change</p></td>
+<td class="text-left"><p><strong>Clausius–Clapeyron</strong>: slope of coexistence curve. Use to predict how <span class="math notranslate nohighlight">\(P\)</span> changes with <span class="math notranslate nohighlight">\(T\)</span> for phase boundaries (e.g., vapor pressure curve).</p></td>
+<td class="text-left"><p>Requires knowledge of <span class="math notranslate nohighlight">\(\Delta H_\text{trs}\)</span> and <span class="math notranslate nohighlight">\(\Delta V_\text{trs}\)</span>.</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><span class="math notranslate nohighlight">\(\ln\frac{P_2}{P_1} \approx -\frac{\Delta H_\text{vap}}{R}\Bigl(\frac{1}{T_2}-\frac{1}{T_1}\Bigr)\)</span></p></td>
+<td class="text-left"><p><span class="math notranslate nohighlight">\(R\)</span>: gas constant</p></td>
+<td class="text-left"><p><strong>Integrated</strong> Clapeyron under ideal‐gas assumption for vapor: use vapor‐pressure measurements at two <span class="math notranslate nohighlight">\(T\)</span> to find <span class="math notranslate nohighlight">\(\Delta H_\text{vap}\)</span> or predict <span class="math notranslate nohighlight">\(P\)</span>.</p></td>
+<td class="text-left"><p>Assumes vapor behaves ideally and <span class="math notranslate nohighlight">\(\Delta H_\text{vap}\)</span> is constant over <span class="math notranslate nohighlight">\(T_1\)</span>–<span class="math notranslate nohighlight">\(T_2\)</span>.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><span class="math notranslate nohighlight">\(\mu_i = \Bigl(\frac{\partial G}{\partial N_i}\Bigr)_{T,P,N_{j\neq i}}\)</span></p></td>
+<td class="text-left"><p><span class="math notranslate nohighlight">\(\mu_i\)</span>: chemical potential of component <span class="math notranslate nohighlight">\(i\)</span><br><span class="math notranslate nohighlight">\(N_i\)</span>: number of moles</p></td>
+<td class="text-left"><p>Defines the intensive variable controlling <strong>mass exchange</strong>. Equal in all phases at multi‐phase equilibrium (e.g., for water in coexisting liquid &amp; vapor).</p></td>
+<td class="text-left"><p>Valid for systems where composition can vary; neglects real gas corrections.</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><span class="math notranslate nohighlight">\(dG = -S\,dT + V\,dP + \sum_i \mu_i\,dN_i\)</span></p></td>
+<td class="text-left"><p>—</p></td>
+<td class="text-left"><p><strong>Fundamental differential</strong> for open, multi‐component systems. Basis for deriving all equilibrium conditions (thermal, mechanical, chemical).</p></td>
+<td class="text-left"><p>Assumes only <span class="math notranslate nohighlight">\(PV\)</span> work and matter exchange; neglects electric, magnetic, surface‐tension work, etc.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><span class="math notranslate nohighlight">\(G(P,T) = G^\circ(T) + RT\ln\frac{P}{P^\circ}\)</span></p></td>
+<td class="text-left"><p><span class="math notranslate nohighlight">\(P^\circ\)</span>: standard pressure</p></td>
+<td class="text-left"><p>Adjusts the Gibbs free energy of an ideal gas from standard pressure to <span class="math notranslate nohighlight">\(P\)</span>.</p></td>
+<td class="text-left"><p>Ideal‐gas assumption.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
 </section>
 </section>
 
@@ -465,6 +585,24 @@
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="section-01.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">6.1. Phase Diagrams</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../appendices/appendix-a.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Appendix A. Differential Calculus</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
