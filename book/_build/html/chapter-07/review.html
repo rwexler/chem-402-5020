@@ -62,9 +62,13 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'chapter-07/review';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Appendix A. Differential Calculus" href="../appendices/appendix-a.html" />
+    <link rel="prev" title="Review" href="../chapter-06/review.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -115,8 +119,6 @@
     <div class="bd-container__inner bd-page-width">
       
       
-      
-        
       
       <dialog id="pst-primary-sidebar-modal"></dialog>
       <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
@@ -215,6 +217,10 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../chapter-06/section-01.html">6.1. Phase Diagrams</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../chapter-06/review.html">Review</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Module 7. Chemical Equilibrium</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Review</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendices</span></p>
 <ul class="nav bd-sidenav">
@@ -429,10 +435,115 @@
 <h1>Review<a class="headerlink" href="#review" title="Link to this heading">#</a></h1>
 <section id="checklist-of-key-concepts">
 <h2>1. Checklist of Key Concepts<a class="headerlink" href="#checklist-of-key-concepts" title="Link to this heading">#</a></h2>
+<ol class="arabic">
+<li><p><strong>Gibbs Free Energy &amp; Reaction Extent</strong></p>
+<ul>
+<li><p>Define the <strong>extent of reaction</strong> <span class="math notranslate nohighlight">\(x\)</span> so that for<br />
+<span class="math notranslate nohighlight">\(\ce{\nu_A A(g) + \nu_B B &lt;=&gt; \nu_Y Y + \nu_Z Z}\)</span>, <span class="math notranslate nohighlight">\(n_{\ce{A}} = n_{\ce{A},0}-\nu_{\ce{A}} x\)</span>, etc.</p></li>
+<li><p>The <strong>driving force</strong> is</p>
+<div class="math notranslate nohighlight">
+\[\left. \frac{\partial G}{\partial x} \right|_{T,P}
+= \sum_i \nu_i\,\mu_i = \Delta G_{\text{rxn}}.\]</div>
+<ul class="simple">
+<li><p>If <span class="math notranslate nohighlight">\(\Delta G_{\text{rxn}}&lt;0\)</span>, reaction proceeds forward.</p></li>
+<li><p>If <span class="math notranslate nohighlight">\(\Delta G_{\text{rxn}}=0\)</span>, equilibrium.</p></li>
+<li><p>If <span class="math notranslate nohighlight">\(\Delta G_{\text{rxn}}&gt;0\)</span>, reaction moves backward.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>Reaction Quotient &amp; Equilibrium Constant</strong></p>
+<ul>
+<li><p><strong>Reaction quotient</strong> <span class="math notranslate nohighlight">\(Q\)</span> compares partial pressures to standard state:</p>
+<div class="math notranslate nohighlight">
+\[Q = \prod_i \left( \frac{P_i}{P^{\circ}} \right)^{\nu_i},\]</div>
+<p>so <span class="math notranslate nohighlight">\(\Delta G_{\text{rxn}} = \Delta G_{\text{rxn}}^\circ + RT\ln Q\)</span>.</p>
+</li>
+<li><p>At <strong>equilibrium</strong>, <span class="math notranslate nohighlight">\(\Delta G_{\text{rxn}}=0\implies Q=K\)</span>, the <strong>equilibrium constant</strong>:</p>
+<div class="math notranslate nohighlight">
+\[K = \exp\left(-\frac{\Delta G_{\text{rxn}}^\circ}{RT}\right).\]</div>
+</li>
+<li><p><strong>Interpretation</strong>: <span class="math notranslate nohighlight">\(Q&lt;K\)</span> drives products; <span class="math notranslate nohighlight">\(Q&gt;K\)</span> drives reactants.</p></li>
+</ul>
+</li>
+<li><p><strong>Gas‐Phase Example &amp; ICE Analysis</strong></p>
+<ul>
+<li><p>Dimerization <span class="math notranslate nohighlight">\(\ce{2NO2(g) &lt;=&gt; N2O4(g)}\)</span>: use an ICE table with extent <span class="math notranslate nohighlight">\(x\)</span> to express mole numbers and mole fractions; define</p>
+<div class="math notranslate nohighlight">
+\[K_p = \frac{P_{\ce{N2O4}}/P^\circ}{(P_{\ce{NO2}}/P^\circ)^2}.\]</div>
+</li>
+<li><p>Solve for <span class="math notranslate nohighlight">\(x_\text{eq}\)</span> at various temperatures (e.g., 250 K, 298 K, 350 K) and pressures.</p></li>
+<li><p>Observe that increasing <span class="math notranslate nohighlight">\(T\)</span> (endothermic dimerization) shifts equilibrium toward reactants.</p></li>
+</ul>
+</li>
+<li><p><strong>Temperature Dependence: van’t Hoff Equation</strong></p>
+<ul>
+<li><p>From <span class="math notranslate nohighlight">\(\Delta G_{\text{rxn}}^\circ = -RT\ln K\)</span> and Gibbs–Helmholtz,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left. \frac{d\ln K}{dT}\right|_P \;=\;\frac{\\Delta H_{\text{rxn}}^\circ}{R\,T^2}.\end{split}\]</div>
+</li>
+<li><p>Enables prediction of how <span class="math notranslate nohighlight">\(K\)</span> changes with <span class="math notranslate nohighlight">\(T\)</span>, and rationalizes the data trend in the <span class="math notranslate nohighlight">\(\ce{NO2}\)</span>–<span class="math notranslate nohighlight">\(\ce{N2O4}\)</span> system.</p></li>
+</ul>
+</li>
+<li><p><strong>Microscopic Basis via Partition Functions</strong></p>
+<ul class="simple">
+<li><p>Helmholtz energy <span class="math notranslate nohighlight">\(A=-RT\ln Q\)</span> for a mixture of ideal gases with <span class="math notranslate nohighlight">\(\;Q(T,V,\{N_i\})=\prod_i Q_i(T,V,N_i)\)</span>.</p></li>
+<li><p>Chemical potentials <span class="math notranslate nohighlight">\(\mu_i=-RT\,(\partial\ln Q/\partial N_i)\)</span>, leading to the same equilibrium condition <span class="math notranslate nohighlight">\(\sum\nu_i\,\mu_i=0\)</span>.</p></li>
+<li><p>From these, one can compute <span class="math notranslate nohighlight">\(K\)</span> purely from molecular partition functions, e.g., for <span class="math notranslate nohighlight">\(\ce{H2(g) + I2(g) &lt;=&gt; 2HI(g)}\)</span>.</p></li>
+</ul>
+</li>
+</ol>
 </section>
 <hr class="docutils" />
 <section id="checklist-of-most-important-equations">
 <h2>2. Checklist of Most Important Equations<a class="headerlink" href="#checklist-of-most-important-equations" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p><strong>Equation</strong></p></th>
+<th class="head text-left"><p><strong>Variables</strong></p></th>
+<th class="head text-left"><p><strong>Meaning &amp; Use Cases</strong></p></th>
+<th class="head text-left"><p><strong>Caveats/Approximations</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><span class="math notranslate nohighlight">\(\Delta G_{\text{rxn}} = \sum_i \nu_i\,\mu_i \;=\;\left(\frac{\partial G}{\partial x}\right)_{T,P}\)</span></p></td>
+<td class="text-left"><p><span class="math notranslate nohighlight">\(\nu_i\)</span>: stoichiometric coefficients (products positive)<br><span class="math notranslate nohighlight">\(\mu_i\)</span>: chemical potential of species <span class="math notranslate nohighlight">\(i\)</span></p></td>
+<td class="text-left"><p>Reaction driving force. Use this to assess spontaneity and locate equilibrium <span class="math notranslate nohighlight">\(\left( \Delta G_{\text{rxn}} = 0 \right)\)</span>.</p></td>
+<td class="text-left"><p>Assumes constant <span class="math notranslate nohighlight">\(T,P\)</span> and only <span class="math notranslate nohighlight">\(PV\)</span> work; applies generally to closed, simple systems.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><span class="math notranslate nohighlight">\(\mu_i = \mu_i^\circ + RT\ln\left( P_i / P^{\circ} \right)\)</span></p></td>
+<td class="text-left"><p>—</p></td>
+<td class="text-left"><p>Defines chemical potential in terms of measurable quantities. Controls mass exchange; at equilibrium between phases or compartments, <span class="math notranslate nohighlight">\(\mu_i\)</span> equal in each.</p></td>
+<td class="text-left"><p>Requires proper choice of standard state and correction for nonideal behavior.</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><span class="math notranslate nohighlight">\(\Delta G_{\text{rxn}} = \Delta G_{\text{rxn}}^\circ + RT\ln Q\)</span></p></td>
+<td class="text-left"><p><span class="math notranslate nohighlight">\(\Delta G_{\text{rxn}}^\circ\)</span>: standard‐state free energy change<br><span class="math notranslate nohighlight">\(Q=\prod \left( P_i / P^{\circ} \right)^{\nu_i}\)</span>: reaction quotient</p></td>
+<td class="text-left"><p>Relates instantaneous driving force to composition. Use to predict direction of reaction under non‐standard conditions.</p></td>
+<td class="text-left"><p>—</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><span class="math notranslate nohighlight">\(K = \exp\left(-\frac{\Delta G_{\text{rxn}}^\circ}{RT}\right)\)</span></p></td>
+<td class="text-left"><p><span class="math notranslate nohighlight">\(K\)</span>: equilibrium constant (can be <span class="math notranslate nohighlight">\(K_P\)</span>, <span class="math notranslate nohighlight">\(K_c\)</span>, etc.)</p></td>
+<td class="text-left"><p>Defines equilibrium composition. Use standard thermodynamic data (<span class="math notranslate nohighlight">\(\Delta G_{\text{rxn}}^\circ\)</span>) to compute <span class="math notranslate nohighlight">\(K\)</span>.</p></td>
+<td class="text-left"><p>Assumes temperature‐independent <span class="math notranslate nohighlight">\(\Delta G_{\text{rxn}}^\circ\)</span> unless corrected; different <span class="math notranslate nohighlight">\(K\)</span> for different standard states (pressure vs concentration).</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><span class="math notranslate nohighlight">\(Q = \frac{\left( y_{\ce{Y}} P / P^{\circ} \right)^{\nu_{\ce{Y}}} \, \left( y_{\ce{Z}} P / P^{\circ} \right)^{\nu_{\ce{Z}}}}{\left( y_{\ce{A}} P / P^{\circ} \right)^{\nu_{\ce{A}}} \, \left( y_{\ce{B}} P / P^{\circ} \right)^{\nu_{\ce{B}}}}\)</span></p></td>
+<td class="text-left"><p><span class="math notranslate nohighlight">\(y_i\)</span>: mole fraction of gas <span class="math notranslate nohighlight">\(i\)</span><br><span class="math notranslate nohighlight">\(P\)</span>: total pressure</p></td>
+<td class="text-left"><p>Specific form of <span class="math notranslate nohighlight">\(Q\)</span> for ideal‐gas mixtures. Use in ICE analyses to solve for equilibrium extent <span class="math notranslate nohighlight">\(x\)</span>.</p></td>
+<td class="text-left"><p>Ideal‐gas assumption; neglects nonidealities.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><span class="math notranslate nohighlight">\(\frac{d\ln K}{dT} = \frac{\Delta H_{\text{rxn}}^\circ}{R\,T^2}\)</span></p></td>
+<td class="text-left"><p><span class="math notranslate nohighlight">\(\Delta H_{\text{rxn}}^\circ\)</span>: standard enthalpy change</p></td>
+<td class="text-left"><p><strong>van’t Hoff</strong>: predicts how <span class="math notranslate nohighlight">\(K\)</span> shifts with <span class="math notranslate nohighlight">\(T\)</span>.</p></td>
+<td class="text-left"><p>Assumes <span class="math notranslate nohighlight">\(\Delta H_{\text{rxn}}^\circ\)</span> constant over the temperature range; in reality, <span class="math notranslate nohighlight">\(C_p\)</span> corrections may be needed.</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><span class="math notranslate nohighlight">\(A = -RT\ln Q,\quad \mu_i = -RT\left(\frac{\partial\ln Q}{\partial N_i}\right)_{T,V}\)</span></p></td>
+<td class="text-left"><p><span class="math notranslate nohighlight">\(A\)</span>: Helmholtz free energy of the mixture<br><span class="math notranslate nohighlight">\(Q\)</span>: total partition function</p></td>
+<td class="text-left"><p>Connects molecular partition functions to macroscopic free energies and chemical potentials. Enables <strong>microscopic</strong> calculation of <span class="math notranslate nohighlight">\(K\)</span>.</p></td>
+<td class="text-left"><p>Exact only if full partition functions (translational, rotational, vibrational, electronic) are known.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
 </section>
 </section>
 
@@ -466,6 +577,24 @@
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="../chapter-06/review.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Review</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../appendices/appendix-a.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Appendix A. Differential Calculus</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               

@@ -54,6 +54,10 @@ parts:
     chapters:
       - file: chapter-06/section-01.md
       - file: chapter-06/review.md
+  - caption: Module 7. Chemical Equilibrium
+    numbered: false
+    chapters:
+      - file: chapter-07/review.md
   - caption: Appendices
     numbered: false
     chapters:
