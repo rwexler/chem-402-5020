@@ -48,6 +48,7 @@ parts:
       - file: chapter-05/section-01.md
       - file: chapter-05/section-02.md
       - file: chapter-05/section-03.md
+      - file: chapter-05/review.md
   - caption: Module 6. Phase Equilibria
     numbered: false
     chapters:
